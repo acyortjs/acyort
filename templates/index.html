@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate" />
+<link rel="icon" href="/dists/icon.png" />
+<title> {{{title}}} </title>
+<link rel="stylesheet" href="/dists/acyort.css" />
+</script>
+</head>
+<body>
+
+<div class="header">
+    <div class="center">
+        <h1><a href="/">{{{title}}}</a></h1>
+        <p>{{{about}}}</p>
+    </div>
+</div>
+
+<div id="posts" class="center">
+
+    <ul>
+    {{#posts}}
+        <li>
+
+        <div class="post">
+            <h2><a href="{{{post_url}}}">{{{title}}}</a></h2>
+            <p>{{{index_body}}}</p>
+            <p class="time">{{{post_time}}}</p>
+        </div>
+
+        <a class="author" href="{{{user.html_url}}}" target="_blank">
+            <img src="{{{user.avatar_url}}}" />
+        </a>
+
+        </li>
+    {{/posts}}
+    </ul>
+
+    <div id="pagination">{{{prev}}}{{{next}}}</div>
+
+</div>
+
+<div class="footer">
+    <div class="center">
+        © {{{year}}} {{{title}}} . <a target="_blank" href="https://github.com/youmi/AcyOrt">AcyOrt</a>
+    </div>
+</div>
+
+</body>
+</html>
