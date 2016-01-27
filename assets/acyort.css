@@ -135,7 +135,7 @@ body {
 }
 #post > h1 {
     color: #212427;
-    font-size: 24px;
+    font-size: 28px;
 }
 #post > p {
     font-size: 14px;
@@ -188,16 +188,17 @@ body {
 
 /* article content */
 .content {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #5a5a5a;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4c4c4c;
 }
 .content h1, .content h2, .content h3, .content h4, .content h5 {
-    font-weight: normal;
-    margin-bottom: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #484848;
 }
 .content p {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 .content h5 {
     font-size: 16px;
@@ -232,13 +233,15 @@ body {
 }
 .content ul, .content ol {
     margin: 10px 0;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 .content ul li {
     list-style: disc;
+    margin-top: 4px;
 }
 .content ol li {
     list-style: decimal;
+    margin-top: 4px;
 }
 .content img {
     margin-top: 14px;
