@@ -1,5 +1,10 @@
 
-var config = {
+// base config
+
+module.exports = {
+    // site url
+    url:        'http://acyort.github.io',
+
     // Blog Name
     title:      'Blog Name',
 
@@ -12,6 +17,9 @@ var config = {
     // GitHub Repo    
     repo:       '',           
 
+    // rss
+    rss:        '/rss.xml',
+
     // Per Page Posts
     perpage:    10,                  
 
@@ -19,7 +27,22 @@ var config = {
     token:      ''+'',              
 
     // Post Authors
-    authors:    []                 
+    authors:    [],
+
+    // menu
+    menu: [
+        {
+            name: 'home',
+            url: '/'
+        },
+        {
+            name: 'about',
+            url: '/about/'
+        },
+        {
+            name: 'archives',
+            url: '/archives/'
+        }
+    ]    
 }
 
-module.exports = config

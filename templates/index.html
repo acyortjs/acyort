@@ -7,7 +7,6 @@
 <link rel="icon" href="/dists/icon.png" />
 <title> {{{title}}} </title>
 <link rel="stylesheet" href="/dists/acyort.css" />
-</script>
 </head>
 <body>
 
@@ -15,6 +14,11 @@
     <div class="center">
         <h1><a href="/">{{{title}}}</a></h1>
         <p>{{{about}}}</p>
+    </div>
+    <div class="menu">
+    {{#menu}}
+        <a href="{{{url}}}">{{{name}}}</a>
+    {{/menu}}
     </div>
 </div>
 
@@ -44,7 +48,7 @@
 
 <div class="footer">
     <div class="center">
-        © {{{year}}} {{{title}}} . <a target="_blank" href="https://github.com/youmi/AcyOrt">AcyOrt</a>
+        © {{{year}}} {{{title}}} . <a target="_blank" href="https://github.com/youmi/AcyOrt">AcyOrt</a> . <a target="_blank" href="{{{rss}}}">RSS</a>
     </div>
 </div>
 

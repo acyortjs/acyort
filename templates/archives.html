@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="google" content="notranslate" />
 <link rel="icon" href="/dists/icon.png" />
-<title> {{{full_title}}} </title>
+<title> {{{title}}} </title>
 <link rel="stylesheet" href="/dists/acyort.css" />
 </head>
 <body>
 
 <div class="header">
     <div class="center">
-        <h1><a href="/">{{{page_title}}}</a></h1>
+        <h1><a href="/">{{{title}}}</a></h1>
         <p>{{{about}}}</p>
     </div>
     <div class="menu">
@@ -22,24 +22,21 @@
     </div>
 </div>
 
-<div id="post" class="center">
+<div id="posts" class="center">
 
-    <h1>{{{title}}}</h1>
-    <p><a href="{{{user.html_url}}}">{{{user.login}}}</a> Updated at {{{updated_at}}}</p>
-
-    <div class="content">{{{body}}}</div>
-
-    <div class="label">
-    {{#labels}}
-    <div><a href="/tags/{{{name}}}/">#{{{name}}}</a></div>
-    {{/labels}}
+    <div class="archives">
+    {{#posts}}
+    <p class="y{{{post_year}}}"><a href="{{{post_url}}}">{{{title}}}</a><span>{{{post_time}}}</span></p>
+    {{/posts}}
     </div>
+
+    <div id="pagination">{{{prev}}}{{{next}}}</div>
 
 </div>
 
 <div class="footer">
     <div class="center">
-        © {{{year}}} {{{page_title}}} . <a target="_blank" href="https://github.com/youmi/AcyOrt">AcyOrt</a> . <a target="_blank" href="{{{rss}}}">RSS</a>
+        © {{{year}}} {{{title}}} . <a target="_blank" href="https://github.com/youmi/AcyOrt">AcyOrt</a> . <a target="_blank" href="{{{rss}}}">RSS</a>
     </div>
 </div>
 

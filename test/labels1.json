@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://api.github.com/repos/LoeiFy/Recordum/labels/css",
+    "name": "question",
+    "color": "207de5"
+  },
+  {
+    "url": "https://api.github.com/repos/LoeiFy/Recordum/labels/javascript",
+    "name": "duplicate",
+    "color": "fbca04"
+  },
+  {
+    "url": "https://api.github.com/repos/LoeiFy/Recordum/labels/html",
+    "name": "help wanted",
+    "color": "eb6420"
+  },
+  {
+    "url": "https://api.github.com/repos/LoeiFy/Recordum/labels/works",
+    "name": "works",
+    "color": "e11d21"
+  }
+]
