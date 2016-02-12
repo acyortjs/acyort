@@ -3,7 +3,7 @@
 
 var config = require('../config.js'),
     marked = require('marked'),
-    timeFormat = require('./modules/time.js'),
+    timeFormat = require('time.js'),
     hl = require('highlight.js');
 
 module.exports = function(data) {
