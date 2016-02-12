@@ -80,9 +80,20 @@ function build_html() {
         dir('./posts/'+ time[0], './posts/'+ time[0] +'/'+ time[1])
         render('./posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html', template.post, post)
     })
-    */
 
     _rss(post_data)
+    */
+
+    page_data.forEach(function(post) {
+        var title = post.title.substr(1, post.title.indexOf(']') - 1),
+            path = title +'/index.html';
+
+        post.page_title = title;
+        post.title = post.title.split(']')[1];
+
+        dir('./'+ post.page_title)
+        render(path, template.page, post)
+    })
 
 }
 
