@@ -27,7 +27,7 @@ module.exports = {
     token:      ''+'',              
 
     // Post Authors
-    authors:    ['LoeiFy'],
+    authors:    [],
 
     // menu
     menu: [
