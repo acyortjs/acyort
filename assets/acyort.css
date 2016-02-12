@@ -63,8 +63,26 @@ body {
     max-width: 700px;
     padding: 0 20px;
 }
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.menu a {
+    display: inline-block;
+    padding: 3px 7px;
+    background: #5694f1;
+    margin: 0 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
 
 /* index */
+#posts {
+    min-height: 600px; 
+}
 #posts li {
     position: relative;
     border-bottom: 1px solid #f5f5f5;
@@ -128,6 +146,31 @@ body {
     position: absolute;
     right: 0;
 }
+#pagination a.hide {
+    display: none;
+}
+.archives {
+    padding: 30px 0 0;
+}
+.archives p {
+    margin-bottom: 20px;
+}
+.archives p:before {
+    content: '- ';
+}
+.archives a {
+    text-decoration: none;
+    color: #333;
+}
+.archives a:hover {
+    text-decoration: underline;
+}
+.archives span {
+    float: right;
+    font-size: 14px;
+    color: #666;
+    margin-top: 1px;
+}
 
 /* single post */
 #post {
@@ -168,8 +211,12 @@ body {
     -moz-border-radius: 3px;
     border-radius: 3px;
     margin-right: 8px;
-    color: #fff;
+    border: 1px solid #e2e2e2;
     font-size: 14px;
+}
+.label a {
+    color: #6D6D6D;
+    text-decoration: none;
 }
 
 

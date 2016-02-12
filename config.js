@@ -21,7 +21,7 @@ module.exports = {
     rss:        '/rss.xml',
 
     // Per Page Posts
-    perpage:    10,                  
+    perpage:    2,                  
 
     // GitHub Access Token
     token:      ''+'',              

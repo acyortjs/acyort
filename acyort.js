@@ -82,7 +82,6 @@ function build_html() {
     })
 
     _rss(post_data)
-    */
 
     page_data.forEach(function(post) {
         var title = post.title.substr(1, post.title.indexOf(']') - 1),
@@ -94,6 +93,45 @@ function build_html() {
         dir('./'+ post.page_title)
         render(path, template.page, post)
     })
+    */
+
+    var pager = {
+        prev: {css: 'hide', url: ''},
+        next: {css: 'hide', url: ''}
+    }
+
+    if (post_data.length > config.perpage) {
+        dir('./pages')
+
+        var cp = 1;
+        for (var i = 0; i < post_data.length; i += config.perpage) {
+
+            pager.posts = post_data.slice(i, i + config.perpage);
+
+            pager.next = {css: '', url: '/pages/'+ (cp + 1)}
+            if (cp != 1) {
+                pager.prev = {css: '', url: '/pages/'+ (cp - 1)}
+            }
+            if (cp == 2) {
+                pager.prev = {css: '', url: '/'}
+            }
+            if (cp == Math.ceil(post_data.length / config.perpage)) {
+                pager.next = {css: 'hide', url: ''}
+            }
+
+            if (cp == 1) {
+                render('./index.html', template.index, pager)
+            } else {
+                dir('./pages/'+ cp)
+                render('./pages/'+ cp +'/index.html', template.index, pager)
+            }
+
+            cp ++
+        }
+    } else {
+        pager.posts = post_data;
+        render('./index.html', template.index, pager)
+    }
 
 }
 
