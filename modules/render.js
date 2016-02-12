@@ -5,7 +5,7 @@ var config = require('../config.js'),
     fs = require('fs'),
     mustache = require('mustache');
 
-module.exports = function(file, template, data) {
+module.exports = function(path, template, data) {
 
     data.menu = config.menu;
     data.site_title = config.title;
@@ -13,7 +13,7 @@ module.exports = function(file, template, data) {
     data.full_year = new Date().getFullYear();
     data.rss = config.rss;
 
-    fs.writeFileSync(file, mustache.render(template, data), 'utf8')
-    console.log('Success build '+ file)
+    fs.writeFileSync(path, mustache.render(template, data), 'utf8')
+    console.log('Success build '+ path)
 
 }

@@ -4,10 +4,8 @@ var config = require('./config.js'),
     get = require('./modules/get.js'),
     post = require('./modules/post.js'),
     timeFormat = require('./modules/time.js'),
-    templates = require('./modules/template.js'),
+    template = require('./modules/template.js'),
     render = require('./modules/render.js');
-
-dir('./posts', './pages')
 
 var label_data = [], post_data = [], page_data = [];
 
@@ -57,7 +55,6 @@ get('labels', function(data) {
                             post_time:  timeFormat(post.updated_at.split('T')[0]),
                             path:       '/posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html'
                         };
-                        e.tag_name = e.name;
                         e.posts.push(o)
                     }
                     return
@@ -65,9 +62,22 @@ get('labels', function(data) {
             })
         })
 
-        console.log(label_data)
+        build_html()
 
     })
 
 })
+
+function build_html() {
+    console.log('Building Html...')
+
+    dir('./posts')
+    post_data.forEach(function(post) {
+        var time = post.created_at.split('T')[0].split('-');
+
+        dir('./posts/'+ time[0], './posts/'+ time[0] +'/'+ time[1])
+        render('./posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html', template.post, post)
+    })
+
+}
 
