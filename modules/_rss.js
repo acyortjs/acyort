@@ -2,6 +2,7 @@
 // generate rss
 
 var config = require('../config.js'),
+    marked = require('marked'),
     fs = require('fs'),
     mustache = require('mustache'),
     rss = require('rss');
@@ -18,13 +19,16 @@ module.exports = function(data) {
         pedantic: false,
         sanitize: true,
         smartLists: true,
-        smartypants: false
+        smartypants: false,
+        highlight: function (code) {
+            return
+        }
     })
 
     var feed = new rss({
         title: config.title,
         description: config.about,
-        feed_url: config.url +'/rss.xml'),
+        feed_url: config.url + config.rss,
         site_url: config.url,
         cdata: true,
         pubDate: new Date().toISOString()
@@ -33,9 +37,9 @@ module.exports = function(data) {
     data.forEach(function(e) {
         feed.item({
             title: e.title,
-            url: config.url + e.file,
+            url: config.url + e.path,
             author: e.user.login,
-            date: e.updated_at,
+            date: e.post_time,
             description: marked(e.body)
         })
     })

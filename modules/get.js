@@ -33,9 +33,9 @@ module.exports = function(type, callback) {
         }
     }
 
-    console.log('Get '+ type +' ['+ page +']...')
-
     ;(get = function() {
+        console.log('Get '+ type +' ['+ page +']...')
+
         if (config.dev) {
             http.get(opt(page), function(res) {
                 response(res)

@@ -3,6 +3,7 @@ var config = require('./config.js'),
     dir = require('./modules/dir.js'),
     get = require('./modules/get.js'),
     post = require('./modules/post.js'),
+    _rss = require('./modules/_rss.js'),
     timeFormat = require('./modules/time.js'),
     template = require('./modules/template.js'),
     render = require('./modules/render.js');
@@ -71,6 +72,7 @@ get('labels', function(data) {
 function build_html() {
     console.log('Building Html...')
 
+    /*
     dir('./posts')
     post_data.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
@@ -78,6 +80,9 @@ function build_html() {
         dir('./posts/'+ time[0], './posts/'+ time[0] +'/'+ time[1])
         render('./posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html', template.post, post)
     })
+    */
+
+    _rss(post_data)
 
 }
 
