@@ -29,6 +29,7 @@ module.exports = function(data) {
         e.marked_body = marked(e.body);
         e.post_time = timeFormat(e.updated_at.split('T')[0]);
         e.path = '/posts/'+ time[0] +'/'+ time[1] +'/'+ e.id +'.html';
+        e.post_year = time[0];
     })
 
     return data

@@ -90,6 +90,6 @@ function build_html() {
 
     pager(post_data, 'pages')
 
-    //pager(label_data, 'tags')
+    pager(post_data, 'archives')
 
 }

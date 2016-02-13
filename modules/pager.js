@@ -44,7 +44,7 @@ module.exports = function(data, type) {
                 pager.prev = {css: '', url: path.split('.')[1] +'/'+ (page - 1) +'/'}
             }
             if (page == 2) {
-                pager.prev = {css: '', url: '/'}
+                pager.prev = {css: '', url: type == 'pages' ? '/' : path.split('.')[1] +'/'}
             }
             if (page == Math.ceil(data.length / config.perpage)) {
                 pager.next = {css: 'hide', url: ''}
