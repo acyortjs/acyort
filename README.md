@@ -38,7 +38,19 @@ Just add issue `Labels`
 
 #### # Build Website
 
-1 . Fork and Switch to branch `gh-pages`
+0 . Fork and Switch to branch `gh-pages`
+
+1 . Delete files(Optional)
+
+```
+./archives
+./page
+./pages
+./posts
+./tags
+./index.html
+./rss.xml
+```
 
 2 . Install modules
   
