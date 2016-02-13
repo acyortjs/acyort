@@ -6,10 +6,10 @@ module.exports = {
     url:        'http://acyort.github.io',
 
     // Blog Name
-    title:      'Blog Name',
+    title:      'AcyOrt',
 
     // Blog Info    
-    about:      'Lorem ipsum dolor sit amet, ius sonet omnesque facilisis an, etiam mediocrem ad ius. Ius ei graece altera, at suavitate adolescens per.',                  
+    about:      'A Node.js blog tool powered by GitHub.',                  
 
     // GitHub UserName
     user:       '',
