@@ -1,47 +1,21 @@
 
-// base config
+// config
 
 module.exports = {
-    // site url
-    url:        'http://acyort.github.io',
 
-    // Blog Name
-    title:      'AcyOrt',
+    url:        'http://acyort.am0200.com',                     // Site Url
+    title:      'AcyOrt',                                       // Blog Title
+    about:      'A Node.js blog tool powered by GitHub.',       // Blog Info    
+    user:       'LoeiFy',                                       // GitHub UserName
+    repo:       'AcyOrt',                                       // GitHub Repo    
+    rss:        '/rss.xml',                                     // RSS Link
+    perpage:    5,                                              // Posts Per Page
+    token:      ''+'',                                          // GitHub Access Token(Optional)
+    authors:    [],                                             // Post Authors
+    menu: [                                                     // Menu
+        {name: 'home', url: '/'},
+        {name: 'about', url: '/page/about/'},
+        {name: 'archives', url: '/archives/'}
+    ]
 
-    // Blog Info    
-    about:      'A Node.js blog tool powered by GitHub.',                  
-
-    // GitHub UserName
-    user:       'LoeiFy',
-
-    // GitHub Repo    
-    repo:       'AcyOrt',           
-
-    // rss
-    rss:        '/rss.xml',
-
-    // Per Page Posts
-    perpage:    5,                  
-
-    // GitHub Access Token
-    token:      ''+'',              
-
-    // Post Authors
-    authors:    [],
-
-    // menu
-    menu: [
-        {
-            name: 'home',
-            url: '/'
-        },
-        {
-            name: 'about',
-            url: '/page/about/'
-        },
-        {
-            name: 'archives',
-            url: '/archives/'
-        }
-    ]    
 }

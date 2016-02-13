@@ -10,7 +10,7 @@ module.exports = function(type, callback) {
     // dev mode
     config.dev_host = '127.0.0.1';
     config.dev_path = '/_AcyOrt';
-    config.dev = true;
+    config.dev = false;
 
     var page = 1, data = [], get;
 
