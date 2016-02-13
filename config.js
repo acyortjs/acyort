@@ -12,16 +12,16 @@ module.exports = {
     about:      'A Node.js blog tool powered by GitHub.',                  
 
     // GitHub UserName
-    user:       '',
+    user:       'LoeiFy',
 
     // GitHub Repo    
-    repo:       '',           
+    repo:       'AcyOrt',           
 
     // rss
     rss:        '/rss.xml',
 
     // Per Page Posts
-    perpage:    10,                  
+    perpage:    5,                  
 
     // GitHub Access Token
     token:      ''+'',              
@@ -45,4 +45,3 @@ module.exports = {
         }
     ]    
 }
-

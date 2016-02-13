@@ -99,6 +99,7 @@ function build_html() {
     pager(post_data, 'archives')
 
     // tags pages
+    dir('./tags')
     label_data.forEach(function(label) {
         if (label.posts.length) {
             pager(label.posts, 'tags/'+ label.name, label.name)
