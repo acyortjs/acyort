@@ -7,7 +7,7 @@ var config = require('../config.js');
     dir = require('./dir.js'),
     render = require('./render.js');
 
-module.exports = function(data, type) {
+module.exports = function(data, type, name) {
 
     var home = './'+ type +'/index.html';
     if (type == 'pages') {
@@ -20,13 +20,16 @@ module.exports = function(data, type) {
     if (type == 'archives') {
         tpl = template.archives
     }
-    if (type == 'tags') {
+    if (type.indexOf('tags') > -1) {
         tpl = template.tag
     }
 
     var pager = {
         prev: {css: 'hide', url: ''},
         next: {css: 'hide', url: ''}
+    }
+    if (type.indexOf('tags') > -1) {
+        pager.name = name
     }
 
     config.perpage = type == 'archives' ? 50 : config.perpage;

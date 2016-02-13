@@ -67,6 +67,7 @@ get('labels', function(data) {
 function build_html() {
     console.log('Building Html...')
 
+    /*
     dir('./posts')
     post_data.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
@@ -91,5 +92,12 @@ function build_html() {
     pager(post_data, 'pages')
 
     pager(post_data, 'archives')
+    */
+
+    label_data.forEach(function(label) {
+        if (label.posts.length) {
+            pager(label.posts, 'tags/'+ label.name, label.name)
+        }
+    })
 
 }
