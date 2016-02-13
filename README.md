@@ -12,17 +12,17 @@ Site content from here: https://github.com/LoeiFy/AcyOrt/issues
 
 ### Usage
 
-#### # Add Post content
+#### # Add Blog Posts
 
 1 . Add Posts
 
-Select one your `Repo` and add content on `issue` 
+Select your `Repo` one and add content on `issue` 
 
 Example: https://github.com/LoeiFy/AcyOrt/issues
 
 2 . Add Page
 
-Set one issue `title` after `[page name]`
+Set the issue `title` after `[page name]`
 
 Example: https://github.com/LoeiFy/AcyOrt/issues/3
 
@@ -36,7 +36,7 @@ Example: https://github.com/LoeiFy/AcyOrt/issues/2
 
 Just add issue `Labels`
 
-#### # Build Website
+#### # Build Your Blog
 
 0 . Fork and Switch to branch `gh-pages`
 
@@ -88,6 +88,12 @@ module.exports = {
 $ npm run build
 ```
 
+5.5 . you can run local test: `http://127.0.0.1:2222`
+
+```bash
+$ npm run start
+```
+
 6 . `git add` and `git push` to publish your posts
 
 ### Feature
@@ -114,7 +120,7 @@ $ npm run build
 
 #### # Menu
 
-  define `config.js`
+  define in `config.js`
 
 ### License
 
