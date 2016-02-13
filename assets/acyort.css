@@ -218,6 +218,14 @@ body {
     color: #6D6D6D;
     text-decoration: none;
 }
+.tag {
+    color: #666;
+    font-size: 16px;
+}
+.tag span {
+    color: #565656;
+    font-weight: bold;
+}
 
 
 .footer {

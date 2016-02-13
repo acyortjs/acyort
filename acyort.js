@@ -67,7 +67,7 @@ get('labels', function(data) {
 function build_html() {
     console.log('Building Html...')
 
-    /*
+    // posts
     dir('./posts')
     post_data.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
@@ -76,8 +76,10 @@ function build_html() {
         render('./posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html', template.post, post)
     })
 
+    // rss
     _rss(post_data)
 
+    // page posts
     page_data.forEach(function(post) {
         var title = post.title.substr(1, post.title.indexOf(']') - 1),
             path = title +'/index.html';
@@ -89,11 +91,13 @@ function build_html() {
         render(path, template.page, post)
     })
 
+    // posts pages
     pager(post_data, 'pages')
 
+    // archives pages
     pager(post_data, 'archives')
-    */
 
+    // tags pages
     label_data.forEach(function(label) {
         if (label.posts.length) {
             pager(label.posts, 'tags/'+ label.name, label.name)
