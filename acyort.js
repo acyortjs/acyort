@@ -80,6 +80,7 @@ function build_html() {
     _rss(post_data)
 
     // page posts
+    dir('./page')
     page_data.forEach(function(post) {
         var title = post.title.substr(1, post.title.indexOf(']') - 1),
             path = title +'/index.html';
@@ -87,8 +88,8 @@ function build_html() {
         post.page_title = title;
         post.title = post.title.split(']')[1];
 
-        dir('./'+ post.page_title)
-        render(path, template.page, post)
+        dir('./page/'+ post.page_title)
+        render('./page/'+ path, template.page, post)
     })
 
     // posts pages

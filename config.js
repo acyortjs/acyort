@@ -37,7 +37,7 @@ module.exports = {
         },
         {
             name: 'about',
-            url: '/about/'
+            url: '/page/about/'
         },
         {
             name: 'archives',
