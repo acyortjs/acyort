@@ -6,6 +6,7 @@ var config = require('./config.js'),
     _rss = require('./modules/_rss.js'),
     timeFormat = require('./modules/time.js'),
     template = require('./modules/template.js'),
+    pager = require('./modules/pager.js'),
     render = require('./modules/render.js');
 
 var label_data = [], post_data = [], page_data = [];
@@ -48,15 +49,9 @@ get('labels', function(data) {
         // labels
         post_data.forEach(function(post) {
             post.labels.forEach(function(label) {
-                label_data.forEach(function(e) {
+                label_data.forEach(function(e, i) {
                     if (e.name == label.name) {
-                        var time = post.created_at.split('T')[0].split('-'),
-                            o = {
-                            title:      post.title,
-                            post_time:  timeFormat(post.updated_at.split('T')[0]),
-                            path:       '/posts/'+ time[0] +'/'+ time[1] +'/'+ post.id +'.html'
-                        };
-                        e.posts.push(o)
+                        e.posts.push(post)
                     }
                     return
                 })
@@ -72,7 +67,6 @@ get('labels', function(data) {
 function build_html() {
     console.log('Building Html...')
 
-    /*
     dir('./posts')
     post_data.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
@@ -93,45 +87,9 @@ function build_html() {
         dir('./'+ post.page_title)
         render(path, template.page, post)
     })
-    */
 
-    var pager = {
-        prev: {css: 'hide', url: ''},
-        next: {css: 'hide', url: ''}
-    }
+    pager(post_data, 'pages')
 
-    if (post_data.length > config.perpage) {
-        dir('./pages')
-
-        var cp = 1;
-        for (var i = 0; i < post_data.length; i += config.perpage) {
-
-            pager.posts = post_data.slice(i, i + config.perpage);
-
-            pager.next = {css: '', url: '/pages/'+ (cp + 1)}
-            if (cp != 1) {
-                pager.prev = {css: '', url: '/pages/'+ (cp - 1)}
-            }
-            if (cp == 2) {
-                pager.prev = {css: '', url: '/'}
-            }
-            if (cp == Math.ceil(post_data.length / config.perpage)) {
-                pager.next = {css: 'hide', url: ''}
-            }
-
-            if (cp == 1) {
-                render('./index.html', template.index, pager)
-            } else {
-                dir('./pages/'+ cp)
-                render('./pages/'+ cp +'/index.html', template.index, pager)
-            }
-
-            cp ++
-        }
-    } else {
-        pager.posts = post_data;
-        render('./index.html', template.index, pager)
-    }
+    //pager(label_data, 'tags')
 
 }
-
