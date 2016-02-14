@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/youmi/AcyOrt.git"
+    "url": "https://github.com/LoeiFy/AcyOrt.git"
   },
   "author": "LoeiFy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/youmi/AcyOrt/issues"
+    "url": "https://github.com/LoeiFy/AcyOrt/issues"
   },
-  "homepage": "https://github.com/youmi/AcyOrt",
+  "homepage": "https://github.com/LoeiFy/AcyOrt",
   "dependencies": {
     "highlight.js": "^9.1.0",
     "marked": "^0.3.5",
