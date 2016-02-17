@@ -126,7 +126,7 @@ $ npm run start
 
 - [x] Menu
 
-- [] prev post & next post
+- [ ] prev post & next post
 
 ### License
 
