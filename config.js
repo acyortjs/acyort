@@ -12,6 +12,8 @@ module.exports = {
     perpage:    5,                                              // Posts Per Page
     token:      ''+'',                                          // GitHub Access Token(Optional)
     authors:    [],                                             // Post Authors
+    duoshuo:    '',                                             // Duoshuo shortname
+    disqus:     '',                                             // Disqus shortname
     menu: [                                                     // Menu
         {name: 'home', url: '/'},
         {name: 'about', url: '/page/about/'},

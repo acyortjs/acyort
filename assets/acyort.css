@@ -227,6 +227,41 @@ body {
     font-weight: bold;
 }
 
+#comment {
+    margin: 50px auto 0;
+    width: 140px;
+    cursor: pointer;
+    display: block;
+    padding: 8px 0;
+    border: 2px solid #c3c2c9;
+    color: #686868;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    outline: 0;
+    line-height: 1;
+}
+#comment.hide {
+    display: none;
+}
+
+#comment:hover {
+    background: #f1f1f1;
+}
+
+.comment_list:before {
+    content: '';
+    height: 1px;
+    display: block;
+    width: 30%;
+    background: #f1f1f1;
+    margin: 70px auto;
+}
+.comment_list.hide:before {
+    display: none;
+}
 
 .footer {
     background: #f7f7f7;
