@@ -72,6 +72,8 @@ module.exports = {
     perpage:    5,                                              // Posts Per Page
     token:      ''+'',                                          // GitHub Access Token(Optional)
     authors:    [],                                             // Post Authors(filter author)
+    duoshuo:    '',                                             // Duoshuo shortname
+    disqus:     '',                                             // Disqus shortname
     menu: [                                                     // Menu
         {name: 'home', url: '/'},
         {name: 'about', url: '/page/about/'},
@@ -98,29 +100,33 @@ $ npm run start
 
 ### Feature
 
-#### # Post
+- [x] Post 
 
-  path: `./posts/yyyy/mm/...`
-
-#### # Archives: 
-
-  path: `./archives/`
+	`./posts/yyyy/mm/...`
   
-#### # Rss:
+- [x] Comment 
+
+	`Disqus` or `Duoshuo`
+
+- [x] Archives
+
+	`./archives/`
+  
+- [x] Rss
  
-  path: `./rss.xml`
+ 	`./rss.xml`
   
-#### # Page: 
+- [x] Page 
 
-  path: `./page/.../`
+	`./page/.../`
 
-#### # Tags 
+- [x] Tags 
 
-  path: `./tags/.../`
+ 	`./tags/.../`
 
-#### # Menu
+- [x] Menu
 
-  define in `config.js`
+- [] prev post & next post
 
 ### License
 
