@@ -16,7 +16,7 @@ module.exports = {
     disqus:     '',                                             // Disqus shortname
     menu: [                                                     // Menu
         {name: 'home', url: '/'},
-        {name: 'about', url: '/page/about/'},
+        {name: 'about', url: '/about/'},
         {name: 'archives', url: '/archives/'}
     ]
 
