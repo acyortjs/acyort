@@ -38,27 +38,14 @@ Just add issue `Labels`
 
 #### # Build Your Blog
 
-0 . Fork and Switch to branch `gh-pages`
-
-1 . Delete files(Optional)
-
-```
-./archives
-./page
-./pages
-./posts
-./tags
-./index.html
-./rss.xml
-```
-
-2 . Install modules
-  
 ```bash
+$ sudo npm i acyort-cli -g
+$ acyort init blog
+$ cd blog
 $ npm i
 ```
 
-3 . Modify `config.js`
+Modify `config.js`
 
 ```js
 // config
@@ -82,51 +69,36 @@ module.exports = {
 }
 ```
 
-4 . Modify `CNAME`, add your domain
-
-5 . Build website
+Build website
 
 ```bash
 $ npm run build
 ```
 
-5.5 . you can run local test: `http://127.0.0.1:2222`
+Run local test: `http://127.0.0.1:2222`
 
 ```bash
 $ npm run start
 ```
 
-6 . `git add` and `git push` to publish your posts
+All generated files are saved in the `public` folder. You can publish them to wherever you like.
 
 ### Feature
 
 - [x] Post 
-
-	`./posts/yyyy/mm/...`
   
-- [x] Comment 
-
-	`Disqus` or `Duoshuo`
+- [x] Comments
 
 - [x] Archives
-
-	`./archives/`
   
 - [x] Rss
- 
- 	`./rss.xml`
   
 - [x] Page 
 
-	`./page/.../`
-
 - [x] Tags 
-
- 	`./tags/.../`
 
 - [x] Menu
 
-- [ ] prev post & next post
 
 ### License
 
