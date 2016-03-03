@@ -91,6 +91,13 @@ if (process.argv[2] == 'server') {
     function build_html() {
         console.log('Building Html...')
 
+        // tags pages
+        label_data.forEach(function(label) {
+            if (label.posts.length) {
+                pager(label.posts, 'tags/'+ label.name, label.name)
+            }
+        })
+
         // posts
         post_data.forEach(function(post) {
             var time = post.created_at.split('T')[0].split('-');
@@ -116,13 +123,6 @@ if (process.argv[2] == 'server') {
 
         // archives pages
         pager(post_data, 'archives')
-
-        // tags pages
-        label_data.forEach(function(label) {
-            if (label.posts.length) {
-                pager(label.posts, 'tags/'+ label.name, label.name)
-            }
-        })
 
         // copy assets
         fs.copy('./themes/source', './public', function (err) {
