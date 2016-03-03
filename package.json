@@ -1,10 +1,10 @@
 {
   "name": "acyort",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AcyOrt",
   "main": "acyort.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node acyort.js server",
     "build": "node acyort.js"
   },
   "repository": {

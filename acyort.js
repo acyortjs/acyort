@@ -9,7 +9,7 @@ var config = require('./config.js'),
     render = require('./lib/render.js');
 
 var static = require('node-static'),
-    fs = require('fs'),
+    fs = require('fs-extra'),
     http = require('http');
 
 
@@ -123,6 +123,15 @@ if (process.argv[2] == 'server') {
                 pager(label.posts, 'tags/'+ label.name, label.name)
             }
         })
+
+        // copy assets
+        fs.copy('./themes/source', './public', function (err) {
+            if (err) {
+                return console.error(err)
+            }
+            console.log('Success coping assets')
+        })
+
     }
 
 }
