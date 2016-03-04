@@ -14,9 +14,6 @@ var static = require('node-static'),
 
 
 if (process.argv[2] == 'server') {
-    if (!fs.existsSync('./public')) {
-        fs.mkdirSync('./public')
-    }
 
     var file = new static.Server( './public', {
         cache: 3600,

@@ -1,11 +1,13 @@
 {
   "name": "acyort",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "AcyOrt",
   "main": "acyort.js",
   "scripts": {
     "start": "node acyort.js server",
-    "build": "node acyort.js"
+    "build": "node acyort.js",
+    "init": "npm install && node ./lib/git.js",
+    "deploy": "node ./lib/git.js deploy"
   },
   "repository": {
     "type": "git",
