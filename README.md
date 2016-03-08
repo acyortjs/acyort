@@ -6,9 +6,9 @@ You can write you blog on `GitHub issue` and publish it on `Your Own Domain` use
 
 ### Demo
 
-http://acyort.am0200.com/
+http://acyort.github.io/
 
-Site content from here: https://github.com/LoeiFy/AcyOrt/issues
+Site content from here: https://github.com/AcyOrt/acyort.github.io/issues
 
 ### Usage
 
@@ -40,9 +40,8 @@ Just add issue `Labels`
 
 ```bash
 $ sudo npm i acyort-cli -g
-$ acyort init blog
+$ acyort create blog
 $ cd blog
-$ npm i
 ```
 
 Modify `config.js`
@@ -69,16 +68,28 @@ module.exports = {
 }
 ```
 
+Init website
+
+```bash
+$ acyort init
+```
+
 Build website
 
 ```bash
-$ npm run build
+$ acyort build
+```
+
+Deploy website (git)
+
+```
+$ acyort deploy
 ```
 
 Run local test: `http://127.0.0.1:2222`
 
 ```bash
-$ npm run start
+$ acyort server
 ```
 
 All generated files are saved in the `public` folder. You can publish them to wherever you like.
