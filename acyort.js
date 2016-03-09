@@ -1,5 +1,5 @@
 
-var config = require('./config.js'),
+var yaml = require('yamljs'),
     get = require('./lib/get.js'),
     post = require('./lib/post.js'),
     _rss = require('./lib/_rss.js'),
@@ -8,6 +8,7 @@ var config = require('./config.js'),
     fs = require('fs-extra'),
     render = require('./lib/render.js');
 
+var config = yaml.load('./config.yml');
 
 var label_data = [], post_data = [], page_data = [];
 
