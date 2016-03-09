@@ -1,30 +1,27 @@
 {
   "name": "acyort",
-  "version": "0.2.1",
-  "description": "AcyOrt",
+  "version": "0.3.0",
+  "description": "A Node.js blog tool powered by GitHub",
   "main": "acyort.js",
   "scripts": {
-    "start": "node acyort.js server",
-    "build": "node acyort.js",
-    "init": "npm install && node ./lib/git.js",
-    "deploy": "node ./lib/git.js deploy"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LoeiFy/AcyOrt.git"
+    "url": "https://github.com/AcyOrt/acyort.git"
   },
   "author": "LoeiFy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LoeiFy/AcyOrt/issues"
+    "url": "https://github.com/AcyOrt/acyort/issues"
   },
-  "homepage": "https://github.com/LoeiFy/AcyOrt",
+  "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
     "fs-extra": "^0.26.5",
     "highlight.js": "^9.1.0",
     "marked": "^0.3.5",
     "mustache": "^2.2.1",
     "node-static": "^0.7.7",
-    "rss": "^1.2.1"
+    "rss": "^1.2.1",
+    "yamljs": "^0.2.6"
   }
 }

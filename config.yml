@@ -1,0 +1,37 @@
+
+# site
+title: AcyOrt
+url: http://yoursite.com
+description: A Node.js blog tool powered by GitHub.
+rss: rss.xml
+
+# pagination
+per_page: 7
+
+# menu
+menu:
+  - name: home
+    url: /
+  - name: about
+    url: /about
+  - name: archives
+    url: /archives
+
+# comment
+duoshuo:
+disqus:
+
+# site post authors filter
+authors:
+  - LoeiFy
+
+# site content issue
+# username/repository
+issue_repo: AcyOrt/acyort.github.io
+
+# site publish repository
+site_repo: git@github.com:AcyOrt/acyort.github.io.git
+
+# GitHub access token(Optional)
+# token should be separated by whitespace
+token: sd46a6d65a asd8sdbn
