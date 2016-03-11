@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="google" content="notranslate" />
-<link rel="icon" href="/images/icon.png" />
+@import('extend/head.html')
 <title>{{{title}}} - {{{site_title}}} </title>
-<link rel="stylesheet" href="/css/acyort.css" />
 </head>
 <body>
 
-<div class="header">
-    <div class="center">
-        <h1><a href="/">{{{site_title}}}</a></h1>
-        <p>{{{site_about}}}</p>
-    </div>
-    <div class="menu">
-    {{#menu}}
-        <a href="{{{url}}}">{{{name}}}</a>
-    {{/menu}}
-    </div>
-</div>
+@import('extend/header.html')
 
 <div id="post" class="center">
 
@@ -42,11 +28,7 @@
 
 </div>
 
-<div class="footer">
-    <div class="center">
-        © {{{full_year}}} {{{site_title}}} . <a target="_blank" href="https://github.com/LoeiFy/AcyOrt">AcyOrt</a> . <a target="_blank" href="/{{{rss}}}">RSS</a>
-    </div>
-</div>
+@import('extend/fooetr.html')
 
 <script>
 
