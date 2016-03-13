@@ -10,40 +10,49 @@ var render = require('./lib/render.js');
 var categories = [], posts = [], pages = [], tags = [];
 
 fetch(function(data) {
-
     // data serialize
     data = serialize(data);
 
     // posts
     posts = data.posts;
 
-    console.log(posts.length)
-    /*
     // pages
-    posts.forEach(function(e, i) {
-        if (e.title.indexOf('[') > -1 && e.title.indexOf(']') > -1) {
-            pages = pages.concat(posts.splice(i, 1))
-        }
-    })
+    pages = data.pages;
 
     // categories
+    data.categories.forEach(function(e, i) {
+        categories[i] = {};
+        categories[i].name = e;
+        categories[i].posts = [];
+    })
 
-    /*
-    // labels
-    article.forEach(function(post) {
-        post.labels.forEach(function(label) {
-            category.forEach(function(e, i) {
-                if (e.name == label.name) {
+    // tags
+    data.tags.forEach(function(e, i) {
+        tags[i] = {};
+        tags[i].name = e;
+        tags[i].posts = [];
+    })
+
+    posts.forEach(function(post) {
+        post.categories.forEach(function(category) {
+            categories.forEach(function(e, i) {
+                if (e.name == category) {
+                    e.posts.push(post)
+                }
+                return
+            })
+        })
+        post.tags.forEach(function(tag) {
+            tags.forEach(function(e, i) {
+                if (e.name == tag) {
                     e.posts.push(post)
                 }
                 return
             })
         })
     })
-    */
 
     //build_html()
-
 })
 
 function build_html() {
