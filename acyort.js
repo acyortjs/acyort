@@ -1,7 +1,7 @@
 
 var config = require('./lib/config.js');
 var fetch = require('./lib/fetch.js');
-var post = require('./lib/post.js');
+var serialize = require('./lib/serialize.js');
 var feed = require('./lib/feed.js');
 var template = require('./lib/template.js');
 var pager = require('./lib/pager.js');
@@ -35,7 +35,7 @@ fetch('labels', function(data) {
         }
 
         // post data handing
-        post_data = post(post_data);
+        post_data = serialize(post_data);
 
         // page posts
         post_data.forEach(function(e, i) {
