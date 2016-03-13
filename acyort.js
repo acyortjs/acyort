@@ -1,15 +1,15 @@
 
-var config = require('./lib/config.js'),
-    get = require('./lib/get.js'),
-    post = require('./lib/post.js'),
-    feed = require('./lib/feed.js'),
-    template = require('./lib/template.js'),
-    pager = require('./lib/pager.js'),
-    render = require('./lib/render.js');
+var config = require('./lib/config.js');
+var fetch = require('./lib/fetch.js');
+var post = require('./lib/post.js');
+var feed = require('./lib/feed.js');
+var template = require('./lib/template.js');
+var pager = require('./lib/pager.js');
+var render = require('./lib/render.js');
 
 var label_data = [], post_data = [], page_data = [];
 
-get('labels', function(data) {
+fetch('labels', function(data) {
 
     data.forEach(function(e) {
         e.posts = []
@@ -18,7 +18,7 @@ get('labels', function(data) {
     label_data = data;
 
 
-    get('issues', function(data) {
+    fetch('issues', function(data) {
 
         // authors filter
         if (config.authors.length > 0) {
