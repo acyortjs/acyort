@@ -17,6 +17,9 @@ menu:
   - name: archives
     url: /archives
 
+# Category
+default_category: uncategorized
+
 # comment
 duoshuo:
 disqus:
@@ -24,6 +27,8 @@ disqus:
 # site post authors filter
 authors:
   - LoeiFy
+  - author0
+  - author1
 
 # site content issue
 # username/repository
@@ -34,4 +39,5 @@ public_dir: public
 
 # GitHub access token(Optional)
 # token should be separated by whitespace
-token: sd46a6d65a asd8sdbn
+
+# token: sd46a6d65a asd8sdbn

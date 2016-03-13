@@ -7,17 +7,21 @@ var tpl = require('./lib/tpl.js');
 var pager = require('./lib/pager.js');
 var render = require('./lib/render.js');
 
-var label_data = [], post_data = [], page_data = [];
 
+var category = [], article = [], page = [];
+
+
+// fetch category data
 fetch('labels', function(data) {
 
+    // category data serialize
     data.forEach(function(e) {
-        e.posts = []
+        e.posts = [];
+        delete e.url;
     })
+    category = data;
 
-    label_data = data;
-
-
+    // fetch article data
     fetch('issues', function(data) {
 
         // authors filter
@@ -25,29 +29,29 @@ fetch('labels', function(data) {
             data.forEach(function(e) {
                 config.authors.forEach(function(author) {
                     if (author == e.user.login) {
-                        post_data.push(e)
+                        article.push(e)
                         return
                     }
                 })
             })
         } else {
-            post_data = data
+            article = data
         }
 
         // post data handing
-        post_data = serialize(post_data);
+        article = serialize(article);
 
         // page posts
-        post_data.forEach(function(e, i) {
+        article.forEach(function(e, i) {
             if (e.title.indexOf('[') > -1 && e.title.indexOf(']') > -1) {
-                page_data = page_data.concat(post_data.splice(i, 1))
+                page = page.concat(article.splice(i, 1))
             }
         })
 
         // labels
-        post_data.forEach(function(post) {
+        article.forEach(function(post) {
             post.labels.forEach(function(label) {
-                label_data.forEach(function(e, i) {
+                category.forEach(function(e, i) {
                     if (e.name == label.name) {
                         e.posts.push(post)
                     }
@@ -56,7 +60,7 @@ fetch('labels', function(data) {
             })
         })
 
-        build_html()
+        //build_html()
 
     })
 
@@ -66,23 +70,23 @@ function build_html() {
     console.log('Building Html...')
 
     // tags pages
-    label_data.forEach(function(label) {
+    category.forEach(function(label) {
         if (label.posts.length) {
             pager(label.posts, 'tags/'+ label.name, label.name)
         }
     })
 
     // posts
-    post_data.forEach(function(post) {
+    article.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
         render(time[0] +'/'+ time[1] +'/'+ post.id +'.html', tpl('post'), post)
     })
 
     // rss
-    feed(post_data)
+    feed(article)
 
     // page posts
-    page_data.forEach(function(post) {
+    page.forEach(function(post) {
         var title = post.title.substr(1, post.title.indexOf(']') - 1),
             path = title +'/index.html';
 
@@ -93,9 +97,9 @@ function build_html() {
     })
 
     // posts pages
-    pager(post_data, 'page')
+    pager(article, 'page')
 
     // archives pages
-    pager(post_data, 'archives')
+    pager(article, 'archives')
 
 }
