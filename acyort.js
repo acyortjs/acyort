@@ -5,7 +5,6 @@ var config = require('./lib/config.js'),
     feed = require('./lib/feed.js'),
     template = require('./lib/template.js'),
     pager = require('./lib/pager.js'),
-    fs = require('fs-extra'),
     render = require('./lib/render.js');
 
 var label_data = [], post_data = [], page_data = [];
@@ -98,13 +97,5 @@ function build_html() {
 
     // archives pages
     pager(post_data, 'archives')
-
-    // copy assets
-    fs.copy('./themes/source', './public', function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log('Success coping assets')
-    })
 
 }
