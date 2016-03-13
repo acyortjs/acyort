@@ -1,14 +1,12 @@
 
-var yaml = require('yamljs'),
+var config = require('./lib/config.js'),
     get = require('./lib/get.js'),
     post = require('./lib/post.js'),
-    _rss = require('./lib/_rss.js'),
+    feed = require('./lib/feed.js'),
     template = require('./lib/template.js'),
     pager = require('./lib/pager.js'),
     fs = require('fs-extra'),
     render = require('./lib/render.js');
-
-var config = yaml.load('./config.yml');
 
 var label_data = [], post_data = [], page_data = [];
 
@@ -82,7 +80,7 @@ function build_html() {
     })
 
     // rss
-    _rss(post_data)
+    feed(post_data)
 
     // page posts
     page_data.forEach(function(post) {

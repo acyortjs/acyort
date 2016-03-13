@@ -29,8 +29,8 @@ authors:
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
 
-# site publish repository
-site_repo: git@github.com:AcyOrt/acyort.github.io.git
+# site publish directory
+public_dir: public
 
 # GitHub access token(Optional)
 # token should be separated by whitespace
