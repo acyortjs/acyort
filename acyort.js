@@ -7,37 +7,28 @@ var tpl = require('./lib/tpl.js');
 var pager = require('./lib/pager.js');
 var render = require('./lib/render.js');
 
-
-var category = [], article = [], page = [];
-
+var categories = [], posts = [], pages = [], tags = [];
 
 fetch(function(data) {
 
-    // post data handing
+    // data serialize
     data = serialize(data);
 
-    /*
-    // authors filter
-    if (config.authors.length > 0) {
-        data.forEach(function(e) {
-            config.authors.forEach(function(author) {
-                if (author == e.user.login) {
-                    article.push(e)
-                    return
-                }
-            })
-        })
-    } else {
-        article = data
-    }
+    // posts
+    posts = data.posts;
 
-    // page posts
-    article.forEach(function(e, i) {
+    console.log(posts)
+    /*
+    // pages
+    posts.forEach(function(e, i) {
         if (e.title.indexOf('[') > -1 && e.title.indexOf(']') > -1) {
-            page = page.concat(article.splice(i, 1))
+            pages = pages.concat(posts.splice(i, 1))
         }
     })
 
+    // categories
+
+    /*
     // labels
     article.forEach(function(post) {
         post.labels.forEach(function(label) {
