@@ -3,7 +3,7 @@ var config = require('./lib/config.js');
 var fetch = require('./lib/fetch.js');
 var serialize = require('./lib/serialize.js');
 var feed = require('./lib/feed.js');
-var template = require('./lib/template.js');
+var tpl = require('./lib/tpl.js');
 var pager = require('./lib/pager.js');
 var render = require('./lib/render.js');
 
@@ -75,7 +75,7 @@ function build_html() {
     // posts
     post_data.forEach(function(post) {
         var time = post.created_at.split('T')[0].split('-');
-        render(time[0] +'/'+ time[1] +'/'+ post.id +'.html', template('post'), post)
+        render(time[0] +'/'+ time[1] +'/'+ post.id +'.html', tpl('post'), post)
     })
 
     // rss
@@ -89,7 +89,7 @@ function build_html() {
         post.page_title = title;
         post.title = post.title.split(']')[1];
 
-        render(path, template('page'), post)
+        render(path, tpl('page'), post)
     })
 
     // posts pages
