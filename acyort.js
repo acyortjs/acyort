@@ -11,58 +11,47 @@ var render = require('./lib/render.js');
 var category = [], article = [], page = [];
 
 
-// fetch category data
-fetch('labels', function(data) {
+fetch(function(data) {
 
-    // category data serialize
-    data.forEach(function(e) {
-        e.posts = [];
-        delete e.url;
-    })
-    category = data;
+    // post data handing
+    data = serialize(data);
 
-    // fetch article data
-    fetch('issues', function(data) {
-
-        // authors filter
-        if (config.authors.length > 0) {
-            data.forEach(function(e) {
-                config.authors.forEach(function(author) {
-                    if (author == e.user.login) {
-                        article.push(e)
-                        return
-                    }
-                })
-            })
-        } else {
-            article = data
-        }
-
-        // post data handing
-        article = serialize(article);
-
-        // page posts
-        article.forEach(function(e, i) {
-            if (e.title.indexOf('[') > -1 && e.title.indexOf(']') > -1) {
-                page = page.concat(article.splice(i, 1))
-            }
-        })
-
-        // labels
-        article.forEach(function(post) {
-            post.labels.forEach(function(label) {
-                category.forEach(function(e, i) {
-                    if (e.name == label.name) {
-                        e.posts.push(post)
-                    }
+    /*
+    // authors filter
+    if (config.authors.length > 0) {
+        data.forEach(function(e) {
+            config.authors.forEach(function(author) {
+                if (author == e.user.login) {
+                    article.push(e)
                     return
-                })
+                }
             })
         })
+    } else {
+        article = data
+    }
 
-        //build_html()
-
+    // page posts
+    article.forEach(function(e, i) {
+        if (e.title.indexOf('[') > -1 && e.title.indexOf(']') > -1) {
+            page = page.concat(article.splice(i, 1))
+        }
     })
+
+    // labels
+    article.forEach(function(post) {
+        post.labels.forEach(function(label) {
+            category.forEach(function(e, i) {
+                if (e.name == label.name) {
+                    e.posts.push(post)
+                }
+                return
+            })
+        })
+    })
+    */
+
+    //build_html()
 
 })
 
