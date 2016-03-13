@@ -17,7 +17,7 @@ fetch(function(data) {
     // posts
     posts = data.posts;
 
-    console.log(posts)
+    console.log(posts.length)
     /*
     // pages
     posts.forEach(function(e, i) {
