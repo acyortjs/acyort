@@ -9,7 +9,7 @@ rss: rss.xml
 theme: ccc45
 
 # pagination
-per_page: 7
+per_page: 1
 
 # menu
 menu:

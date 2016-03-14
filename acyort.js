@@ -73,14 +73,14 @@ function build_html() {
         render(page.path, tpl('page'), page)
     })
 
-    /*
-    // tags pages
-    category.forEach(function(label) {
-        if (label.posts.length) {
-            pager(label.posts, 'tags/'+ label.name, label.name)
+    // tags
+    tags.forEach(function(tag) {
+        if (tag.posts.length) {
+            pager(tag.posts, 'tag/'+ tag.name)
         }
     })
 
+    /*
     // archives pages
     pager(article, 'archives')
     */
