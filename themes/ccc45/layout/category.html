@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+@import('extend/head.html')
+<title> {{{name}}} - {{{title}}} </title>
+</head>
+<body>
+
+@import('extend/header.html')
+
+<div id="posts" class="center">
+
+    <h2 class="tag">Category : <span>#{{{name}}}</span></h2>
+
+    <ul>
+    {{#posts}}
+        <li>
+
+        <div class="post">
+            <h2><a href="{{{path}}}">{{{post_title}}}</a></h2>
+            <p>{{{summary}}}</p>
+            <p class="time">{{{post_time}}}</p>
+        </div>
+
+        <a class="author" href="{{{author.url}}}" target="_blank">
+            <img src="{{{author.avatar}}}" />
+        </a>
+
+        </li>
+    {{/posts}}
+    </ul>
+
+@import('extend/pagination.html')
+
+</div>
+
+@import('extend/fooetr.html')
+
+</body>
+</html>

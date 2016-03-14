@@ -80,6 +80,13 @@ function build_html() {
         }
     })
 
+    // categories
+    categories.forEach(function(category) {
+        if (category.posts.length) {
+            pager(category.posts, 'category/'+ category.name)
+        }
+    })
+
     /*
     // archives pages
     pager(article, 'archives')
