@@ -52,12 +52,16 @@ fetch(function(data) {
         })
     })
 
-    //build_html()
+    build_html()
 })
 
 function build_html() {
-    console.log('Building Html...')
+    console.log('building html...')
 
+    // rss
+    feed(posts)
+
+    /*
     // tags pages
     category.forEach(function(label) {
         if (label.posts.length) {
@@ -71,8 +75,6 @@ function build_html() {
         render(time[0] +'/'+ time[1] +'/'+ post.id +'.html', tpl('post'), post)
     })
 
-    // rss
-    feed(article)
 
     // page posts
     page.forEach(function(post) {
@@ -90,5 +92,6 @@ function build_html() {
 
     // archives pages
     pager(article, 'archives')
+    */
 
 }
