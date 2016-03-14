@@ -66,23 +66,17 @@ function build_html() {
         render(post.path, tpl('post'), post)
     })
 
+    // pages
+    pages.forEach(function(page) {
+        render(page.path, tpl('page'), page)
+    })
+
     /*
     // tags pages
     category.forEach(function(label) {
         if (label.posts.length) {
             pager(label.posts, 'tags/'+ label.name, label.name)
         }
-    })
-
-    // page posts
-    page.forEach(function(post) {
-        var title = post.title.substr(1, post.title.indexOf(']') - 1),
-            path = title +'/index.html';
-
-        post.page_title = title;
-        post.title = post.title.split(']')[1];
-
-        render(path, tpl('page'), post)
     })
 
     // posts pages
