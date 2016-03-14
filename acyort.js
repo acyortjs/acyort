@@ -61,6 +61,11 @@ function build_html() {
     // rss
     feed(posts)
 
+    // posts
+    posts.forEach(function(post) {
+        render(post.path, tpl('post'), post)
+    })
+
     /*
     // tags pages
     category.forEach(function(label) {
@@ -68,13 +73,6 @@ function build_html() {
             pager(label.posts, 'tags/'+ label.name, label.name)
         }
     })
-
-    // posts
-    article.forEach(function(post) {
-        var time = post.created_at.split('T')[0].split('-');
-        render(time[0] +'/'+ time[1] +'/'+ post.id +'.html', tpl('post'), post)
-    })
-
 
     // page posts
     page.forEach(function(post) {

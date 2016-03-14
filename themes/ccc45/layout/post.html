@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+@import('extend/head.html')
+<title>{{{post_title}}} - {{{title}}} </title>
+<script>
+var c = {
+    name: '{{{comment.name}}}',
+    url: '{{{comment.url}}}'
+}
+</script>
+</head>
+<body>
+
+@import('extend/header.html')
+
+<div id="post" class="center">
+
+    <h1>{{{post_title}}}</h1>
+    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Updated at {{{post_time}}}</p>
+
+    <div class="content">{{{body}}}</div>
+
+    <div class="label">
+    {{#tags}}
+    <div><a href="/tags/{{{.}}}/">#{{{.}}}</a></div>
+    {{/tags}}
+    </div>
+
+    <div class="comment_list hide" id="disqus_thread"></div>
+    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{{id}}}" data-title="" data-url=""></div>
+
+    <button class="hide" data-id="{{{id}}}" id="comment">Add Comments</button>
+
+</div>
+
+@import('extend/fooetr.html')
+
+<script src="/js/comment.js"></script>
+</body>
+</html>

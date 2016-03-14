@@ -5,6 +5,9 @@ url: http://yoursite.com
 description: A Node.js blog tool powered by GitHub.
 rss: rss.xml
 
+# theme
+theme: ccc45
+
 # pagination
 per_page: 7
 
@@ -17,7 +20,7 @@ menu:
   - name: archives
     url: /archives
 
-# Category
+# category
 default_category: uncategorized
 
 # comment
