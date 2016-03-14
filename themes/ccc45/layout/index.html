@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 @import('extend/head.html')
-<title> {{{site_title}}} </title>
+<title> {{{title}}} </title>
 </head>
 <body>
 
@@ -15,13 +15,13 @@
         <li>
 
         <div class="post">
-            <h2><a href="{{{path}}}">{{{title}}}</a></h2>
+            <h2><a href="{{{path}}}">{{{post_title}}}</a></h2>
             <p>{{{summary}}}</p>
             <p class="time">{{{post_time}}}</p>
         </div>
 
-        <a class="author" href="{{{user.html_url}}}" target="_blank">
-            <img src="{{{user.avatar_url}}}" />
+        <a class="author" href="{{{author.url}}}" target="_blank">
+            <img src="{{{author.avatar}}}" />
         </a>
 
         </li>

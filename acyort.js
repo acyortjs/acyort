@@ -65,6 +65,8 @@ function build_html() {
     posts.forEach(function(post) {
         render(post.path, tpl('post'), post)
     })
+    // posts pages
+    pager(posts, 'index')
 
     // pages
     pages.forEach(function(page) {
@@ -78,9 +80,6 @@ function build_html() {
             pager(label.posts, 'tags/'+ label.name, label.name)
         }
     })
-
-    // posts pages
-    pager(article, 'page')
 
     // archives pages
     pager(article, 'archives')
