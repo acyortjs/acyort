@@ -6,6 +6,7 @@ var feed = require('./lib/feed.js');
 var tpl = require('./lib/tpl.js');
 var pager = require('./lib/pager.js');
 var render = require('./lib/render.js');
+var archives = require('./lib/archives.js');
 
 var categories = [], posts = [], pages = [], tags = [];
 
@@ -83,9 +84,7 @@ function build_html() {
         pager(category.posts, 'category/'+ category.name)
     })
 
-    /*
-    // archives pages
-    pager(article, 'archives')
-    */
+    // archives
+    archives(posts)
 
 }
