@@ -75,16 +75,12 @@ function build_html() {
 
     // tags
     tags.forEach(function(tag) {
-        if (tag.posts.length) {
-            pager(tag.posts, 'tag/'+ tag.name)
-        }
+        pager(tag.posts, 'tag/'+ tag.name)
     })
 
     // categories
     categories.forEach(function(category) {
-        if (category.posts.length) {
-            pager(category.posts, 'category/'+ category.name)
-        }
+        pager(category.posts, 'category/'+ category.name)
     })
 
     /*
