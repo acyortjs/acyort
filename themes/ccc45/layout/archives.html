@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 @import('extend/head.html')
-<title> archives - {{{site_title}}} </title>
+<title> archives - {{{title}}} </title>
 </head>
 <body>
 
@@ -10,13 +10,11 @@
 
 <div id="posts" class="center">
 
-    <div class="archives">
+    <ul class="archives">
     {{#posts}}
-    <p class="y{{{post_year}}}"><a href="{{{path}}}">{{{title}}}</a><span>{{{post_time}}}</span></p>
+    <li class="{{{p_class}}}"><p>{{{p_year}}}</p><a href="{{{path}}}">{{{post_title}}}<span>{{{post_time}}}</span></a></li>
     {{/posts}}
-    </div>
-
-@import('extend/pagination.html')
+    </ul>
 
 </div>
 
