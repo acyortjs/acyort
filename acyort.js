@@ -85,7 +85,6 @@ function build_html() {
     })
 
     // archives
-    console.log(archives(posts))
-    //render('/archives/index.html', tpl('archives'), archives(posts))
+    render('/archives/index.html', tpl('archives'), archives(posts))
 
 }
