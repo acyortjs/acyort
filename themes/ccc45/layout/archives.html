@@ -12,7 +12,15 @@
 
     <ul class="archives">
     {{#posts}}
-    <li class="{{{p_class}}}"><p>{{{p_year}}}</p><a href="{{{path}}}">{{{post_title}}}<span>{{{post_time}}}</span></a></li>
+    <li class="{{{p_class}}}">
+        <p>{{{p_year}}}</p>
+        <a href="{{{path}}}">{{{post_title}}}<span>{{{post_time}}}</span></a>
+        <div class="label">
+        {{#tags}}
+            <div><a href="/tags/{{{.}}}/">#{{{.}}}</a></div>
+        {{/tags}}
+        </div>
+    </li>
     {{/posts}}
     </ul>
 
