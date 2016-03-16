@@ -11,6 +11,7 @@ var archives = require('./lib/archives.js');
 var categories = [], posts = [], pages = [], tags = [];
 
 fetch(function(data) {
+
     // data serialize
     data = serialize(data);
 
@@ -54,9 +55,14 @@ fetch(function(data) {
     })
 
     build_html()
+
 })
 
 function build_html() {
+
+    // copy assets
+    require('./lib/assets.js')
+
     console.log('building html...')
 
     // rss
