@@ -19,6 +19,10 @@ menu:
     url: /about
   - name: archives
     url: /archives
+  - name: tags
+    url: /tags
+  - name: categories
+    url: /categories
 
 # category
 default_category: uncategorized

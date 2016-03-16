@@ -17,13 +17,17 @@ var c = {
 <div id="post" class="center">
 
     <h1>{{{post_title}}}</h1>
-    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{post_time}}}, {{{post_year}}}</p>
+    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{post_time}}}, {{{post_year}}} . -
+    {{#categories}}
+    <a href="/category/{{{.}}}/">{{{.}}}</a> -
+    {{/categories}}
+    </p>
 
     <div class="content">{{{body}}}</div>
 
     <div class="label">
     {{#tags}}
-    <div><a href="/tags/{{{.}}}/">#{{{.}}}</a></div>
+    <div><a href="/tag/{{{.}}}/">#{{{.}}}</a></div>
     {{/tags}}
     </div>
 
