@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+@import('extend/head.html')
+<title> categories - {{{title}}} </title>
+</head>
+<body>
+
+@import('extend/header.html')
+
+<div id="posts" class="center">
+
+    {{#data}}
+    <p><a href="/category/{{{name}}}/">{{{name}}}</a><span>({{{number}}})</span></p>
+    {{/data}}
+
+</div>
+
+@import('extend/fooetr.html')
+
+</body>
+</html>

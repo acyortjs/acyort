@@ -74,17 +74,29 @@ function build_html() {
         render(page.path, tpl('page'), page)
     })
 
-    // tags
+    // tag
     tags.forEach(function(tag) {
         pager(tag.posts, 'tag/'+ tag.name)
+
+        // tags
+        tag.number = tag.posts.length;
     })
 
-    // categories
+    // category
     categories.forEach(function(category) {
         pager(category.posts, 'category/'+ category.name)
+
+        // categories
+        category.number = category.posts.length
     })
 
     // archives
     render('/archives/index.html', tpl('archives'), archives(posts))
+
+    // render tags and categories
+    var all_tags = { data: tags };
+    var all_categories = { data: categories };
+    render('/tags/index.html', tpl('tags'), all_tags)
+    render('/categories/index.html', tpl('categories'), all_categories)
 
 }
