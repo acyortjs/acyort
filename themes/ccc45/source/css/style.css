@@ -70,13 +70,12 @@ body {
 }
 .menu a {
     display: inline-block;
-    padding: 3px 7px;
-    background: #5694f1;
-    margin: 0 3px;
+    padding: 5px 10px;
+    background: #518BE2;
+    margin: 0 3px 6px;
     -webkit-border-radius: 3px;
     font-size: 14px;
     color: #fff;
-    font-weight: bold;
 }
 
 /* index */
@@ -149,16 +148,27 @@ body {
 #pagination a.hide {
     display: none;
 }
-.archives {
-    padding: 30px 0 0;
+
+.archives > div {
+    margin-top: 30px;
 }
-.archives p {
-    margin-bottom: 20px;
+.archives h2 + div {
+    margin-top: 50px;
 }
-.archives p:before {
-    content: '- ';
+.archives h3 {
+    float: left;
+    font-size: 28px;
+    color: #666;
+}
+.archives ul {
+    padding: 5px 0 0 140px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.archives li {
+    margin-bottom: 30px;
 }
 .archives a {
+    font-size: 18px;
     text-decoration: none;
     color: #333;
 }
@@ -166,10 +176,20 @@ body {
     text-decoration: underline;
 }
 .archives span {
-    float: right;
+    font-size: 16px;
+    color: #999;
+    width: 80px;
+    display: inline-block;
+}
+.archives .label {
+    margin: 10px 0 0 80px;
     font-size: 14px;
-    color: #666;
-    margin-top: 1px;
+    color: #888;
+}
+.archives .label a {
+    font-size: 14px;
+    text-decoration: underline;
+    margin-left: 10px;
 }
 
 /* single post */
@@ -274,6 +294,10 @@ body {
 }
 .footer a {
     color: #565656;
+}
+.footer .center:first-letter {
+    font-family: sans-serif;
+    margin-right: 3px;
 }
 
 /* article content */
@@ -459,9 +483,6 @@ pre code {
     .header {
         margin-bottom: 10px;
     }
-    .header .center {
-        padding-top: 100px;
-    }
     .post {
         padding-right: 70px;
     }
@@ -498,5 +519,23 @@ pre code {
     }
     .content h1 {
         font-size: 20px;
+    }
+    .menu {
+        right: auto;
+        left: 20px;
+    }
+    .archives h3 {
+        float: none;
+        margin-bottom: 30px;
+    }
+    .archives ul {
+        padding-left: 0;
+    }
+    .archives span {
+        display: inline;
+        margin-right: 10px;
+    }
+    .archives .label {
+        margin-left: 0;
     }
 }

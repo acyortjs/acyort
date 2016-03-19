@@ -8,22 +8,26 @@
 
 @import('extend/header.html')
 
-<div id="posts" class="archives center">
+<div class="archives center">
+
+    <h2 class="tag">Archives</h2>
 
     {{#posts}}
-    <ul>
+    <div>
         <h3>{{{year}}}</h3>
+        <ul>
         {{#data}}
         <li>
-            <a href="{{{path}}}">{{{post_title}}}<span>{{{post_time}}}</span></a>
-            <div class="label">
+            <p><span>{{{post_time}}}</span><a href="{{{path}}}">{{{post_title}}}</a></p>
+            <div class="label">tags: 
             {{#tags}}
             <a href="/tag/{{{.}}}/">#{{{.}}}</a>
             {{/tags}}
             </div>
         </li>
         {{/data}}
-    </ul>
+        </ul>
+    </div>
     {{/posts}}
 
 </div>
