@@ -247,6 +247,25 @@ body {
     font-weight: bold;
 }
 
+.categories {
+    text-align: center;
+    padding: 30px 0;
+    min-height: 300px;
+}
+.categories h2 {
+    margin-bottom: 50px;
+}
+.categories p {
+    display: inline-block;
+    margin: 10px;
+}
+.categories a {
+    color: #333;
+}
+.categories span {
+    color: #999;
+}
+
 #comment {
     margin: 50px auto 0;
     width: 140px;

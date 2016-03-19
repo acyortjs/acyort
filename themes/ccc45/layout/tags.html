@@ -8,7 +8,9 @@
 
 @import('extend/header.html')
 
-<div id="posts" class="center">
+<div class="center categories">
+
+    <h2 class="tag">Tags</h2>
 
     {{#data}}
     <p><a href="/tag/{{{name}}}/">{{{name}}}</a><span>({{{number}}})</span></p>
