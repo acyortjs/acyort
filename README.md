@@ -4,19 +4,24 @@ A Node.js blog tool powered by GitHub.
 
 You can write you blog on `GitHub issue` and publish it on `Your Own Domain` use `GitHub page`
 
-### Demo
+## 安装说明及添加文章说明
+http://acyort.github.io/2016/03/143240507.html
+
+http://acyort.github.io/2016/03/143249315.html
+
+## Demo
 
 http://acyort.github.io/
 
 Site content from here: https://github.com/AcyOrt/acyort.github.io/issues
 
-### Install
+## Install
 
 ```bash
 $ sudo npm install acyort-cli -g
 ```
 
-### Create new blog
+## Create new blog
 
 ```bash
 $ acyort create blog
@@ -24,11 +29,11 @@ $ cd blog
 $ npm i
 ```
 
-### Config your blog
+## Config your blog
 
 modify `config.yml`
 
-### Build your blog
+## Build your blog
 
 ```bash
 $ acyort build
@@ -36,13 +41,13 @@ $ acyort build
 
 all generated html files are saved in the `public` folder. You can publish them to wherever you like.
 
-### Local test server
+## Local test server
 
 ```bash
 $ acyort server
 ```
 
-### Feature
+## Feature
 
 - [x] Post 
 - [x] Comments
@@ -55,6 +60,6 @@ $ acyort server
 - [x] Menu
 
 
-### License
+## License
 
 MIT
