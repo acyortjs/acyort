@@ -54,14 +54,14 @@ fetch(function(data) {
         })
     })
 
-    build_html()
+    //build_html()
 
 })
 
 function build_html() {
 
     // copy assets
-    require('./lib/assets.js')
+    require('./lib/assets.js')()
 
     console.log('building html...')
 
