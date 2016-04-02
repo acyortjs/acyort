@@ -1,17 +1,22 @@
 
 var config = require('./lib/config.js');
 var fetch = require('./lib/fetch.js');
-var serialize = require('./lib/serialize.js');
+//var serialize = require('./lib/serialize.js');
 var feed = require('./lib/feed.js');
 var tpl = require('./lib/tpl.js');
 var pager = require('./lib/pager.js');
 var render = require('./lib/render.js');
 var archives = require('./lib/archives.js');
 
+var serialize = require('./lib/serialize')
+
 var categories = [], posts = [], pages = [], tags = [];
 
 fetch(function(data) {
 
+    serialize(data)
+
+    /*
     // data serialize
     data = serialize(data);
 
@@ -53,6 +58,7 @@ fetch(function(data) {
             })
         })
     })
+    */
 
     //build_html()
 

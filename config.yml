@@ -1,15 +1,17 @@
 
 # site
 title: AcyOrt
+subtitle: A Node.js blog tool powered by GitHub.
 url: http://yoursite.com
-description: A Node.js blog tool powered by GitHub.
+root: /
+description: 
 rss: rss.xml
 
 # theme
 theme: ccc45
 
 # pagination
-per_page: 2
+per_page: 4
 
 # menu
 menu:
@@ -27,15 +29,20 @@ menu:
 # category
 default_category: uncategorized
 
+# thumbnail mode 
+# 1: use the first image as thumbnail and remove the image
+# 2: use the first image as thumbnail but not remove the image
+thumbnail_mode: 2
+
 # comment
 duoshuo:
 disqus: acyort
 
 # site post authors filter
 authors:
-    #  - LoeiFy
-    #  - author0
-    #  - author1
+#    - LoeiFy
+#    - author0
+#    - author1
 
 # site content issue
 # username/repository
