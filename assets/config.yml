@@ -29,6 +29,9 @@ menu:
 # category
 default_category: uncategorized
 
+# Directory
+public_dir: /
+
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
