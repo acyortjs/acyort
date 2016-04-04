@@ -9,63 +9,15 @@ var archives = require('./lib/archives');
 var serialize = require('./lib/serialize');
 
 fetch(function(data) {
-
-    serialize(data)
-
-    /*
-    // data serialize
-    data = serialize(data);
-
-    // posts
-    posts = data.posts;
-
-    // pages
-    pages = data.pages;
-
-    // categories
-    data.categories.forEach(function(e, i) {
-        categories[i] = {};
-        categories[i].name = e;
-        categories[i].posts = [];
-    })
-
-    // tags
-    data.tags.forEach(function(e, i) {
-        tags[i] = {};
-        tags[i].name = e;
-        tags[i].posts = [];
-    })
-
-    posts.forEach(function(post) {
-        post.categories.forEach(function(category) {
-            categories.forEach(function(e, i) {
-                if (e.name == category) {
-                    e.posts.push(post)
-                }
-                return
-            })
-        })
-        post.tags.forEach(function(tag) {
-            tags.forEach(function(e, i) {
-                if (e.name == tag) {
-                    e.posts.push(post)
-                }
-                return
-            })
-        })
-    })
-    */
-
-    //build_html()
-
+    build(serialize(data))
 })
 
-function build_html() {
+function build(data) {
 
     // copy assets
     require('./lib/assets.js')()
-
-    console.log('building html...')
+    /*
+    console.log('building...')
 
     // rss
     feed(posts)
@@ -106,5 +58,6 @@ function build_html() {
     var all_categories = { data: categories };
     render('/tags/index.html', tpl('tags'), all_tags)
     render('/categories/index.html', tpl('categories'), all_categories)
+    */
 
 }

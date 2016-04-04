@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var program = require('commander');
+var fs = require('fs-extra');
+var path = require('path');
+var exec = require('../lib/exec.js');
+
+program
+    .allowUnknownOption()
+    .usage(' <command>')
+
+program
+    .command('create <folder>')
+    .description('Create a new AcyOrt blog folder')
+    .action(function(folder) {
+        console.log('Coping data to "%s"', folder)
+
+        fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
+            if (err) {
+                return console.error(err)
+            }
+            console.log('Enter "'+ folder +'", modify "config.yml" then run "npm i" to finish the installation')
+        })
+
+    })
+
+program
+    .command('version')
+    .description('Display AcyOrt version')
+    .action(function() {
+        console.log(require('../package.json').version)
+    })
+
+program
+    .command('build')
+    .description('Build the site html')
+    .action(function() {
+        try {
+            var config = fs.readFileSync(process.cwd() +'/config.yml');
+            exec('node '+ process.cwd() +'/acyort.js')
+        } catch(e) {
+            console.error('Cannot find "config.yml", Please run in your blog foler')
+        }
+    })
+
+program
+    .command('server')
+    .description('Create a local test server')
+    .action(function() {
+        try {
+            var config = fs.readFileSync(process.cwd() +'/config.yml');
+            exec('node '+ path.resolve(__dirname, '../lib/server.js'))
+        } catch(e) {
+            console.error('Cannot find "config.yml", Please run in your blog foler')
+        }
+    })
+
+program.parse(process.argv)
+
+if (!program.args.length) {
+    program.help()
+}
+
+if (process.argv[2] != 'version'    && 
+    process.argv[2] != 'create'     &&
+    process.argv[2] != 'build'      &&
+    process.argv[2] != 'server'
+) {
+    program.help()
+}
