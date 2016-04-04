@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@import('extend/head.html')
-<title> categories - {{{title}}} </title>
+@import(extend/head.html, {
+    "title": "categories - {{{site.title}}}"
+})
 </head>
 <body>
 
-@import('extend/header.html')
+@import(extend/header.html)
 
 <div class="center categories">
 
     <h2 class="tag">Categories</h2>
 
-    {{#data}}
+    {{#lists}}
     <p><a href="/category/{{{name}}}/">{{{name}}}</a><span>({{{number}}})</span></p>
-    {{/data}}
+    {{/lists}}
 
 </div>
 
-@import('extend/fooetr.html')
+@import(extend/fooetr.html)
 
 </body>
 </html>

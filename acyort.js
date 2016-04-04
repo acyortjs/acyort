@@ -27,6 +27,10 @@ function build(data) {
     
     // archives
     //render('/archives/index.html', template('archives'), archives(data.posts))
+    
+    // all tags and all categories
+    //render('/tags/index.html', template('tags'), {lists: data.tags})
+    //render('/categories/index.html', template('categories'), {lists: data.categories})
 
     // posts
     //data.posts.forEach(function(post) {
@@ -45,26 +49,16 @@ function build(data) {
     // tag
     tags.forEach(function(tag) {
         pager(tag.posts, 'tag/'+ tag.name)
-
-        // tags
-        tag.number = tag.posts.length;
     })
 
     // category
     categories.forEach(function(category) {
         pager(category.posts, 'category/'+ category.name)
-
-        // categories
-        category.number = category.posts.length
     })
-
-
-
-    // render tags and categories
-    var all_tags = { data: tags };
-    var all_categories = { data: categories };
-    render('/tags/index.html', tpl('tags'), all_tags)
-    render('/categories/index.html', tpl('categories'), all_categories)
     */
+
+
+
+
 
 }
