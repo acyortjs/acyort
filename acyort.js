@@ -33,6 +33,10 @@ function build(data) {
         //render(post.path, template('post'), post)
     //})
 
+
+
+
+
     /*
     // posts pages
     pager(posts, 'index')
