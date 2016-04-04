@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 @import(extend/head.html, {
-    "title": "{{{title}}}"
+    "title": "{{{site.title}}}"
 })
 </head>
 <body>
@@ -16,9 +16,9 @@
         <li>
 
         <div class="post">
-            <h2><a href="{{{path}}}">{{{post_title}}}</a></h2>
-            <p>{{{summary}}}</p>
-            <p class="time">{{{post_time}}}, {{{post_year}}}</p>
+            <h2><a href="{{{path}}}">{{{title}}}</a></h2>
+            <p class="time">{{{time.MMM}}} {{{time.DD}}}, {{{time.YYYY}}}</p>
+            <div>{{{summary}}}</div>
         </div>
 
         <a class="author" href="{{{author.url}}}" target="_blank">

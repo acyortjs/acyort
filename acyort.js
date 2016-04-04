@@ -15,50 +15,38 @@ fetch(function(data) {
 function build(data) {
 
     // copy assets
-    //require('./lib/assets.js')()
+    require('./lib/assets.js')()
 
     // rss
-    //feed(data.posts)
+    feed(data.posts)
 
     // pages
-    //data.pages.forEach(function(page) {
-        //render(page.path, template('page'), page)
-    //})
+    data.pages.forEach(function(page) {
+        render(page.path, template('page'), page)
+    })
     
     // archives
-    //render('/archives/index.html', template('archives'), archives(data.posts))
+    render('/archives/index.html', template('archives'), archives(data.posts))
     
     // all tags and all categories
-    //render('/tags/index.html', template('tags'), {lists: data.tags})
-    //render('/categories/index.html', template('categories'), {lists: data.categories})
+    render('/tags/index.html', template('tags'), {lists: data.tags})
+    render('/categories/index.html', template('categories'), {lists: data.categories})
 
     // posts
-    //data.posts.forEach(function(post) {
-        //render(post.path, template('post'), post)
-    //})
+    data.posts.forEach(function(post) {
+        render(post.path, template('post'), post)
+    })
 
-
-
-
-
-    /*
-    // posts pages
-    pager(posts, 'index')
-
+    pager(data.posts, 'index')
 
     // tag
-    tags.forEach(function(tag) {
+    data.tags.forEach(function(tag) {
         pager(tag.posts, 'tag/'+ tag.name)
     })
 
     // category
-    categories.forEach(function(category) {
+    data.categories.forEach(function(category) {
         pager(category.posts, 'category/'+ category.name)
     })
-    */
-
-
-
-
 
 }
