@@ -2,9 +2,7 @@
 # site
 title: AcyOrt
 subtitle: A Node.js blog tool powered by GitHub.
-url: http://yoursite.com
-root: /
-description: 
+description: A Node.js blog tool powered by GitHub. 
 rss: rss.xml
 
 # theme
@@ -29,7 +27,8 @@ menu:
 # category
 default_category: uncategorized
 
-# Directory
+# url and directory
+url: http://yoursite.com
 public_dir: /
 
 # thumbnail mode 

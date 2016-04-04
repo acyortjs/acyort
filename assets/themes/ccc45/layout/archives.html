@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@import('extend/head.html')
-<title> archives - {{{title}}} </title>
+@import(extend/head.html, {
+    "title": "archives - {{{title}}}"
+})
 </head>
 <body>
 
-@import('extend/header.html')
+@import(extend/header.html)
 
 <div class="archives center">
 
     <h2 class="tag">Archives</h2>
 
-    {{#posts}}
+    {{#lists}}
     <div>
         <h3>{{{year}}}</h3>
         <ul>
-        {{#data}}
+        {{#posts}}
         <li>
-            <p><span>{{{post_time}}}</span><a href="{{{path}}}">{{{post_title}}}</a></p>
+            <p><span>{{{time.MMM}}} {{{time.DD}}}</span><a href="{{{path}}}">{{{title}}}</a></p>
             <div class="label"> 
             {{#tags}}
             <a href="/tag/{{{.}}}/">#{{{.}}}</a>
             {{/tags}}
             </div>
         </li>
-        {{/data}}
+        {{/posts}}
         </ul>
     </div>
-    {{/posts}}
+    {{/lists}}
 
 </div>
 
-@import('extend/fooetr.html')
+@import(extend/fooetr.html)
 
 </body>
 </html>

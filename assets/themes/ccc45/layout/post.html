@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@import('extend/head.html')
-<title>{{{post_title}}} - {{{title}}} </title>
+@import(extend/head.html, {
+    "title": "{{{title}}} - {{{site.title}}}"
+})
 <script>
 var c = {
-    name: '{{{comment.name}}}',
-    url: '{{{comment.url}}}'
+    name: '{{{site.comment.name}}}',
+    url: '{{{site.comment.url}}}'
 }
 </script>
 </head>
 <body>
 
-@import('extend/header.html')
+@import(extend/header.html)
 
 <div id="post" class="center">
 
-    <h1>{{{post_title}}}</h1>
-    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{post_time}}}, {{{post_year}}} . -
+    <h1>{{{title}}}</h1>
+    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{time.MMM}}} {{{time.DD}}}, {{{time.YYYY}}} . -
     {{#categories}}
     <a href="/category/{{{.}}}/">{{{.}}}</a> -
     {{/categories}}
@@ -38,7 +39,7 @@ var c = {
 
 </div>
 
-@import('extend/fooetr.html')
+@import(extend/fooetr.html)
 
 <script src="/js/comment.js"></script>
 </body>

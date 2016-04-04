@@ -1,11 +1,11 @@
 <div class="header">
     <div class="center">
-        <h1><a href="/">{{{title}}}</a></h1>
-        <p>{{{description}}}</p>
+        <h1><a href="/">{{{site.title}}}</a></h1>
+        <p>{{{site.subtitle}}}</p>
     </div>
     <div class="menu">
-    {{#menu}}
+    {{#site.menu}}
         <a href="{{{url}}}">{{{name}}}</a>
-    {{/menu}}
+    {{/site.menu}}
     </div>
 </div>

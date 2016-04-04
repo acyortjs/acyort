@@ -2,7 +2,7 @@
 var config = require('./lib/config');
 var fetch = require('./lib/fetch');
 var feed = require('./lib/feed');
-var tpl = require('./lib/template');
+var template = require('./lib/template');
 var pager = require('./lib/pager');
 var render = require('./lib/render');
 var archives = require('./lib/archives');
@@ -15,24 +15,28 @@ fetch(function(data) {
 function build(data) {
 
     // copy assets
-    require('./lib/assets.js')()
-    /*
-    console.log('building...')
+    //require('./lib/assets.js')()
 
     // rss
-    feed(posts)
+    //feed(data.posts)
+
+    // pages
+    //data.pages.forEach(function(page) {
+        //render(page.path, template('page'), page)
+    //})
+    
+    // archives
+    //render('/archives/index.html', template('archives'), archives(data.posts))
 
     // posts
-    posts.forEach(function(post) {
-        render(post.path, tpl('post'), post)
-    })
+    //data.posts.forEach(function(post) {
+        //render(post.path, template('post'), post)
+    //})
+
+    /*
     // posts pages
     pager(posts, 'index')
 
-    // pages
-    pages.forEach(function(page) {
-        render(page.path, tpl('page'), page)
-    })
 
     // tag
     tags.forEach(function(tag) {
@@ -50,8 +54,7 @@ function build(data) {
         category.number = category.posts.length
     })
 
-    // archives
-    render('/archives/index.html', tpl('archives'), archives(posts))
+
 
     // render tags and categories
     var all_tags = { data: tags };
