@@ -1,13 +1,23 @@
 {
   "name": "acyort",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "A Node.js blog tool powered by GitHub",
-  "main": "acyort.js",
+  "main": "lib/acyort",
+  "bin": {
+    "acyort": "./bin/acyort"
+  },
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/AcyOrt/acyort.git"
   },
+  "keywords": [
+    "website",
+    "blog",
+    "acyort",
+    "tool",
+    "issue"
+  ],
   "author": "LoeiFy",
   "license": "MIT",
   "bugs": {

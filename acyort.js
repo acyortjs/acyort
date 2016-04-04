@@ -1,16 +1,12 @@
 
-var config = require('./lib/config.js');
-var fetch = require('./lib/fetch.js');
-//var serialize = require('./lib/serialize.js');
-var feed = require('./lib/feed.js');
-var tpl = require('./lib/tpl.js');
-var pager = require('./lib/pager.js');
-var render = require('./lib/render.js');
-var archives = require('./lib/archives.js');
-
-var serialize = require('./lib/serialize')
-
-var categories = [], posts = [], pages = [], tags = [];
+var config = require('./lib/config');
+var fetch = require('./lib/fetch');
+var feed = require('./lib/feed');
+var tpl = require('./lib/template');
+var pager = require('./lib/pager');
+var render = require('./lib/render');
+var archives = require('./lib/archives');
+var serialize = require('./lib/serialize');
 
 fetch(function(data) {
 
