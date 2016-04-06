@@ -6,7 +6,7 @@ description: A Node.js blog tool powered by GitHub.
 rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
-url: http://yoursite.com/child
+url: http://yoursite.com/child/
 
 # theme
 theme: ccc45
@@ -31,7 +31,7 @@ menu:
 default_category: uncategorized
 
 # html output directory
-public_dir: /demo
+public_dir: demo
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
