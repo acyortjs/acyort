@@ -7,7 +7,7 @@ rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
 # please add 'http://' or 'https://'
-url: http://yoursite.com/child
+url: http://yoursite.com/demo
 
 # theme
 theme: ccc45

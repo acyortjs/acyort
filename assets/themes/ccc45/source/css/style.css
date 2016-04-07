@@ -24,7 +24,7 @@ body {
     position: relative;
     width: 100%;
     height: 240px;
-    background: #374756 url(/images/header.jpg) no-repeat center;
+    background: #374756 url(../images/header.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
