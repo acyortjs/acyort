@@ -20,7 +20,7 @@ var c = {
     <h1>{{{title}}}</h1>
     <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{time.MMM}}} {{{time.DD}}}, {{{time.YYYY}}} . -
     {{#categories}}
-    <a href="/category/{{{.}}}/">{{{.}}}</a> -
+    <a href="{{{url}}}">{{{name}}}</a> -
     {{/categories}}
     </p>
 
@@ -28,7 +28,7 @@ var c = {
 
     <div class="label">
     {{#tags}}
-    <div><a href="/tag/{{{.}}}/">#{{{.}}}</a></div>
+    <div><a href="{{{url}}}">#{{{name}}}</a></div>
     {{/tags}}
     </div>
 
