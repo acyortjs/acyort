@@ -7,7 +7,7 @@ rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
 # please add 'http://' or 'https://'
-url: http://yoursite.com/demo
+url: http://yoursite.com/
 
 # theme
 theme: ccc45
@@ -32,7 +32,7 @@ menu:
 default_category: uncategorized
 
 # html output directory
-public_dir: demo
+public_dir: /
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
