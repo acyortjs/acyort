@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
+    "commander": "^2.9.0",
     "fs-extra": "^0.26.5",
     "highlight.js": "^9.1.0",
     "marked": "^0.3.5",
     "moment": "^2.12.0",
     "mustache": "^2.2.1",
+    "node-static": "^0.7.7",
     "rss": "^1.2.1",
     "yamljs": "^0.2.6"
   }
