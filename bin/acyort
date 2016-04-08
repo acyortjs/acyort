@@ -21,7 +21,7 @@ program
             if (err) {
                 return console.error(err)
             }
-            console.log('Enter "'+ folder +'", modify "config.yml" then run "npm i" to finish the installation')
+            console.log('Enter "'+ folder +'", modify "config.yml" to configure your site')
         })
 
     })
@@ -39,7 +39,7 @@ program
     .action(function() {
         try {
             var config = fs.readFileSync(process.cwd() +'/config.yml');
-            exec('node '+ process.cwd() +'/acyort.js')
+            exec('node '+ path.resolve(__dirname, '../acyort.js'))
         } catch(e) {
             console.error('Cannot find "config.yml", Please run in your blog foler')
         }
