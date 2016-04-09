@@ -21,6 +21,10 @@ program
             if (err) {
                 return console.error(err)
             }
+
+            var ignore = 'Thumbs.db \n .DS_Store \n *.swp \n themes/';
+            fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
+
             console.log('Enter "'+ folder +'", modify "config.yml" to configure your site')
         })
 
