@@ -31,7 +31,7 @@ menu:
 # category
 default_category: uncategorized
 
-# html output directory
+# html output directory or child directory e.g. 'child'
 public_dir: /
 
 # thumbnail mode 
