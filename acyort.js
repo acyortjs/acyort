@@ -2,7 +2,7 @@
 var config = require('./lib/config');
 var fetch = require('./lib/fetch');
 var feed = require('./lib/feed');
-var template = require('./lib/template');
+var template = require('./lib/template')();
 var pager = require('./lib/pager');
 var render = require('./lib/render');
 var archives = require('./lib/archives');
@@ -14,6 +14,7 @@ fetch(function(data) {
 
 function build(data) {
 
+    /*
     // copy assets
     require('./lib/assets.js')()
 
@@ -48,5 +49,8 @@ function build(data) {
     data.categories.forEach(function(category) {
         pager(category.posts, 'category/'+ category.name)
     })
+    */
+
+    render(data.posts[0].path, template.post, data.posts[0])
 
 }
