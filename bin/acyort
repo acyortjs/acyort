@@ -6,6 +6,7 @@ var program = require('commander');
 var fs = require('fs-extra');
 var path = require('path');
 var exec = require('../lib/exec.js');
+var colors = require('colors');
 
 program
     .allowUnknownOption()
@@ -15,17 +16,17 @@ program
     .command('create <folder>')
     .description('Create a new AcyOrt blog folder')
     .action(function(folder) {
-        console.log('Coping data to "%s"', folder)
+        console.log('Info: '.blue +'coping data to "%s"', folder)
 
         fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
             if (err) {
-                return console.error(err)
+                return console.log('Error: '.red + err)
             }
 
             var ignore = 'Thumbs.db \n .DS_Store \n *.swp \n themes/';
             fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
 
-            console.log('Enter "'+ folder +'", modify "config.yml" to configure your site')
+            console.log('Info: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
         })
 
     })
@@ -45,7 +46,7 @@ program
             var config = fs.readFileSync(process.cwd() +'/config.yml');
             exec('node '+ path.resolve(__dirname, '../acyort.js'))
         } catch(e) {
-            console.error('Cannot find "config.yml", Please run in your blog foler')
+            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
         }
     })
 
@@ -57,7 +58,7 @@ program
             var config = fs.readFileSync(process.cwd() +'/config.yml');
             exec('node '+ path.resolve(__dirname, '../lib/server.js'))
         } catch(e) {
-            console.error('Cannot find "config.yml", Please run in your blog foler')
+            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
         }
     })
 

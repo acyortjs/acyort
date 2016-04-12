@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Node.js blog tool powered by GitHub",
   "main": "lib/acyort",
   "bin": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
+    "colors": "^1.1.2",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5",
     "highlight.js": "^9.1.0",
