@@ -32,7 +32,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: demo
+public_dir: /
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
