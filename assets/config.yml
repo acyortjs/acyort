@@ -7,13 +7,13 @@ rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
 # please add 'http://' or 'https://'
-url: http://yoursite.com
+url: http://acyort.github.io
 
 # theme
 theme: ccc45
 
 # pagination
-per_page: 4
+per_page: 5
 
 # menu
 menu:
