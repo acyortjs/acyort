@@ -6,8 +6,6 @@ var program = require('commander');
 var fs = require('fs-extra');
 var path = require('path');
 var colors = require('colors');
-var acyort = require('../lib/acyort');
-var server = require('../lib/server');
 
 program
     .allowUnknownOption()
@@ -44,9 +42,9 @@ program
     .description('Build the site html')
     .action(function() {
         try {
-            fs.readFileSync(process.cwd() +'/config.yml')
 
-            acyort()
+            require('../lib/acyort')()
+
         } catch(e) {
             console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
         }
@@ -57,9 +55,9 @@ program
     .description('Create a local test server')
     .action(function() {
         try {
-            fs.readFileSync(process.cwd() +'/config.yml')
 
-            server()
+            require('../lib/server')()
+
         } catch(e) {
             console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
         }
