@@ -53,6 +53,9 @@ authors:
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
 
+# dev mode
+dev: false
+
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
 
