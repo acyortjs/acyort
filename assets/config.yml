@@ -13,7 +13,7 @@ url: http://acyort.github.io/test
 theme: ccc45
 
 # pagination
-per_page: 5
+per_page: 3
 
 # menu
 menu:

@@ -145,7 +145,7 @@ body {
     position: absolute;
     right: 0;
 }
-#pagination a.hide {
+#pagination a[href=""] {
     display: none;
 }
 
