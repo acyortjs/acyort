@@ -29,6 +29,13 @@
     {{/posts}}
     </ul>
 
+    <div>
+    {{#categories}}
+        <a href="">all</a>
+        <a href="{{{url}}}">{{{name}}}({{{number}}})</a>
+    {{/categories}}
+    </div>
+
 @import(extend/pagination.html)
 
 </div>
