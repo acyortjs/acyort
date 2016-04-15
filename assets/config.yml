@@ -13,7 +13,7 @@ url: http://acyort.github.io
 theme: ccc45
 
 # pagination
-per_page: 5
+per_page: 3
 
 # menu
 menu:
@@ -53,10 +53,9 @@ authors:
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
 
-# dev mode
-dev: false
-
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
-
 # token: sd46a6d65a asd8sdbn
+
+# dev mode
+dev: false
