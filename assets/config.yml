@@ -7,7 +7,7 @@ rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
 # please add 'http://' or 'https://'
-url: http://acyort.github.io/test
+url: http://acyort.github.io
 
 # theme
 theme: ccc45
@@ -32,7 +32,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: test
+public_dir: /
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
@@ -53,10 +53,9 @@ authors:
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
 
-# dev mode
-dev: true
-
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
-
 # token: sd46a6d65a asd8sdbn
+
+# dev mode
+dev: false
