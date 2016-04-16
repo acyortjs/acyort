@@ -1,10 +1,6 @@
-*.log
 npm-debug.log*
 
 .DS_Store
 node_modules/
 
-*.bak
 *.swp
-
-public/
