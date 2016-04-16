@@ -46,7 +46,7 @@ program
             require('../lib/acyort')()
 
         } catch(e) {
-            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
+            console.log('x '.red + e)
         }
     })
 
@@ -59,7 +59,7 @@ program
             require('../lib/server')()
 
         } catch(e) {
-            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
+            console.log('x '.red + e)
         }
     })
 
