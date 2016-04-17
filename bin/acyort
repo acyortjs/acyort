@@ -22,7 +22,7 @@ program
                 return console.log('Error: '.red + err)
             }
 
-            var ignore = 'Thumbs.db \n .DS_Store \n *.swp \n themes/';
+            var ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/';
             fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
 
             console.log('Info: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
@@ -46,7 +46,7 @@ program
             require('../lib/acyort')()
 
         } catch(e) {
-            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
+            console.log('x '.red + e)
         }
     })
 
@@ -59,7 +59,7 @@ program
             require('../lib/server')()
 
         } catch(e) {
-            console.error('Error: '.red +'cannot find [config.yml], Please run in your blog foler')
+            console.log('x '.red + e)
         }
     })
 
