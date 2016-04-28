@@ -21,7 +21,7 @@
     {% if post.tags.length %}
     <div class="label">
     {% for tag in post.tags %}
-    <a href="{{ tag.url }}">#{{ tag.name }}</a>
+    <div><a href="{{ tag.url }}">#{{ tag.name }}</a></div>
     {% endfor %}
     </div>
     {% endif %}
