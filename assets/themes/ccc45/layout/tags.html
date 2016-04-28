@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-@import(extend/head.html, {
-    "title": "tags - {{{site.title}}}"
-})
-</head>
-<body>
+{% extends 'layout.html' %}
 
-@import(extend/header.html)
+{% block title %}
+Tags | {{ data.config.title }}
+{% endblock %}
 
+{% block content %}
 <div class="center categories">
 
-    <h2 class="tag">Tags</h2>
+    <h2 class="tag">Tas</h2>
 
-    {{#lists}}
-    <p><a href="{{{url}}}">{{{name}}}</a><span>({{{number}}})</span></p>
-    {{/lists}}
+    {% for tag in tags %}
+    <p><a href="{{ tag.url }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
+    {% endfor %}
 
 </div>
-
-@import(extend/fooetr.html)
-
-</body>
-</html>
+{% endblock %}
