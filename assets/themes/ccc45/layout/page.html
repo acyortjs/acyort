@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-@import(extend/head.html, {
-    "title": "{{{title}}} - {{{site.title}}}"
-})
-</head>
-<body>
+{% extends 'layout.html' %}
 
-@import(extend/header.html)
+{% block title %}
+{{ page.title }} | {{ data.config.title }}
+{% endblock %}
 
+{% block content %}
 <div id="post" class="center">
 
-    <h1>{{{title}}}</h1>
+    <h1>{{ page.title }}</h1>
 
-    <div class="content">{{{body}}}</div>
+    <div class="content">{% autoescape false %}{{ page.body }}{% endautoescape %}</div>
 
 </div>
+{% endblock %}
 
-@import(extend/fooetr.html)
-
-</body>
-</html>

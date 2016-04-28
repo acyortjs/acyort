@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-@import(extend/head.html, {
-    "title": "categories - {{{site.title}}}"
-})
-</head>
-<body>
+{% extends 'layout.html' %}
 
-@import(extend/header.html)
+{% block title %}
+Categories | {{ data.config.title }}
+{% endblock %}
 
+{% block content %}
 <div class="center categories">
 
     <h2 class="tag">Categories</h2>
 
-    {{#lists}}
-    <p><a href="{{{url}}}">{{{name}}}</a><span>({{{number}}})</span></p>
-    {{/lists}}
+    {% for category in categories %}
+    <p><a href="{{ category.url }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
+    {% endfor %}
 
 </div>
-
-@import(extend/fooetr.html)
-
-</body>
-</html>
+{% endblock %}
