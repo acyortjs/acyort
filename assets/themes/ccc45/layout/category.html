@@ -1,41 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-@import(extend/head.html, {
-    "title": "{{{name}}} - {{{site.title}}}"
-})
-</head>
-<body>
+{% extends 'layout.html' %}
+{% import 'partials/pagination.html' as pagination %}
 
-@import(extend/header.html)
+{% block title %}
+category.heading | {{ data.config.title }}
+{% endblock %}
 
+{% block content %}
 <div id="posts" class="center">
 
-    <h2 class="tag">Category : <span>{{{name}}}</span></h2>
+    <h2 class="tag">Category : <span>{{ category.heading }}</span></h2>
 
     <ul>
-    {{#posts}}
+    {% for id in category.posts %}
+    {% set post = helper.post(id) %}
         <li>
 
         <div class="post">
-            <h2><a href="{{{url}}}">{{{title}}}</a></h2>
-            <p class="time">{{{time.MMM}}} {{{time.DD}}}, {{{time.YYYY}}}</p>
-            <div>{{{summary}}}</div>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="time">{{ helper.time(post.updated, 'MMM DD, YYYY') }}</p>
+            {% if post.summary %}
+            <div>{% autoescape false %}{{ post.summary }}{% endautoescape %}</div>
+            {% endif %}
         </div>
 
-        <a class="author" href="{{{author.url}}}" target="_blank">
-            <img src="{{{author.avatar}}}" />
+        <a class="author" href="{{ post.author.url }}" target="_blank">
+            <img src="{{ post.author.avatar }}" />
         </a>
 
         </li>
-    {{/posts}}
+    {% endfor %}
     </ul>
 
-@import(extend/pagination.html)
+    {{ pagination.render(category) }}
 
 </div>
-
-@import(extend/fooetr.html)
-
-</body>
-</html>
+{% endblock %}
