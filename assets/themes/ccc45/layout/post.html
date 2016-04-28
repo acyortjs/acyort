@@ -1,46 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-@import(extend/head.html, {
-    "title": "{{{title}}} - {{{site.title}}}"
-})
-<script>
-var c = {
-    name: '{{{site.comment.name}}}',
-    url: '{{{site.comment.url}}}'
-}
-</script>
-</head>
-<body>
+{% extends 'layout.html' %}
 
-@import(extend/header.html)
+{% block title %}
+{{ post.title }} | {{ data.config.title }}
+{% endblock %}
 
+{% block content %}
 <div id="post" class="center">
 
-    <h1>{{{title}}}</h1>
-    <p><a href="{{{author.url}}}">{{{author.name}}}</a> Posted at {{{time.MMM}}} {{{time.DD}}}, {{{time.YYYY}}} . -
-    {{#categories}}
-    <a href="{{{url}}}">{{{name}}}</a> -
-    {{/categories}}
+    <h1>{{ post.title }}</h1>
+
+    <p><a href="{{ post.author.url }}">{{ post.author.name }}</a> Posted at {{ helper.time(post.created, 'MMM DD, YYYY') }} . -
+
+    {% for category in post.categories %}
+    <a href="{{ category.url }}">{{ category.name}}</a> -
+    {% endfor %}
     </p>
 
-    <div class="content">{{{body}}}</div>
+    <div class="content">{% autoescape false %}{{ post.body }}{% endautoescape %}</div>
 
+    {% if post.tags.length %}
     <div class="label">
-    {{#tags}}
-    <div><a href="{{{url}}}">#{{{name}}}</a></div>
-    {{/tags}}
+    {% for tag in post.tags %}
+    <a href="{{ tag.url }}">#{{ tag.name }}</a>
+    {% endfor %}
     </div>
+    {% endif %}
 
     <div class="comment_list hide" id="disqus_thread"></div>
-    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{{id}}}" data-title="" data-url=""></div>
+    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ post.id }}" data-title="" data-url=""></div>
 
-    <button class="hide" data-id="{{{id}}}" id="comment">Add Comments</button>
+    <button class="hide" data-id="{{ post.id }}" id="comment">Add Comments</button>
 
 </div>
+{% endblock %}
 
-@import(extend/fooetr.html)
+{% block script %}
+{% if data.config.disqus %}
+<script>
+var c = {
+    name: '{{ data.config.disqus }}',
+    url: '//{{ data.config.disqus }}.disqus.com/embed.js'
+}
+</script>
+{% else %}
+<script>
+var c = {
+    name: '{{ data.config.duoshuo }}',
+    url: '//static.duoshuo.com/embed.js'
+}
+</script>
+{% endif %}
 
-<script src="{{{site.root}}}/js/comment.js"></script>
-</body>
-</html>
+<script src="{{ data.config.root }}/js/comment.js"></script>
+{% endblock %}
