@@ -16,6 +16,13 @@
     {% endfor %}
     </p>
 
+    {% if post.toc %}
+    <div class="toc">
+    <h3>文章目录</h3>
+    {% autoescape false %}{{ post.toc }}{% endautoescape %}
+    </div>
+    {% endif %}
+
     <div class="content">{% autoescape false %}{{ post.body }}{% endautoescape %}</div>
 
     {% if post.tags.length %}
@@ -25,6 +32,18 @@
     {% endfor %}
     </div>
     {% endif %}
+
+    <div class="relate">
+    {% if post.prev %}
+    {% set prev = helper.post(post.prev) %}
+    <a rel="prev" href="{{ prev.url }}">← {{ prev.title }}</a>
+    {% endif %}
+
+    {% if post.next %}
+    {% set next = helper.post(post.next) %}
+    <a rel="next" href="{{ next.url }}">{{ next.title }} →</a>
+    {% endif %}
+    </div>
 
     <div class="comment_list hide" id="disqus_thread"></div>
     <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ post.id }}" data-title="" data-url=""></div>

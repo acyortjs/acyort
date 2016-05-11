@@ -15,7 +15,7 @@ program
     .command('create <folder>')
     .description('Create a new AcyOrt blog folder')
     .action(function(folder) {
-        console.log('Info: '.blue +'coping data to "%s"', folder)
+        console.log('INFO: '.blue +'coping data to "%s"', folder)
 
         fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
             if (err) {
@@ -25,7 +25,7 @@ program
             var ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/';
             fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
 
-            console.log('Info: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
+            console.log('INFO: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
         })
 
     })

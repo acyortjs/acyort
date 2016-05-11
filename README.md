@@ -6,16 +6,16 @@ You can write you blog on `GitHub issue` and publish it on `Your Own Domain` use
 
 ## Feature
 
-- [x] Post 
-- [x] Comments
-- [x] Archives
-- [x] Rss
-- [x] Page 
-- [x] Category
-- [x] Themes
-- [x] Tags 
-- [x] Menu
-- [x] Post Thumbnail
+- Post 
+- Comments
+- Archives
+- Rss
+- Page 
+- Category
+- Theme
+- Tag 
+- Menu
+- Post Thumbnail
 
 ## Demo
 
