@@ -104,13 +104,21 @@ body {
 .post p {
     color: #5A5A67;
     font-size: 14px;
-    margin-top: 14px;
     line-height: 1.8;
 }
 .post .time {
     color: #878B94;
     font-size: 14px;
     margin-top: 20px;
+}
+.thumb {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 30px;
+}
+.summary {
+    margin-top: 30px;
 }
 .author {
     width: 50px;

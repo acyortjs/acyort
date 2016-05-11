@@ -16,8 +16,13 @@
         <div class="post">
             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p class="time">{{ helper.time(post.updated, 'MMM DD, YYYY') }}</p>
+
+            {% if post.thumb %}
+            <img class="thumb" src="{{ post.thumb }}" />
+            {% endif %}
+
             {% if post.summary %}
-            <div>{% autoescape false %}{{ post.summary }}{% endautoescape %}</div>
+            <div class="summary">{% autoescape false %}{{ post.summary }}{% endautoescape %}</div>
             {% endif %}
         </div>
 
