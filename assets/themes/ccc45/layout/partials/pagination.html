@@ -6,7 +6,7 @@
     {% endif %}
 
     {% if pagination.paginator %}
-    <div class="toc">{% autoescape false %}{{ pagination.paginator }}{% endautoescape %}</div>
+    <div class="paginator">{% autoescape false %}{{ pagination.paginator }}{% endautoescape %}</div>
     {% endif %}
 
     {% if pagination.next %}

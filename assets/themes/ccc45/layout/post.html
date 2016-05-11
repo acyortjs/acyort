@@ -17,7 +17,10 @@
     </p>
 
     {% if post.toc %}
-    <div class="toc">{% autoescape false %}{{ post.toc }}{% endautoescape %}</div>
+    <div class="toc">
+    <h3>文章目录</h3>
+    {% autoescape false %}{{ post.toc }}{% endautoescape %}
+    </div>
     {% endif %}
 
     <div class="content">{% autoescape false %}{{ post.body }}{% endautoescape %}</div>
@@ -33,12 +36,12 @@
     <div class="relate">
     {% if post.prev %}
     {% set prev = helper.post(post.prev) %}
-    <a href="{{ prev.url }}">{{ prev.title }}</a>
+    <a rel="prev" href="{{ prev.url }}">← {{ prev.title }}</a>
     {% endif %}
 
     {% if post.next %}
     {% set next = helper.post(post.next) %}
-    <a href="{{ next.url }}">{{ next.title }}</a>
+    <a rel="next" href="{{ next.url }}">{{ next.title }} →</a>
     {% endif %}
     </div>
 
