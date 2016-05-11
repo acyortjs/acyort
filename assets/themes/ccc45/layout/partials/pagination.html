@@ -5,6 +5,10 @@
     <a rel="prev" href="{{ pagination.prev }}">← Newer Posts</a>
     {% endif %}
 
+    {% if pagination.paginator %}
+    <div class="toc">{% autoescape false %}{{ pagination.paginator }}{% endautoescape %}</div>
+    {% endif %}
+
     {% if pagination.next %}
     <a rel="next" href="{{ pagination.next }}">Older Posts →</a>
     {% endif %}
