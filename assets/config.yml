@@ -14,7 +14,7 @@ theme: ccc45
 
 # pagination
 per_page: 3
-archives_per_page: 50
+archives_per_page: 3
 
 # menu
 menu:
