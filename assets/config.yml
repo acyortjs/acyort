@@ -7,14 +7,14 @@ rss: rss.xml
 
 # site url. can set as 'http://yoursite.com/child' if you need
 # please add 'http://' or 'https://'
-url: http://acyort.github.io/test
+url: http://acyort.github.io
 
 # theme
 theme: ccc45
 
 # pagination
 per_page: 3
-archives_per_page: 3
+archives_per_page: 30
 
 # menu
 menu:
@@ -33,7 +33,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: /test
+public_dir: /
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
@@ -59,4 +59,4 @@ issue_repo: AcyOrt/acyort.github.io
 # token: sd46a6d65a asd8sdbn
 
 # dev mode
-dev: true
+dev: false
