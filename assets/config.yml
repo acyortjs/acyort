@@ -1,11 +1,10 @@
 
 # site
 title: AcyOrt
-subtitle: A Node.js blog tool powered by GitHub.
 description: A Node.js blog tool powered by GitHub. 
 rss: rss.xml
 
-# site url. can set as 'http://yoursite.com/child' if you need
+# site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
 
