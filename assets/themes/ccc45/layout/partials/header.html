@@ -5,7 +5,7 @@
     </div>
     <div class="menu">
     {% for menu in data.config.menu %}
-    <a href="{{ menu.url }}">{{ menu.name }}</a>
+    <a href="{{ menu }}">{{ loop.key }}</a>
     {% endfor %}
     </div>
 </div>
