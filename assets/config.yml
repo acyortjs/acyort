@@ -29,6 +29,14 @@ default_category: uncategorized
 # html output directory or child directory e.g. 'child'
 public_dir: /test
 
+# comment
+duoshuo:
+disqus: acyort
+
+# site content issue
+# username/repository
+issue_repo: AcyOrt/acyort.github.io
+
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
@@ -38,19 +46,16 @@ thumbnail_mode: 2
 # whether to get the thumbnail size
 thumbnail_size: false
 
-# comment
-duoshuo:
-disqus: acyort
-
 # site post authors filter
 authors:
     - LoeiFy
     - author0
     - author1
 
-# site content issue
-# username/repository
-issue_repo: AcyOrt/acyort.github.io
+# custom fields
+customs: 
+    - test
+    - title
 
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
