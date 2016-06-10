@@ -19,7 +19,7 @@ program
 
         fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
             if (err) {
-                return console.log('Error: '.red + err)
+                return console.log('x '.red + err)
             }
 
             var ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/';

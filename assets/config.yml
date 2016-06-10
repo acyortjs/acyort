@@ -62,4 +62,6 @@ customs:
 # token: sd46a6d65a asd8sdbn
 
 # dev mode
+# boolean / string
+# you can set test json path: test/test.json 
 dev: false
