@@ -29,6 +29,12 @@ default_category: uncategorized
 # html output directory or child directory e.g. 'child'
 public_dir: /
 
+# category directory
+category_dir:
+
+# tag directory
+tag_dir:
+
 # comment
 duoshuo:
 disqus: acyort
