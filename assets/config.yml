@@ -2,11 +2,18 @@
 # site
 title: AcyOrt
 description: A Node.js blog tool powered by GitHub. 
+keywords: acyort, nodejs, blog
 rss: rss.xml
+favicon: /icon.png
 
 # site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
+
+# comment
+comment:
+    disqus: acyort
+#    duoshuo:
 
 # theme
 theme: ccc45
@@ -35,10 +42,6 @@ category_dir:
 # tag directory
 tag_dir:
 
-# comment
-duoshuo:
-disqus: acyort
-
 # site content issue
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
@@ -54,9 +57,9 @@ thumbnail_size: false
 
 # site post authors filter
 authors:
-    - LoeiFy
-    - author0
-    - author1
+#    - LoeiFy
+#    - author0
+#    - author1
 
 # custom fields
 customs: 
