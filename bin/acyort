@@ -51,12 +51,14 @@ program
     })
 
 program
-    .command('server')
+    .command('server [port]')
     .description('Create a local test server')
-    .action(function() {
+    .action(function(port) {
+        port = parseInt(port) || 2222;        
+
         try {
 
-            require('../lib/server')()
+            require('../lib/server')(port)
 
         } catch(e) {
             console.log('x '.red + e)
