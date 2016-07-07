@@ -29,34 +29,36 @@ https://github.com/AcyOrt/acyort.github.io/issues
 $ sudo npm install acyort -g
 ```
 
-## Create new blog
+## Usage
+
+### create new blog
 
 ```bash
 $ acyort create blog
 $ cd blog
 ```
 
-## Config your blog
+### config your blog
 
 modify `config.yml`
 
-## Build your blog
+### build your blog
 
 ```bash
 $ acyort build
 ```
 
-all generated html files are saved in the `'public_dir'` you define in `config.yml`. You can publish them to wherever you like.
+all generated html files are saved in the `'public_dir'` you define in `config.yml`. 
 
-## Local test server
+you can publish them to wherever you like.
+
+### local test
 
 ```bash
 $ acyort server
 ```
 
-local server width liveReload
-
-`http://127.0.0.1:2222`
+local server width liveReload: `http://127.0.0.1:2222`
 
 ## License
 
