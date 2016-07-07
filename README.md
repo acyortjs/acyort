@@ -1,8 +1,6 @@
 # AcyOrt
 
-A Node.js blog tool powered by GitHub.
-
-You can write you blog on `GitHub issue` and publish it on `Your Own Domain` use `GitHub page`
+A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Feature
 
@@ -21,7 +19,9 @@ You can write you blog on `GitHub issue` and publish it on `Your Own Domain` use
 
 http://acyort.github.io/
 
-Site content from here: https://github.com/AcyOrt/acyort.github.io/issues
+content from:
+ 
+https://github.com/AcyOrt/acyort.github.io/issues
 
 ## Install
 
@@ -54,7 +54,9 @@ all generated html files are saved in the `'public_dir'` you define in `config.y
 $ acyort server
 ```
 
-now access `http://127.0.0.1:2222` to test your blog
+local server width liveReload
+
+`http://127.0.0.1:2222`
 
 ## License
 
