@@ -1,13 +1,19 @@
 
 # site
 title: AcyOrt
-subtitle: A Node.js blog tool powered by GitHub.
 description: A Node.js blog tool powered by GitHub. 
+keywords: acyort, nodejs, blog
 rss: rss.xml
+favicon: /icon.png
 
-# site url. can set as 'http://yoursite.com/child' if you need
+# site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
+
+# comment
+comment:
+    disqus: acyort
+#    duoshuo:
 
 # theme
 theme: ccc45
@@ -16,18 +22,13 @@ theme: ccc45
 per_page: 3
 archives_per_page: 30
 
-# menu
+#menu
 menu:
-  - name: home
-    url: /
-  - name: about
-    url: /about
-  - name: archives
-    url: /archives
-  - name: tags
-    url: /tags
-  - name: categories
-    url: /categories
+    home: /
+    about: /about
+    archives: /archives
+    tags: /tags
+    categories: /categories
 
 # category
 default_category: uncategorized
@@ -35,28 +36,41 @@ default_category: uncategorized
 # html output directory or child directory e.g. 'child'
 public_dir: /
 
+# category directory
+category_dir:
+
+# tag directory
+tag_dir:
+
+# site content issue
+# username/repository
+issue_repo: AcyOrt/acyort.github.io
+
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
 thumbnail_mode: 2
 
-# comment
-duoshuo:
-disqus: acyort
+# thumbnail size
+# whether to get the thumbnail size
+thumbnail_size: false
 
 # site post authors filter
 authors:
-    - LoeiFy
-    - author0
-    - author1
+#    - LoeiFy
+#    - author0
+#    - author1
 
-# site content issue
-# username/repository
-issue_repo: AcyOrt/acyort.github.io
+# custom fields
+customs: 
+#    - test
+#    - title
 
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
 # token: sd46a6d65a asd8sdbn
 
 # dev mode
+# boolean / string
+# you can set test json path: test/test.json 
 dev: false

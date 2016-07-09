@@ -54,20 +54,24 @@
 {% endblock %}
 
 {% block script %}
-{% if data.config.disqus %}
+{% if data.config.comment %}
+
+{% if data.config.comment.disqus %}
 <script>
 var c = {
-    name: '{{ data.config.disqus }}',
-    url: '//{{ data.config.disqus }}.disqus.com/embed.js'
+    name: '{{ data.config.comment.disqus }}',
+    url: '//{{ data.config.comment.disqus }}.disqus.com/embed.js'
 }
 </script>
 {% else %}
 <script>
 var c = {
-    name: '{{ data.config.duoshuo }}',
+    name: '{{ data.config.comment.duoshuo }}',
     url: '//static.duoshuo.com/embed.js'
 }
 </script>
+{% endif %}
+
 {% endif %}
 
 <script src="{{ data.config.root }}/js/comment.js"></script>

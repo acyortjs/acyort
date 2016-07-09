@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A Node.js blog tool powered by GitHub",
   "main": "lib/acyort",
   "bin": {
@@ -25,16 +25,19 @@
   },
   "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
+    "async": "^1.5.2",
+    "chokidar": "^1.6.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5",
     "highlight.js": "^9.1.0",
     "marked": "^0.3.5",
     "moment": "^2.12.0",
-    "node-static": "^0.7.7",
+    "probe-image-size": "^1.0.6",
     "request-promise": "^2.0.1",
     "rss": "^1.2.1",
     "swig": "^1.4.2",
+    "ws": "^1.1.1",
     "yamljs": "^0.2.6"
   }
 }

@@ -19,10 +19,10 @@ program
 
         fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
             if (err) {
-                return console.log('Error: '.red + err)
+                return console.log('x '.red + err)
             }
 
-            var ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/';
+            var ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/';
             fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
 
             console.log('INFO: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
@@ -51,12 +51,14 @@ program
     })
 
 program
-    .command('server')
+    .command('server [port]')
     .description('Create a local test server')
-    .action(function() {
+    .action(function(port) {
+        port = parseInt(port) || 2222;        
+
         try {
 
-            require('../lib/server')()
+            require('../lib/server')(port)
 
         } catch(e) {
             console.log('x '.red + e)

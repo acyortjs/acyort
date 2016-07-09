@@ -18,7 +18,11 @@
             <p class="time">{{ helper.time(post.updated, 'MMM DD, YYYY') }}</p>
 
             {% if post.thumb %}
+            {% if post.thumb.src %}
+            <img class="thumb" src="{{ post.thumb.src }}" />
+            {% else %}
             <img class="thumb" src="{{ post.thumb }}" />
+            {% endif %}
             {% endif %}
 
             {% if post.summary %}
