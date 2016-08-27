@@ -12,8 +12,8 @@ url: http://acyort.github.io
 
 # comment
 comment:
-    disqus: acyort
-#    duoshuo:
+    disqus: 
+    duoshuo:
 
 # theme
 theme: ccc45

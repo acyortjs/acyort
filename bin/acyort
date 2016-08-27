@@ -12,20 +12,23 @@ program
     .usage(' <command>')
 
 program
-    .command('create <folder>')
+    .command('create [folder]')
     .description('Create a new AcyOrt blog folder')
     .action(function(folder) {
-        console.log('INFO: '.blue +'coping data to "%s"', folder)
+        var name = folder || process.cwd().substring(process.cwd().lastIndexOf('/') + 1); 
+        var _path = folder ? '/'+ folder : '';
 
-        fs.copy(path.resolve(__dirname, '../assets'), process.cwd() +'/'+ folder, function (err) {
+        console.log('INFO: '.blue +'coping data to "%s"', name)
+
+        fs.copy(path.resolve(__dirname, '../assets'), process.cwd() + _path, function (err) {
             if (err) {
                 return console.log('x '.red + err)
             }
 
             var ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/';
-            fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
+            fs.outputFileSync(process.cwd() + _path +'/.gitignore', ignore)
 
-            console.log('INFO: '.blue +'enter "'+ folder +'", modify "config.yml" to configure your site')
+            console.log('INFO: '.blue +'enter "'+ name +'", modify "config.yml" to configure your site')
         })
 
     })
