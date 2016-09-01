@@ -10,6 +10,14 @@ favicon: /icon.png
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
 
+# site permalink
+# id, time or category
+# e.g.
+# id: 'posts/id.html'
+# time: 'year/month/id.html'
+# category: 'category_dir/category_name/id.html'
+permalink: category
+
 # comment
 comment:
     disqus: 
