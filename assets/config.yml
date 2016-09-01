@@ -65,14 +65,9 @@ thumbnail_size: false
 
 # site post authors filter
 authors:
-    - LoeiFy
+#    - LoeiFy
 #    - author0
 #    - author1
-
-# custom fields
-customs: 
-#    - test
-#    - title
 
 # GitHub access token(Optional)
 # token should be separated by whitespace if you push this file to GitHub 
@@ -81,4 +76,4 @@ customs:
 # dev mode
 # boolean / string
 # you can set test json path: test/test.json 
-dev: true
+dev: false
