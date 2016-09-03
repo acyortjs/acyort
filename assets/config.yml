@@ -16,7 +16,7 @@ url: http://acyort.github.io
 # id: 'posts/id.html'
 # time: 'year/month/id.html'
 # category: 'category_dir/category_name/id.html'
-permalink: category
+permalink: id
 
 # comment
 comment:
