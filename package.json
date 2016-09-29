@@ -6,7 +6,10 @@
   "bin": {
     "acyort": "./bin/acyort"
   },
-  "scripts": {},
+  "scripts": {
+    "server": "cd assets && mode=dev node ../bin/acyort server",
+    "build": "cd assets && mode=dev node ../bin/acyort build"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/AcyOrt/acyort.git"
