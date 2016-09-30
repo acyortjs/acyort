@@ -8,7 +8,9 @@
   },
   "scripts": {
     "server": "cd assets && mode=dev node ../bin/acyort server",
-    "build": "cd assets && mode=dev node ../bin/acyort build"
+    "build": "cd assets && mode=dev node ../bin/acyort build",
+    "clear": "cd assets && node ../bin/clear",
+    "config": "vim assets/config.yml"
   },
   "repository": {
     "type": "git",
