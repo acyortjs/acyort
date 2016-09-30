@@ -1,7 +1,7 @@
 {
   "name": "acyort",
-  "version": "0.3.8",
-  "description": "A Node.js blog tool powered by GitHub",
+  "version": "0.3.9",
+  "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib/acyort",
   "bin": {
     "acyort": "./bin/acyort"
@@ -9,8 +9,7 @@
   "scripts": {
     "server": "cd assets && mode=dev node ../bin/acyort server",
     "build": "cd assets && mode=dev node ../bin/acyort build",
-    "clear": "cd assets && node ../bin/clear",
-    "config": "vim assets/config.yml"
+    "clear": "cd assets && node ../bin/clear"
   },
   "repository": {
     "type": "git",
@@ -19,11 +18,12 @@
   "keywords": [
     "website",
     "blog",
-    "acyort",
+    "github",
     "tool",
+    "static",
     "issue"
   ],
-  "author": "LoeiFy",
+  "author": "LoeiFy@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AcyOrt/acyort/issues"
