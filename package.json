@@ -9,7 +9,7 @@
   "scripts": {
     "test": "cd assets && mode=dev node ../bin/acyort server",
     "build": "cd assets && mode=dev node ../bin/acyort build",
-    "clear": "cd assets && node ../bin/clear"
+    "clear": "cd assets && find . -maxdepth 1 -name '* *' -delete && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -delete"
   },
   "repository": {
     "type": "git",
