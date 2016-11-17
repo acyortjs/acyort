@@ -31,6 +31,7 @@
   "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
     "async": "^1.5.2",
+    "axios": "^0.15.2",
     "chokidar": "^1.6.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
