@@ -1,0 +1,14 @@
+
+var fs = require('fs-extra');
+
+fs.readdir(process.cwd(), function(err, files) {
+    if (!err) {
+
+        files.forEach(function(file) {
+            if (file != 'config.yml' && file != 'themes') {
+                fs.removeSync(process.cwd() +'/'+ file)
+            }
+        })
+
+    }
+})

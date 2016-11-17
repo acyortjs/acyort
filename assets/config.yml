@@ -4,7 +4,7 @@ title: AcyOrt
 description: A Node.js blog tool powered by GitHub. 
 keywords: acyort, nodejs, blog
 rss: rss.xml
-favicon: /icon.png
+favicon: icon.png
 
 # site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
@@ -16,11 +16,11 @@ url: http://acyort.github.io
 # id: 'posts/id.html'
 # time: 'year/month/id.html'
 # category: 'category_dir/category_name/id.html'
-permalink: category
+permalink: id
 
 # comment
 comment:
-    disqus: 
+    disqus: acyort
     duoshuo:
 
 # theme
@@ -44,10 +44,10 @@ default_category: uncategorized
 # html output directory or child directory e.g. 'child'
 public_dir: /
 
-# category directory
+# category directory name
 category_dir:
 
-# tag directory
+# tag directory name
 tag_dir:
 
 # site content issue
@@ -69,11 +69,11 @@ authors:
 #    - author0
 #    - author1
 
-# GitHub access token(Optional)
+# GitHub access token(optional)
 # token should be separated by whitespace if you push this file to GitHub 
 # token: sd46a6d65a asd8sdbn
 
 # dev mode
-# boolean / string
+# boolean or string
 # you can set test json path: test/test.json 
 dev: false

@@ -60,6 +60,32 @@ $ acyort server
 
 local server width liveReload: `http://127.0.0.1:2222`
 
+## Development
+
+### config
+
+```bash
+$ vim assets/config.yml
+```
+
+### local build
+
+```bash
+$ npm run build
+```
+
+### test server
+
+```bash
+$ npm run server
+```
+
+### clear build files
+
+```bash
+$ npm run clear
+```
+
 ## License
 
 MIT
