@@ -1,13 +1,13 @@
 {
   "name": "acyort",
-  "version": "0.3.9",
+  "version": "0.4.0",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib/acyort",
   "bin": {
-    "acyort": "./bin/acyort"
+    "acyort": "./bin/acyort.js"
   },
   "scripts": {
-    "server": "cd assets && mode=dev node ../bin/acyort server",
+    "test": "cd assets && mode=dev node ../bin/acyort server",
     "build": "cd assets && mode=dev node ../bin/acyort build",
     "clear": "cd assets && node ../bin/clear"
   },
@@ -43,7 +43,7 @@
     "probe-image-size": "^1.0.6",
     "request-promise": "^2.0.1",
     "rss": "^1.2.1",
-    "swig": "^1.4.2",
+    "swig-templates": "^2.0.2",
     "ws": "^1.1.1",
     "yamljs": "^0.2.6"
   }
