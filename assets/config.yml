@@ -10,14 +10,6 @@ favicon: icon.png
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
 
-# site permalink
-# id, time or category
-# e.g.
-# id: 'posts/id.html'
-# time: 'year/month/id.html'
-# category: 'category_dir/category_name/id.html'
-permalink: id
-
 # comment
 comment:
     disqus: acyort
@@ -50,6 +42,9 @@ category_dir:
 # tag directory name
 tag_dir:
 
+# post directory name
+post_dir:
+
 # site content issue
 # username/repository
 issue_repo: AcyOrt/acyort.github.io
@@ -58,10 +53,6 @@ issue_repo: AcyOrt/acyort.github.io
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
 thumbnail_mode: 2
-
-# thumbnail size
-# whether to get the thumbnail size
-thumbnail_size: false
 
 # site post authors filter
 authors:
