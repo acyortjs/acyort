@@ -34,7 +34,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: /
+public_dir: 
 
 # category directory name
 category_dir:
