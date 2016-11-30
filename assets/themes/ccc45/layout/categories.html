@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-Categories | {{ data.config.title }}
+All categories | {{ config.title }}
 {% endblock %}
 
 {% block content %}
 <div class="center categories">
 
-    <h2 class="tag">Categories</h2>
+    <h2 class="tag">All categories</h2>
 
     {% for category in categories %}
     <p><a href="{{ category.url }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
