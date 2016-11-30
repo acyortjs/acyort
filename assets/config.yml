@@ -44,9 +44,12 @@ tag_dir:
 # post directory name
 post_dir:
 
-# site content issue
-# username/repository
-issue_repo: AcyOrt/acyort.github.io
+# site content source
+# your github username/repository
+# username
+user: AcyOrt
+# repository
+repository: acyort.github.io
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
@@ -60,8 +63,8 @@ authors:
 #    - author1
 
 # GitHub access token(optional)
-# token should be separated by whitespace if you push this file to GitHub 
-# token: sd46a6d65a asd8sdbn
+# token should be separated by '#' if you push this file to GitHub 
+# token: s#d46a6d65aasd8sdbn
 
 # dev mode
 # boolean or string
