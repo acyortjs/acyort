@@ -11,9 +11,8 @@ favicon: icon.png
 url: http://acyort.github.io
 
 # comment
-comment:
-    disqus: acyort
-    duoshuo:
+disqus: acyort
+duoshuo:
 
 # theme
 theme: ccc45

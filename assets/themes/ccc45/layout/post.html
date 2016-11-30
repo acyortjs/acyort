@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-{{ post.title }} | {{ data.config.title }}
+{{ post.title }} | {{ config.title }}
 {% endblock %}
 
 {% block content %}
@@ -15,13 +15,6 @@
     <a href="{{ category.url }}">{{ category.name}}</a> -
     {% endfor %}
     </p>
-
-    {% if post.toc %}
-    <div class="toc">
-    <h3>文章目录</h3>
-    {% autoescape false %}{{ post.toc }}{% endautoescape %}
-    </div>
-    {% endif %}
 
     <div class="content">{% autoescape false %}{{ post.body }}{% endautoescape %}</div>
 
@@ -54,25 +47,21 @@
 {% endblock %}
 
 {% block script %}
-{% if data.config.comment %}
-
-{% if data.config.comment.disqus %}
+{% if config.disqus %}
 <script>
 var c = {
-    name: '{{ data.config.comment.disqus }}',
-    url: '//{{ data.config.comment.disqus }}.disqus.com/embed.js'
+    name: '{{ config.comment.disqus }}',
+    url: '//{{ config.comment.disqus }}.disqus.com/embed.js'
 }
 </script>
-{% else %}
+{% endif %}
+{% if config.duoshuo %}
 <script>
 var c = {
-    name: '{{ data.config.comment.duoshuo }}',
+    name: '{{ config.comment.duoshuo }}',
     url: '//static.duoshuo.com/embed.js'
 }
 </script>
 {% endif %}
-
-{% endif %}
-
-<script src="{{ data.config.root }}/js/comment.js"></script>
+<script src="{{ config.root }}/js/comment.js"></script>
 {% endblock %}
