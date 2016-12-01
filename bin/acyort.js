@@ -4,11 +4,11 @@
 
 const program = require('commander')
 const fs = require('fs-extra')
+const path = require('path')
 const colors = require('colors')
 const pkg = require('../package.json')
-
-const commands = 'version create build server'
-const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
+const index = require('../lib')
+const server = require('../lib/server')
 
 program
     .allowUnknownOption()
@@ -18,16 +18,17 @@ program
     .command('create [folder]')
     .description('create new blog')
     .action((folder = '') => {
-        console.log('Coping files...')
+        const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
 
         try {
-            fs.copySync('../assets', process.cwd() +'/'+ folder)
-            fs.outputFileSync(process.cwd() +'/'+ folder +'/.gitignore', ignore)
+            console.log('Coping files ...'.blue)
+            fs.copySync('../assets', path.join(process.cwd(), folder))
+            fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignore)
         } catch (e) {
-            console.log('ERROR:'.red, e)
+            console.log('\u00D7'.red, e)
         }
 
-        console.log('Done.'.green, 'Modify "config.yml" to configure your blog')
+        console.log('\u221A Configure "config.yml" to start your blog'.green)
     })
 
 program
@@ -38,27 +39,15 @@ program
 program
     .command('server [port]')
     .description('Create a local test server')
-    .action((port = 2222) => {
-        try {
-            require('../lib/server')(port)
-        } catch(e) {
-            console.log('ERROR:'.red, e)
-        }
-    })
+    .action((port = 2222) => server(port))
 
 program
     .command('build')
-    .description('Build the blog html')
-    .action(() => {
-        try {
-            require('../lib/acyort')()
-        } catch(e) {
-            console.log('ERROR:'.red, e)
-        }
-    })
+    .description('Generate the html')
+    .action(() => index())
 
 program.parse(process.argv)
 
-if (!program.args.length || commands.indexOf(process.argv[2]) == -1) {
+if (!program.args.length || 'version create build server'.indexOf(process.argv[2]) == -1) {
     program.help()
 }

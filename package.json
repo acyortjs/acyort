@@ -1,13 +1,13 @@
 {
   "name": "acyort",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib/acyort",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
   "scripts": {
-    "test": "cd assets && NODE_ENV=dev node ../bin/acyort server",
+    "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -delete && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -delete"
   },
