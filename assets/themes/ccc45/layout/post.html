@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-{{ post.title }} | {{ data.config.title }}
+{{ post.title }} | {{ config.title }}
 {% endblock %}
 
 {% block content %}
@@ -16,14 +16,7 @@
     {% endfor %}
     </p>
 
-    {% if post.toc %}
-    <div class="toc">
-    <h3>文章目录</h3>
-    {% autoescape false %}{{ post.toc }}{% endautoescape %}
-    </div>
-    {% endif %}
-
-    <div class="content">{% autoescape false %}{{ post.body }}{% endautoescape %}</div>
+    <div class="content">{% autoescape false %}{{ post.content }}{% endautoescape %}</div>
 
     {% if post.tags.length %}
     <div class="label">
@@ -48,31 +41,27 @@
     <div class="comment_list hide" id="disqus_thread"></div>
     <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ post.id }}" data-title="" data-url=""></div>
 
-    <button class="hide" data-id="{{ post.id }}" id="comment">Add Comments</button>
+    <button data-id="{{ post.id }}" id="comment">Add Comments</button>
 
 </div>
 {% endblock %}
 
 {% block script %}
-{% if data.config.comment %}
-
-{% if data.config.comment.disqus %}
+{% if config.disqus %}
 <script>
 var c = {
-    name: '{{ data.config.comment.disqus }}',
-    url: '//{{ data.config.comment.disqus }}.disqus.com/embed.js'
+    name: '{{ config.disqus }}',
+    url: '//{{ config.disqus }}.disqus.com/embed.js'
 }
 </script>
-{% else %}
+{% endif %}
+{% if config.duoshuo %}
 <script>
 var c = {
-    name: '{{ data.config.comment.duoshuo }}',
+    name: '{{ config.duoshuo }}',
     url: '//static.duoshuo.com/embed.js'
 }
 </script>
 {% endif %}
-
-{% endif %}
-
-<script src="{{ data.config.root }}/js/comment.js"></script>
+<script src="{{ config.root }}/js/comment.js"></script>
 {% endblock %}

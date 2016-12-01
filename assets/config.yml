@@ -1,4 +1,3 @@
-
 # site
 title: AcyOrt
 description: A Node.js blog tool powered by GitHub. 
@@ -10,18 +9,9 @@ favicon: icon.png
 # please add 'http://' or 'https://'
 url: http://acyort.github.io
 
-# site permalink
-# id, time or category
-# e.g.
-# id: 'posts/id.html'
-# time: 'year/month/id.html'
-# category: 'category_dir/category_name/id.html'
-permalink: id
-
 # comment
-comment:
-    disqus: acyort
-    duoshuo:
+disqus: acyort
+duoshuo:
 
 # theme
 theme: ccc45
@@ -42,7 +32,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: /
+public_dir: 
 
 # category directory name
 category_dir:
@@ -50,18 +40,20 @@ category_dir:
 # tag directory name
 tag_dir:
 
-# site content issue
-# username/repository
-issue_repo: AcyOrt/acyort.github.io
+# post directory name
+post_dir:
+
+# site content source
+# your github username/repository
+# username
+user: AcyOrt
+# repository
+repository: acyort.github.io
 
 # thumbnail mode 
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
 thumbnail_mode: 2
-
-# thumbnail size
-# whether to get the thumbnail size
-thumbnail_size: false
 
 # site post authors filter
 authors:
@@ -70,8 +62,8 @@ authors:
 #    - author1
 
 # GitHub access token(optional)
-# token should be separated by whitespace if you push this file to GitHub 
-# token: sd46a6d65a asd8sdbn
+# token should be separated by '#' if you push this file to GitHub 
+# token: s#d46a6d65aasd8sdbn
 
 # dev mode
 # boolean or string

@@ -1,11 +1,11 @@
 <div class="header">
     <div class="center">
-        <h1><a href="{{ data.config.root }}/">{{ data.config.title }}</a></h1>
-        <p>{{ data.config.description }}</p>
+        <h1><a href="{{ config.root }}/">{{ config.title }}</a></h1>
+        <p>{{ config.description }}</p>
     </div>
     <div class="menu">
-    {% for menu in data.config.menu %}
-    <a href="{{ menu }}">{{ loop.key }}</a>
+    {% for url in config.menu %}
+    <a href="{{ url }}">{{ loop.key }}</a>
     {% endfor %}
     </div>
 </div>

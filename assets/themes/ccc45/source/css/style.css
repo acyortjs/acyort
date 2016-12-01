@@ -150,14 +150,6 @@ body {
 #pagination a:hover {
     text-decoration: underline;
 }
-.paginator a, .paginator span{
-    display: inline-block;
-    margin: 0 5px;
-}
-.paginator .current {
-    text-decoration: underline;
-    color: #666;
-}
 #pagination > a {
     position: absolute;
     top: 0;
@@ -299,26 +291,6 @@ body {
 }
 .relate a[rel="next"] {
     float: right;
-}
-
-.toc {
-    margin-top: 50px;
-}
-.toc h3 {
-    margin-bottom: 20px;
-}
-.toc a span:first-child {
-    display: none;
-}
-.toc ul {
-    margin-left: 14px;
-}
-.toc li {
-    list-style: initial;
-}
-.toc a {
-    font-size: 14px;
-    color: #5694f1;
 }
 
 #comment {

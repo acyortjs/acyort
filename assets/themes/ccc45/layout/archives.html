@@ -2,14 +2,14 @@
 {% import 'partials/pagination.html' as pagination %}
 
 {% block title %}
-Archives | {{ data.config.title }}
+Archives | {{ config.title }}
 {% endblock %}
 
 
 {% block content %}
 <div class="archives center">
 
-    <h2 class="tag">总共 {{ data.posts.length }} 篇文章</h2>
+    <h2 class="tag">A total of {{ helper.posts().length }} articles</h2>
 
     {% for list in archives.posts %}
     <div>
