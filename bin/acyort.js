@@ -7,8 +7,10 @@ const fs = require('fs-extra')
 const path = require('path')
 const colors = require('colors')
 const pkg = require('../package.json')
-const index = require('../lib')
-const server = require('../lib/server')
+
+const checker = () => {
+    return fs.existsSync(path.join(process.cwd(), 'config.yml'))
+}
 
 program
     .allowUnknownOption()
@@ -22,13 +24,12 @@ program
 
         try {
             console.log('Coping files ...'.blue)
-            fs.copySync('../assets', path.join(process.cwd(), folder))
+            fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
             fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignore)
+            console.log('\u221A Configure "config.yml" to start your blog'.green)
         } catch (e) {
             console.log('\u00D7'.red, e)
         }
-
-        console.log('\u221A Configure "config.yml" to start your blog'.green)
     })
 
 program
@@ -39,12 +40,24 @@ program
 program
     .command('server [port]')
     .description('Create a local test server')
-    .action((port = 2222) => server(port))
+    .action((port = 2222) => {
+        if (!checker()) {
+            return console.log('Cannot find "config.yml"'.red)
+        }
+
+        require('../lib/server')(port)
+    })
 
 program
     .command('build')
     .description('Generate the html')
-    .action(() => index())
+    .action(() => {
+        if (!checker()) {
+            return console.log('Cannot find "config.yml"'.red)
+        }
+        
+        require('../lib')()
+    })
 
 program.parse(process.argv)
 
