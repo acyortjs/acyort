@@ -2,7 +2,7 @@
 
 A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
-## Feature
+## Support feature
 
 - Post 
 - Comments
@@ -31,56 +31,67 @@ $ sudo npm install acyort -g
 
 ## Usage
 
-### create new blog
+### create
 
 ```bash
 $ acyort create blog
-$ cd blog
 ```
 
-### config your blog
+or 
+
+```bash
+$ acyort create
+```
+
+### configure
 
 modify `config.yml`
 
-### build your blog
+### build
 
 ```bash
 $ acyort build
 ```
 
+### publish
+
 all generated html files are saved in the `'public_dir'` you define in `config.yml`. 
 
 you can publish them to wherever you like.
 
-### local test
+### local test server
 
 ```bash
 $ acyort server
 ```
 
-local server width liveReload: `http://127.0.0.1:2222`
+local server: `http://127.0.0.1:2222`
+
+> width liveReload
+
+set `dev: true` in `config.yml`
 
 ## Development
 
-### config
+### configure
 
 ```bash
 $ vim assets/config.yml
 ```
 
-### local build
+### build
 
 ```bash
 $ npm run build
 ```
 
-### test server
+### local test server
 
 ```bash
-$ npm run server
+$ npm run start
 ```
 
-### clear build files
+### clear generated files
 
 ```bash
 $ npm run clear
