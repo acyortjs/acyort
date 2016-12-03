@@ -9,10 +9,11 @@
   "scripts": {
     "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
+    "lint": "eslint . || true",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
   },
   "engines": {
-      "node": ">=6.0.0"
+    "node": ">=6.0.0"
   },
   "repository": {
     "type": "git",
@@ -47,5 +48,8 @@
     "swig-templates": "^2.0.2",
     "ws": "^1.1.1",
     "yamljs": "^0.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1"
   }
 }
