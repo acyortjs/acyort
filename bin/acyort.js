@@ -3,8 +3,8 @@
 const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
-const colors = require('colors')
 const pkg = require('../package.json')
+const { log } = require('../lib/util')
 
 const checker = () => {
     return fs.existsSync(path.join(process.cwd(), 'config.yml'))
