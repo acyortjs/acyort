@@ -10,6 +10,8 @@ const checker = () => {
     return fs.existsSync(path.join(process.cwd(), 'config.yml'))
 }
 
+const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
+
 program
     .allowUnknownOption()
     .usage('<command>')
@@ -18,29 +20,29 @@ program
     .command('create [folder]')
     .description('create new blog')
     .action((folder = '') => {
-        const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
-
         try {
-            console.log('Coping files ...'.blue)
+            log.info('Coping files ...')
+
             fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
             fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignore)
-            console.log('\u221A Configure "config.yml" to start your blog'.green)
+
+            log.done('Configure "config.yml" to start your blog')
         } catch (e) {
-            console.log('\u00D7'.red, e)
+            log.error(e)
         }
     })
 
 program
     .command('version')
     .description('Display AcyOrt version')
-    .action(() => console.log(pkg.version.green))
+    .action(() => log.info(pkg.version))
 
 program
     .command('server [port]')
     .description('Create a local test server')
     .action((port = 2222) => {
         if (!checker()) {
-            return console.log('Cannot find "config.yml"'.red)
+            return log.error('Cannot find "config.yml"')
         }
 
         require('../lib/server')(port)
@@ -51,7 +53,7 @@ program
     .description('Generate the html')
     .action(() => {
         if (!checker()) {
-            return console.log('Cannot find "config.yml"'.red)
+            return log.error('Cannot find "config.yml"')
         }
         
         require('../lib')()
