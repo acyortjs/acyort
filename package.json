@@ -9,7 +9,7 @@
   "scripts": {
     "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
-    "lint": "eslint . || true",
+    "lint": "eslint .",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
   },
   "engines": {

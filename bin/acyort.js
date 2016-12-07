@@ -5,11 +5,11 @@ const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
 const { log } = require('../lib/util')
+const server = require('../lib/server')
+const build = require('../lib')
 
-const checker = () => {
-    return fs.existsSync(path.join(process.cwd(), 'config.yml'))
-}
-
+const checker = () => fs.existsSync(path.join(process.cwd(), 'config.yml'))
+const err = () => log.error('Cannot find "config.yml"')
 const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
 
 program
@@ -40,27 +40,15 @@ program
 program
     .command('server [port]')
     .description('Create a local test server')
-    .action((port = 2222) => {
-        if (!checker()) {
-            return log.error('Cannot find "config.yml"')
-        }
-
-        require('../lib/server')(port)
-    })
+    .action((port = 2222) => (checker() ? server(port) : err()))
 
 program
     .command('build')
     .description('Generate the html')
-    .action(() => {
-        if (!checker()) {
-            return log.error('Cannot find "config.yml"')
-        }
-        
-        require('../lib')()
-    })
+    .action(() => (checker() ? build() : err()))
 
 program.parse(process.argv)
 
-if (!program.args.length || 'version create build server'.indexOf(process.argv[2]) == -1) {
+if (!program.args.length || 'version create build server'.indexOf(process.argv[2]) === -1) {
     program.help()
 }
