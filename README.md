@@ -34,13 +34,13 @@ $ sudo npm install acyort -g
 ### create
 
 ```bash
-$ acyort create blog
+$ acyort init blog
 ```
 
 or 
 
 ```bash
-$ acyort create
+$ acyort init
 ```
 
 ### configure
