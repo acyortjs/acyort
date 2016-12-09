@@ -312,11 +312,9 @@ body {
 #comment.hide {
     display: none;
 }
-
 #comment:hover {
     background: #f1f1f1;
 }
-
 .comment_list:before {
     content: '';
     height: 1px;
@@ -423,7 +421,6 @@ code {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-
 table {
     margin-bottom: 10px;
     padding: 0;
@@ -457,7 +454,6 @@ table tr th :first-child, table tr td :first-child {
 table tr th :last-child, table tr td :last-child {
     margin-bottom: 0;
 }
-
 .hljs {
     overflow: auto;
     margin: 20px 0;
@@ -489,19 +485,16 @@ table tr th :last-child, table tr td :last-child {
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
  */
-
 pre code {
   display: block;
   color: #333;
   overflow-x: auto;
   line-height: 1.4;
 }
-
 .hljs-comment,
 .hljs-meta {
   color: #969896;
 }
-
 .hljs-string,
 .hljs-variable,
 .hljs-template-variable,
@@ -510,29 +503,24 @@ pre code {
 .hljs-quote {
   color: #df5000;
 }
-
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-type {
   color: #a71d5d;
 }
-
 .hljs-literal,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-attribute {
   color: #0086b3;
 }
-
 .hljs-section,
 .hljs-name {
   color: #63a35c;
 }
-
 .hljs-tag {
   color: #333333;
 }
-
 .hljs-title,
 .hljs-attr,
 .hljs-selector-id,
@@ -541,25 +529,19 @@ pre code {
 .hljs-selector-pseudo {
   color: #795da3;
 }
-
 .hljs-addition {
   color: #55a532;
   background-color: #eaffea;
 }
-
 .hljs-deletion {
   color: #bd2c00;
   background-color: #ffecec;
 }
-
 .hljs-link {
   text-decoration: underline;
 }
 
 @media screen and (max-width: 600px) {
-    .toc {
-        display: none;
-    }
     .header {
         margin-bottom: 10px;
     }

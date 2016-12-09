@@ -20,7 +20,7 @@ document.getElementById('comment').addEventListener('click', function() {
         this.page.identifier = identifier;
     };
 
-    var sc = document.createElement('script'); 
+    var sc = document.createElement('script');
     sc.async = true;
     sc.src = (location.protocol == 'https:' ? 'https:' : 'http:') + c.url;
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(sc);
