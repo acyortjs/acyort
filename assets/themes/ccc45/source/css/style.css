@@ -80,7 +80,7 @@ body {
 
 /* index */
 #posts {
-    min-height: 600px; 
+    min-height: 600px;
 }
 #posts li {
     position: relative;
@@ -458,6 +458,33 @@ table tr th :last-child, table tr td :last-child {
     margin-bottom: 0;
 }
 
+.hljs {
+    overflow: auto;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f7f7f7;
+}
+.hljs table {
+    margin: 0;
+    width: auto;
+    border: none;
+}
+.hljs td, .hljs tr {
+    border: none;
+    padding: 0;
+    background: none;
+}
+.hljs code {
+    border: none;
+    background: none;
+}
+.hljs .line {
+    text-align: right;
+    padding-right: 10px;
+}
+.hljs .line span {
+    color: #666;
+}
 /**
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
@@ -465,7 +492,6 @@ table tr th :last-child, table tr td :last-child {
 
 pre code {
   display: block;
-  padding: 14px;
   color: #333;
   overflow-x: auto;
   line-height: 1.4;
