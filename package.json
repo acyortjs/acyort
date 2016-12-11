@@ -10,6 +10,7 @@
     "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
+    "test": "istanbul cover _mocha test/test.js || true",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
   },
   "engines": {
@@ -54,6 +55,9 @@
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.7.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
   }
 }
