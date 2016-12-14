@@ -1,6 +1,6 @@
 # site
 title: AcyOrt
-description: A Node.js blog tool powered by GitHub. 
+description: A Node.js blog tool powered by GitHub.
 keywords: acyort, nodejs, blog
 rss: rss.xml
 favicon: icon.png
@@ -32,7 +32,7 @@ menu:
 default_category: uncategorized
 
 # html output directory or child directory e.g. 'child'
-public_dir: 
+public_dir:
 
 # category directory name
 category_dir:
@@ -50,7 +50,7 @@ user: AcyOrt
 # repository
 repository: acyort.github.io
 
-# thumbnail mode 
+# thumbnail mode
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
 thumbnail_mode: 2
@@ -62,10 +62,13 @@ authors:
 #    - author1
 
 # GitHub access token(optional)
-# token should be separated by '#' if you push this file to GitHub 
+# token should be separated by '#' if you push this file to GitHub
 # token: s#d46a6d65aasd8sdbn
+
+# json output
+json: false
 
 # dev mode
 # boolean or string
-# you can set test json path: test/test.json 
+# you can set test json path: test/test.json
 dev: false
