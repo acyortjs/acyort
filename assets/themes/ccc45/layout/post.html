@@ -9,11 +9,7 @@
 
     <h1>{{ post.title }}</h1>
 
-    <p><a href="{{ post.author.url }}">{{ post.author.name }}</a> Posted at {{ helper.time(post.created, 'MMM DD, YYYY') }} . -
-
-    {% for category in post.categories %}
-    <a href="{{ category.url }}">{{ category.name}}</a> -
-    {% endfor %}
+    <p><a href="{{ post.author.url }}">{{ post.author.name }}</a> Posted at {{ helper.time(post.created, 'MMM DD, YYYY') }} . - <a href="{{ post.category.url }}">{{ post.category.name}}</a>
     </p>
 
     <div class="content">{% autoescape false %}{{ post.content }}{% endautoescape %}</div>
