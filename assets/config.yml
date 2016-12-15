@@ -43,6 +43,9 @@ tag_dir:
 # post directory name
 post_dir:
 
+# archives directory name
+archive_dir:
+
 # site content source
 # your github username/repository
 # username
