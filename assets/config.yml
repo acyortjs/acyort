@@ -34,16 +34,16 @@ default_category: uncategorized
 # html output directory or child directory e.g. 'child'
 public_dir:
 
-# category directory name
+# category directory
 category_dir:
 
-# tag directory name
+# tag directory
 tag_dir:
 
-# post directory name
+# post directory
 post_dir:
 
-# archives directory name
+# archives directory
 archives_dir:
 
 # site content source

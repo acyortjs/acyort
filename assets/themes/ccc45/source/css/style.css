@@ -167,16 +167,12 @@ body {
     margin-top: 50px;
 }
 .archives h3 {
-    float: left;
     font-size: 28px;
     color: #666;
+    margin-top: 20px;
 }
-.archives ul {
-    padding: 5px 0 0 140px;
-    border-bottom: 1px solid #f3f3f3;
-}
-.archives li {
-    margin-bottom: 30px;
+.archives .entry {
+    padding-left:  100px;
 }
 .archives a {
     font-size: 18px;
@@ -600,7 +596,7 @@ pre code {
         float: none;
         margin-bottom: 30px;
     }
-    .archives ul {
+    .archives .entry {
         padding-left: 0;
     }
     .archives span {
