@@ -69,7 +69,7 @@ authors:
 # token: s#d46a6d65aasd8sdbn
 
 # json output
-json: false
+json: true
 
 # dev mode
 # boolean or string
