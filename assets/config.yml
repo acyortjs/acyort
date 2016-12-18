@@ -17,6 +17,7 @@ duoshuo:
 theme: ccc45
 
 # pagination
+# set 0 if not paging
 per_page: 3
 archives_per_page: 30
 
