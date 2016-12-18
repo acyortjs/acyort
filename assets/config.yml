@@ -1,6 +1,6 @@
 # site
 title: AcyOrt
-description: A Node.js blog tool powered by GitHub. 
+description: A Node.js blog tool powered by GitHub.
 keywords: acyort, nodejs, blog
 rss: rss.xml
 favicon: icon.png
@@ -17,8 +17,14 @@ duoshuo:
 theme: ccc45
 
 # pagination
+# set 0 if not paging
 per_page: 3
 archives_per_page: 30
+
+# thumbnail mode
+# 1: use the first image as thumbnail and remove the image
+# 2: use the first image as thumbnail but not remove the image
+thumbnail_mode: 2
 
 #menu
 menu:
@@ -31,29 +37,41 @@ menu:
 # category
 default_category: uncategorized
 
-# html output directory or child directory e.g. 'child'
-public_dir: 
+# blogroll
+blogroll:
+    GitHub: https://github.com
+    Google: https://www.google.com
 
-# category directory name
+# social
+social:
+    email: LoeiFy@gmail.com
+    github: https://github.com
+
+
+# dir
+# html output directory or child directory e.g. 'child'
+public_dir:
+
+# category directory
 category_dir:
 
-# tag directory name
+# tag directory
 tag_dir:
 
-# post directory name
+# post directory
 post_dir:
 
+# archives directory
+archives_dir:
+
+
+# source
 # site content source
 # your github username/repository
 # username
 user: AcyOrt
 # repository
 repository: acyort.github.io
-
-# thumbnail mode 
-# 1: use the first image as thumbnail and remove the image
-# 2: use the first image as thumbnail but not remove the image
-thumbnail_mode: 2
 
 # site post authors filter
 authors:
@@ -62,10 +80,15 @@ authors:
 #    - author1
 
 # GitHub access token(optional)
-# token should be separated by '#' if you push this file to GitHub 
+# token should be separated by '#' if you push this file to GitHub
 # token: s#d46a6d65aasd8sdbn
+
+# json output
+# boolean or string
+# you can set json output path
+json: false
 
 # dev mode
 # boolean or string
-# you can set test json path: test/test.json 
+# you can set test json path: test/test.json
 dev: false
