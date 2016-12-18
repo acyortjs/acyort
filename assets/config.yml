@@ -20,6 +20,11 @@ theme: ccc45
 per_page: 3
 archives_per_page: 30
 
+# thumbnail mode
+# 1: use the first image as thumbnail and remove the image
+# 2: use the first image as thumbnail but not remove the image
+thumbnail_mode: 2
+
 #menu
 menu:
     home: /
@@ -31,6 +36,18 @@ menu:
 # category
 default_category: uncategorized
 
+# blogroll
+blogroll:
+    GitHub: https://github.com
+    Google: https://www.google.com
+
+# social
+social:
+    email: LoeiFy@gmail.com
+    github: https://github.com
+
+
+# dir
 # html output directory or child directory e.g. 'child'
 public_dir:
 
@@ -46,17 +63,14 @@ post_dir:
 # archives directory
 archives_dir:
 
+
+# source
 # site content source
 # your github username/repository
 # username
 user: AcyOrt
 # repository
 repository: acyort.github.io
-
-# thumbnail mode
-# 1: use the first image as thumbnail and remove the image
-# 2: use the first image as thumbnail but not remove the image
-thumbnail_mode: 2
 
 # site post authors filter
 authors:
@@ -69,7 +83,9 @@ authors:
 # token: s#d46a6d65aasd8sdbn
 
 # json output
-json: true
+# boolean or string
+# you can set json output path
+json: false
 
 # dev mode
 # boolean or string
