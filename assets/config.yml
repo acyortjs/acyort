@@ -48,7 +48,6 @@ social:
     github: https://github.com
 
 
-# dir
 # html output directory or child directory e.g. 'child'
 public_dir:
 
