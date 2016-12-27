@@ -65,15 +65,20 @@ you can publish them to wherever you like.
 $ acyort server
 ```
 
+or
+
+```bash
+$ acyort server [port]
+```
+
 local server: `http://127.0.0.1:2222`
 
-> width liveReload
-
-set `dev: true` in `config.yml`
 
 ## Development
 
 ### configure
+
+set `dev:true`
 
 ```bash
 $ vim assets/config.yml
@@ -88,7 +93,7 @@ $ npm run build
 ### local test server
 
 ```bash
-$ npm run start
+$ npm start
 ```
 
 ### clear generated files
