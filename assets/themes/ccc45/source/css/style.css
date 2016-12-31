@@ -1,9 +1,8 @@
 
-body, div, h1, h2, h3, h4, h5, p, ul, li {
+body, div, h1, h2, h3, h4, h5, p {
     margin: 0;
     padding: 0;
     font-weight: normal;
-    list-style: none;
 }
 html {
     -webkit-text-size-adjust: 100%;
@@ -79,6 +78,18 @@ body {
 }
 
 /* index */
+.toc {
+    margin-top: 30px;
+}
+.toc ul {
+    padding-left: 20px;
+}
+.toc li {
+    margin-top: 5px;
+}
+.toc a {
+    color: #666;
+}
 #posts {
     min-height: 600px;
 }
@@ -200,6 +211,9 @@ body {
 }
 
 /* single post */
+.toc ul {
+    list-style-:
+}
 #post {
     padding-top: 20px;
 }
@@ -395,11 +409,9 @@ body {
     padding-left: 25px;
 }
 .content ul li {
-    list-style: disc;
     margin-top: 4px;
 }
 .content ol li {
-    list-style: decimal;
     margin-top: 4px;
 }
 .content img {
