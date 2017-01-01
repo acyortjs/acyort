@@ -8,12 +8,8 @@
 
 {% block content %}
 <div id="posts" class="center">
-
     <h2 class="tag">Category : <span>{{ category.name }}</span></h2>
-
     {{ posts.render(category, helper) }}
-
     {{ pagination.render(category) }}
-
 </div>
 {% endblock %}

@@ -97,6 +97,7 @@ body {
     position: relative;
     border-bottom: 1px solid #f5f5f5;
     padding: 30px 0 40px;
+    list-style: none;
 }
 .post {
     padding-right: 100px;
@@ -211,9 +212,6 @@ body {
 }
 
 /* single post */
-.toc ul {
-    list-style-:
-}
 #post {
     padding-top: 20px;
 }

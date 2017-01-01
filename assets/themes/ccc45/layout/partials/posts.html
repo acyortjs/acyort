@@ -4,7 +4,6 @@
 {% for id in type.posts %}
 {% set post = helper.post(id) %}
     <li>
-
     <div class="post">
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
         <p class="time">{{ helper.time(post.updated, 'MMM DD, YYYY') }}</p>
@@ -21,7 +20,6 @@
     <a class="author" href="{{ post.author.url }}" target="_blank">
         <img src="{{ post.author.avatar }}" />
     </a>
-
     </li>
 {% endfor %}
 </ul>
