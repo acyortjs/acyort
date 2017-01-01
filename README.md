@@ -73,16 +73,11 @@ $ acyort server [port]
 
 local server: `http://127.0.0.1:2222`
 
+> width liveReload
+          
+ set `dev: true` in `config.yml`
 
 ## Development
-
-### configure
-
-set `dev:true`
-
-```bash
-$ vim assets/config.yml
-```
 
 ### build
 
@@ -90,7 +85,7 @@ $ vim assets/config.yml
 $ npm run build
 ```
 
-### local test server
+### local test server width LiveReload
 
 ```bash
 $ npm start

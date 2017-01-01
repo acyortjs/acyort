@@ -2,6 +2,7 @@
   "name": "acyort",
   "version": "1.2.0",
   "description": "A simple Node.js blog tool. Powered by GitHub",
+  "main": "lib",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
@@ -37,6 +38,7 @@
   "dependencies": {
     "axios": "^0.15.2",
     "chalk": "^1.1.3",
+    "chokidar": "^1.6.1",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5",
     "highlight.js": "^9.1.0",
@@ -46,6 +48,7 @@
     "moment": "^2.12.0",
     "rss": "^1.2.1",
     "swig-templates": "^2.0.2",
+    "ws": "^1.1.1",
     "yamljs": "^0.2.6"
   },
   "devDependencies": {

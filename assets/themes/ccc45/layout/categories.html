@@ -6,12 +6,10 @@ All categories | {{ config.title }}
 
 {% block content %}
 <div class="center categories">
-
     <h2 class="tag">All categories</h2>
 
     {% for category in categories %}
     <p><a href="{{ category.url }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
     {% endfor %}
-
 </div>
 {% endblock %}
