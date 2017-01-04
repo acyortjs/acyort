@@ -1,1 +1,19 @@
-<script>var ws=new WebSocket('ws://'+ location.host);ws.onmessage=function(e){location.reload()}</script>
+<script>
+(function() {
+    function socket() {
+        var ws = new WebSocket('ws://'+ location.host)
+        ws.onmessage = function(e) {
+            location.reload()
+        }
+        ws.onopen = function(e) {
+            console.info('WebSocket connected')
+        }
+        ws.onclose = function(e) {
+            console.error('WebSocket closed, reconnecting...')
+            setTimeout(socket, 5000)
+        }
+    }
+
+    socket()
+})()
+</script>

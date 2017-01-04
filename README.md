@@ -14,6 +14,7 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 - Tag 
 - Menu
 - Post Thumbnail
+- Post TOC
 
 ## Demo
 
