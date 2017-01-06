@@ -13,8 +13,8 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 - Theme
 - Tag 
 - Menu
-- Post Thumbnail
-- Post TOC
+- Thumbnail
+- TOC
 
 ## Demo
 
