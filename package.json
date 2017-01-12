@@ -11,6 +11,7 @@
     "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
+    "temp": "cd assets && node ../lib/i18n.js",
     "test": "istanbul cover _mocha test/test.js || true",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
   },

@@ -13,6 +13,11 @@ url: http://acyort.github.io
 disqus: acyort
 duoshuo:
 
+# language
+language:
+  - zh-CN
+  - en
+
 # theme
 theme: ccc45
 
@@ -28,25 +33,24 @@ thumbnail_mode: 2
 
 #menu
 menu:
-    home: /
-    about: /about
-    archives: /archives
-    tags: /tags
-    categories: /categories
+  home: /
+  about: /about
+  archives: /archives
+  tags: /tags
+  categories: /categories
 
 # category
 default_category: uncategorized
 
 # blogroll
 blogroll:
-    GitHub: https://github.com
-    Google: https://www.google.com
+  GitHub: https://github.com
+  Google: https://www.google.com
 
 # social
 social:
-    email: LoeiFy@gmail.com
-    github: https://github.com
-
+  email: LoeiFy@gmail.com
+  github: https://github.com
 
 # html output directory or child directory e.g. 'child'
 public_dir:
@@ -63,7 +67,6 @@ post_dir:
 # archives directory
 archives_dir:
 
-
 # source
 # site content source
 # your github username/repository
@@ -74,9 +77,9 @@ repository: acyort.github.io
 
 # site post authors filter
 authors:
-#    - LoeiFy
-#    - author0
-#    - author1
+#   - LoeiFy
+#   - author0
+#   - author1
 
 # GitHub access token(optional)
 # token should be separated by '#' if you push this file to GitHub
