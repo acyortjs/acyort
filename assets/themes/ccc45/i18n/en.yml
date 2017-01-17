@@ -1,3 +1,7 @@
-archive: Archive
-category: Category
-tag: Tag
+archive: archive
+category: category
+tag: tag
+hello: hello %s, Are you OK?
+tag_cloud:
+  one: now have %d tag
+  other: now have %d tags
