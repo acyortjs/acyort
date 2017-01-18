@@ -7,6 +7,7 @@
     <div class="post">
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
         <h3>{{ helper.__n('tag_cloud', 10) }}</h3>
+        <h4>{{ helper.post_url(post.id) }}</h4>
         <p class="time">{{ helper.time(post.updated, 'MMM DD, YYYY') }}</p>
 
         {% if post.thumb %}
