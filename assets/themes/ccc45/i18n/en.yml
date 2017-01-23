@@ -3,5 +3,6 @@ category: category
 tag: tag
 hello: hello %s, Are you OK?
 tag_cloud:
-  one: now have %d tag
+  zero: no tags
+  one: now have one tag
   other: now have %d tags

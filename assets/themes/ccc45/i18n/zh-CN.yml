@@ -3,5 +3,6 @@ category: 分类
 tag: 标签
 hello: 你好 %s, 你今天挂了没?
 tag_cloud:
-  one: 目前共计 %d 个标签
+  zero: 目前没有标签
+  one: 目前共计 1 个标签
   other: 目前共计 %d 个标签
