@@ -2,7 +2,7 @@
 title:
 description:
 keywords:
-rss:
+rss: rss.xml
 favicon:
 
 # site url. you can set as 'http://yoursite.com/child' if need
@@ -33,7 +33,7 @@ thumbnail_mode: 2
 
 #menu
 menu:
-#  home: /
+  home: /
 #  about: /about
 
 # category
