@@ -12,7 +12,7 @@
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
     "test": "istanbul cover _mocha test/test.js || true",
-    "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
+    "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name config.sample.yml ! -name themes -exec rm -r {} +"
   },
   "engines": {
     "node": ">=6.0.0"

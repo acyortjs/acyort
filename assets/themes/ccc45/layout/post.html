@@ -1,49 +1,49 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-{{ post.title }} | {{ config.title }}
+{{ page.title }} | {{ config.title }}
 {% endblock %}
 
 {% block content %}
 <div id="post" class="center">
-    <h1>{{ post.title }}</h1>
-    <p><a href="{{ post.author.url }}">{{ post.author.name }}</a> Posted at {{ helper.time(post.created, 'MMM DD, YYYY') }} . - <a href="{{ post.category.url }}">{{ post.category.name}}</a>
+    <h1>{{ page.title }}</h1>
+    <p><a href="{{ page.author.url }}">{{ page.author.name }}</a> Posted at {{ time(page.created, 'MMM DD, YYYY') }} . - <a href="{{ page.category.url }}">{{ page.category.name}}</a>
     </p>
 
     <div class="content">
-        {% if post.toc %}
+        {% if page.toc %}
         <div class="toc">
             <h3>Table Of Contents</h3>
-            {% autoescape false %}{{ post.toc }}{% endautoescape %}
+            {% autoescape false %}{{ page.toc }}{% endautoescape %}
         </div>
         {% endif %}
-        {% autoescape false %}{{ post.content }}{% endautoescape %}
+        {% autoescape false %}{{ page.content }}{% endautoescape %}
     </div>
 
-    {% if post.tags.length %}
+    {% if page.tags.length %}
     <div class="label">
-    {% for tag in post.tags %}
+    {% for tag in page.tags %}
     <div><a href="{{ tag.url }}">#{{ tag.name }}</a></div>
     {% endfor %}
     </div>
     {% endif %}
 
     <div class="relate">
-    {% if post.prev %}
-    {% set prev = helper.post(post.prev) %}
+    {% if page.prev %}
+    {% set prev = post(page.prev) %}
     <a rel="prev" href="{{ prev.url }}">← {{ prev.title }}</a>
     {% endif %}
 
-    {% if post.next %}
-    {% set next = helper.post(post.next) %}
+    {% if page.next %}
+    {% set next = post(page.next) %}
     <a rel="next" href="{{ next.url }}">{{ next.title }} →</a>
     {% endif %}
     </div>
 
     <div class="comment_list hide" id="disqus_thread"></div>
-    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ post.id }}" data-title="" data-url=""></div>
+    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ page.id }}" data-title="" data-url=""></div>
 
-    <button data-id="{{ post.id }}" id="comment">Add Comments</button>
+    <button data-id="{{ page.id }}" id="comment">Add Comments</button>
 </div>
 {% endblock %}
 
@@ -64,5 +64,5 @@ var c = {
 }
 </script>
 {% endif %}
-<script src="{{ config.root }}/js/comment.js"></script>
+<script src="{{ url('js/comment.js') }}"></script>
 {% endblock %}

@@ -31,6 +31,9 @@ archives_per_page: 30
 # 2: use the first image as thumbnail but not remove the image
 thumbnail_mode: 2
 
+# table of content
+toc: true
+
 #menu
 menu:
   home: /
