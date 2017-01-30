@@ -7,28 +7,28 @@ Archives | {{ config.title }}
 
 {% block content %}
 <div class="archives center">
-    <h2 class="tag">A total of {{ helper.posts().length }} articles</h2>
+    <h2 class="tag">A total of {{ posts().length }} articles</h2>
 
-    {% for id in archives.posts %}
-    {% set post = helper.post(id) %}
+    {% for id in page.posts %}
+    {% set p = post(id) %}
 
     {% set year %}
-    {% set post.year = helper.time(post.created, 'YYYY') %}
+    {% set p.year = time(p.created, 'YYYY') %}
 
-    {% if post.year !== year %}
-    {% set year = post.year %}
+    {% if p.year !== year %}
+    {% set year = p.year %}
     <h3 class="year">{{ year }}</h3>
     {% endif %}
 
     <div class="entry">
         <p>
-        <span>{{ helper.time(post.created, 'MMM DD') }}</span>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span>{{ time(p.created, 'MMM DD') }}</span>
+        <a href="{{ p.url }}">{{ p.title }}</a>
         </p>
 
-        {% if post.tags.length %}
+        {% if p.tags.length %}
         <div class="label">
-        {% for tag in post.tags %}
+        {% for tag in p.tags %}
         <a href="{{ tag.url }}">#{{ tag.name }}</a>
         {% endfor %}
         </div>
@@ -37,6 +37,6 @@ Archives | {{ config.title }}
 
     {% endfor %}
 
-    {{ pagination.render(archives) }}
+    {{ pagination.render(page) }}
 </div>
 {% endblock %}

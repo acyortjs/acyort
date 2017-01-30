@@ -8,7 +8,7 @@ All categories | {{ config.title }}
 <div class="center categories">
     <h2 class="tag">All categories</h2>
 
-    {% for category in categories %}
+    {% for category in page %}
     <p><a href="{{ category.url }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
     {% endfor %}
 </div>
