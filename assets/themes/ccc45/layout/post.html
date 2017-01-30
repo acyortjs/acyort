@@ -40,29 +40,41 @@
     {% endif %}
     </div>
 
-    <div class="comment_list hide" id="disqus_thread"></div>
-    <div id="duoshuo_thread" class="comment_list hide ds-thread" data-thread-key="{{ page.id }}" data-title="" data-url=""></div>
-
-    <button data-id="{{ page.id }}" id="comment">Add Comments</button>
+    {% if config.duoshuo %}
+    <div class="ds-thread" data-thread-key="{{ page.id }}"></div>
+    {% endif %}
+    {% if config.disqus %}
+    <div id="disqus_thread"></div>
+    {% endif %}
 </div>
 {% endblock %}
 
 {% block script %}
-{% if config.disqus %}
-<script>
-var c = {
-    name: '{{ config.disqus }}',
-    url: '//{{ config.disqus }}.disqus.com/embed.js'
-}
-</script>
-{% endif %}
 {% if config.duoshuo %}
 <script>
-var c = {
-    name: '{{ config.duoshuo }}',
-    url: '//static.duoshuo.com/embed.js'
-}
+var duoshuoQuery = {short_name:"{{ config.duoshuo }}"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
 </script>
 {% endif %}
-<script src="{{ url('js/comment.js') }}"></script>
+{% if config.disqus %}
+<script>
+var disqus_config = function() {
+    this.page.url = location.href.split('?')[0]
+    this.page.identifier = {{ page.id }}
+}
+;(function() {
+var d = document, s = d.createElement('script');
+s.src = '//{{ config.disqus }}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+{% endif %}
 {% endblock %}
