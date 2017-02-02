@@ -15,8 +15,8 @@ duoshuo:
 
 # language
 languages:
-#  - zh-CN
-#  - en
+  - zh-CN
+  - en
 
 # theme
 theme: ccc45
