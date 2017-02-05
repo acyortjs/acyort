@@ -23,13 +23,13 @@
     <div class="entry">
         <p>
         <span>{{ time(p.created, 'MMM DD') }}</span>
-        <a href="{{ p.url }}">{{ p.title }}</a>
+        <a href="{{ url(p.url) }}">{{ p.title }}</a>
         </p>
 
         {% if p.tags.length %}
         <div class="label">
         {% for tag in p.tags %}
-        <a href="{{ tag.url }}">#{{ tag.name }}</a>
+        <a href="{{ url(tag.url) }}">#{{ tag.name }}</a>
         {% endfor %}
         </div>
         {% endif %}

@@ -9,7 +9,7 @@ All categories | {{ config.title }}
     <h2 class="tag">All categories</h2>
 
     {% for category in page %}
-    <p><a href="{{ category.url }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
+    <p><a href="{{ url(category.url) }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
     {% endfor %}
 </div>
 {% endblock %}

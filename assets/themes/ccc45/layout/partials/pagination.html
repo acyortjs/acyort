@@ -2,11 +2,11 @@
 
 <div id="pagination">
     {% if pagination.prev %}
-    <a rel="prev" href="{{ pagination.prev }}">← Newer Posts</a>
+    <a rel="prev" href="{{ url(pagination.prev) }}">← Newer Posts</a>
     {% endif %}
 
     {% if pagination.next %}
-    <a rel="next" href="{{ pagination.next }}">Older Posts →</a>
+    <a rel="next" href="{{ url(pagination.next) }}">Older Posts →</a>
     {% endif %}
 </div>
 

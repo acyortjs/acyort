@@ -7,7 +7,7 @@
 {% block content %}
 <div id="post" class="center">
     <h1>{{ page.title }}</h1>
-    <p><a href="{{ page.author.url }}">{{ page.author.name }}</a> Posted at {{ time(page.created, 'MMM DD, YYYY') }} . - <a href="{{ page.category.url }}">{{ page.category.name}}</a>
+    <p><a href="{{ page.author.url }}">{{ page.author.name }}</a> Posted at {{ time(page.created, 'MMM DD, YYYY') }} . - <a href="{{ url(page.category.url) }}">{{ page.category.name}}</a>
     </p>
 
     <div class="content">
@@ -23,7 +23,7 @@
     {% if page.tags.length %}
     <div class="label">
     {% for tag in page.tags %}
-    <div><a href="{{ tag.url }}">#{{ tag.name }}</a></div>
+    <div><a href="{{ url(tag.url) }}">#{{ tag.name }}</a></div>
     {% endfor %}
     </div>
     {% endif %}
@@ -31,12 +31,12 @@
     <div class="relate">
     {% if page.prev %}
     {% set prev = post(page.prev) %}
-    <a rel="prev" href="{{ prev.url }}">← {{ prev.title }}</a>
+    <a rel="prev" href="{{ url(prev.url) }}">← {{ prev.title }}</a>
     {% endif %}
 
     {% if page.next %}
     {% set next = post(page.next) %}
-    <a rel="next" href="{{ next.url }}">{{ next.title }} →</a>
+    <a rel="next" href="{{ url(next.url) }}">{{ next.title }} →</a>
     {% endif %}
     </div>
 

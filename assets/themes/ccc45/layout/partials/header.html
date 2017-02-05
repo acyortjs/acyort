@@ -1,11 +1,11 @@
 <div class="header">
     <div class="center">
-        <h1><a href="/">{{ config.title }}</a></h1>
+        <h1><a href="{{ url('/') }}">{{ config.title }}</a></h1>
         <p>{{ config.description }}</p>
     </div>
     <div class="menu">
-    {% for url in config.menu %}
-    <a href="{{ url }}">{{ loop.key }}</a>
+    {% for u in config.menu %}
+    <a href="{{ url(u) }}">{{ loop.key }}</a>
     {% endfor %}
     </div>
 </div>
