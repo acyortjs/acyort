@@ -1,8 +1,9 @@
-archive: 文章归档
-category: 分类
-tag: 标签
-hello: 你好 %s, 你今天挂了没?
-tag_cloud:
-  zero: 目前没有标签
-  one: 目前共计 1 个标签
-  other: 目前共计 %d 个标签
+title:
+  archive: 文章归档
+
+archives:
+  zero: 没有文章.
+  one: 共有一篇文章.
+  other: 共有 %d 篇文章.
+
+powered: 由 %s 强力驱动

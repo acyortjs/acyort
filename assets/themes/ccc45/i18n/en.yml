@@ -1,8 +1,9 @@
-archive: archive
-category: category
-tag: tag
-hello: hello %s, Are you OK?
-tag_cloud:
-  zero: no tags
-  one: now have one tag
-  other: now have %d tags
+title:
+  archive: archive
+
+archives:
+  zero: No posts.
+  one: 1 post.
+  other: %d posts in total.
+
+powered: Powered by %s
