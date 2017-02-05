@@ -8,7 +8,7 @@
 
 {% block content %}
 <div id="posts" class="center">
-    <h2 class="tag">Tag : <span>{{ page.name }}</span></h2>
+    <h2 class="tag">{{ __('title.tag') }} : <span>{{ page.name }}</span></h2>
     {{ posts.render(page, post, time) }}
     {{ pagination.render(page) }}
 </div>

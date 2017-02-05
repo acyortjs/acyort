@@ -38,8 +38,8 @@ toc: true
 menu:
   home: /
   archives: /archives/
-  categories: /categories/
-  tags: /tags/
+  categories: /category/
+  tags: /tag/
   about: /about/
 
 # category

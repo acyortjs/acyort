@@ -1,5 +1,11 @@
 title:
   archive: archive
+  categories: All categories
+  tags: tags
+  category: category
+  tag: tag
+  toc: Table Of Contents
+  posted: Posted at
 
 archives:
   zero: No posts.
@@ -7,3 +13,15 @@ archives:
   other: %d posts in total.
 
 powered: Powered by %s
+
+menu:
+  home: home
+  archives: archives
+  categories: categories
+  tags: tags
+  about: about
+
+pager:
+  prev: Newer Posts
+  next: Older Posts
+

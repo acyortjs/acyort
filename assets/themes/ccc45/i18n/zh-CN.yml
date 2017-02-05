@@ -1,5 +1,11 @@
 title:
   archive: 文章归档
+  categories: 所有分类
+  tags: 所有标签
+  category: 分类
+  tag: 标签
+  toc: 文章目录
+  posted: 发表于
 
 archives:
   zero: 没有文章.
@@ -7,3 +13,14 @@ archives:
   other: 共有 %d 篇文章.
 
 powered: 由 %s 强力驱动
+
+menu:
+  home: 首页
+  archives: 归档
+  categories: 所有分类
+  tags: 所有标签
+  about: 关于
+
+pager:
+  next: 下一页
+  prev: 上一页

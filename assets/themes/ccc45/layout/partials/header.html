@@ -5,7 +5,7 @@
     </div>
     <div class="menu">
     {% for u in config.menu %}
-    <a href="{{ url(u) }}">{{ loop.key }}</a>
+    <a href="{{ url(u) }}">{{ __('menu.' + loop.key) }}</a>
     {% endfor %}
     </div>
 </div>
