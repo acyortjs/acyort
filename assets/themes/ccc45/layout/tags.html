@@ -9,7 +9,7 @@ All tags | {{ config.title }}
     <h2 class="tag">All tags</h2>
 
     {% for tag in page %}
-    <p><a href="{{ tag.url }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
+    <p><a href="{{ url(tag.url) }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
     {% endfor %}
 </div>
 {% endblock %}
