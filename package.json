@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib",
   "bin": {
@@ -12,7 +12,7 @@
     "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
     "test": "istanbul cover _mocha test/test.js || true",
-    "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name themes -exec rm -r {} +"
+    "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name config.sample.yml ! -name themes -exec rm -r {} +"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/AcyOrt/acyort",
   "dependencies": {
+    "acyort-i18n": "^0.1.0",
     "axios": "^0.15.2",
     "chalk": "^1.1.3",
     "chokidar": "^1.6.1",

@@ -8,7 +8,7 @@
 
 {% block content %}
 <div id="posts" class="center">
-    {{ posts.render(index, helper) }}
-    {{ pagination.render(index) }}
+    {{ posts.render(page, post, time) }}
+    {{ pagination.render(page) }}
 </div>
 {% endblock %}

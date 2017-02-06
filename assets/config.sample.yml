@@ -1,20 +1,20 @@
 # site
-title:
-description:
-keywords:
+title: AcyOrt
+description: A Node.js blog tool powered by GitHub.
+keywords: acyort, nodejs, blog
 rss: rss.xml
-favicon:
+favicon: icon.png
 
 # site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
-url:
+url: http://acyort.github.io
 
 # comment
 disqus: acyort
 duoshuo:
 
 # language
-languages:
+language:
   - zh-CN
   - en
 
@@ -36,51 +36,51 @@ toc: true
 
 #menu
 menu:
-#  home: /
-#  archives: /archives/
-#  categories: /category/
-#  tags: /tag/
+  home: /
+  about: /about/
+  archives: /archives/
+  tags: /tags/
+  categories: /categories/
 
 # category
 default_category: uncategorized
 
 # blogroll
 blogroll:
-#  GitHub: https://github.com
+  GitHub: https://github.com
+  Google: https://www.google.com
 
 # social
 social:
-#  github: https://github.com
+  email: LoeiFy@gmail.com
+  github: https://github.com
 
 # html output directory or child directory e.g. 'child'
-# default "/"
 public_dir:
 
 # category directory
-# default "category"
 category_dir:
 
 # tag directory
-# default "tag"
 tag_dir:
 
 # post directory
-# default "posts"
 post_dir:
 
 # archives directory
-# default "archives"
 archives_dir:
 
+# source
 # site content source
-# github username
-user:
-# github repository
-repository:
+# your github username/repository
+# username
+user: AcyOrt
+# repository
+repository: acyort.github.io
 
-# post authors
-# github username
+# site post authors filter
 authors:
+  - LoeiFy
 #  - author0
 #  - author1
 

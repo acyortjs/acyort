@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-All tags | {{ config.title }}
+{{ __('title.tags') }} | {{ config.title }}
 {% endblock %}
 
 {% block content %}
 <div class="center categories">
-    <h2 class="tag">All tags</h2>
+    <h2 class="tag">{{ __('title.tags') }}</h2>
 
-    {% for tag in tags %}
-    <p><a href="{{ tag.url }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
+    {% for tag in page %}
+    <p><a href="{{ url(tag.url) }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
     {% endfor %}
 </div>
 {% endblock %}

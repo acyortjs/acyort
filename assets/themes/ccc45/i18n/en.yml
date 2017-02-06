@@ -1,0 +1,27 @@
+title:
+  archive: archive
+  categories: All categories
+  tags: All tags
+  category: category
+  tag: tag
+  toc: Table Of Contents
+  posted: Posted at
+
+archives:
+  zero: No posts.
+  one: 1 post.
+  other: %d posts in total.
+
+powered: Powered by %s
+
+menu:
+  home: home
+  archives: archives
+  categories: categories
+  tags: tags
+  about: about
+
+pager:
+  prev: Newer Posts
+  next: Older Posts
+

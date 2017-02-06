@@ -3,13 +3,13 @@
 {% import 'partials/posts.html' as posts %}
 
 {% block title %}
-{{ category.name }} | {{ config.title }}
+{{ page.name }} | {{ config.title }}
 {% endblock %}
 
 {% block content %}
 <div id="posts" class="center">
-    <h2 class="tag">Category : <span>{{ category.name }}</span></h2>
-    {{ posts.render(category, helper) }}
-    {{ pagination.render(category) }}
+    <h2 class="tag">{{ __('title.category') }} : <span>{{ page.name }}</span></h2>
+    {{ posts.render(page, post, time) }}
+    {{ pagination.render(page) }}
 </div>
 {% endblock %}
