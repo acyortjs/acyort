@@ -7,5 +7,12 @@
     {% for u in config.menu %}
     <a href="{{ url(u) }}">{{ __('menu.' + loop.key) }}</a>
     {% endfor %}
+
+    {% set locale = getLocale() %}
+    {% if locale == 'en' %}
+    <a href="/">中文</a>
+    {% else %}
+    <a href="/en/">English</a>
+    {% endif %}
     </div>
 </div>

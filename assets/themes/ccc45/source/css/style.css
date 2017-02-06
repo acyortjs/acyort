@@ -1,4 +1,3 @@
-
 body, div, h1, h2, h3, h4, h5, p {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
 .header {
     position: relative;
     width: 100%;
@@ -55,7 +53,6 @@ body {
     font-size: 14px;
     line-height: 1.6;
 }
-
 .center {
     position: relative;
     margin: 0 auto;
@@ -76,7 +73,6 @@ body {
     font-size: 14px;
     color: #fff;
 }
-
 /* index */
 .toc {
     margin-top: 30px;
@@ -146,7 +142,6 @@ body {
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
-
 #pagination {
     margin-top: 30px;
     position: relative;
@@ -171,7 +166,6 @@ body {
     left: auto;
     right: 0;
 }
-
 .archives > div {
     margin-top: 30px;
 }
@@ -210,7 +204,6 @@ body {
     text-decoration: underline;
     margin-right: 10px;
 }
-
 /* single post */
 #post {
     padding-top: 20px;
@@ -265,7 +258,6 @@ body {
     color: #565656;
     font-weight: bold;
 }
-
 .categories {
     text-align: center;
     padding: 30px 0;
@@ -284,7 +276,6 @@ body {
 .categories span {
     color: #999;
 }
-
 .relate {
     margin-top: 30px;
     overflow: hidden;
@@ -316,7 +307,6 @@ body {
     font-family: sans-serif;
     margin-right: 3px;
 }
-
 /* article content */
 .content {
     font-size: 16px;
@@ -521,7 +511,6 @@ pre code {
 .hljs-link {
   text-decoration: underline;
 }
-
 @media screen and (max-width: 600px) {
     .header {
         margin-bottom: 10px;

@@ -7,7 +7,7 @@
 {% block content %}
 <div id="post" class="center">
     <h1>{{ page.title }}</h1>
-    <p><a href="{{ page.author.url }}">{{ page.author.name }}</a> {{ __('title.posted') }} {{ time(page.created, 'MMM DD, YYYY') }} . - <a href="{{ url(page.category.url) }}">{{ page.category.name}}</a>
+    <p><a href="{{ page.author.url }}">{{ page.author.name }}</a> {{ __('title.posted') }} {{ time(page.created, 'YYYY-MM-DD') }} . - <a href="{{ url(page.category.url) }}">{{ page.category.name}}</a>
     </p>
 
     <div class="content">
