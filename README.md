@@ -2,7 +2,7 @@
 
 A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
-## Support feature
+## Features
 
 - Post 
 - Comments
@@ -15,6 +15,7 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 - Menu
 - Thumbnail
 - TOC
+- i18n
 
 ## Demo
 
