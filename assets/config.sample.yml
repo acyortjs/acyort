@@ -37,10 +37,10 @@ toc: true
 #menu
 menu:
   home: /
-  about: /about
-  archives: /archives
-  tags: /tags
-  categories: /categories
+  about: /about/
+  archives: /archives/
+  tags: /tags/
+  categories: /categories/
 
 # category
 default_category: uncategorized

@@ -36,11 +36,10 @@ toc: true
 
 #menu
 menu:
-  home: /
-  archives: /archives/
-  categories: /category/
-  tags: /tag/
-  about: /about/
+#  home: /
+#  archives: /archives/
+#  categories: /category/
+#  tags: /tag/
 
 # category
 default_category: uncategorized
@@ -48,7 +47,6 @@ default_category: uncategorized
 # blogroll
 blogroll:
 #  GitHub: https://github.com
-#  Google: https://www.google.com
 
 # social
 social:
