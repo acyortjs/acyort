@@ -19,11 +19,11 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Demo
 
-http://acyort.github.io/
+http://acyortjs.github.io/
 
 content from:
  
-https://github.com/AcyOrt/acyort.github.io/issues
+https://github.com/acyortjs/acyortjs.github.io/issues
 
 ## Install
 
