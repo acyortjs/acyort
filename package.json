@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib",
   "bin": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AcyOrt/acyort.git"
+    "url": "https://github.com/acyortjs/acyort.git"
   },
   "keywords": [
     "website",
@@ -32,9 +32,9 @@
   "author": "LoeiFy@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AcyOrt/acyort/issues"
+    "url": "https://github.com/acyortjs/acyort/issues"
   },
-  "homepage": "https://github.com/AcyOrt/acyort",
+  "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
     "acyort-i18n": "^0.1.0",
     "axios": "^0.15.2",
