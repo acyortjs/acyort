@@ -7,7 +7,7 @@ favicon: icon.png
 
 # site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
-url: http://acyort.github.io
+url: http://acyortjs.github.io
 
 # comment
 disqus: acyort
@@ -37,10 +37,9 @@ toc: true
 #menu
 menu:
   home: /
-  about: /about/
   archives: /archives/
-  tags: /tags/
-  categories: /categories/
+  tags: /tag/
+  categories: /category/
 
 # category
 default_category: uncategorized
@@ -74,9 +73,9 @@ archives_dir:
 # site content source
 # your github username/repository
 # username
-user: AcyOrt
+user: acyortjs
 # repository
-repository: acyort.github.io
+repository: acyortjs.github.io
 
 # site post authors filter
 authors:
