@@ -14,7 +14,7 @@ disqus: acyort
 duoshuo:
 
 # language
-language:
+languages:
   - zh-CN
   - en
 
