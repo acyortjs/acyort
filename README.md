@@ -87,14 +87,6 @@ clean the generated files
 acyort clean
 ```
 
- ### clean
-
- clean the generated files
-
- ```bash
- acyort clean
- ```
-
 ## Development
 
 ### build
