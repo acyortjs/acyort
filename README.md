@@ -77,15 +77,15 @@ local server: `http://127.0.0.1:2222`
 
 > width liveReload
           
- set `dev: true` in `config.yml`
+set `dev: true` in `config.yml`
 
- ### clean
+### clean
 
- clean the generated files
+clean the generated files
 
- ```bash
- acyort clean
- ```
+```bash
+acyort clean
+```
 
 ## Development
 
