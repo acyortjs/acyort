@@ -87,6 +87,14 @@ clean the generated files
 acyort clean
 ```
 
+ ### clean
+
+ clean the generated files
+
+ ```bash
+ acyort clean
+ ```
+
 ## Development
 
 ### build
@@ -101,7 +109,7 @@ $ npm run build
 $ npm start
 ```
 
-### clear generated files
+### clear the generated files
 
 ```bash
 $ npm run clear
@@ -110,3 +118,7 @@ $ npm run clear
 ## License
 
 MIT
+
+## Relate
+
+AcyOrt via `アルドノア・ゼロ オリジナル・サウンドトラック` @ `澤野弘之`
