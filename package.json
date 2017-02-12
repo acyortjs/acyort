@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib",
   "bin": {
@@ -8,8 +8,8 @@
   },
   "preferGlobal": "true",
   "scripts": {
-    "start": "cd assets && NODE_ENV=dev node ../bin/acyort server",
-    "build": "cd assets && NODE_ENV=dev node ../bin/acyort build",
+    "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
+    "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
     "test": "istanbul cover _mocha test/test.js || true",
     "clear": "cd assets && find . -maxdepth 1 -name '* *' -exec rm -r {} + && find . -maxdepth 1 ! -name . ! -name config.yml ! -name config.sample.yml ! -name themes -exec rm -r {} +"
@@ -53,6 +53,7 @@
     "yamljs": "^0.2.6"
   },
   "devDependencies": {
+    "cross-env": "^3.1.4",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",

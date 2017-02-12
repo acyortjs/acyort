@@ -8,7 +8,7 @@ const { log } = require('../lib/util')
 
 const checker = () => fs.existsSync(path.join(process.cwd(), 'config.yml'))
 const err = () => log.error('Cannot find "config.yml"')
-const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/'
+const ignore = 'Thumbs.db\n.DS_Store\n*.swp\n.cache/\nthemes/\nconfig.sample.yml'
 
 program
     .allowUnknownOption()
