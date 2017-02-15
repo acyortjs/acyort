@@ -14,9 +14,7 @@ disqus: acyort
 duoshuo:
 
 # language
-languages:
-  - zh-CN
-  - en
+language: zh-CN
 
 # theme
 theme: ccc45
@@ -36,10 +34,10 @@ toc: true
 
 #menu
 menu:
-#  home: /
-#  archives: /archives/
-#  categories: /category/
-#  tags: /tag/
+  home: /
+  archives: /archives/
+  categories: /category/
+  tags: /tag/
 
 # category
 default_category: uncategorized
