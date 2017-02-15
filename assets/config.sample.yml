@@ -14,9 +14,7 @@ disqus: acyort
 duoshuo:
 
 # language
-languages:
-  - zh-CN
-  - en
+language: zh-CN
 
 # theme
 theme: ccc45

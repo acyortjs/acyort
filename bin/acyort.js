@@ -48,7 +48,7 @@ program
 
         server(port)
 
-        if (!pkg.dev) {
+        if (!pkg.dev && process.env.NODE_ENV !== 'dev') {
             return log.info(`Server running\n=> http://127.0.0.1:${port}/`, '\nCTRL + C to shutdown')
         }
 
