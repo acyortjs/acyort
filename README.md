@@ -101,10 +101,10 @@ $ npm run build
 $ npm start
 ```
 
-### clear the generated files
+### clean the generated files
 
 ```bash
-$ npm run clear
+$ npm run clean
 ```
 
 ## License
