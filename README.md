@@ -113,4 +113,4 @@ MIT
 
 ## Relate
 
-`AcyOrt` via `アルドノア・ゼロ オリジナル・サウンドトラック` @ `澤野弘之`
+![AcyOrt](https://cloud.githubusercontent.com/assets/2193211/23100112/ef8f3da2-f6b2-11e6-8843-108fc87f37f1.jpg)
