@@ -91,6 +91,4 @@ authors:
 json: false
 
 # dev mode
-# boolean or string
-# you can set test json path: test/test.json
 dev: false
