@@ -17,7 +17,7 @@ program
 
 program
 .command('init [folder]')
-.description('create new blog')
+.description('Create new blog')
 .action((folder = '') => {
   try {
     log.info('Coping files ...')
