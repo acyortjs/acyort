@@ -16,11 +16,6 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 http://acyortjs.github.io/
 
-content from:
- 
-https://github.com/acyortjs/acyortjs.github.io/issues
-
-
 ## Supports
 
 - Comments
@@ -32,7 +27,6 @@ https://github.com/acyortjs/acyortjs.github.io/issues
 - Thumbnail
 - TOC
 - i18n
-
 
 ## Install
 
