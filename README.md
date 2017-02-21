@@ -4,26 +4,29 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
 
-- Post 
-- Comments
-- Archives
-- Rss
-- Page 
-- Category
-- Theme
-- Tag 
-- Menu
-- Thumbnail
-- TOC
-- i18n
+- muti-authors support
+- write your blog on GitHub issue
+- not worry about losing blog data
+- use GitHub powerful markdown writing tool
+- simpler themes development(width LiveReload)
+- only install once and simple config
+- json output
 
 ## Demo
 
 http://acyortjs.github.io/
 
-content from:
- 
-https://github.com/acyortjs/acyortjs.github.io/issues
+## Supports
+
+- Comments
+- Rss
+- Page
+- Category
+- Theme
+- Tag
+- Thumbnail
+- TOC
+- i18n
 
 ## Install
 
@@ -45,7 +48,7 @@ or
 $ acyort init
 ```
 
-### configure
+### config
 
 modify `config.yml`
 
@@ -95,17 +98,26 @@ acyort clean
 $ npm run build
 ```
 
-### local test server width LiveReload
+### test
+
+local test server width LiveReload
 
 ```bash
 $ npm start
 ```
 
-### clean the generated files
+### clean
+
+clean the generated files
 
 ```bash
 $ npm run clean
 ```
+
+## Todo
+
+- unit test
+- plugins support
 
 ## License
 

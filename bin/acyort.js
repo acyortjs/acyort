@@ -8,7 +8,7 @@ const { log } = require('../lib/util')
 
 const checker = () => fs.existsSync(path.join(process.cwd(), 'config.yml'))
 const err = () => log.error('Cannot find "config.yml"')
-const ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/\nconfig.sample.yml'
+const ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/\nconfig.sample.yml\nISSUE_DATA.json'
 const commands = 'version init build server clean'
 
 program
@@ -17,7 +17,7 @@ program
 
 program
 .command('init [folder]')
-.description('create new blog')
+.description('Create new blog')
 .action((folder = '') => {
   try {
     log.info('Coping files ...')
@@ -47,13 +47,7 @@ program
   const server = require('../lib/server')
   /* eslint-disable */
 
-  server(port)
-
-  if (!pkg.dev && process.env.NODE_ENV !== 'dev') {
-    return log.info(`Server running\n=> http://127.0.0.1:${port}/`, '\nCTRL + C to shutdown')
-  }
-
-  return
+  return server(port)
 })
 
 program
