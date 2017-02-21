@@ -101,10 +101,10 @@ $ npm run build
 $ npm start
 ```
 
-### clear the generated files
+### clean the generated files
 
 ```bash
-$ npm run clear
+$ npm run clean
 ```
 
 ## License
@@ -113,4 +113,5 @@ MIT
 
 ## Relate
 
-`AcyOrt` via `アルドノア・ゼロ オリジナル・サウンドトラック` @ `澤野弘之`
+![acyort](https://cloud.githubusercontent.com/assets/2193211/23157548/b3ebe872-f856-11e6-9859-d173c7905dcb.jpg)
+

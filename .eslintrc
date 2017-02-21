@@ -1,11 +1,10 @@
 {
-    "extends": "airbnb-base",
-    "root": true,
-    "env": {
-        "node": true
-    },
-    "rules": {
-        "semi": [2, "never"],
-        "indent": ["error", 4]
-    }
+  "extends": "airbnb-base",
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "semi": [2, "never"]
+  }
 }

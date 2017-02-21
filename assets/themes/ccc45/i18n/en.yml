@@ -12,7 +12,7 @@ archives:
   one: 1 post.
   other: %d posts in total.
 
-powered: Powered by %s
+powered: Powered by %2$s . %1$s
 
 menu:
   home: home

@@ -12,7 +12,7 @@ archives:
   one: 共有一篇文章.
   other: 共有 %d 篇文章.
 
-powered: 由 %s 强力驱动
+powered: 由 %2$s . %1$s 强力驱动
 
 menu:
   home: 首页
