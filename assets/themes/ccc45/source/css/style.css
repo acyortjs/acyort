@@ -75,7 +75,15 @@ body {
 }
 /* index */
 .toc {
-    margin-top: 30px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 30px;
+    height: 0;
+    margin-left: 720px;
+    min-width: 300px;
+}
+.toc h3 {
+    margin-top: 0!important;
 }
 .toc ul {
     padding-left: 20px;
@@ -85,6 +93,9 @@ body {
 }
 .toc a {
     color: #666;
+}
+.main {
+
 }
 #posts {
     min-height: 600px;
@@ -127,6 +138,9 @@ body {
 }
 .summary {
     margin-top: 30px;
+}
+.summary a {
+    color: #333;
 }
 .author {
     width: 50px;
