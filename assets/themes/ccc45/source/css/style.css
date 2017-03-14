@@ -180,6 +180,10 @@ body {
     left: auto;
     right: 0;
 }
+#pagination span {
+    color: #999;
+    font-size: 14px;
+}
 .archives > div {
     margin-top: 30px;
 }

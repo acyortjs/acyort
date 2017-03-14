@@ -5,6 +5,8 @@
     <a rel="prev" href="{{ url(pagination.prev) }}">← {{ __('pager.prev') }}</a>
     {% endif %}
 
+    <span>Page {{ pagination.current }} of {{ pagination.total }}</span>
+
     {% if pagination.next %}
     <a rel="next" href="{{ url(pagination.next) }}">{{ __('pager.next') }} →</a>
     {% endif %}

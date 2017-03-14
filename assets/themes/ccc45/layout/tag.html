@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% import 'partials/pagination.html' as pagination %}
-{% import 'partials/posts.html' as posts %}
+{% import 'partials/posts.html' as postsTpl %}
 
 {% block title %}
 {{ page.name }} | {{ config.title }}
@@ -9,7 +9,7 @@
 {% block content %}
 <div id="posts" class="center">
     <h2 class="tag">{{ __('title.tag') }} : <span>{{ page.name }}</span></h2>
-    {{ posts.render(page, post, time) }}
+    {{ postsTpl.render(page, post, time) }}
     {{ pagination.render(page) }}
 </div>
 {% endblock %}
