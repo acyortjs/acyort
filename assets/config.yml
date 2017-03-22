@@ -31,8 +31,8 @@ thumbnail_mode: 2
 #menu
 menu:
   archives: /archives
-  categories: /category
-  tags: /tag
+  categories: /categories
+  tags: /tags
 
 # category
 default_category: uncategorized
