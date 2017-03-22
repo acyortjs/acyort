@@ -30,10 +30,9 @@ thumbnail_mode: 2
 
 #menu
 menu:
-  home: /
-  archives: /archives/
-  categories: /category/
-  tags: /tag/
+  archives: /archives
+  categories: /category
+  tags: /tag
 
 # category
 default_category: uncategorized
