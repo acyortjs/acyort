@@ -1,5 +1,5 @@
 # site
-title:
+title: Recordum
 description:
 keywords:
 rss: rss.xml
@@ -33,6 +33,7 @@ menu:
   archives: /archives
   categories: /categories
   tags: /tags
+  about: /pages/about
 
 # category
 default_category: uncategorized
@@ -59,8 +60,8 @@ archives_dir:
 
 # site content source
 # your github username/repository
-user: xufei
-repository: blog
+user: LoeiFy
+repository: Recordum
 
 # post authors
 # github username
