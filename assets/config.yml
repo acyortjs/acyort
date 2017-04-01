@@ -1,5 +1,5 @@
 # site
-title: Recordum
+title:
 description:
 keywords:
 rss: rss.xml
@@ -60,8 +60,8 @@ archives_dir:
 
 # site content source
 # your github username/repository
-user: LoeiFy
-repository: Recordum
+user:
+repository:
 
 # post authors
 # github username
@@ -76,7 +76,7 @@ authors:
 # json output
 # boolean or string
 # you can set json output path
-json: json
+json: false
 
 # dev mode
 dev: false
