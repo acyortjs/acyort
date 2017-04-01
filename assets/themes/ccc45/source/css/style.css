@@ -180,6 +180,10 @@ body {
     left: auto;
     right: 0;
 }
+#pagination span {
+    color: #999;
+    font-size: 14px;
+}
 .archives > div {
     margin-top: 30px;
 }
@@ -446,16 +450,9 @@ table tr th :last-child, table tr td :last-child {
     padding: 0;
     background: none;
 }
-.hljs code {
-    border: none;
-    background: none;
-}
 .hljs .line {
     text-align: right;
-    padding-right: 10px;
-}
-.hljs .line span {
-    color: #666;
+    padding-right: 15px;
 }
 .hljs .mark {
     position: absolute;

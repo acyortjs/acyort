@@ -20,7 +20,7 @@ theme: ccc45
 
 # pagination
 # set 0 if no need paging
-per_page: 3
+per_page: 5
 archives_per_page: 30
 
 # thumbnail mode
@@ -30,10 +30,10 @@ thumbnail_mode: 2
 
 #menu
 menu:
-  home: /
-  archives: /archives/
-  categories: /category/
-  tags: /tag/
+  archives: /archives
+  categories: /categories
+  tags: /tags
+  about: /pages/about
 
 # category
 default_category: uncategorized
