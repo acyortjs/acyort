@@ -6,10 +6,10 @@ const path = require('path')
 const pkg = require('../package.json')
 const { log } = require('../lib/util')
 
-const checker = () => fs.existsSync(path.join(process.cwd(), 'config.yml'))
-const err = () => log.error('Cannot find "config.yml"')
-const ignore = 'Thumbs.db\n.DS_Store\n*.swp\nthemes/\nconfig.sample.yml\nISSUE_DATA.json'
+const configPath = path.join(process.cwd(), 'config.yml')
+const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
 const commands = 'version init build server clean'
+const keeps = 'themes config.yml CNAME README.md'
 
 program
 .allowUnknownOption()
@@ -20,10 +20,12 @@ program
 .description('Create new blog')
 .action((folder = '') => {
   try {
-    log.info('Coping files ...')
+    if (fs.existsSync(configPath)) {
+      fs.copySync(configPath, path.join(process.cwd(), 'config.bak.yml'))
+    }
 
     fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
-    fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignore)
+    fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignores)
 
     log.done('Configure "config.yml" to start your blog')
   } catch (e) {
@@ -40,8 +42,8 @@ program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  if (!checker()) {
-    return err()
+  if (!fs.existsSync(configPath)) {
+    return log.error('Cannot find "config.yml"')
   }
   /* eslint-disable */
   const server = require('../lib/server')
@@ -54,8 +56,8 @@ program
 .command('build')
 .description('Generate the html')
 .action(() => {
-  if (!checker()) {
-    return err()
+  if (!fs.existsSync(configPath)) {
+    return log.error('Cannot find "config.yml"')
   }
 
   /* eslint-disable */
@@ -75,7 +77,7 @@ program
     if ((/(^|\/)\.[^\/\.]/g).test(file)) {
       return false
     }
-    if ('themes config.yml config.sample.yml'.indexOf(file) > -1) {
+    if (keeps.indexOf(file) > -1) {
       return false
     }
     return true

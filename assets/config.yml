@@ -33,7 +33,6 @@ menu:
   archives: /archives
   categories: /categories
   tags: /tags
-  about: /pages/about
 
 # category
 default_category: uncategorized
