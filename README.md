@@ -5,12 +5,12 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 ## Features
 
 - muti-authors support
-- write your blog on GitHub issue
-- not worry about losing blog data
-- use GitHub powerful markdown writing tool
-- simpler themes development(width LiveReload)
-- only install once and simple config
-- json output
+- write your blog on github issue
+- use github powerful markdown writing tool
+- simpler themes development(width livereload)
+- quick install and simple config
+- json output support
+- ci deploy
 
 ## Demo
 
