@@ -10,11 +10,11 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 - simpler themes development(width livereload)
 - quick install and simple config
 - json output support
-- ci deploy
+- Travis Ci auto deploy
 
 ## Demo
 
-http://acyortjs.github.io/
+http://acyort.am0200.com/
 
 ## Supports
 
@@ -118,6 +118,7 @@ $ npm run clean
 
 - unit test
 - plugins support
+- the website
 
 ## License
 
