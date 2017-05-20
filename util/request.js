@@ -9,6 +9,6 @@ class Request extends Config {
   }
 
   getArgs(args = {}) {
-    const args = Object.keys(params).map()
+    return Object.keys(args).map(arg => `${arg}=${args[arg]}`).join('&')
   }
 }
