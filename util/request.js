@@ -23,8 +23,7 @@ class Request {
 
   fetch() {
     const url = `${this.host + this.thePath}?${this.theArgs}`
-    return url
-    //return axios.get(url).then(res => res)
+    return axios.get(url).then(res => res)
   }
 }
 
