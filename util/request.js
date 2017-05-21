@@ -1,14 +1,31 @@
-const axios = request('axios')
+const axios = require('axios')
 
-class Request extends Config {
-  constructor() {
-    super()
-    this.userAgent = 'AcyOrt'
+axios.defaults.headers['User-Agent'] = 'AcyOrt'
+
+class Request {
+  constructor(user, repo, args = {}) {
     this.host = 'https://api.github.com'
-    this.path = `/repos/${this.config.user}/${this.config.repo}/issues`
+    this.user = user
+    this.repo = repo
+    this.args = args
   }
 
-  getArgs(args = {}) {
-    return Object.keys(args).map(arg => `${arg}=${args[arg]}`).join('&')
+  get thePath() {
+    return `/repos/${this.user}/${this.repo}/issues`
+  }
+
+  get theArgs() {
+    return Object
+    .keys(this.args)
+    .map(arg => `${arg}=${this.args[arg]}`)
+    .join('&')
+  }
+
+  fetch() {
+    const url = `${this.host + this.thePath}?${this.theArgs}`
+    return url
+    //return axios.get(url).then(res => res)
   }
 }
+
+module.exports = Request
