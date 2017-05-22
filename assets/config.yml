@@ -2,7 +2,7 @@
 title:
 description:
 keywords:
-rss: rss.xml
+rss: false
 favicon:
 
 # site url. you can set as 'http://yoursite.com/child' if need

@@ -1,15 +1,15 @@
-const Log = require('./util/log')
-const Request = require('./util/request')
+// const Log = require('./util/log')
+// const Request = require('./util/request')
 const config = require('./lib/config/')
+// const Acyort = require('./lib/acyort')
 
-// class Test extends Request {
-//   constructor(...args) {
-//     super(...args)
+
+// class Test extends Acyort {
+//   constructor() {
+//     super()
+//   }
+
+//   log() {
+//     console.log(this.config)
 //   }
 // }
-
-// var s = new Test('LoeiFy', 'Recordum', { page: 1 })
-
-// console.log(s.fetch())
-
-console.log(config)
