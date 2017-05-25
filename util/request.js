@@ -4,6 +4,7 @@ axios.defaults.headers['User-Agent'] = 'AcyOrt'
 
 class Request {
   constructor(user, repo, args = {}) {
+    console.log(user)
     this.host = 'https://api.github.com'
     this.user = user
     this.repo = repo
@@ -23,7 +24,8 @@ class Request {
 
   fetch() {
     const url = `${this.host + this.thePath}?${this.theArgs}`
-    return axios.get(url).then(res => res)
+    return url
+    //return axios.get(url).then(res => res)
   }
 }
 
