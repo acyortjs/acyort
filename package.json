@@ -8,6 +8,7 @@
   },
   "preferGlobal": "true",
   "scripts": {
+    "test": "cd assets && cross-env NODE_ENV=dev node ../lib/acyort",
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
