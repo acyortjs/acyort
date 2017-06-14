@@ -1,4 +1,4 @@
-{% macro render(page, post, time) %}
+{% macro render(page, post, time, config) %}
 
 <ul>
 {% for id in page.posts %}
@@ -7,7 +7,7 @@
     <div class="post">
         <h2><a href="{{ url(p.url) }}">{{ p.title }}</a></h2>
         <p class="time">
-        {% if _lang() == 'en' %}
+        {% if config.language == 'en' %}
         {{ time(p.updated, 'MMMM DD, YYYY') }}
         {% else %}
         {{ time(p.updated, 'YYYY-MM-DD') }}
