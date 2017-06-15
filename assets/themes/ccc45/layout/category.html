@@ -9,7 +9,7 @@
 {% block content %}
 <div id="posts" class="center">
     <h2 class="tag">{{ __('title.category') }} : <span>{{ page.name }}</span></h2>
-    {{ postsTpl.render(page, post, time, config) }}
+    {{ postsTpl.render(page, _post, _time, config) }}
     {{ pagination.render(page) }}
 </div>
 {% endblock %}

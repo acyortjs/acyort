@@ -7,13 +7,13 @@
 
 {% block content %}
 <div class="archives center">
-    <h2 class="tag">{{ _n('archives', posts().length) }}</h2>
+    <h2 class="tag">{{ _n('archives', _posts().length) }}</h2>
 
     {% for id in page.posts %}
-    {% set p = post(id) %}
+    {% set p = _post(id) %}
 
     {% set year %}
-    {% set p.year = time(p.created, 'YYYY') %}
+    {% set p.year = _time(p.created, 'YYYY') %}
 
     {% if p.year !== year %}
     {% set year = p.year %}
@@ -22,14 +22,14 @@
 
     <div class="entry">
         <p>
-        <span>{{ time(p.created, 'MM-DD') }}</span>
-        <a href="{{ url(p.url) }}">{{ p.title }}</a>
+        <span>{{ _time(p.created, 'MM-DD') }}</span>
+        <a href="{{ _url(p.url) }}">{{ p.title }}</a>
         </p>
 
         {% if p.tags.length %}
         <div class="label">
         {% for tag in p.tags %}
-        <a href="{{ url(tag.url) }}">#{{ tag.name }}</a>
+        <a href="{{ _url(tag.url) }}">#{{ tag.name }}</a>
         {% endfor %}
         </div>
         {% endif %}

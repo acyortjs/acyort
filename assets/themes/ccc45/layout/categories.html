@@ -9,7 +9,7 @@
     <h2 class="tag">{{ __('title.categories') }}</h2>
 
     {% for category in page %}
-    <p><a href="{{ url(category.url) }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
+    <p><a href="{{ _url(category.url) }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
     {% endfor %}
 </div>
 {% endblock %}

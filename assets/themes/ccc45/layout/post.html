@@ -11,11 +11,11 @@
     <a href="{{ page.author.url }}">{{ page.author.name }}</a>
     {{ __('title.posted') }}
     {% if config.language == 'en' %}
-    {{ time(page.created, 'MMMM DD, YYYY') }}
+    {{ _time(page.created, 'MMMM DD, YYYY') }}
     {% else %}
-    {{ time(page.created, 'YYYY-MM-DD') }}
+    {{ _time(page.created, 'YYYY-MM-DD') }}
     {% endif %}
-    . - <a href="{{ url(page.category.url) }}">{{ page.category.name}}</a>
+    . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
     </p>
 
     <div class="content">
@@ -33,20 +33,20 @@
     {% if page.tags.length %}
     <div class="label">
     {% for tag in page.tags %}
-    <div><a href="{{ url(tag.url) }}">#{{ tag.name }}</a></div>
+    <div><a href="{{ _url(tag.url) }}">#{{ tag.name }}</a></div>
     {% endfor %}
     </div>
     {% endif %}
 
     <div class="relate">
     {% if page.prev %}
-    {% set prev = post(page.prev) %}
-    <a rel="prev" href="{{ url(prev.url) }}">← {{ prev.title }}</a>
+    {% set prev = _post(page.prev) %}
+    <a rel="prev" href="{{ _url(prev.url) }}">← {{ prev.title }}</a>
     {% endif %}
 
     {% if page.next %}
-    {% set next = post(page.next) %}
-    <a rel="next" href="{{ url(next.url) }}">{{ next.title }} →</a>
+    {% set next = _post(page.next) %}
+    <a rel="next" href="{{ _url(next.url) }}">{{ next.title }} →</a>
     {% endif %}
     </div>
 </div>
