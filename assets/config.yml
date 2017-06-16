@@ -84,7 +84,7 @@ authors:
 # boolean or string
 # you can set json output path
 # default false
-json:
+json: json
 
 # dev mode
 # default false
