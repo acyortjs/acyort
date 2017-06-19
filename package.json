@@ -1,14 +1,13 @@
 {
   "name": "acyort",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "description": "A simple Node.js blog tool. Powered by GitHub",
-  "main": "lib",
+  "main": "lib/acyort",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
   "preferGlobal": "true",
   "scripts": {
-    "test": "cd assets && cross-env NODE_ENV=dev node ../lib/acyort",
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "lint": "eslint .",
