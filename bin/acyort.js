@@ -4,8 +4,6 @@ const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
-const Acyort = require('../lib/acyort')
-const Server = require('../lib/server/')
 const Logger = require('../lib/logger/')
 
 const config = path.join(process.cwd(), 'config.yml')
@@ -45,6 +43,7 @@ program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
+  const Server = require('../lib/server/')
   const server = new Server(port)
   server._()
 })
@@ -53,6 +52,7 @@ program
 .command('build')
 .description('Generate the files')
 .action(() => {
+  const Acyort = require('../lib/acyort')
   const acyort = new Acyort()
   acyort._()
 })
