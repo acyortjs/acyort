@@ -4,12 +4,13 @@ const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
-const { log } = require('../lib/util')
+const Logger = require('../lib/logger/')
 
-const configPath = path.join(process.cwd(), 'config.yml')
+const config = path.join(process.cwd(), 'config.yml')
 const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
 const commands = 'version init build server clean'
 const keeps = 'themes config.yml CNAME README.md'
+const logger = new Logger()
 
 program
 .allowUnknownOption()
@@ -20,51 +21,40 @@ program
 .description('Create new blog')
 .action((folder = '') => {
   try {
-    if (fs.existsSync(configPath)) {
-      fs.copySync(configPath, path.join(process.cwd(), 'config.bak.yml'))
+    if (fs.existsSync(config)) {
+      fs.copySync(config, path.join(process.cwd(), 'config.bak.yml'))
     }
 
     fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
     fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignores)
 
-    log.done('Configure "config.yml" to start your blog')
+    logger.success('Configure "config.yml" to start your blog')
   } catch (e) {
-    log.error(e)
+    logger.error(e)
   }
 })
 
 program
 .command('version')
 .description('Display AcyOrt version')
-.action(() => log.info(pkg.version))
+.action(() => logger.info(pkg.version))
 
 program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  if (!fs.existsSync(configPath)) {
-    return log.error('Cannot find "config.yml"')
-  }
-  /* eslint-disable */
-  const server = require('../lib/server')
-  /* eslint-disable */
-
-  return server(port)
+  const Server = require('../lib/server/')
+  const server = new Server(port)
+  server._()
 })
 
 program
 .command('build')
-.description('Generate the html')
+.description('Generate the files')
 .action(() => {
-  if (!fs.existsSync(configPath)) {
-    return log.error('Cannot find "config.yml"')
-  }
-
-  /* eslint-disable */
-  const build = require('../lib')
-  /* eslint-disable */
-
-  return build()
+  const Acyort = require('../lib/acyort')
+  const acyort = new Acyort()
+  acyort._()
 })
 
 program

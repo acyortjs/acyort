@@ -1,41 +1,48 @@
 # site
+# default "AcyOrt", "A Node.js blog tool powered by GitHub."
 title:
 description:
-keywords:
-rss: rss.xml
-favicon:
+
+# rss
+# set false if no need rss output
+# default "rss.xml"
+rss:
 
 # site url. you can set as 'http://yoursite.com/child' if need
 # please add 'http://' or 'https://'
+# default "https://acyortjs.github.io"
 url:
 
-# comment
-disqus:
-
 # language
-language: zh-CN
+# base on the theme support
+# default "en"
+language:
 
 # theme
-theme: ccc45
+# default "ccc45"
+theme:
 
 # pagination
 # set 0 if no need paging
-per_page: 5
-archives_per_page: 30
+# default 10, 30
+per_page:
+archives_per_page:
 
 # thumbnail mode
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
-thumbnail_mode: 2
+# default 2
+thumbnail_mode:
 
-#menu
+# menu
 menu:
-  archives: /archives
-  categories: /category
-  tags: /tag
+  # archives: /archives/
+  # categories: /category/
+  # tags: /tag/
 
 # category
-default_category: uncategorized
+# default "uncategorized"
+default_category:
 
 # html output directory or child directory e.g. 'child'
 # default "/"
@@ -58,7 +65,8 @@ post_dir:
 archives_dir:
 
 # site content source
-# your github username/repository
+# your github user/repository
+# default "acyortjs", "acyortjs.github.io"
 user:
 repository:
 
@@ -68,21 +76,23 @@ authors:
 #  - author0
 #  - author1
 
-# GitHub access token(optional)
-# token should be separated by '#' if you push this file to GitHub
+# gitHub access token(optional)
+# token should be separated by '#' if you push this file to github
 # token: s#d46a6d65aasd8sdbn
 
 # json output
 # boolean or string
 # you can set json output path
-json: false
+# default false
+json:
 
 # dev mode
-dev: false
+# default false
+dev:
 
 # other
-# customize some settings if you need
+# customize some settings if need
 
-# duoshuo:
-# blogroll:
-#  GitHub: https://github.com
+# disqus:
+# keywords:
+# favicon:

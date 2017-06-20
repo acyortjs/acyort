@@ -4,29 +4,16 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
 
-- muti-authors support
-- write your blog on github issue
-- use github powerful markdown writing tool
-- simpler themes development(width livereload)
-- quick install and simple config
-- json output support
-- Travis Ci auto deploy
+- Muti-authors support
+- Write the blog on github issue
+- Simple themes development(width livereload)
+- Quick install and simple config
+- Json output support
+- Ci auto deploy support
 
 ## Demo
 
 http://acyort.am0200.com/
-
-## Supports
-
-- Comments
-- Rss
-- Page
-- Category
-- Theme
-- Tag
-- Thumbnail
-- TOC
-- i18n
 
 ## Install
 
