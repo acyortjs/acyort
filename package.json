@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A simple Node.js blog tool. Powered by GitHub",
   "main": "lib/acyort",
   "bin": {
