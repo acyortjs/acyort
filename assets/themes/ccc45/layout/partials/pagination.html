@@ -5,7 +5,7 @@
     <a rel="prev" href="{{ _url(pagination.prev) }}">← {{ __('pager.prev') }}</a>
     {% endif %}
 
-    <span>Page {{ pagination.current }} of {{ pagination.total }}</span>
+    <span>{{ __('pager.tip', pagination.current, pagination.total) }}</span>
 
     {% if pagination.next %}
     <a rel="next" href="{{ _url(pagination.next) }}">{{ __('pager.next') }} →</a>

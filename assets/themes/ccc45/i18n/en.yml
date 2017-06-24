@@ -24,4 +24,5 @@ menu:
 pager:
   prev: Newer Posts
   next: Older Posts
+  tip: page %1$s of %2$s
 

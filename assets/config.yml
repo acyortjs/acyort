@@ -3,12 +3,18 @@
 title:
 description:
 
+# timezone
+# the timezone of your website
+# example: America/New_York, Japan, or UTC
+# default is local system timezone
+timezone:
+
 # rss
 # set false if no need rss output
 # default "rss.xml"
 rss:
 
-# site url. you can set as 'http://yoursite.com/child' if need
+# site url. you can set as 'http://yoursite.com/child' if necessary
 # please add 'http://' or 'https://'
 # default "https://acyortjs.github.io"
 url:
@@ -91,7 +97,7 @@ json:
 dev:
 
 # other
-# customize some settings if need
+# customize some settings if necessary
 
 # disqus:
 # keywords:

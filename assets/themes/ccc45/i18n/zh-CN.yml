@@ -24,3 +24,4 @@ menu:
 pager:
   next: 下一页
   prev: 上一页
+  tip: 第 %1$s / %2$s 页

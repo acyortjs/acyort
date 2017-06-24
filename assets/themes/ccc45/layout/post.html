@@ -10,11 +10,7 @@
     <p>
     <a href="{{ page.author.url }}">{{ page.author.name }}</a>
     {{ __('title.posted') }}
-    {% if config.language == 'en' %}
     {{ _time(page.created, 'MMMM DD, YYYY') }}
-    {% else %}
-    {{ _time(page.created, 'YYYY-MM-DD') }}
-    {% endif %}
     . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
     </p>
 

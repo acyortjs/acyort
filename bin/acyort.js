@@ -9,7 +9,7 @@ const Logger = require('../lib/logger/')
 const config = path.join(process.cwd(), 'config.yml')
 const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
 const commands = 'version init build server clean'
-const keeps = 'themes config.yml CNAME README.md'
+const keeps = 'themes config.yml CNAME README.md LICENSE ISSUE_DATA.json favicon.ico'
 const logger = new Logger()
 
 program
