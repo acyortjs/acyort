@@ -8,7 +8,7 @@
 
 {% block content %}
 <div id="posts" class="center">
-    {{ postsTpl.render(page, _post, _time, config) }}
+    {{ postsTpl.render(page) }}
     {{ pagination.render(page) }}
 </div>
 {% endblock %}
