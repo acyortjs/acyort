@@ -14,7 +14,7 @@
     "lint": "eslint ./lib"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=6.0.0"
   },
   "repository": {
     "type": "git",
