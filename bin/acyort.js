@@ -4,7 +4,7 @@ const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
-const Logger = require('../lib/logger/')
+const Logger = require('../lib/logger')
 
 const config = path.join(process.cwd(), 'config.yml')
 const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
@@ -43,7 +43,7 @@ program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  const Server = require('../lib/server/')
+  const Server = require('../lib/server')
   const server = new Server(port)
   server._()
 })
