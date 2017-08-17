@@ -20,7 +20,7 @@ rss:
 url:
 
 # language
-# requires the theme support
+# requires theme support
 # default "en"
 language:
 
@@ -84,7 +84,8 @@ authors:
 
 # gitHub access token(optional)
 # token should be separated by '#' if you push this file to github
-# token: s#d46a6d65aasd8sdbn
+# 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
+token:
 
 # json output
 # boolean or string

@@ -5,12 +5,16 @@ const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
 const Logger = require('../lib/logger')
+const Server = require('../lib/server')
+const Acyort = require('../lib/acyort')
 
-const config = path.join(process.cwd(), 'config.yml')
+const yml = path.join(process.cwd(), 'config.yml')
 const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
 const commands = 'version init build server clean'
 const keeps = 'themes config.yml CNAME README.md LICENSE ISSUE_DATA.json favicon.ico'
 const logger = new Logger()
+const server = new Server()
+const acyort = new Acyort()
 
 program
 .allowUnknownOption()
@@ -21,8 +25,8 @@ program
 .description('Create new blog')
 .action((folder = '') => {
   try {
-    if (fs.existsSync(config)) {
-      fs.copySync(config, path.join(process.cwd(), 'config.bak.yml'))
+    if (fs.existsSync(yml)) {
+      fs.copySync(yml, path.join(process.cwd(), 'config.bak.yml'))
     }
 
     fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
@@ -43,18 +47,22 @@ program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  const Server = require('../lib/server')
-  const server = new Server(port)
-  server._()
+  if (!fs.existsSync(yml)) {
+    logger.error('Cannot find "config.yml"')
+  } else {
+    server.start()
+  }
 })
 
 program
 .command('build')
 .description('Generate the files')
 .action(() => {
-  const Acyort = require('../lib/acyort')
-  const acyort = new Acyort()
-  acyort._()
+  if (!fs.existsSync(yml)) {
+    logger.error('Cannot find "config.yml"')
+  } else {
+    acyort.start()
+  }
 })
 
 program
