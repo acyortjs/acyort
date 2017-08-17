@@ -50,7 +50,7 @@ program
   if (!fs.existsSync(yml)) {
     logger.error('Cannot find "config.yml"')
   } else {
-    server.start()
+    server.start(port)
   }
 })
 
