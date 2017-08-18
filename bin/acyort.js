@@ -4,17 +4,23 @@ const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const pkg = require('../package.json')
+const yaml = require('yamljs')
 const Logger = require('../lib/logger')
 const Server = require('../lib/server')
 const Acyort = require('../lib/acyort')
 
-const yml = path.join(process.cwd(), 'config.yml')
-const ignores = 'Thumbs.db .DS_Store *.swp themes/ ISSUE_DATA.json'.split(' ').join('\n')
-const commands = 'version init build server clean'
-const keeps = 'themes config.yml CNAME README.md LICENSE ISSUE_DATA.json favicon.ico'
 const logger = new Logger()
 const server = new Server()
 const acyort = new Acyort()
+const { ignores, commands, keeps } = yaml.load(path.join(__dirname, 'config.yml'))
+
+function check() {
+  const yml = path.join(process.cwd(), 'config.yml')
+  if (fs.existsSync(yml)) {
+    return yml
+  }
+  return false
+}
 
 program
 .allowUnknownOption()
@@ -25,12 +31,12 @@ program
 .description('Create new blog')
 .action((folder = '') => {
   try {
-    if (fs.existsSync(yml)) {
-      fs.copySync(yml, path.join(process.cwd(), 'config.bak.yml'))
+    if (check()) {
+      fs.copySync(check(), path.join(process.cwd(), 'config.bak.yml'))
     }
 
     fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
-    fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignores)
+    fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignores.join('\n'))
 
     logger.success('Configure "config.yml" to start your blog')
   } catch (e) {
@@ -47,7 +53,7 @@ program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  if (!fs.existsSync(yml)) {
+  if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
     server.start(port)
@@ -58,7 +64,7 @@ program
 .command('build')
 .description('Generate the files')
 .action(() => {
-  if (!fs.existsSync(yml)) {
+  if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
     acyort.start()
@@ -69,19 +75,18 @@ program
 .command('clean')
 .description('Remove all the generated files')
 .action(() => {
-  let files = fs.readdirSync(process.cwd())
+  try {
+    const files = fs.readdirSync(process.cwd()).filter((file) => {
+      if ((/(^|\/)\.[^\/\.]/g).test(file) || keeps.indexOf(file) > -1) {
+        return false
+      }
+      return true
+    })
 
-  files = files.filter((file) => {
-    if ((/(^|\/)\.[^\/\.]/g).test(file)) {
-      return false
-    }
-    if (keeps.indexOf(file) > -1) {
-      return false
-    }
-    return true
-  })
-
-  files.forEach(file => fs.removeSync(file))
+    files.forEach(file => fs.removeSync(file))
+  } catch (e) {
+    logger.error(e)
+  }
 })
 
 program.parse(process.argv)
