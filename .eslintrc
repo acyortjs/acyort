@@ -5,6 +5,9 @@
     "node": true
   },
   "rules": {
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "no-underscore-dangle": ["error", {
+      "allowAfterThis": true
+    }]
   }
 }
