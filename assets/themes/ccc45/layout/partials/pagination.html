@@ -1,15 +1,15 @@
 {% macro render(pagination) %}
 
 <div id="pagination">
-    {% if pagination.prev %}
-    <a rel="prev" href="{{ _url(pagination.prev) }}">← {{ __('pager.prev') }}</a>
-    {% endif %}
+  {% if pagination.prev %}
+  <a rel="prev" href="{{ _url(pagination.prev) }}">← {{ __('pager.prev') }}</a>
+  {% endif %}
 
-    <span>{{ __('pager.tip', pagination.current, pagination.total) }}</span>
+  <span>{{ __('pager.tip', pagination.current, pagination.total) }}</span>
 
-    {% if pagination.next %}
-    <a rel="next" href="{{ _url(pagination.next) }}">{{ __('pager.next') }} →</a>
-    {% endif %}
+  {% if pagination.next %}
+  <a rel="next" href="{{ _url(pagination.next) }}">{{ __('pager.next') }} →</a>
+  {% endif %}
 </div>
 
 {% endmacro %}

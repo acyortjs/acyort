@@ -1,13 +1,9 @@
+# Base Config
+
 # site
 # default "AcyOrt", "A Node.js blog tool powered by GitHub."
 title:
 description:
-
-# timezone
-# the timezone of your website
-# example: America/New_York, Japan, or UTC
-# default is local system timezone
-timezone:
 
 # rss
 # set false if not need rss output
@@ -19,26 +15,14 @@ rss:
 # default "https://acyortjs.github.io"
 url:
 
-# language
-# requires theme support
-# default "en"
-language:
-
 # theme
 # default "ccc45"
 theme:
 
 # pagination
 # set 0 if not need
-# default 10, 30
+# default 10
 per_page:
-archives_per_page:
-
-# thumbnail mode
-# 1: use the first image as thumbnail and remove the image
-# 2: use the first image as thumbnail but not remove the image
-# default 2
-thumbnail_mode:
 
 # menu
 menu:
@@ -50,9 +34,58 @@ menu:
 # default "uncategorized"
 default_category:
 
+# site content source
+# your github user/repository
+# default "acyortjs", "acyortjs.github.io"
+user:
+repository:
+
+
+# Advance Config
+# you can ignore it
+
 # html output directory or child directory e.g. 'child'
 # default "/"
 public_dir:
+
+# blog post authors
+# github username
+authors:
+#  - author0
+#  - author1
+
+# timezone
+# the timezone of your website
+# example: America/New_York, Japan, or UTC
+# default is local system timezone
+timezone:
+
+# language
+# requires theme support
+language:
+
+# code line numbers
+# whether to dispaly code line numbers
+# default true
+line_numbers:
+
+# archives pagination
+# set 0 if not need
+# default 30
+archives_per_page:
+
+# post order
+# order by create time" or "update time"
+# created: use "create time"
+# updated: use "update time"
+# default "created"
+order:
+
+# thumbnail mode
+# 1: use the first image as thumbnail and remove the image
+# 2: use the first image as thumbnail but not remove the image
+# default 2
+thumbnail_mode:
 
 # category directory
 # default "category"
@@ -70,21 +103,9 @@ post_dir:
 # default "archives"
 archives_dir:
 
-# site content source
-# your github user/repository
-# default "acyortjs", "acyortjs.github.io"
-user:
-repository:
-
-# post authors
-# github username
-authors:
-#  - author0
-#  - author1
-
 # gitHub access token(optional)
 # token should be separated by '#' if you push this file to github
-# 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
+# example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
 token:
 
 # json output
@@ -97,7 +118,8 @@ json:
 # default false
 dev:
 
-# other
+
+# Other Config
 # customize some settings if necessary
 
 # disqus:

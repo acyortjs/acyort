@@ -7,37 +7,29 @@
 
 {% block content %}
 <div class="archives center">
-    <h2 class="tag">{{ _n('archives', _posts().length) }}</h2>
+  <p class="head-tag">{{ _n('archives', _posts().length) }}</p>
 
-    {% for id in page.posts %}
-    {% set p = _post(id) %}
+  {% for id in page.posts %}
+  {% set p = _post(id) %}
 
-    {% set year %}
-    {% set p.year = _time(p.created, 'YYYY') %}
+  {% set year %}
+  {% set p.year = _time(p.created, 'YYYY') %}
 
-    {% if p.year !== year %}
-    {% set year = p.year %}
-    <h3 class="year">{{ year }}</h3>
-    {% endif %}
+  {% if p.year !== year %}
+  {% set year = p.year %}
+  <h3 class="year">{{ year }}</h3>
+  {% endif %}
 
-    <div class="entry">
-        <p>
-        <span>{{ _time(p.created, 'MM-DD') }}</span>
-        <a href="{{ _url(p.url) }}">{{ p.title }}</a>
-        </p>
+  <div class="entry">
+    <p>
+      <span>{{ _time(p.created, 'MM-DD') }}</span>
+      <a href="{{ _url(p.url) }}">{{ p.title }}</a>
+    </p>
+  </div>
 
-        {% if p.tags.length %}
-        <div class="label">
-        {% for tag in p.tags %}
-        <a href="{{ _url(tag.url) }}">#{{ tag.name }}</a>
-        {% endfor %}
-        </div>
-        {% endif %}
-    </div>
+  {% endfor %}
 
-    {% endfor %}
+  {{ pagination.render(page) }}
 </div>
-
-{{ pagination.render(page) }}
 
 {% endblock %}

@@ -3,24 +3,24 @@
 <ul>
 {% for id in page.posts %}
 {% set p = _post(id) %}
-    <li>
+  <li>
     <div class="post">
-        <h2><a href="{{ _url(p.url) }}">{{ p.title }}</a></h2>
-        <p class="time">{{ _time(p.updated, 'MMMM DD, YYYY') }}</p>
+      <h2><a href="{{ _url(p.url) }}">{{ p.title }}</a></h2>
+      <p class="time">{{ _time(p.created, 'MMMM DD, YYYY') }}</p>
 
-        {% if p.thumb %}
-        <img class="thumb" src="{{ p.thumb }}" />
-        {% endif %}
+      {% if p.thumb %}
+      <img class="thumb" src="{{ p.thumb }}" />
+      {% endif %}
 
-        {% if p.summary %}
-        <div class="summary">{% autoescape false %}{{ p.summary }}{% endautoescape %}</div>
-        {% endif %}
+      {% if p.summary %}
+      <div class="summary">{% autoescape false %}{{ p.summary }}{% endautoescape %}</div>
+      {% endif %}
     </div>
 
     <a class="author" href="{{ p.author.url }}" target="_blank">
-        <img src="{{ p.author.avatar }}" />
+      <img src="{{ p.author.avatar }}" />
     </a>
-    </li>
+  </li>
 {% endfor %}
 </ul>
 

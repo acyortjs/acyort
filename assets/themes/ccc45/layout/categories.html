@@ -5,11 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="center categories">
-    <h2 class="tag">{{ __('title.categories') }}</h2>
+<div class="center clouds">
+  <p class="head-tag">{{ __('title.categories') }}</p>
 
+  <div>
     {% for category in page %}
-    <p><a href="{{ _url(category.url) }}">{{ category.name }}</a><span>({{ category.posts.length }})</span></p>
+    <p>
+      <a href="{{ _url(category.url) }}">{{ category.name }}</a>
+      <span>({{ category.posts.length }})</span>
+    </p>
     {% endfor %}
+  </div>
 </div>
 {% endblock %}

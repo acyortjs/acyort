@@ -1,0 +1,25 @@
+# git ignores
+ignores:
+  - Thumbs.db
+  - .DS_Store
+  - '*.swp'
+  - themes/
+  - ISSUE_DATA.json
+
+# cli commands
+commands:
+  - version
+  - init
+  - build
+  - server
+  - clean
+
+# files keeps
+keeps:
+  - themes
+  - config.yml
+  - CNAME
+  - README.md
+  - LICENSE
+  - ISSUE_DATA.json
+  - favicon.ico

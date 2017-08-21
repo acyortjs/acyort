@@ -5,11 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="center categories">
-    <h2 class="tag">{{ __('title.tags') }}</h2>
+<div class="center clouds">
+  <p class="head-tag">{{ __('title.tags') }}</p>
 
+  <div>
     {% for tag in page %}
-    <p><a href="{{ _url(tag.url) }}">{{ tag.name }}</a><span>({{ tag.posts.length }})</span></p>
+    <p>
+      <a href="{{ _url(tag.url) }}">{{ tag.name }}</a>
+      <span>({{ tag.posts.length }})</span>
+    </p>
     {% endfor %}
+  </div>
 </div>
 {% endblock %}
