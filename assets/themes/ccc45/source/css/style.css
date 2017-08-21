@@ -333,11 +333,9 @@ a {
   margin: 20px 0 10px;
   padding-left: 25px;
 }
-.content ul li {
-  margin-top: 10px;
-}
-.content ol li {
-  margin-top: 10px;
+.content ol li, .content ul li {
+  margin-top: 5px;
+  line-height: 1.6
 }
 .content img {
   margin-top: 14px;
