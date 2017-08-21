@@ -22,7 +22,7 @@ theme:
 # pagination
 # set 0 if not need
 # default 10
-per_page:
+per_page: 3
 
 # menu
 menu:
@@ -44,15 +44,15 @@ public_dir:
 user: LoeiFy
 repository: Recordum
 
+
+# Advance Config
+# you can ignore it
+
 # blog post authors
 # github username
 authors:
 #  - author0
 #  - author1
-
-
-# Advance Config
-# you can ignore it
 
 # timezone
 # the timezone of your website
@@ -64,10 +64,15 @@ timezone:
 # requires theme support
 language:
 
+# code line numbers
+# whether to dispaly code line numbers
+# default true
+line_numbers: false
+
 # archives pagination
 # set 0 if not need
 # default 30
-archives_per_page:
+archives_per_page: 3
 
 # post order
 # order by create time" or "update time"
