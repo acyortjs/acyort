@@ -1,9 +1,9 @@
 title:
-  archive: archive
+  archive: Archive
   categories: All categories
   tags: All tags
-  category: category
-  tag: tag
+  category: Category
+  tag: Tag
   toc: Table Of Contents
   posted: Posted at
 
@@ -22,7 +22,7 @@ menu:
   about: about
 
 pager:
-  prev: Newer Posts
-  next: Older Posts
+  prev: Newer
+  next: Older
   tip: page %1$s of %2$s
 

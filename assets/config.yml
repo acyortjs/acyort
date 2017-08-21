@@ -22,7 +22,7 @@ theme:
 # pagination
 # set 0 if not need
 # default 10
-per_page: 3
+per_page:
 
 # menu
 menu:
@@ -34,19 +34,19 @@ menu:
 # default "uncategorized"
 default_category:
 
-# html output directory or child directory e.g. 'child'
-# default "/"
-public_dir:
-
 # site content source
 # your github user/repository
 # default "acyortjs", "acyortjs.github.io"
-user: LoeiFy
-repository: Recordum
+user:
+repository:
 
 
 # Advance Config
 # you can ignore it
+
+# html output directory or child directory e.g. 'child'
+# default "/"
+public_dir:
 
 # blog post authors
 # github username
@@ -67,12 +67,12 @@ language:
 # code line numbers
 # whether to dispaly code line numbers
 # default true
-line_numbers: false
+line_numbers:
 
 # archives pagination
 # set 0 if not need
 # default 30
-archives_per_page: 3
+archives_per_page:
 
 # post order
 # order by create time" or "update time"

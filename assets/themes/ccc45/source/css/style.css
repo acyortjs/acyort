@@ -1,4 +1,4 @@
-body, div, h1, h2, h3, h4, h5, p, ul {
+body, div, h1, h2, h3, h4, h5, p, ul, pre {
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -22,12 +22,27 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+.center {
+  position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 20px;
+}
+.head-tag {
+  font-size: 16px;
+  color: #6D6D6D;
+  margin: 30px 0;
+}
+.head-tag:first-letter {
+  text-transform: uppercase;
+}
 .header {
   position: relative;
   background: #374756 url(../images/header.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  margin-bottom: 30px;
 }
 .header:before {
   content: '';
@@ -55,12 +70,6 @@ a {
   font-size: 16px;
   line-height: 1.6;
 }
-.center {
-  position: relative;
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 0 20px;
-}
 .menu {
   position: absolute;
   top: 20px;
@@ -79,7 +88,6 @@ a {
   text-transform: uppercase;
 }
 #posts {
-  margin-top: 30px;
   min-height: 600px;
 }
 #posts li {
@@ -176,57 +184,54 @@ a {
   color: #999;
   font-size: 14px;
 }
-
-
-
-
-
-
-.archives > div {
-  margin-top: 30px;
-}
-.archives h2 + div {
-  margin-top: 50px;
-}
 .archives h3 {
-  font-size: 28px;
+  font-size: 24px;
   color: #666;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
 }
 .archives .entry {
-  padding-left:  100px;
+  padding-left:  80px;
+  margin-top: 20px;
 }
-.archives a {
-  font-size: 18px;
-  text-decoration: none;
+.archives .entry + h3 {
+  border-top: 1px solid #eee;
+}
+.archives .entry a {
+  font-size: 16px;
   color: #333;
 }
-.archives a:hover {
-  text-decoration: underline;
+.archives .entry a:hover {
+  color: #5694f1;
 }
-.archives span {
+.archives .entry span {
   font-size: 16px;
   color: #999;
-  width: 80px;
+  width: 60px;
   display: inline-block;
 }
-.archives .label {
-  margin: 10px 0 0 80px;
-  font-size: 14px;
-  color: #888;
+.clouds {
+  min-height: 400px;
 }
-.archives .label a {
-  font-size: 14px;
-  text-decoration: underline;
-  margin-right: 10px;
+.clouds > div p {
+  display: inline-block;
+  margin: 0 10px 10px 0;
 }
-/* single post */
+.clouds a {
+  color: #333;
+}
+.clouds a:hover {
+  color: #5694f1;
+}
+.clouds span {
+  color: #999;
+}
 #post {
   padding-top: 20px;
 }
 #post > h1 {
   color: #212427;
-  font-size: 28px;
+  font-size: 26px;
 }
 #post > p {
   font-size: 14px;
@@ -235,11 +240,7 @@ a {
 }
 #post > p a {
   color: #5694f1;
-  text-decoration: none;
   margin-right: 5px;
-}
-#post > p a:hover {
-  text-decoration: underline;
 }
 #post .content:before {
   content: '';
@@ -260,49 +261,19 @@ a {
   border-radius: 3px;
   margin-right: 8px;
   border: 1px solid #e2e2e2;
-  font-size: 14px;
+  font-size: 13px;
 }
 .label a {
   color: #6D6D6D;
-  text-decoration: none;
-}
-.tag {
-  color: #666;
-  font-size: 16px;
-}
-.tag span {
-  color: #565656;
-  font-weight: bold;
-}
-.categories {
-  text-align: center;
-  padding: 30px 0;
-  min-height: 300px;
-}
-.categories h2 {
-  margin-bottom: 50px;
-}
-.categories p {
-  display: inline-block;
-  margin: 10px;
-}
-.categories a {
-  color: #333;
-}
-.categories span {
-  color: #999;
 }
 .relate {
-  margin-top: 30px;
+  margin-top: 50px;
   overflow: hidden;
 }
 .relate a {
+  font-size: 15px;
   color: #5694f1;
-  text-decoration: none;
   float: left;
-}
-.relate a:hover {
-  text-decoration: underline;
 }
 .relate a[rel="next"] {
   float: right;
@@ -310,18 +281,18 @@ a {
 
 /* article content */
 .content {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
   color: #4c4c4c;
 }
 .content h1, .content h2, .content h3, .content h4, .content h5 {
   font-weight: 700;
   margin-bottom: 14px;
-  margin-top: 26px;
+  margin-top: 24px;
   color: #484848;
 }
 .content p {
   margin-bottom: 16px;
+  line-height: 1.6;
 }
 .content h5 {
   font-size: 16px;
@@ -359,14 +330,14 @@ a {
   border: none;
 }
 .content ul, .content ol {
-  margin: 10px 0;
+  margin: 20px 0 10px;
   padding-left: 25px;
 }
 .content ul li {
-  margin-top: 4px;
+  margin-top: 10px;
 }
 .content ol li {
-  margin-top: 4px;
+  margin-top: 10px;
 }
 .content img {
   margin-top: 14px;
@@ -419,9 +390,15 @@ table tr th :last-child, table tr td :last-child {
 .hljs {
   overflow: auto;
   margin: 20px 0;
-  padding: 22px 15px 15px;
+  padding: 15px;
   position: relative;
   background: #f7f7f7;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.hljs pre {
+  line-height: 1.4;
 }
 .hljs table {
   margin: 0;
@@ -435,27 +412,16 @@ table tr th :last-child, table tr td :last-child {
 }
 .hljs .line {
   text-align: right;
-  padding-right: 15px;
+  padding-right: 10px;
+  border-right: 1px solid #d5d5d5;
 }
-.hljs .mark {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 1px 6px 2px;
-  background: #666;
-  font-size: 12px;
-  color: #fff;
+.hljs .code {
+  padding-left: 10px;
 }
 /**
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
  */
- pre code {
-  display: block;
-  color: #333;
-  overflow-x: auto;
-  line-height: 1.4;
-}
 .hljs-comment,
 .hljs-meta {
   color: #969896;
@@ -505,7 +471,6 @@ table tr th :last-child, table tr td :last-child {
 .hljs-link {
   text-decoration: underline;
 }
-
 .toc {
   position: sticky;
   position: -webkit-sticky;
@@ -528,6 +493,9 @@ table tr th :last-child, table tr td :last-child {
 }
 
 @media screen and (max-width: 600px) {
+  .header {
+    margin-bottom: 20px;
+  }
   .header h1 {
     font-size: 24px;
   }
@@ -564,14 +532,27 @@ table tr th :last-child, table tr td :last-child {
     margin-top: 50px;
     font-size: 13px;
   }
-
-
-
+  .archives h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  .archives .entry {
+    padding-left: 0;
+  }
+  .archives .entry span {
+    font-size: 14px;
+  }
+  .archives .entry a {
+    font-size: 14px;
+  }
   #post > h1 {
     font-size: 20px;
   }
   #post .content:before {
     margin: 30px 0 20px;
+  }
+  .relate {
+    display: none;
   }
   .content h5 {
     font-size: 14px;
@@ -588,18 +569,7 @@ table tr th :last-child, table tr td :last-child {
   .content h1 {
     font-size: 20px;
   }
-  .archives h3 {
-    float: none;
-    margin-bottom: 30px;
-  }
-  .archives .entry {
-    padding-left: 0;
-  }
-  .archives span {
-    display: inline;
-    margin-right: 10px;
-  }
-  .archives .label {
-    margin-left: 0;
+  .toc {
+    display: none;
   }
 }
