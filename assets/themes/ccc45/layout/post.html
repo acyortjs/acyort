@@ -6,35 +6,35 @@
 
 {% block content %}
 <div id="post" class="center">
-    <h1>{{ page.title }}</h1>
-    <p>
+  <h1>{{ page.title }}</h1>
+  <p>
     <a href="{{ page.author.url }}">{{ page.author.name }}</a>
     {{ __('title.posted') }}
     {{ _time(page.created, 'MMMM DD, YYYY') }}
     . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
-    </p>
+  </p>
 
-    <div class="content">
-        {% if page.toc %}
-            <div class="toc">
-            <h3>{{ __('title.toc') }}</h3>
-            {% autoescape false %}{{ page.toc }}{% endautoescape %}
-        </div>
-        {% endif %}
-        <div class="main">
-        {% autoescape false %}{{ page.content }}{% endautoescape %}
-        </div>
+  <div class="content">
+    {% if page.toc %}
+    <div class="toc">
+      <h3>{{ __('title.toc') }}</h3>
+      {% autoescape false %}{{ page.toc }}{% endautoescape %}
     </div>
+    {% endif %}
+    <div class="main">
+    {% autoescape false %}{{ page.content }}{% endautoescape %}
+    </div>
+  </div>
 
-    {% if page.tags.length %}
-    <div class="label">
+  {% if page.tags.length %}
+  <div class="label">
     {% for tag in page.tags %}
     <div><a href="{{ _url(tag.url) }}">#{{ tag.name }}</a></div>
     {% endfor %}
-    </div>
-    {% endif %}
+  </div>
+  {% endif %}
 
-    <div class="relate">
+  <div class="relate">
     {% if page.prev %}
     {% set prev = _post(page.prev) %}
     <a rel="prev" href="{{ _url(prev.url) }}">← {{ prev.title }}</a>
@@ -44,7 +44,7 @@
     {% set next = _post(page.next) %}
     <a rel="next" href="{{ _url(next.url) }}">{{ next.title }} →</a>
     {% endif %}
-    </div>
+  </div>
 </div>
 {% endblock %}
 
