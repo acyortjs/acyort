@@ -3,4 +3,8 @@
 //   return data
 // })
 
-console.log('?')
+const pkg = require('../package.json')
+
+console.log(pkg.name, acyort.name)
+
+return 0
