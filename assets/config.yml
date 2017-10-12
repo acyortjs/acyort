@@ -37,12 +37,15 @@ default_category:
 # site content source
 # your github user/repository
 # default "acyortjs", "acyortjs.github.io"
-user:
-repository:
+user: LoeiFy
+repository: Recordum
 
 
 # Advance Config
-# you can ignore it
+
+# script
+scripts:
+  - test.js
 
 # html output directory or child directory e.g. 'child'
 # default "/"
