@@ -56,7 +56,7 @@ program
   if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
-    server.start(port)
+    server.init(port)
   }
 })
 
@@ -67,7 +67,7 @@ program
   if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
-    acyort.start()
+    acyort.init()
   }
 })
 
