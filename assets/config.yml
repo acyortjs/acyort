@@ -45,8 +45,8 @@ repository: Recordum
 
 # script
 scripts:
-  - test.js
-  - promise.js
+  # - test.js
+  # - promise.js
 
 # html output directory or child directory e.g. 'child'
 # default "/"
