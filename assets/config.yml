@@ -37,8 +37,8 @@ default_category:
 # site content source
 # your github user/repository
 # default "acyortjs", "acyortjs.github.io"
-user: LoeiFy
-repository: Recordum
+user:
+repository:
 
 
 # Advance Config

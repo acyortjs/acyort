@@ -9,6 +9,7 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 - Simple themes development(width livereload)
 - Quick install and simple config
 - Json output support
+- Scripts support
 - Ci auto deploy support
 
 ## Demo
@@ -104,7 +105,6 @@ $ npm run clean
 ## Todo
 
 - unit test
-- plugins support
 - the website
 
 ## License
