@@ -4,10 +4,10 @@ A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
 
-- Muti-authors support
-- Write the blog on github issue
-- Simple themes development(width livereload)
 - Quick install and simple config
+- Write blog on github issues
+- Muti-authors support
+- Simple themes development(width livereload)
 - Json output support
 - Scripts support
 - Ci auto deploy support
@@ -33,6 +33,7 @@ $ acyort init blog
 or 
 
 ```bash
+$ cd blog
 $ acyort init
 ```
 

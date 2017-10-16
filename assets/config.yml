@@ -43,7 +43,8 @@ repository:
 
 # Advance Config
 
-# script
+# scripts
+# script file name
 scripts:
   # - test.js
   # - promise.js
