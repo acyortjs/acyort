@@ -17,6 +17,7 @@ commands:
 # files keeps
 keeps:
   - themes
+  - scripts
   - config.yml
   - CNAME
   - README.md

@@ -42,7 +42,12 @@ repository:
 
 
 # Advance Config
-# you can ignore it
+
+# scripts
+# script file name
+scripts:
+  # - test.js
+  # - promise.js
 
 # html output directory or child directory e.g. 'child'
 # default "/"
