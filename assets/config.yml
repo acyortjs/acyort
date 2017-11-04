@@ -30,11 +30,12 @@ menu:
   # categories: /category/
   # tags: /tag/
 
-# category
+# default category
 # default "uncategorized"
 default_category:
 
 # site content source
+# the repository issues
 # your github user/repository
 # default "acyortjs", "acyortjs.github.io"
 user:
@@ -45,16 +46,16 @@ repository:
 
 # scripts
 # script file name
+# the directory is "scripts"
 scripts:
-  # - test.js
-  # - promise.js
+  # - hexo.js
 
-# html output directory or child directory e.g. 'child'
+# html output directory or child directory e.g. "child"
 # default "/"
 public_dir:
 
-# blog post authors
-# github username
+# authors
+# GitHub username
 authors:
 #  - author0
 #  - author1
@@ -67,6 +68,7 @@ timezone:
 
 # language
 # requires theme support
+# default is "default"
 language:
 
 # code line numbers
@@ -108,8 +110,8 @@ post_dir:
 # default "archives"
 archives_dir:
 
-# gitHub access token(optional)
-# token should be separated by '#' if you push this file to github
+# GitHub access token(optional)
+# token should be separated by '#' if you push this file to GitHub
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
 token:
 

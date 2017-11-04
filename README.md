@@ -1,6 +1,6 @@
 # AcyOrt
 
-A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
+A Node.js blog tool. Powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
 
@@ -30,7 +30,7 @@ $ sudo npm install acyort -g
 $ acyort init blog
 ```
 
-or 
+or
 
 ```bash
 $ cd blog
@@ -49,7 +49,7 @@ $ acyort build
 
 ### publish
 
-all generated html files are saved in the `'public_dir'` you define in `config.yml`. 
+all generated html files are saved in the `'public_dir'` you define in `config.yml`.
 
 you can publish them to wherever you like.
 
@@ -68,7 +68,7 @@ $ acyort server [port]
 local server: `http://127.0.0.1:2222`
 
 > width liveReload
-          
+
 set `dev: true` in `config.yml`
 
 ### clean

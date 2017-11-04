@@ -10,8 +10,6 @@ const Server = require('../lib/server')
 const Acyort = require('../lib/acyort')
 
 const logger = new Logger()
-const server = new Server()
-const acyort = new Acyort()
 const { ignores, commands, keeps } = yaml.load(path.join(__dirname, 'config.yml'))
 
 function check() {
@@ -56,6 +54,7 @@ program
   if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
+    const server = new Server()
     server.init(port)
   }
 })
@@ -67,6 +66,7 @@ program
   if (!check()) {
     logger.error('Cannot find "config.yml"')
   } else {
+    const acyort = new Acyort()
     acyort.init()
   }
 })
