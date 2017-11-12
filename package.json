@@ -11,8 +11,8 @@
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
-    "test": "NODE_ENV=dev mocha -r intelli-espower-loader test",
-    "cover": "NODE_ENV=dev istanbul cover --print both _mocha -r intelli-espower-loader test",
+    "test": "NODE_ENV=test mocha -r intelli-espower-loader test",
+    "cover": "NODE_ENV=test istanbul cover --print both _mocha -r intelli-espower-loader test",
     "lint": "eslint ./lib"
   },
   "engines": {
