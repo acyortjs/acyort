@@ -4,6 +4,6 @@ npm-debug.log*
 node_modules/
 coverage/
 
-ISSUE_DATA.json
+_issues.json
 
 *.swp
