@@ -1,7 +1,7 @@
 const yaml = require('yamljs')
 const matters = []
 
-acyort.extend.register('after_post_get', data => {
+acyort.extend.register('after_fetch', data => {
   // origin data from github API
   data.forEach((d, i) => {
     // get Hexo Front-matter
@@ -21,7 +21,7 @@ acyort.extend.register('after_post_get', data => {
   })
 })
 
-acyort.extend.register('after_post_process', data => {
+acyort.extend.register('after_process', data => {
   // json data after processed
   data.posts.forEach((d, i) => {
     // example: change the permalink

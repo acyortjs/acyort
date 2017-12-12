@@ -1,13 +1,8 @@
-# Base Config
+# Base
 
 # site
 title: AcyOrt
 description: A Node.js blog tool powered by GitHub.
-
-# rss
-# set false if not need rss output
-# default is "rss.xml"
-rss:
 
 # url
 # you can set as "http://yoursite.com/child" if necessary
@@ -25,7 +20,6 @@ per_page:
 
 # menu
 menu:
-  archives: /archives/
   categories: /category/
   tags: /tag/
 
@@ -40,7 +34,7 @@ user: acyortjs
 repository: acyortjs.github.io
 
 
-# Advance Config
+# Advance
 
 # scripts
 # script file name
@@ -73,11 +67,6 @@ language:
 # default is true
 line_numbers:
 
-# archives pagination
-# set 0 if not need
-# default is 30
-archives_per_page:
-
 # order
 # order by issues create time" or "update time"
 # created: use "create time"
@@ -92,32 +81,19 @@ order:
 thumbnail_mode:
 
 # directory
-# default is "category", "tag", "posts", "archives"
+# default is "category", "tag", "posts"
 category_dir:
 tag_dir:
 post_dir:
-archives_dir:
 
-# token(optional)
-# GitHub access token
-# token should be separated by '#' if you push this file to GitHub
+# token
+# github access token
+# token should be separated by '#' if you push this file to github
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
 token:
 
-# json
-# boolean or string
-# you can set json output path
-# default is false
-json:
-
-# develop
-# default false
-dev:
-
-
-# Other Config
+# Other
 # customize some settings if necessary
 
 # disqus:
-# keywords:
 # favicon:
