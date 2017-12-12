@@ -15,7 +15,7 @@ const renderer = new Render()
 const {
   ignores,
   commands,
-  keeps
+  keeps,
 } = renderer.render('yaml', { path: path.join(__dirname, 'config.yml') })
 const config = new Config({ base, renderer }).value
 
@@ -48,7 +48,7 @@ program
 program
 .command('version')
 .description('Display AcyOrt version')
-.action(() => logger.info(version))
+.action(() => console.log(version)) // eslint-disable-line no-console
 
 // program
 // .command('server [port]')
@@ -77,17 +77,20 @@ program
 .command('clean')
 .description('Remove all the generated files')
 .action(() => {
-  const regex = /(^|\/)\.[^\/\.]/g
-  try {
-    const removes = fs
-      .readdirSync(base)
-      .filter(file => !regex.test(file) && keeps.indexOf(file) === -1)
+  const regex = /(^|\/)\.[^/.]/g
 
-    console.log(removes)
+  if (!config) {
+    logger.error('Cannot find "config.yml" or Configuration information error')
+  } else {
+    try {
+      const removes = fs
+        .readdirSync(base)
+        .filter(file => !regex.test(file) && keeps.indexOf(file) === -1)
 
-    // removes.forEach(file => fs.removeSync(file))
-  } catch (e) {
-    logger.error(e)
+      removes.forEach(file => fs.removeSync(file))
+    } catch (e) {
+      logger.error(e)
+    }
   }
 })
 

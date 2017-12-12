@@ -12,7 +12,7 @@
     "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
     "test": "NODE_ENV=test mocha -r intelli-espower-loader test",
     "cover": "NODE_ENV=test istanbul cover --print both _mocha -r intelli-espower-loader test",
-    "lint": "eslint ./lib"
+    "test:lint": "eslint ."
   },
   "engines": {
     "node": ">=6.0.0"
