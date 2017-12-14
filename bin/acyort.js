@@ -50,17 +50,16 @@ program
 .description('Display AcyOrt version')
 .action(() => console.log(version)) // eslint-disable-line no-console
 
-// program
-// .command('server [port]')
-// .description('Create a local test server')
-// .action((port = 2222) => {
-//   if (!check()) {
-//     logger.error('Cannot find "config.yml"')
-//   } else {
-//     const server = new Server()
-//     server.init(port)
-//   }
-// })
+program
+.command('server [port]')
+.description('Create a local test server')
+.action((port = 2222) => {
+  if (!config) {
+    logger.error('Cannot find "config.yml" or Configuration information error')
+  } else {
+    new Acyort(config).start()
+  }
+})
 
 program
 .command('build')
@@ -69,7 +68,7 @@ program
   if (!config) {
     logger.error('Cannot find "config.yml" or Configuration information error')
   } else {
-    new Acyort(config).run()
+    new Acyort(config).build()
   }
 })
 
