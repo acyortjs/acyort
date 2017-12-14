@@ -2,7 +2,7 @@
 
 <ul>
 {% for id in page.posts %}
-{% set p = _post(id) %}
+{% set p = _posts(id) %}
   <li>
     <div class="post">
       <h2><a href="{{ _url(p.url) }}">{{ p.title }}</a></h2>
@@ -13,7 +13,7 @@
       {% endif %}
 
       {% if p.summary %}
-      <div class="summary">{% autoescape false %}{{ p.summary }}{% endautoescape %}</div>
+      <div class="summary">{{ p.summary }}</div>
       {% endif %}
     </div>
 

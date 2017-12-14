@@ -16,7 +16,7 @@ theme:
 # pagination
 # set 0 if not need
 # default is 10
-per_page:
+per_page: 3
 
 # menu
 menu:
@@ -39,7 +39,11 @@ repository: acyortjs.github.io
 # scripts
 # script file name
 scripts:
-  # - hexo.js
+  - example.js
+
+# plugins
+plugins:
+  # - xxx module
 
 # output
 # html output directory
