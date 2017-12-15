@@ -37,14 +37,14 @@
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
     "acyort-config": "^0.1.1",
-    "acyort-extend": "^0.1.4",
+    "acyort-extend": "^0.1.6",
     "acyort-fetcher": "^0.1.2",
     "acyort-helper": "^0.1.2",
     "acyort-logger": "^0.1.0",
     "acyort-marked": "^0.1.2",
     "acyort-processor": "^0.1.1",
     "acyort-render": "^0.1.0",
-    "acyort-server": "^0.1.0",
+    "acyort-server": "^0.1.1",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5"
   },

@@ -57,7 +57,7 @@ program
   if (!config) {
     logger.error('Cannot find "config.yml" or Configuration information error')
   } else {
-    new Acyort(config).start()
+    new Acyort(config).start(port)
   }
 })
 
