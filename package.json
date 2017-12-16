@@ -11,9 +11,10 @@
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
-    "test": "NODE_ENV=test mocha -r intelli-espower-loader test",
-    "cover": "NODE_ENV=test istanbul cover --print both _mocha -r intelli-espower-loader test",
-    "test:lint": "eslint ."
+    "test": "npm run test:lint && npm run test:cover",
+    "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test",
+    "test:lint": "eslint .",
+    "test:cover": "istanbul cover --print both _mocha ./test"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -50,6 +51,7 @@
     "fs-extra": "^0.26.5"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "cross-env": "^3.1.4",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
@@ -57,6 +59,7 @@
     "intelli-espower-loader": "^1.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "puppeteer": "^0.13.0"
   }
 }
