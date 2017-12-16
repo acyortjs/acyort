@@ -22,6 +22,7 @@ per_page: 3
 menu:
   categories: /category/
   tags: /tag/
+  about: /about/
 
 # default category
 # default is "uncategorized"
@@ -30,8 +31,8 @@ default_category:
 # content
 # the repository's issues
 # GitHub user/repository
-user: acyortjs
-repository: acyortjs.github.io
+user: LoeiFy
+repository: Recordum
 
 
 # Advance

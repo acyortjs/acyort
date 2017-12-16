@@ -39,8 +39,6 @@ a {
 .header {
   position: relative;
   background: #374756 url(../images/header.jpg) no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   margin-bottom: 30px;
 }
@@ -141,8 +139,6 @@ a {
 .author img {
   width: 100%;
   height: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
 }
 .footer {
@@ -183,32 +179,6 @@ a {
 #pagination span {
   color: #999;
   font-size: 14px;
-}
-.archives h3 {
-  font-size: 24px;
-  color: #666;
-  margin-top: 30px;
-  padding-top: 20px;
-}
-.archives .entry {
-  padding-left:  80px;
-  margin-top: 20px;
-}
-.archives .entry + h3 {
-  border-top: 1px solid #eee;
-}
-.archives .entry a {
-  font-size: 16px;
-  color: #333;
-}
-.archives .entry a:hover {
-  color: #5694f1;
-}
-.archives .entry span {
-  font-size: 16px;
-  color: #999;
-  width: 60px;
-  display: inline-block;
 }
 .clouds {
   min-height: 400px;
@@ -256,8 +226,6 @@ a {
 .label div {
   padding: 2px 12px;
   display: inline-block;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   margin-right: 8px;
   border: 1px solid #e2e2e2;
@@ -348,8 +316,6 @@ code {
   background: #f7f7f7;
   border: 1px solid #e6e6e6;
   padding: 1px 5px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 table {
@@ -391,8 +357,6 @@ table tr th :last-child, table tr td :last-child {
   padding: 15px;
   position: relative;
   background: #f7f7f7;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 .hljs pre {
@@ -488,86 +452,4 @@ table tr th :last-child, table tr td :last-child {
 }
 .toc a {
   color: #666;
-}
-
-@media screen and (max-width: 600px) {
-  .header {
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 24px;
-  }
-  .header p {
-    font-size: 14px;
-  }
-  .menu {
-    right: auto;
-    left: 20px;
-  }
-  .menu a {
-    margin: 0 10px 10px 0;
-    font-size: 14px;
-  }
-  .post {
-    padding-right: 50px;
-  }
-  #posts li {
-    padding: 24px 0;
-  }
-  .post h2 {
-    font-size: 18px;
-  }
-  .post .time {
-    font-size: 13px;
-  }
-  .author {
-    top: 24px;
-    width: 40px;
-    height: 40px;
-  }
-  .footer {
-    padding: 30px 0;
-    margin-top: 50px;
-    font-size: 13px;
-  }
-  .archives h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-  .archives .entry {
-    padding-left: 0;
-  }
-  .archives .entry span {
-    font-size: 14px;
-  }
-  .archives .entry a {
-    font-size: 14px;
-  }
-  #post > h1 {
-    font-size: 20px;
-  }
-  #post .content:before {
-    margin: 30px 0 20px;
-  }
-  .relate {
-    display: none;
-  }
-  .content h5 {
-    font-size: 14px;
-  }
-  .content h4 {
-    font-size: 15px;
-  }
-  .content h3 {
-    font-size: 16px;
-  }
-  .content h2 {
-    font-size: 18px;
-  }
-  .content h1 {
-    font-size: 20px;
-  }
-  .toc {
-    display: none;
-  }
 }

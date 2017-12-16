@@ -7,6 +7,7 @@
   },
   "preferGlobal": "true",
   "scripts": {
+    "version": "cd assets && node ../bin/acyort version",
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
@@ -39,7 +40,7 @@
     "acyort-config": "^0.1.1",
     "acyort-extend": "^0.1.6",
     "acyort-fetcher": "^0.1.2",
-    "acyort-helper": "^0.1.2",
+    "acyort-helper": "^0.1.3",
     "acyort-logger": "^0.1.0",
     "acyort-marked": "^0.1.2",
     "acyort-processor": "^0.1.1",

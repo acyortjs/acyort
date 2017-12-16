@@ -1,22 +1,14 @@
 title:
-  archive: Archive
-  categories: All categories
-  tags: All tags
+  categories: Categories
+  tags: Tags
   category: Category
   tag: Tag
   toc: Table Of Contents
   posted: Posted at
 
-archives:
-  zero: No posts.
-  one: 1 post.
-  other: %d posts in total.
-
 powered: Powered by %2$s | %1$s
 
 menu:
-  home: home
-  archives: archives
   categories: categories
   tags: tags
   about: about
@@ -24,5 +16,5 @@ menu:
 pager:
   prev: Newer
   next: Older
-  tip: page %1$s of %2$s
+  tip: %1$s / %2$s
 
