@@ -61,6 +61,7 @@ describe('acyort', () => {
       fs.writeFileSync(`${themeDir}/source/css/style.css`, origin.style)
       fs.writeFileSync(`${themeDir}/layout/layout.html`, origin.layout)
       fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
+      fs.removeSync(`${themeDir}/source/images/newheader.jpg`)
     })
 
     const acyort = new Acyort(config)
@@ -71,9 +72,12 @@ describe('acyort', () => {
     await page.goto('http://127.0.0.1:2222')
 
     let color = await page.evaluate(getBodyStyle)
-
     assert(text('category/index.html', '.head-tag') === 'Categories')
     assert(color === 'rgb(255, 255, 255)')
+
+    fs.copySync(`${themeDir}/source/images/header.jpg`, `${themeDir}/source/images/newheader.jpg`)
+    await sleep(1000)
+    assert(fs.existsSync(dir(`${config.public_dir}/images/newheader.jpg`)) === true)
 
     fs.writeFileSync(`${themeDir}/i18n/${config.language}.yml`, i18nTpl)
     await sleep(1000)
