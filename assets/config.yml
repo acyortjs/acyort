@@ -7,7 +7,7 @@ description: A Node.js blog tool powered by GitHub.
 # url
 # you can set as "http://yoursite.com/child" if necessary
 # don not forget to add "http://" or "https://"
-url: https://acyortjs.github.io
+url: http://acyort.com
 
 # theme
 # default is "ccc45"
@@ -40,7 +40,7 @@ repository: Recordum
 # scripts
 # script file name
 scripts:
-  - example.js
+  # - example.js
 
 # plugins
 plugins:
