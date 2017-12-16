@@ -36,12 +36,12 @@
 
   <div class="relate">
     {% if page.prev %}
-    {% set prev = _post(page.prev) %}
+    {% set prev = _posts(page.prev) %}
     <a rel="prev" href="{{ _url(prev.url) }}">← {{ prev.title }}</a>
     {% endif %}
 
     {% if page.next %}
-    {% set next = _post(page.next) %}
+    {% set next = _posts(page.next) %}
     <a rel="next" href="{{ _url(next.url) }}">{{ next.title }} →</a>
     {% endif %}
   </div>
