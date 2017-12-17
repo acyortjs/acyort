@@ -1,5 +1,6 @@
 const assert = require('power-assert')
 const fs = require('fs-extra')
+const sinon = require('sinon')
 const pathFn = require('path')
 const Config = require('acyort-config')
 const Render = require('acyort-render')
@@ -12,6 +13,10 @@ const categoriesTpl = require('./fixtures/categories')
 const layoutTpl = require('./fixtures/layout')
 const styleTpl = require('./fixtures/style')
 const headerTpl = require('./fixtures/header')
+
+const helperTpl = require('./fixtures/helper')
+const throwTpl = require('./fixtures/throw')
+const indexTpl = require('./fixtures/index')
 
 const base = pathFn.resolve(__dirname, '../assets')
 const renderer = new Render()
@@ -50,15 +55,43 @@ const origin = {
   layout: fs.readFileSync(`${themeDir}/layout/layout.html`),
   categories: fs.readFileSync(`${themeDir}/layout/categories.html`),
   header: fs.readFileSync(`${themeDir}/layout/partials/header.html`),
+  index: fs.readFileSync(`${themeDir}/layout/index.html`),
 }
 
 config.cache = true
 
 describe('acyort', () => {
+  it('plugins', async function () {
+    this.timeout(10000)
+
+    fs.writeFileSync(`${dir('scripts/helper.js')}`, helperTpl)
+    fs.writeFileSync(`${dir('scripts/throw.js')}`, throwTpl)
+
+    const _config = JSON.parse(JSON.stringify(config))
+    _config.scripts = ['throw.js']
+    let acyort = new Acyort(_config)
+
+    const spy = sinon.spy(acyort.logger, 'error')
+    await acyort.build()
+    assert(spy.calledWith(spy.args[0][0]) === true)
+
+    fs.writeFileSync(`${themeDir}/layout/index.html`, indexTpl)
+
+    _config.scripts = ['helper.js']
+    acyort = new Acyort(_config)
+    await acyort.build()
+
+    assert(text('index.html', '#index') === 'a.b')
+
+    fs.writeFileSync(`${themeDir}/layout/index.html`, origin.index)
+    fs.removeSync(`${dir('scripts/helper.js')}`)
+    fs.removeSync(`${dir('scripts/throw.js')}`)
+  })
+
   it('server', async function () {
     this.timeout(20000)
 
-    after(function() {
+    after(function () {
       fs.writeFileSync(`${themeDir}/i18n/${config.language}.yml`, origin.i18n)
       fs.writeFileSync(`${themeDir}/source/css/style.css`, origin.style)
       fs.writeFileSync(`${themeDir}/layout/layout.html`, origin.layout)
