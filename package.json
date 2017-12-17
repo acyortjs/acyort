@@ -14,7 +14,8 @@
     "test": "npm run test:lint && npm run test:cover",
     "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test",
     "test:lint": "eslint .",
-    "test:cover": "istanbul cover --print both _mocha ./test"
+    "test:cover": "istanbul cover --print both _mocha ./test",
+    "posttest": "npm run clean"
   },
   "engines": {
     "node": ">=6.0.0"

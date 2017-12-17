@@ -1,5 +1,8 @@
 # AcyOrt
 
+[![Build Status](https://travis-ci.org/acyortjs/acyort.svg?branch=master)](https://travis-ci.org/acyortjs/acyort)
+[![codecov](https://codecov.io/gh/acyortjs/acyort/branch/master/graph/badge.svg)](https://codecov.io/gh/acyortjs/acyort)
+
 A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
@@ -18,7 +21,7 @@ http://acyort.am0200.com/
 ## Install
 
 ```bash
-$ sudo npm install acyort@1.6.5 -g
+$ sudo npm install acyort -g
 ```
 
 ## Usage
