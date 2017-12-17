@@ -11,6 +11,7 @@ const i18nTpl = require('./fixtures/i18n')
 const categoriesTpl = require('./fixtures/categories')
 const layoutTpl = require('./fixtures/layout')
 const styleTpl = require('./fixtures/style')
+const headerTpl = require('./fixtures/header')
 
 const base = pathFn.resolve(__dirname, '../assets')
 const renderer = new Render()
@@ -48,6 +49,7 @@ const origin = {
   style: fs.readFileSync(`${themeDir}/source/css/style.css`),
   layout: fs.readFileSync(`${themeDir}/layout/layout.html`),
   categories: fs.readFileSync(`${themeDir}/layout/categories.html`),
+  header: fs.readFileSync(`${themeDir}/layout/partials/header.html`),
 }
 
 config.cache = true
@@ -61,23 +63,48 @@ describe('acyort', () => {
       fs.writeFileSync(`${themeDir}/source/css/style.css`, origin.style)
       fs.writeFileSync(`${themeDir}/layout/layout.html`, origin.layout)
       fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
+      fs.writeFileSync(`${themeDir}/layout/partials/header.html`, origin.header)
       fs.removeSync(`${themeDir}/source/images/newheader.jpg`)
+      fs.removeSync(`${themeDir}/i18n/en.yml`)
+      fs.removeSync(`${themeDir}/layout/nohtml.yml`)
+      fs.removeSync(`${themeDir}/nodir.html`)
     })
 
     const acyort = new Acyort(config)
     await acyort.start(2222)
 
+    let msgs = []
+
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto('http://127.0.0.1:2222')
+    page.on('console', ({ text }) => msgs.push(text))
 
     let color = await page.evaluate(getBodyStyle)
     assert(text('category/index.html', '.head-tag') === 'Categories')
+    assert(text('index.html', '.header p') === config.description)
     assert(color === 'rgb(255, 255, 255)')
 
     fs.copySync(`${themeDir}/source/images/header.jpg`, `${themeDir}/source/images/newheader.jpg`)
     await sleep(1000)
     assert(fs.existsSync(dir(`${config.public_dir}/images/newheader.jpg`)) === true)
+    assert(msgs.length === 2)
+
+    fs.writeFileSync(`${themeDir}/i18n/en.yml`, '# yml')
+    await sleep(500)
+    assert(msgs.length === 2)
+
+    fs.writeFileSync(`${themeDir}/layout/nohtml.yml`, '# html')
+    await sleep(500)
+    assert(msgs.length === 2)
+
+    fs.writeFileSync(`${themeDir}/nodir.html`, '# html')
+    await sleep(500)
+    assert(msgs.length === 2)
+
+    fs.writeFileSync(`${themeDir}/layout/partials/header.html`, headerTpl)
+    await sleep(1000)
+    assert(text('index.html', '.header p') === config.description + 'more')
 
     fs.writeFileSync(`${themeDir}/i18n/${config.language}.yml`, i18nTpl)
     await sleep(1000)
