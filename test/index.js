@@ -83,6 +83,15 @@ describe('acyort', () => {
 
     assert(text('index.html', '#index') === 'a.b')
 
+    fs.removeSync(`${themeDir}/layout/index.html`)
+    fs.removeSync(dir('index.html'))
+
+    _config.scripts = []
+    acyort = new Acyort(_config)
+    await acyort.build()
+
+    assert(fs.existsSync(dir('index.html')) === false)
+
     fs.writeFileSync(`${themeDir}/layout/index.html`, origin.index)
     fs.removeSync(`${dir('scripts/helper.js')}`)
     fs.removeSync(`${dir('scripts/throw.js')}`)
