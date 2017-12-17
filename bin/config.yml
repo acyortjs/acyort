@@ -4,7 +4,7 @@ ignores:
   - .DS_Store
   - '*.swp'
   - themes/
-  - ISSUE_DATA.json
+  - _issues.json
 
 # cli commands
 commands:
@@ -22,5 +22,7 @@ keeps:
   - CNAME
   - README.md
   - LICENSE
-  - ISSUE_DATA.json
+  - _issues.json
   - favicon.ico
+  - package.json
+  - package.lock.json

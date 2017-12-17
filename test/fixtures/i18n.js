@@ -1,5 +1,6 @@
+module.exports = `
 title:
-  categories: Categories
+  categories: new Categories
   tags: Tags
   category: Category
   tag: Tag
@@ -17,3 +18,4 @@ pager:
   prev: Newer
   next: Older
   tip: %1$s / %2$s
+`

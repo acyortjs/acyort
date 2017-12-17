@@ -1,68 +1,64 @@
-# Base Config
+# Base
 
 # site
-# default "AcyOrt", "A Node.js blog tool powered by GitHub."
-title:
-description:
+title: AcyOrt
+description: A Node.js blog tool powered by GitHub.
 
-# rss
-# set false if not need rss output
-# default "rss.xml"
-rss:
-
-# site url. you can set as 'http://yoursite.com/child' if necessary
-# please add 'http://' or 'https://'
-# default "https://acyortjs.github.io"
-url:
+# url
+# you can set as "http://yoursite.com/child" if necessary
+# don not forget to add "http://" or "https://"
+url: http://acyort.com
 
 # theme
-# default "ccc45"
+# default is "ccc45"
 theme:
 
 # pagination
 # set 0 if not need
-# default 10
-per_page:
+# default is 10
+per_page: 3
 
 # menu
 menu:
-  # archives: /archives/
-  # categories: /category/
-  # tags: /tag/
+  categories: /category/
+  tags: /tag/
+  about: /about/
 
 # default category
-# default "uncategorized"
+# default is "uncategorized"
 default_category:
 
-# site content source
-# the repository issues
-# your github user/repository
-# default "acyortjs", "acyortjs.github.io"
-user:
-repository:
+# content
+# the repository's issues
+# GitHub user/repository
+user: LoeiFy
+repository: Recordum
 
 
-# Advance Config
+# Advance
 
 # scripts
 # script file name
-# the directory is "scripts"
 scripts:
-  # - hexo.js
+  # - example.js
 
-# html output directory or child directory e.g. "child"
-# default "/"
-public_dir:
+# plugins
+plugins:
+  # - xxx module
+
+# output
+# html output directory
+# you can set child directory e.g. "child"
+public_dir: /
 
 # authors
-# GitHub username
+# GitHub user
 authors:
 #  - author0
 #  - author1
 
 # timezone
-# the timezone of your website
-# example: America/New_York, Japan, or UTC
+# example: "America/New_York", "Japan", "UTC", or "Asia/Shanghai"
 # default is local system timezone
 timezone:
 
@@ -73,62 +69,36 @@ language:
 
 # code line numbers
 # whether to dispaly code line numbers
-# default true
+# default is true
 line_numbers:
 
-# archives pagination
-# set 0 if not need
-# default 30
-archives_per_page:
-
-# post order
-# order by create time" or "update time"
+# order
+# order by issues create time" or "update time"
 # created: use "create time"
 # updated: use "update time"
-# default "created"
+# default is "created"
 order:
 
-# thumbnail mode
+# thumbnail
 # 1: use the first image as thumbnail and remove the image
 # 2: use the first image as thumbnail but not remove the image
-# default 2
+# default is 2
 thumbnail_mode:
 
-# category directory
-# default "category"
+# directory
+# default is "category", "tag", "posts"
 category_dir:
-
-# tag directory
-# default "tag"
 tag_dir:
-
-# post directory
-# default "posts"
 post_dir:
 
-# archives directory
-# default "archives"
-archives_dir:
-
-# GitHub access token(optional)
-# token should be separated by '#' if you push this file to GitHub
+# token
+# github access token
+# token should be separated by '#' if you push this file to github
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
 token:
 
-# json output
-# boolean or string
-# you can set json output path
-# default false
-json:
-
-# dev mode
-# default false
-dev:
-
-
-# Other Config
+# Other
 # customize some settings if necessary
 
 # disqus:
-# keywords:
 # favicon:

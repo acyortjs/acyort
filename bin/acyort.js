@@ -3,21 +3,24 @@
 const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
-const pkg = require('../package.json')
-const yaml = require('yamljs')
-const Logger = require('../lib/logger')
-const Server = require('../lib/server')
+const { version } = require('../package.json')
+const Config = require('acyort-config')
+const Render = require('acyort-render')
+const Logger = require('acyort-logger')
 const Acyort = require('../lib/acyort')
 
+const base = process.cwd()
 const logger = new Logger()
-const { ignores, commands, keeps } = yaml.load(path.join(__dirname, 'config.yml'))
+const renderer = new Render()
+const {
+  ignores,
+  commands,
+  keeps,
+} = renderer.render('yaml', { path: path.join(__dirname, 'config.yml') })
+const config = new Config({ base, renderer }).value
 
-function check() {
-  const yml = path.join(process.cwd(), 'config.yml')
-  if (fs.existsSync(yml)) {
-    return yml
-  }
-  return false
+if (process.env.NODE_ENV === 'dev') {
+  config.cache = true
 }
 
 program
@@ -29,12 +32,12 @@ program
 .description('Create new blog')
 .action((folder = '') => {
   try {
-    if (check()) {
-      fs.copySync(check(), path.join(process.cwd(), 'config.bak.yml'))
+    if (config) {
+      fs.copySync(path.join(base, 'config.yml'), path.join(base, 'config.bak.yml'))
     }
 
-    fs.copySync(path.resolve(__dirname, '../assets'), path.join(process.cwd(), folder))
-    fs.outputFileSync(path.join(process.cwd(), folder, '.gitignore'), ignores.join('\n'))
+    fs.copySync(path.resolve(__dirname, '../assets'), path.join(base, folder))
+    fs.outputFileSync(path.join(base, folder, '.gitignore'), ignores.join('\n'))
 
     logger.success('Configure "config.yml" to start your blog')
   } catch (e) {
@@ -45,17 +48,16 @@ program
 program
 .command('version')
 .description('Display AcyOrt version')
-.action(() => logger.info(pkg.version))
+.action(() => console.log(version)) // eslint-disable-line no-console
 
 program
 .command('server [port]')
 .description('Create a local test server')
 .action((port = 2222) => {
-  if (!check()) {
-    logger.error('Cannot find "config.yml"')
+  if (!config) {
+    logger.error('Cannot find "config.yml" or Configuration information error')
   } else {
-    const server = new Server()
-    server.init(port)
+    new Acyort(config).start(port)
   }
 })
 
@@ -63,11 +65,10 @@ program
 .command('build')
 .description('Generate the files')
 .action(() => {
-  if (!check()) {
-    logger.error('Cannot find "config.yml"')
+  if (!config) {
+    logger.error('Cannot find "config.yml" or Configuration information error')
   } else {
-    const acyort = new Acyort()
-    acyort.init()
+    new Acyort(config).build()
   }
 })
 
@@ -75,17 +76,20 @@ program
 .command('clean')
 .description('Remove all the generated files')
 .action(() => {
-  try {
-    const files = fs.readdirSync(process.cwd()).filter((file) => {
-      if ((/(^|\/)\.[^\/\.]/g).test(file) || keeps.indexOf(file) > -1) {
-        return false
-      }
-      return true
-    })
+  const regex = /(^|\/)\.[^/.]/g
 
-    files.forEach(file => fs.removeSync(file))
-  } catch (e) {
-    logger.error(e)
+  if (!config) {
+    logger.error('Cannot find "config.yml" or Configuration information error')
+  } else {
+    try {
+      const removes = fs
+        .readdirSync(base)
+        .filter(file => !regex.test(file) && keeps.indexOf(file) === -1)
+
+      removes.forEach(file => fs.removeSync(file))
+    } catch (e) {
+      logger.error(e)
+    }
   }
 })
 
