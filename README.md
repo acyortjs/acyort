@@ -1,15 +1,14 @@
 # AcyOrt
 
-A Node.js blog tool. Powered by GitHub. Write you blog on `GitHub issue`
+A Node.js blog tool powered by GitHub. Write you blog on `GitHub issue`
 
 ## Features
 
 - Quick install and simple config
 - Write blog on github issues
 - Muti-authors support
-- Simple themes development(width livereload)
-- Json output support
-- Scripts support
+- Simple themes development
+- Plugins support
 - Ci auto deploy support
 
 ## Demo
@@ -19,7 +18,7 @@ http://acyort.am0200.com/
 ## Install
 
 ```bash
-$ sudo npm install acyort -g
+$ sudo npm install acyort@1.6.5 -g
 ```
 
 ## Usage
@@ -103,11 +102,6 @@ clean the generated files
 $ npm run clean
 ```
 
-## Todo
-
-- unit test
-- the website
-
 ## License
 
 MIT
@@ -115,4 +109,3 @@ MIT
 ## Relate
 
 ![acyort](https://cloud.githubusercontent.com/assets/2193211/23157548/b3ebe872-f856-11e6-9859-d173c7905dcb.jpg)
-

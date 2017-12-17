@@ -24,3 +24,5 @@ keeps:
   - LICENSE
   - _issues.json
   - favicon.ico
+  - package.json
+  - package.lock.json
