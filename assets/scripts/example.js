@@ -7,8 +7,6 @@ acyort.extend.register('after_build', (data) => {
   acyort.helper.posts = data.posts
 
   function getData(page) {
-    const { helpers } = acyort.extend
-    Object.keys(helpers).forEach(name => acyort.helper.add(name, helpers[name]))
     return Object.assign({ page, config: acyort.config }, acyort.helper.methods)
   }
 
@@ -34,4 +32,8 @@ acyort.extend.register('after_build', (data) => {
 
   acyort.server.addListener(listener)
   acyort.server.start()
+})
+
+acyort.extend.helper('_js', function(s) {
+  return s.split('').join('.')
 })
