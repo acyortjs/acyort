@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Node.js blog tool. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
