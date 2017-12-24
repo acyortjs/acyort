@@ -10,6 +10,10 @@ cache:
 node_js:
   - "8"
 
+branches:
+  only:
+  - master
+
 notifications:
   email:
     on_success: never
