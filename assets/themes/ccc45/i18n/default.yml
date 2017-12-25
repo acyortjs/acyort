@@ -13,6 +13,11 @@ menu:
   tags: tags
   about: about
 
+footer:
+  zero: ' 0'
+  one: ' 1'
+  other: %d
+
 pager:
   prev: Newer
   next: Older
