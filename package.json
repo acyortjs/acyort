@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "A Node.js blog tool. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -48,7 +48,7 @@
     "acyort-marked": "^0.1.2",
     "acyort-processor": "^0.1.1",
     "acyort-render": "^0.1.0",
-    "acyort-server": "^0.1.4",
+    "acyort-server": "^0.1.6",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5"
   },
