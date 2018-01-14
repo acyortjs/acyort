@@ -46,7 +46,7 @@
     "acyort-helper": "^0.1.6",
     "acyort-logger": "^0.1.0",
     "acyort-marked": "^0.1.3",
-    "acyort-processor": "^0.1.3",
+    "acyort-processor": "^0.1.4",
     "acyort-render": "^0.1.0",
     "acyort-server": "^0.1.7",
     "commander": "^2.9.0",
