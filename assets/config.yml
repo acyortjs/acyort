@@ -20,8 +20,8 @@ per_page: 3
 
 # menu
 menu:
-  categories: /category/
-  tags: /tag/
+  categories: /categories/
+  tags: /tags/
   about: /about/
 
 # default category
@@ -79,14 +79,8 @@ line_numbers:
 # default is "created"
 order:
 
-# thumbnail
-# 1: use the first image as thumbnail and remove the image
-# 2: use the first image as thumbnail but not remove the image
-# default is 2
-thumbnail_mode:
-
 # directory
-# default is "category", "tag", "posts"
+# default is "categories", "tags", "posts"
 category_dir:
 tag_dir:
 post_dir:
