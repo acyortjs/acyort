@@ -115,6 +115,7 @@ describe('acyort', () => {
     await acyort.build()
 
     assert(fs.existsSync(dir('index.html')) === false)
+
     _config.scripts = ['tag.js']
     acyort = new Acyort(_config)
     await acyort.build()
