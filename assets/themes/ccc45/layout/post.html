@@ -14,17 +14,7 @@
     . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
   </p>
 
-  <div class="content">
-    {% if page.toc %}
-    <div class="toc">
-      <h3>{{ __('title.toc') }}</h3>
-      {% autoescape false %}{{ page.toc }}{% endautoescape %}
-    </div>
-    {% endif %}
-    <div class="main">
-    {% autoescape false %}{{ page.content }}{% endautoescape %}
-    </div>
-  </div>
+  <div class="content">{{ page.content }}</div>
 
   {% if page.tags.length %}
   <div class="label">

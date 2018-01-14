@@ -17,7 +17,8 @@ const {
   commands,
   keeps,
 } = renderer.render('yaml', { path: path.join(__dirname, 'config.yml') })
-const config = new Config({ base, renderer }).value
+const config = new Config(base).value
+const filter = src => src !== '_issues.json'
 
 if (process.env.NODE_ENV === 'dev') {
   config.cache = true
@@ -36,7 +37,7 @@ program
       fs.copySync(path.join(base, 'config.yml'), path.join(base, 'config.bak.yml'))
     }
 
-    fs.copySync(path.resolve(__dirname, '../assets'), path.join(base, folder))
+    fs.copySync(path.resolve(__dirname, '../assets'), path.join(base, folder), { filter })
     fs.outputFileSync(path.join(base, folder, '.gitignore'), ignores.join('\n'))
 
     logger.success('Configure "config.yml" to start your blog')

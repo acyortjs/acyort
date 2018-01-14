@@ -69,10 +69,6 @@ $ acyort server [port]
 
 local server: `http://127.0.0.1:2222`
 
-> width liveReload
-
-set `dev: true` in `config.yml`
-
 ### clean
 
 clean the generated files
@@ -89,9 +85,9 @@ acyort clean
 $ npm run build
 ```
 
-### test
+### start
 
-local test server width LiveReload
+local test server
 
 ```bash
 $ npm start
@@ -105,10 +101,14 @@ clean the generated files
 $ npm run clean
 ```
 
+### test
+
+eslint, units, coverage test
+
+```bash
+npm t
+```
+
 ## License
 
 MIT
-
-## Relate
-
-![acyort](https://cloud.githubusercontent.com/assets/2193211/23157548/b3ebe872-f856-11e6-9859-d173c7905dcb.jpg)

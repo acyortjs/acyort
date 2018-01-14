@@ -3,7 +3,6 @@ const fs = require('fs-extra')
 const sinon = require('sinon')
 const pathFn = require('path')
 const Config = require('acyort-config')
-const Render = require('acyort-render')
 const cheerio = require('cheerio')
 const puppeteer = require('puppeteer')
 const Acyort = require('../lib/acyort')
@@ -19,7 +18,6 @@ const throwTpl = require('./fixtures/throw')
 const indexTpl = require('./fixtures/index')
 
 const base = pathFn.resolve(__dirname, '../assets')
-const renderer = new Render()
 
 String.prototype.trim = function() {
   return this.replace(/\n/g, '')
@@ -46,7 +44,7 @@ function text(path, tag) {
   return $(tag).text().trim()
 }
 
-const config = new Config({ base, renderer }).value
+const config = new Config(base).value
 const themeDir = pathFn.join(base, 'themes', config.theme)
 
 const origin = {
@@ -147,7 +145,7 @@ describe('acyort', () => {
     page.on('console', ({ text }) => msgs.push(text))
 
     let color = await page.evaluate(getBodyStyle)
-    assert(text('category/index.html', '.head-tag') === 'Categories')
+    assert(text('categories/index.html', '.head-tag') === 'Categories')
     assert(text('index.html', '.header p') === config.description)
     assert(color === 'rgb(255, 255, 255)')
 
@@ -174,7 +172,7 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${themeDir}/i18n/${config.language}.yml`, i18nTpl)
     await sleep(1000)
-    assert(text('category/index.html', '.head-tag') === 'new Categories')
+    assert(text('categories/index.html', '.head-tag') === 'new Categories')
 
     fs.writeFileSync(`${themeDir}/source/css/style.css`, styleTpl)
     await sleep(1000)
@@ -183,11 +181,11 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${themeDir}/layout/layout.html`, layoutTpl)
     await sleep(1000)
-    assert(text('category/index.html', '#special') === 'special')
+    assert(text('categories/index.html', '#special') === 'special')
 
     fs.writeFileSync(`${themeDir}/layout/categories.html`, categoriesTpl)
     await sleep(1000)
-    assert(text('category/index.html', '.head-tag') === 'new Categoriesmore')
+    assert(text('categories/index.html', '.head-tag') === 'new Categoriesmore')
 
     await browser.close()
     acyort.server.close()
@@ -199,16 +197,16 @@ describe('acyort', () => {
     const acyort = new Acyort(config)
     await acyort.build()
 
-    'css,post,index.html,page,category,about'
+    'css,posts,index.html,page,categories,about'
       .split(',')
       .forEach((tag) => {
         assert(fs.existsSync(dir(tag)) === true)
       })
 
     assert(text('index.html', 'title') === config.title)
-    assert(text('tag/index.html', 'title') === 'Tags | AcyOrt')
-    assert(text('post/71470122.html', '#post h1') === '输入框输入值自动格式化')
-    assert(text('post/223304114.html', '#开发选择') === '开发选择')
+    assert(text('tags/index.html', 'title') === 'Tags | AcyOrt')
+    assert(text('posts/71470122.html', '#post h1') === '输入框输入值自动格式化')
+    assert(text('posts/223304114.html', '#开发选择') === '开发选择')
     assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrtSource')
   })
 })
