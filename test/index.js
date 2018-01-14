@@ -15,6 +15,7 @@ const headerTpl = require('./fixtures/header')
 
 const helperTpl = require('./fixtures/helper')
 const throwTpl = require('./fixtures/throw')
+const tagTpl = require('./fixtures/tag')
 const indexTpl = require('./fixtures/index')
 
 const base = pathFn.resolve(__dirname, '../assets')
@@ -88,6 +89,7 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${dir('scripts/helper.js')}`, helperTpl)
     fs.writeFileSync(`${dir('scripts/throw.js')}`, throwTpl)
+    fs.writeFileSync(`${dir('scripts/tag.js')}`, tagTpl)
 
     const _config = JSON.parse(JSON.stringify(config))
     _config.scripts = ['throw.js']
@@ -113,10 +115,15 @@ describe('acyort', () => {
     await acyort.build()
 
     assert(fs.existsSync(dir('index.html')) === false)
+    _config.scripts = ['tag.js']
+    acyort = new Acyort(_config)
+    await acyort.build()
+    assert(acyort.tags.length === 8)
 
     fs.writeFileSync(`${themeDir}/layout/index.html`, origin.index)
     fs.removeSync(`${dir('scripts/helper.js')}`)
     fs.removeSync(`${dir('scripts/throw.js')}`)
+    fs.removeSync(`${dir('scripts/tag.js')}`)
   })
 
   it('server', async function () {
