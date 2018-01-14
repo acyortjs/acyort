@@ -112,12 +112,6 @@ a {
   font-size: 14px;
   margin-top: 10px;
 }
-.thumb {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 30px;
-}
 .summary {
   margin-top: 30px;
 }
@@ -432,24 +426,4 @@ table tr th :last-child, table tr td :last-child {
 }
 .hljs-link {
   text-decoration: underline;
-}
-.toc {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 30px;
-  height: 0;
-  margin-left: 720px;
-  min-width: 300px;
-}
-.toc h3 {
-  margin-top: 0!important;
-}
-.toc ul {
-  padding-left: 20px;
-}
-.toc li {
-  margin-top: 5px;
-}
-.toc a {
-  color: #666;
 }
