@@ -7,7 +7,7 @@ description: A Node.js blog tool powered by GitHub.
 # url
 # you can set as "http://yoursite.com/child" if necessary
 # don not forget to add "http://" or "https://"
-url: http://acyort.com
+url:
 
 # theme
 # default is "ccc45"
