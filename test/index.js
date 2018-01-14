@@ -61,6 +61,30 @@ const origin = {
 config.cache = true
 
 describe('acyort', () => {
+  it('source dir miss', async function () {
+    this.timeout(10000)
+
+    const _config = JSON.parse(JSON.stringify(config))
+    _config.source_dir = 'error'
+
+    let acyort = new Acyort(_config)
+    await acyort.build()
+
+    assert(fs.existsSync(dir('css')) === false)
+    assert(fs.existsSync(dir('images')) === false)
+
+    fs.ensureDirSync(`${themeDir}/new`)
+    _config.source_dir = 'new'
+
+    acyort = new Acyort(_config)
+    await acyort.build()
+
+    assert(fs.existsSync(dir('css')) === false)
+    assert(fs.existsSync(dir('images')) === false)
+
+    fs.removeSync(`${themeDir}/new`)
+  })
+
   it('plugins', async function () {
     this.timeout(10000)
 
