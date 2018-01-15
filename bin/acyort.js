@@ -18,7 +18,7 @@ const {
   keeps,
 } = renderer.render('yaml', { path: path.join(__dirname, 'config.yml') })
 const config = new Config(base).value
-const filter = src => src !== '_issues.json'
+const filter = src => src.indexOf('_issues.json') === -1
 
 if (process.env.NODE_ENV === 'dev') {
   config.cache = true
