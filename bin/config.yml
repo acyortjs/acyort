@@ -22,6 +22,7 @@ keeps:
   - CNAME
   - README.md
   - LICENSE
+  - .gitignore
   - _issues.json
   - favicon.ico
   - package.json

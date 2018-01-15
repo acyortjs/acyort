@@ -14,6 +14,7 @@ url:
 theme:
 
 # pagination
+# Number
 # set 0 if not need
 # default is 10
 per_page: 3
@@ -68,6 +69,7 @@ timezone:
 language:
 
 # code line numbers
+# Boolean
 # whether to dispaly code line numbers
 # default is true
 line_numbers:
@@ -90,6 +92,12 @@ post_dir:
 # token should be separated by '#' if you push this file to github
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
 token:
+
+# cache
+# Boolean
+# cache github issues data
+# for development
+cache:
 
 # Other
 # customize some settings if necessary
