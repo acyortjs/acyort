@@ -79,12 +79,6 @@ acyort clean
 
 ## Development
 
-### build
-
-```bash
-$ npm run build
-```
-
 ### start
 
 local test server

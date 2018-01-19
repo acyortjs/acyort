@@ -41,7 +41,7 @@
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
     "acyort-config": "^0.1.5",
-    "acyort-extend": "^0.1.6",
+    "acyort-extend": "^0.1.7",
     "acyort-fetcher": "^0.1.2",
     "acyort-helper": "^0.1.7",
     "acyort-logger": "^0.1.0",
