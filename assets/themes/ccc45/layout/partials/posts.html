@@ -8,8 +8,8 @@
       <h2><a href="{{ _url(p.url) }}">{{ p.title }}</a></h2>
       <p class="time">{{ _time(p.created, 'MMMM DD, YYYY') }}</p>
 
-      {% if p.summary %}
-      <div class="summary">{{ p.summary }}</div>
+      {% if p.excerpt %}
+      <div class="summary">{{ p.excerpt }}</div>
       {% endif %}
     </div>
 
