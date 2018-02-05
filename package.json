@@ -1,7 +1,7 @@
 {
   "name": "acyort",
-  "version": "2.0.14",
-  "description": "A Node.js blog tool. Powered by GitHub",
+  "version": "2.0.15",
+  "description": "A Node.js static website framework. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
