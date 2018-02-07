@@ -20,7 +20,7 @@ $ sudo npm install acyort -g
 
 ## Modules
 
-Project | Status | Description
+Project | Version | Description
 --- | --- | ---
 acyort-server | [![version](https://img.shields.io/npm/v/acyort-server.svg)](https://www.npmjs.com/package/acyort-server) | LiveReload Server
 acyort-marked | [![version](https://img.shields.io/npm/v/acyort-marked.svg)](https://www.npmjs.com/package/acyort-marked) | Markdown Parser
