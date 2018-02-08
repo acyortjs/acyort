@@ -17,13 +17,12 @@ theme:
 # Number
 # set 0 if not need
 # default is 10
-per_page: 3
+per_page:
 
 # menu
 menu:
   categories: /categories/
   tags: /tags/
-  about: /about/
 
 # default category
 # default is "uncategorized"
@@ -32,8 +31,8 @@ default_category:
 # content
 # the repository's issues
 # GitHub user/repository
-user: LoeiFy
-repository: Recordum
+user:
+repository:
 
 
 # Advance

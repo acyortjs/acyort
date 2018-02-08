@@ -6,17 +6,11 @@ A Node.js static website framework. Powered by GitHub.
 
 ## Demo
 
-http://acyort.am0200.com/
+https://github.com/LoeiFy/Recordum
 
 ## Documentation
 
 To check out the docs, visit https://acyortjs.github.io
-
-## Install
-
-```bash
-$ sudo npm install acyort -g
-```
 
 ## Modules
 
@@ -34,6 +28,3 @@ acyort-fetcher | [![version](https://img.shields.io/npm/v/acyort-fetcher.svg)](h
 acyort-logger | [![version](https://img.shields.io/npm/v/acyort-logger.svg)](https://www.npmjs.com/package/acyort-logger) | Log Module
 acyort-render | [![version](https://img.shields.io/npm/v/acyort-render.svg)](https://www.npmjs.com/package/acyort-render) | Render Module
 
-## License
-
-MIT
