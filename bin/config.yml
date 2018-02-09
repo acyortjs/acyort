@@ -24,7 +24,7 @@ keeps:
   - LICENSE
   - .gitignore
   - _issues.json
-  - favicon.ico
   - package.json
   - package-lock.json
   - node_modules
+  - .git
