@@ -4,13 +4,13 @@
 
 A Node.js static website framework. Powered by GitHub.
 
+## Documentation
+
+To check out the docs, visit https://acyort.com
+
 ## Demo
 
 https://github.com/LoeiFy/Recordum
-
-## Documentation
-
-To check out the docs, visit https://acyortjs.github.io
 
 ## Modules
 
