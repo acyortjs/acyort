@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "2.0.19",
+  "version": "2.1.0",
   "description": "A Node.js static website framework. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -39,15 +39,15 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
-    "acyort-config": "^0.1.5",
-    "acyort-extend": "^0.1.7",
-    "acyort-fetcher": "^0.1.2",
-    "acyort-helper": "^0.1.8",
-    "acyort-logger": "^0.1.0",
-    "acyort-marked": "^0.1.5",
-    "acyort-processor": "^0.1.7",
-    "acyort-render": "^0.1.0",
-    "acyort-server": "^0.1.10",
+    "acyort-config": "^1.0.2",
+    "acyort-extend": "^1.0.1",
+    "acyort-fetcher": "^1.0.1",
+    "acyort-helper": "^1.0.0",
+    "acyort-logger": "^1.0.0",
+    "acyort-marked": "^1.0.2",
+    "acyort-processor": "^1.0.0",
+    "acyort-render": "^1.0.1",
+    "acyort-server": "^1.0.0",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.5"
   },

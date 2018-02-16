@@ -2,7 +2,7 @@ const assert = require('power-assert')
 const fs = require('fs-extra')
 const sinon = require('sinon')
 const pathFn = require('path')
-const Config = require('acyort-config')
+const getConfig = require('acyort-config')
 const cheerio = require('cheerio')
 const puppeteer = require('puppeteer')
 const Acyort = require('../lib/acyort')
@@ -45,7 +45,7 @@ function text(path, tag) {
   return $(tag).text().trim()
 }
 
-const config = new Config(base).value
+const config = getConfig(base)
 const themeDir = pathFn.join(base, 'themes', config.theme)
 
 const origin = {

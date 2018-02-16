@@ -4,20 +4,21 @@ const program = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const { version } = require('../package.json')
-const Config = require('acyort-config')
+const getConfig = require('acyort-config')
 const Render = require('acyort-render')
 const Logger = require('acyort-logger')
 const Acyort = require('../lib/acyort')
 
 const base = process.cwd()
+const configPath = path.join(__dirname, 'config.yml')
 const logger = new Logger()
 const renderer = new Render()
 const {
   ignores,
   commands,
   keeps,
-} = renderer.render('yaml', { path: path.join(__dirname, 'config.yml') })
-const config = new Config(base).value
+} = renderer.use('yaml').renderFile(configPath)
+const config = getConfig(base)
 const filter = src => src.indexOf('_issues.json') === -1
 
 if (process.env.NODE_ENV === 'dev') {
