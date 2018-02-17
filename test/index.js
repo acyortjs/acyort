@@ -57,7 +57,6 @@ const origin = {
 config.cache = true
 
 describe('acyort', () => {
-  /*
   it('source dir miss', async function () {
     this.timeout(10000)
 
@@ -81,13 +80,11 @@ describe('acyort', () => {
 
     fs.removeSync(`${themeDir}/new`)
   })
-  */
 
   it('plugins', async function () {
     this.timeout(10000)
 
     fs.writeFileSync(`${dir('scripts/throw.js')}`, throwTpl)
-    fs.writeFileSync(`${dir('scripts/tag.js')}`, tagTpl)
 
     const _config = JSON.parse(JSON.stringify(config))
     _config.scripts = ['throw.js']
@@ -97,28 +94,21 @@ describe('acyort', () => {
     await acyort.build()
     assert(spy.calledWith(spy.args[0][0]) === true)
 
-    acyort = new Acyort(_config)
-    await acyort.build()
-
-    fs.removeSync(`${themeDir}/layout/index.html`)
-    fs.removeSync(dir('index.html'))
-
-    _config.scripts = []
-    acyort = new Acyort(_config)
-    await acyort.build()
-
-    assert(fs.existsSync(dir('index.html')) === false)
+    fs.writeFileSync(`${dir('scripts/tag.js')}`, tagTpl)
+    fs.removeSync(`${themeDir}/layout/categories.html`)
+    fs.removeSync(`${dir('categories/index.html')}`)
 
     _config.scripts = ['tag.js']
     acyort = new Acyort(_config)
     await acyort.build()
-    assert(acyort.tags.length === 8)
+    assert(acyort.templates.length === 8)
+    assert(fs.existsSync(dir('categories/index.html')) === false)
 
     fs.removeSync(`${dir('scripts/throw.js')}`)
     fs.removeSync(`${dir('scripts/tag.js')}`)
+    fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
   })
 
-/*
   it('server', async function () {
     this.timeout(20000)
 
@@ -209,5 +199,4 @@ describe('acyort', () => {
     assert(text('posts/223304114.html', '#开发选择') === '开发选择')
     assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrtSource')
   })
-*/
 })
