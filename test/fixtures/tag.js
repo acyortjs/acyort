@@ -1,3 +1,3 @@
 module.exports = `
-acyort.builder.addTags(['archives', 'archives'])
+acyort.builder.register(['archives', 'archives'])
 `

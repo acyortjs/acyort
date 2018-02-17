@@ -15,7 +15,7 @@ theme:
 # pagination
 # post count per page. set 0 to disable it
 # default is 10
-per_page:
+per_page: 3
 
 # menu
 # navigation menus of website

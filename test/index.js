@@ -13,10 +13,8 @@ const layoutTpl = require('./fixtures/layout')
 const styleTpl = require('./fixtures/style')
 const headerTpl = require('./fixtures/header')
 
-const helperTpl = require('./fixtures/helper')
 const throwTpl = require('./fixtures/throw')
 const tagTpl = require('./fixtures/tag')
-const indexTpl = require('./fixtures/index')
 
 const base = pathFn.resolve(__dirname, '../assets')
 
@@ -54,12 +52,12 @@ const origin = {
   layout: fs.readFileSync(`${themeDir}/layout/layout.html`),
   categories: fs.readFileSync(`${themeDir}/layout/categories.html`),
   header: fs.readFileSync(`${themeDir}/layout/partials/header.html`),
-  index: fs.readFileSync(`${themeDir}/layout/index.html`),
 }
 
 config.cache = true
 
 describe('acyort', () => {
+  /*
   it('source dir miss', async function () {
     this.timeout(10000)
 
@@ -83,11 +81,11 @@ describe('acyort', () => {
 
     fs.removeSync(`${themeDir}/new`)
   })
+  */
 
   it('plugins', async function () {
     this.timeout(10000)
 
-    fs.writeFileSync(`${dir('scripts/helper.js')}`, helperTpl)
     fs.writeFileSync(`${dir('scripts/throw.js')}`, throwTpl)
     fs.writeFileSync(`${dir('scripts/tag.js')}`, tagTpl)
 
@@ -99,13 +97,8 @@ describe('acyort', () => {
     await acyort.build()
     assert(spy.calledWith(spy.args[0][0]) === true)
 
-    fs.writeFileSync(`${themeDir}/layout/index.html`, indexTpl)
-
-    _config.scripts = ['helper.js']
     acyort = new Acyort(_config)
     await acyort.build()
-
-    assert(text('index.html', '#index') === 'a.b')
 
     fs.removeSync(`${themeDir}/layout/index.html`)
     fs.removeSync(dir('index.html'))
@@ -121,12 +114,11 @@ describe('acyort', () => {
     await acyort.build()
     assert(acyort.tags.length === 8)
 
-    fs.writeFileSync(`${themeDir}/layout/index.html`, origin.index)
-    fs.removeSync(`${dir('scripts/helper.js')}`)
     fs.removeSync(`${dir('scripts/throw.js')}`)
     fs.removeSync(`${dir('scripts/tag.js')}`)
   })
 
+/*
   it('server', async function () {
     this.timeout(20000)
 
@@ -217,4 +209,5 @@ describe('acyort', () => {
     assert(text('posts/223304114.html', '#开发选择') === '开发选择')
     assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrtSource')
   })
+*/
 })
