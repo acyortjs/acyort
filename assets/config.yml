@@ -2,100 +2,96 @@
 
 # site
 title: AcyOrt
-description: A Node.js blog tool powered by GitHub.
+description: A Node.js static website framework. Powered by GitHub.
 
 # url
-# you can set as "http://yoursite.com/child" if necessary
-# don not forget to add "http://" or "https://"
+# url of website. format like http://<domain>/<path> or https://<domain>
 url:
 
 # theme
-# default is "ccc45"
+# default is ccc45
 theme:
 
 # pagination
-# Number
-# set 0 if not need
+# post count per page. set 0 to disable it
 # default is 10
 per_page:
 
 # menu
+# navigation menus of website
 menu:
   categories: /categories/
   tags: /tags/
 
-# default category
+# default category name
 # default is "uncategorized"
 default_category:
 
 # content
-# the repository's issues
 # GitHub user/repository
-user:
-repository:
+# website contents comes from this repository issues
+user: LoeiFy
+repository: Recordum
 
 
 # Advance
 
 # scripts
-# script file name
+# script file names
 scripts:
   # - example.js
 
 # plugins
+# npm modules
 plugins:
   # - xxx module
 
 # output
-# html output directory
-# you can set child directory e.g. "child"
+# where static site files located
 public_dir: /
 
 # authors
-# GitHub user
+# Github usernames, users whose issues can be generated to post
 authors:
 #  - author0
 #  - author1
 
 # timezone
+# website timezone. use machine setting by default
 # example: "America/New_York", "Japan", "UTC", or "Asia/Shanghai"
-# default is local system timezone
 timezone:
 
 # language
-# requires theme support
-# default is "default"
+# language of website, theme support is needed
+# default is default
 language:
 
 # code line numbers
-# Boolean
-# whether to dispaly code line numbers
+# whether showing line numbers in code block
 # default is true
 line_numbers:
 
 # order
-# order by issues create time" or "update time"
-# created: use "create time"
-# updated: use "update time"
-# default is "created"
+# post ordering, order posts by issues create_time(created) or update_time(updated)
+# default is created
 order:
 
 # directory
-# default is "categories", "tags", "posts"
+# subdirectory in public_dir
+# default is categories, tags, posts
 category_dir:
 tag_dir:
 post_dir:
 
 # token
 # github access token
-# token should be separated by '#' if you push this file to github
-# example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
+# In order to prevent the token from removed by github, you should add a # inside it
+# for example the original token abcdedf should be replaced with a#bcdef.
 token:
 
 # cache
-# Boolean
-# cache github issues data
-# for development
+# whether caching GitHub issues data, just for development
+# default false
 cache:
 
 # Other
