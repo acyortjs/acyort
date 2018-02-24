@@ -12,7 +12,7 @@ To check out the docs, visit https://acyort.com
 
 https://github.com/LoeiFy/Recordum
 
-## Modules
+## Dependencies
 
 Project | Version | Description
 --- | --- | ---
