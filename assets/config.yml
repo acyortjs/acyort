@@ -30,8 +30,8 @@ default_category:
 # content
 # GitHub user/repository
 # website contents comes from this repository issues
-user: LoeiFy
-repository: Recordum
+user:
+repository:
 
 
 # Advance
