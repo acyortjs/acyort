@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A Node.js static website framework. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -42,7 +42,7 @@
     "acyort-config": "^1.0.2",
     "acyort-extend": "^1.0.1",
     "acyort-fetcher": "^1.0.1",
-    "acyort-helper": "^1.0.1",
+    "acyort-helper": "^1.0.2",
     "acyort-logger": "^1.0.0",
     "acyort-marked": "^1.1.0",
     "acyort-processor": "^1.0.1",
