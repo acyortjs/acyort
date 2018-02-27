@@ -197,6 +197,6 @@ describe('acyort', () => {
     assert(text('tags/index.html', 'title') === 'Tags | AcyOrt')
     assert(text('posts/71470122.html', '#post h1') === '输入框输入值自动格式化')
     assert(text('posts/223304114.html', '#开发选择') === '开发选择')
-    assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrtSource')
+    assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrt')
   })
 })
