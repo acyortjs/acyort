@@ -78,15 +78,13 @@ program
 .command('clean')
 .description('Remove all the generated files')
 .action(() => {
-  const regex = /(^|\/)\.[^/.]/g
-
   if (!config) {
     logger.error('Cannot find "config.yml" or Configuration information error')
   } else {
     try {
       const removes = fs
         .readdirSync(base)
-        .filter(file => !regex.test(file) && keeps.indexOf(file) === -1)
+        .filter(file => file[0] !== '.' && keeps.indexOf(file) === -1)
 
       removes.forEach(file => fs.removeSync(file))
     } catch (e) {
