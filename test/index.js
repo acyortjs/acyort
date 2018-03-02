@@ -120,7 +120,7 @@ describe('acyort', () => {
       fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
       fs.writeFileSync(`${themeDir}/layout/partials/header.html`, origin.header)
       fs.removeSync(`${themeDir}/source/images/newheader.jpg`)
-      fs.removeSync(`${themeDir}/i18n/en.yml`)
+      fs.removeSync(`${themeDir}/i18n/zh-cn.yml`)
       fs.removeSync(`${themeDir}/layout/nohtml.yml`)
       fs.removeSync(`${themeDir}/nodir.html`)
     })
@@ -145,7 +145,7 @@ describe('acyort', () => {
     assert(fs.existsSync(dir(`${config.public_dir}/images/newheader.jpg`)) === true)
     assert(msgs.length === 2)
 
-    fs.writeFileSync(`${themeDir}/i18n/en.yml`, '# yml')
+    fs.writeFileSync(`${themeDir}/i18n/zh-cn.yml`, '# yml')
     await sleep(500)
     assert(msgs.length === 2)
 
