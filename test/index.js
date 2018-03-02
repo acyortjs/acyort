@@ -102,6 +102,7 @@ describe('acyort', () => {
     acyort = new Acyort(_config)
     await acyort.build()
     assert(acyort.templates.length === 8)
+    assert(acyort.builder.ext === 'swig')
     assert(fs.existsSync(dir('categories/index.html')) === false)
 
     fs.removeSync(`${dir('scripts/throw.js')}`)

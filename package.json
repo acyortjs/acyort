@@ -1,12 +1,12 @@
 {
   "name": "acyort",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "A Node.js static website framework. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
   "main": "./lib/acyort.js",
-  "preferGlobal": "true",
+  "preferGlobal": true,
   "scripts": {
     "version": "cd assets && node ../bin/acyort version",
     "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
