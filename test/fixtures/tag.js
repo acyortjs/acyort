@@ -1,4 +1,4 @@
 module.exports = `
-acyort.builder.register(['archives', 'archives'])
-acyort.builder.extension = 'swig'
+acyort.template.register(['archives', 'archives'])
+acyort.template.extension = 'swig'
 `
