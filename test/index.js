@@ -101,8 +101,8 @@ describe('acyort', () => {
     _config.scripts = ['tag.js']
     acyort = new Acyort(_config)
     await acyort.build()
-    assert(acyort.templates.length === 8)
-    assert(acyort.builder.ext === 'swig')
+    assert(acyort.template.templates.length === 8)
+    assert(acyort.template.ext === 'swig')
     assert(fs.existsSync(dir('categories/index.html')) === false)
 
     fs.removeSync(`${dir('scripts/throw.js')}`)
@@ -151,11 +151,11 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${themeDir}/layout/nohtml.yml`, '# html')
     await sleep(500)
-    assert(msgs.length === 2)
+    assert(msgs.length === 4)
 
     fs.writeFileSync(`${themeDir}/nodir.html`, '# html')
     await sleep(500)
-    assert(msgs.length === 2)
+    assert(msgs.length === 4)
 
     fs.writeFileSync(`${themeDir}/layout/partials/header.html`, headerTpl)
     await sleep(1000)
