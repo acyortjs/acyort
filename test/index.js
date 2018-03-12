@@ -146,15 +146,15 @@ describe('acyort', () => {
     assert(msgs.length === 2)
 
     fs.writeFileSync(`${themeDir}/i18n/zh-cn.yml`, '# yml')
-    await sleep(500)
-    assert(msgs.length === 2)
+    await sleep(1000)
+    assert(msgs.length === 4)
 
     fs.writeFileSync(`${themeDir}/layout/nohtml.yml`, '# html')
-    await sleep(500)
+    await sleep(1000)
     assert(msgs.length === 4)
 
     fs.writeFileSync(`${themeDir}/nodir.html`, '# html')
-    await sleep(500)
+    await sleep(1000)
     assert(msgs.length === 4)
 
     fs.writeFileSync(`${themeDir}/layout/partials/header.html`, headerTpl)
