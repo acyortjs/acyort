@@ -1,5 +1,5 @@
 module.exports = `
-acyort.extend.register('after_init', () => {
+acyort.filter.register('after_init', () => {
   throw new Error('error')
 })
 `
