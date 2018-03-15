@@ -14,7 +14,7 @@
     . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
   </p>
 
-  <div class="content">{{ page.content }}</div>
+  <div class="content markdown-body">{{ page.body }}</div>
 
   {% if page.tags.length %}
   <div class="label">

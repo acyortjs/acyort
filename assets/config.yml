@@ -39,7 +39,7 @@ repository:
 # scripts
 # script file names
 scripts:
-  # - example.js
+  - content.js
 
 # plugins
 # npm modules
