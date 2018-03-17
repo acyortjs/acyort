@@ -13,7 +13,6 @@ menu:
   tags: Tags
   about: About
 
-pager:
-  prev: Newer
-  next: Older
-  tip: %1$s / %2$s
+prev: Previous
+next: Next
+paginator: %1$s / %2$s
