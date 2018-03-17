@@ -2,7 +2,7 @@ module.exports = `
 {% extends 'layout.html' %}
 
 {% block title %}
-{{ __('title.categories') }} | {{ config.title }}
+Categories | {{ config.title }}
 {% endblock %}
 
 {% block content %}

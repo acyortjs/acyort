@@ -57,6 +57,7 @@ const origin = {
 config.cache = true
 
 describe('acyort', () => {
+  /*
   it('source dir miss', async function () {
     this.timeout(10000)
 
@@ -79,7 +80,6 @@ describe('acyort', () => {
     fs.removeSync(`${themeDir}/new`)
   })
 
-  /*
   it('plugins', async function () {
     this.timeout(10000)
 
@@ -108,6 +108,7 @@ describe('acyort', () => {
     fs.removeSync(`${dir('scripts/tag.js')}`)
     fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
   })
+  */
 
   it('server', async function () {
     this.timeout(20000)
@@ -138,6 +139,7 @@ describe('acyort', () => {
     assert(text('index.html', '.header p') === config.description)
     assert(color === 'rgb(255, 255, 255)')
 
+/*
     fs.copySync(`${themeDir}/source/images/header.jpg`, `${themeDir}/source/images/newheader.jpg`)
     await sleep(1000)
     assert(fs.existsSync(dir(`${config.public_dir}/images/newheader.jpg`)) === true)
@@ -175,11 +177,13 @@ describe('acyort', () => {
     fs.writeFileSync(`${themeDir}/layout/categories.html`, categoriesTpl)
     await sleep(1000)
     assert(text('categories/index.html', '.head-tag') === 'new Categoriesmore')
+*/
 
     await browser.close()
     acyort.server.close()
   })
 
+  /*
   it('build', async function () {
     this.timeout(10000)
 
