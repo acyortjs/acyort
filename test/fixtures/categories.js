@@ -7,7 +7,7 @@ module.exports = `
 
 {% block content %}
 <div class="center clouds">
-  <p class="head-tag">{{ __('title.categories') }}more</p>
+  <p class="head-tag">more</p>
 
   <div>
     {% for category in page %}

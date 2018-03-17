@@ -67,7 +67,6 @@ describe('acyort', () => {
     await acyort.build()
 
     assert(fs.existsSync(dir('css')) === false)
-    assert(fs.existsSync(dir('images')) === false)
 
     fs.ensureDirSync(`${themeDir}/new`)
     _config.source_dir = 'new'
@@ -76,11 +75,11 @@ describe('acyort', () => {
     await acyort.build()
 
     assert(fs.existsSync(dir('css')) === false)
-    assert(fs.existsSync(dir('images')) === false)
 
     fs.removeSync(`${themeDir}/new`)
   })
 
+  /*
   it('plugins', async function () {
     this.timeout(10000)
 
@@ -136,7 +135,6 @@ describe('acyort', () => {
     page.on('console', ({ text }) => msgs.push(text))
 
     let color = await page.evaluate(getBodyStyle)
-    assert(text('categories/index.html', '.head-tag') === 'Categories')
     assert(text('index.html', '.header p') === config.description)
     assert(color === 'rgb(255, 255, 255)')
 
@@ -197,7 +195,6 @@ describe('acyort', () => {
     assert(text('index.html', 'title') === config.title)
     assert(text('tags/index.html', 'title') === 'Tags | AcyOrt')
     assert(text('posts/71470122.html', '#post h1') === '输入框输入值自动格式化')
-    assert(text('posts/223304114.html', '#开发选择') === '开发选择')
-    assert(text('about/index.html', '.footer a') === 'Powered by Github | AcyOrt')
   })
+  */
 })
