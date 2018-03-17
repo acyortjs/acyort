@@ -8,7 +8,6 @@
 
 {% block content %}
 <div id="posts" class="center">
-  <p class="head-tag">{{ __('title.category') }}: <span>{{ page.title }}</span></p>
   {{ postsTpl.render(page) }}
   {{ pagination.render(page) }}
 </div>

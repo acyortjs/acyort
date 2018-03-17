@@ -143,19 +143,19 @@ h1, h2 {
   margin-top: 14px;
 }
 
-.clouds {
-  min-height: 400px;
+.clouds > div {
+  margin-top: 30px;
 }
 .clouds > div p {
   display: inline-block;
-  margin: 0 10px 10px 0;
+  margin: 0 20px 20px 0;
 }
 .clouds a {
-  color: #333;
+  color: #221155;
 }
 .clouds a:hover {
-  color: #5694f1;
+  color: #2bb24c;
 }
 .clouds span {
-  color: #999;
+  color: #757575;
 }
