@@ -23,11 +23,15 @@ a {
   font-size: 14px;
   color: #49535d;
   line-height: 1.6;
+  margin-top: 30px;
+}
+h1, h2 {
+  margin: 0;
 }
 
 .header {
   text-align: center;
-  padding: 170px 0 20px;
+  padding: 100px 0 20px;
 }
 .header > a {
   color: #fff;
@@ -90,7 +94,6 @@ a {
   font-size: 20px;
   line-height: 1.4;
   font-weight: 500;
-  margin: 0;
 }
 .post > h2 a {
   color: #2F3335;
@@ -102,9 +105,6 @@ a {
   color: #878B94;
   font-size: 14px;
   margin-top: 10px;
-}
-.post .markdown-body {
-  margin-top: 30px;
 }
 
 #pagination {
@@ -129,6 +129,20 @@ a {
   color: #2bb24c;
 }
 
+#post {
+  padding-top: 30px;
+}
+#post > h1 {
+  color: #212427;
+  font-size: 24px;
+  font-weight: 500;
+}
+#post > p {
+  font-size: 14px;
+  color: #969896;
+  margin-top: 14px;
+}
+
 .clouds {
   min-height: 400px;
 }
@@ -144,54 +158,4 @@ a {
 }
 .clouds span {
   color: #999;
-}
-#post {
-  padding-top: 20px;
-}
-#post > h1 {
-  color: #212427;
-  font-size: 26px;
-}
-#post > p {
-  font-size: 14px;
-  color: #969896;
-  margin-top: 14px;
-}
-#post > p a {
-  color: #5694f1;
-  margin-right: 5px;
-}
-#post .content:before {
-  content: '';
-  height: 1px;
-  display: block;
-  width: 30px;
-  margin: 50px 0 30px;
-  background: #eee;
-}
-.label {
-  margin-top: 30px;
-}
-.label div {
-  padding: 2px 12px;
-  display: inline-block;
-  border-radius: 3px;
-  margin-right: 8px;
-  border: 1px solid #e2e2e2;
-  font-size: 13px;
-}
-.label a {
-  color: #6D6D6D;
-}
-.relate {
-  margin-top: 50px;
-  overflow: hidden;
-}
-.relate a {
-  font-size: 15px;
-  color: #5694f1;
-  float: left;
-}
-.relate a[rel="next"] {
-  float: right;
 }

@@ -7,34 +7,9 @@
 {% block content %}
 <div id="post" class="center">
   <h1>{{ page.title }}</h1>
-  <p>
-    <a href="{{ page.author.url }}">{{ page.author.name }}</a>
-    {{ __('title.posted') }}
-    {{ _time(page.created, 'MMMM DD, YYYY') }}
-    . - <a href="{{ _url(page.category.url) }}">{{ page.category.name}}</a>
-  </p>
+  <p>{{ _time(page.created, 'MMMM DD, YYYY') }}</p>
 
-  <div class="content markdown-body">{{ page.body }}</div>
-
-  {% if page.tags.length %}
-  <div class="label">
-    {% for tag in page.tags %}
-    <div><a href="{{ _url(tag.url) }}">#{{ tag.name }}</a></div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="relate">
-    {% if page.prev %}
-    {% set prev = _posts(page.prev) %}
-    <a rel="prev" href="{{ _url(prev.url) }}">← {{ prev.title }}</a>
-    {% endif %}
-
-    {% if page.next %}
-    {% set next = _posts(page.next) %}
-    <a rel="next" href="{{ _url(next.url) }}">{{ next.title }} →</a>
-    {% endif %}
-  </div>
+  <div class="markdown-body">{{ page.body }}</div>
 </div>
 {% endblock %}
 
