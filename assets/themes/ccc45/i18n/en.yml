@@ -8,9 +8,10 @@ title:
 powered: Powered by %2$s | %1$s
 
 menu:
-  categories: categories
-  tags: tags
-  about: about
+  home: Home
+  categories: Categories
+  tags: Tags
+  about: About
 
 footer:
   zero: ' 0'

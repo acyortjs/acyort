@@ -1,22 +1,10 @@
-body, div, h1, h2, h3, h4, h5, p, ul, pre {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: normal;
-}
-html {
-  -webkit-text-size-adjust: 100%;
-}
-html, body {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-font-smoothing: antialiased;
-  background: #fff;
-}
 body {
-  font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, PingFang SC, Microsoft YaHei, sans-serif;
+  background: #fff;
+  font-family: Roboto Slab, Roboto, PingFang SC, Microsoft YaHei, sans-serif;
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
+  margin: 0;
 }
 a {
   cursor: pointer;
@@ -26,65 +14,63 @@ a {
   position: relative;
   margin: 0 auto;
   max-width: 700px;
-  padding: 0 20px;
 }
-.head-tag {
-  font-size: 16px;
-  color: #6D6D6D;
-  margin: 30px 0;
-}
-.head-tag:first-letter {
-  text-transform: uppercase;
-}
+
 .header {
-  position: relative;
-  background: #374756 url(../images/header.jpg) no-repeat center;
-  background-size: cover;
-  margin-bottom: 30px;
+  text-align: center;
+  padding: 170px 0 20px;
 }
-.header:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, .35);
-  top: 0;
-  left: 0;
-}
-.header .center {
-  padding-top: 120px;
-  padding-bottom: 30px;
-}
-.header h1 {
-  font-size: 26px;
-  font-weight: 500;
-}
-.header a {
+.header > a {
   color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 3px 14px;
+  letter-spacing: 1px;
+  background-color: #000;
 }
 .header p {
-  color: #f2f2f2;
-  margin-top: 14px;
+  color: #333;
+  margin-top: 30px;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 .menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  margin-top: 100px;
 }
 .menu a {
   display: inline-block;
-  margin: 0 0 10px 10px;
   font-size: 15px;
-  color: #f2f2f2;
+  color: #757575;
+  margin: 0 30px -1px 0;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 10px;
+  letter-spacing: .5px;
 }
 .menu a:hover {
-  color: #fff;
+  border-bottom-color: #757575;
 }
-.menu a:first-letter {
-  text-transform: uppercase;
+.menu a.active {
+  border-bottom-color: #2bb24c!important;
+  color: #2bb24c;
 }
+
+.footer {
+  background: #f7f7f7;
+  border-top: 1px solid #f3f3f3;
+  padding: 50px 0;
+  margin-top: 70px;
+  text-align: center;
+  font-size: 14px;
+  color: #565656;
+}
+.footer a {
+  color: #565656;
+  line-height: 1.5;
+}
+
 #posts {
   min-height: 600px;
 }
@@ -135,19 +121,7 @@ a {
   height: auto;
   border-radius: 50%;
 }
-.footer {
-  background: #f7f7f7;
-  border-top: 1px solid #f3f3f3;
-  padding: 50px 0;
-  margin-top: 70px;
-  text-align: center;
-  font-size: 14px;
-  color: #565656;
-}
-.footer a {
-  color: #565656;
-  line-height: 1.5;
-}
+
 #pagination {
   margin-top: 50px;
   position: relative;

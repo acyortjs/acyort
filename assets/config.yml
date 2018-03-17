@@ -20,8 +20,10 @@ per_page: 3
 # menu
 # navigation menus of website
 menu:
+  home: /
   categories: /categories/
   tags: /tags/
+  about: /about/
 
 # default category name
 # default is "uncategorized"
@@ -40,6 +42,7 @@ repository:
 # script file names
 scripts:
   - content.js
+  - active.js
 
 # plugins
 # npm modules
