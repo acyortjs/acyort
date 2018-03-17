@@ -57,7 +57,6 @@ const origin = {
 config.cache = true
 
 describe('acyort', () => {
-  /*
   it('source dir miss', async function () {
     this.timeout(10000)
 
@@ -108,7 +107,6 @@ describe('acyort', () => {
     fs.removeSync(`${dir('scripts/tag.js')}`)
     fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
   })
-  */
 
   it('server', async function () {
     this.timeout(20000)
@@ -119,7 +117,7 @@ describe('acyort', () => {
       fs.writeFileSync(`${themeDir}/layout/layout.html`, origin.layout)
       fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
       fs.writeFileSync(`${themeDir}/layout/partials/header.html`, origin.header)
-      fs.removeSync(`${themeDir}/source/images/newheader.jpg`)
+      fs.removeSync(`${themeDir}/source/favicon.ico`)
       fs.removeSync(`${themeDir}/i18n/zh-cn.yml`)
       fs.removeSync(`${themeDir}/layout/nohtml.yml`)
       fs.removeSync(`${themeDir}/nodir.html`)
@@ -139,10 +137,9 @@ describe('acyort', () => {
     assert(text('index.html', '.header p') === config.description)
     assert(color === 'rgb(255, 255, 255)')
 
-/*
-    fs.copySync(`${themeDir}/source/images/header.jpg`, `${themeDir}/source/images/newheader.jpg`)
+    fs.copySync(`${themeDir}/source/favicon.ico`, `${themeDir}/source/newfavicon.ico`)
     await sleep(1000)
-    assert(fs.existsSync(dir(`${config.public_dir}/images/newheader.jpg`)) === true)
+    assert(fs.existsSync(dir(`${config.public_dir}/newfavicon.ico`)) === true)
     assert(msgs.length === 2)
 
     fs.writeFileSync(`${themeDir}/i18n/zh-cn.yml`, '# yml')
@@ -163,7 +160,7 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${themeDir}/i18n/${config.language}.yml`, i18nTpl)
     await sleep(1000)
-    assert(text('categories/index.html', '.head-tag') === 'new Categories')
+    assert(text('categories/index.html', '.menu a') === 'Home????CategoriesTagsAbout')
 
     fs.writeFileSync(`${themeDir}/source/css/style.css`, styleTpl)
     await sleep(1000)
@@ -176,14 +173,12 @@ describe('acyort', () => {
 
     fs.writeFileSync(`${themeDir}/layout/categories.html`, categoriesTpl)
     await sleep(1000)
-    assert(text('categories/index.html', '.head-tag') === 'new Categoriesmore')
-*/
+    assert(text('categories/index.html', '.head-tag') === 'more')
 
     await browser.close()
     acyort.server.close()
   })
 
-  /*
   it('build', async function () {
     this.timeout(10000)
 
@@ -200,5 +195,4 @@ describe('acyort', () => {
     assert(text('tags/index.html', 'title') === 'Tags | AcyOrt')
     assert(text('posts/71470122.html', '#post h1') === '输入框输入值自动格式化')
   })
-  */
 })
