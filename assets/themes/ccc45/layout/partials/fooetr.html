@@ -1,10 +1,7 @@
 <div class="footer">
-  <div class="center">
-    &copy; {{ _time(Date.now(), 'YYYY') }} {{ config.title }} .
-    <a target="_blank" href="https://github.com/acyortjs/acyort">{{ __('powered', 'AcyOrt', 'Github') }}</a> .
-    {% if config.user && config.repository %}
-    <a target="_blank" href="https://github.com/{{ config.user }}/{{ config.repository }}/issues">Source</a>
-    {% endif %}
-    <sup>{{ _n('footer',  Math.floor(Math.random() * 10)) }}</sup>
-  </div>
+  &copy; {{ _time(Date.now(), 'YYYY') }}
+  . <a target="_blank" href="https://github.com/acyortjs/acyort">{{ __('powered', 'AcyOrt') }}</a>
+  {% if config.user && config.repository %}
+  . <a target="_blank" href="https://github.com/{{ config.user }}/{{ config.repository }}/issues">Source</a>
+  {% endif %}
 </div>

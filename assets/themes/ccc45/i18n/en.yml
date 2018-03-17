@@ -5,18 +5,13 @@ title:
   tag: Tag
   posted: Posted at
 
-powered: Powered by %2$s | %1$s
+powered: Powered by %s
 
 menu:
   home: Home
   categories: Categories
   tags: Tags
   about: About
-
-footer:
-  zero: ' 0'
-  one: ' 1'
-  other: %d
 
 pager:
   prev: Newer
