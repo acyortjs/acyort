@@ -117,7 +117,7 @@ describe('acyort', () => {
       fs.writeFileSync(`${themeDir}/layout/layout.html`, origin.layout)
       fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
       fs.writeFileSync(`${themeDir}/layout/partials/header.html`, origin.header)
-      fs.removeSync(`${themeDir}/source/favicon.ico`)
+      fs.removeSync(`${themeDir}/source/newfavicon.ico`)
       fs.removeSync(`${themeDir}/i18n/zh-cn.yml`)
       fs.removeSync(`${themeDir}/layout/nohtml.yml`)
       fs.removeSync(`${themeDir}/nodir.html`)
@@ -140,19 +140,19 @@ describe('acyort', () => {
     fs.copySync(`${themeDir}/source/favicon.ico`, `${themeDir}/source/newfavicon.ico`)
     await sleep(1000)
     assert(fs.existsSync(dir(`${config.public_dir}/newfavicon.ico`)) === true)
-    assert(msgs.length === 2)
+    assert(msgs.length === 3)
 
     fs.writeFileSync(`${themeDir}/i18n/zh-cn.yml`, '# yml')
     await sleep(1000)
-    assert(msgs.length === 4)
+    assert(msgs.length === 5)
 
     fs.writeFileSync(`${themeDir}/layout/nohtml.yml`, '# html')
     await sleep(1000)
-    assert(msgs.length === 4)
+    assert(msgs.length === 5)
 
     fs.writeFileSync(`${themeDir}/nodir.html`, '# html')
     await sleep(1000)
-    assert(msgs.length === 4)
+    assert(msgs.length === 5)
 
     fs.writeFileSync(`${themeDir}/layout/partials/header.html`, headerTpl)
     await sleep(1000)
