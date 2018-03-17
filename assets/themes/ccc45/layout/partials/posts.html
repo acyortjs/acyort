@@ -9,13 +9,9 @@
       <p class="time">{{ _time(p.created, 'MMMM DD, YYYY') }}</p>
 
       {% if p.excerpt %}
-      <div class="summary">{{ p.excerpt }}</div>
+      <div class="markdown-body">{{ p.excerpt }}</div>
       {% endif %}
     </div>
-
-    <a class="author" href="{{ p.author.url }}" target="_blank">
-      <img src="{{ p.author.avatar }}" />
-    </a>
   </li>
 {% endfor %}
 </ul>
