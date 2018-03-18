@@ -1,6 +1,6 @@
 const map = {}
 
-acyort.fetcher.getHtml = true
+acyort.fetcher.setHeaders({ Accept: 'application/vnd.github.v3.full' })
 
 acyort.filter.register('after_fetch', function (data) {
   data.forEach(({ id, body_html }) => {
