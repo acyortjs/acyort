@@ -8,8 +8,9 @@
 - Updated module Processor
   * Ignore empty issues data error
 - Default theme fixed
+- Add CHANGELOG
 
 ### 2.2.3
 
 - Add page types
-- Change default theme
+- New default theme
