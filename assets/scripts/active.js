@@ -20,7 +20,3 @@ acyort.helper.register('_active', function (page, key) {
 
   return ''
 })
-
-acyort.template.action('head', function () {
-  console.log(this.type)
-})
