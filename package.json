@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "A Node.js static website framework. Powered by GitHub",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -13,9 +13,10 @@
     "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
     "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
     "test": "npm run test:lint && npm run test:cover",
-    "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test",
+    "test:unit": "npm run clean && mocha --reporter dot --require intelli-espower-loader ./test",
     "test:lint": "eslint .",
     "test:cover": "istanbul cover --print both _mocha ./test",
+    "pretest": "npm run clean",
     "posttest": "npm run clean"
   },
   "engines": {
