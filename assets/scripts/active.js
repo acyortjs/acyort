@@ -1,5 +1,5 @@
-acyort.helper.register('_active', function (page, key) {
-  let { type } = page
+acyort.helper.register('_active', function (key) {
+  let { type } = this
 
   if (
     (type === 'index' && key === 'home') ||
@@ -9,7 +9,7 @@ acyort.helper.register('_active', function (page, key) {
   }
 
   if (!type) {
-    type = page[0].type
+    type = this[0].type
     if (
       (type === 'categories' && key === 'categories') ||
       (type === 'tags' && key === 'tags')

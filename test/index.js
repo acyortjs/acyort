@@ -9,12 +9,14 @@ const Acyort = require('../lib/acyort')
 
 const i18nTpl = require('./fixtures/i18n')
 const categoriesTpl = require('./fixtures/categories')
+const tagsTpl = require('./fixtures/tags')
 const layoutTpl = require('./fixtures/layout')
 const styleTpl = require('./fixtures/style')
 const headerTpl = require('./fixtures/header')
 
 const throwTpl = require('./fixtures/throw')
 const tagTpl = require('./fixtures/tag')
+const actionTpl = require('./fixtures/action')
 
 const base = pathFn.resolve(__dirname, '../assets')
 
@@ -51,6 +53,7 @@ const origin = {
   style: fs.readFileSync(`${themeDir}/source/css/style.css`),
   layout: fs.readFileSync(`${themeDir}/layout/layout.html`),
   categories: fs.readFileSync(`${themeDir}/layout/categories.html`),
+  tags: fs.readFileSync(`${themeDir}/layout/tags.html`),
   header: fs.readFileSync(`${themeDir}/layout/partials/header.html`),
 }
 
@@ -103,9 +106,21 @@ describe('acyort', () => {
     assert(acyort.template.ext === 'swig')
     assert(fs.existsSync(dir('categories/index.html')) === false)
 
+    fs.writeFileSync(`${dir('scripts/action.js')}`, actionTpl)
+    fs.writeFileSync(`${themeDir}/layout/tags.html`, tagsTpl)
+
+    _config.scripts = ['action.js']
+    acyort = new Acyort(_config)
+    await acyort.build()
+
+    assert(acyort.helper.methods._footer() === 'footer')
+    assert(text('tags/index.html', '.action') === '14')
+
     fs.removeSync(`${dir('scripts/throw.js')}`)
     fs.removeSync(`${dir('scripts/tag.js')}`)
+    fs.removeSync(`${dir('scripts/action.js')}`)
     fs.writeFileSync(`${themeDir}/layout/categories.html`, origin.categories)
+    fs.writeFileSync(`${themeDir}/layout/tags.html`, origin.tags)
   })
 
   it('server', async function () {
