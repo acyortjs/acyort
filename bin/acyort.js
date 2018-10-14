@@ -1,100 +1,44 @@
 #!/usr/bin/env node
 
-const program = require('commander')
-const fs = require('fs-extra')
-const path = require('path')
-const { version } = require('../package.json')
-const getConfig = require('acyort-config')
-const Render = require('acyort-render')
-const Logger = require('acyort-logger')
-const Acyort = require('../lib/acyort')
+const yargs = require('yargs-parser')
+const { join } = require('path')
+const pkg = require('../package.json')
 
-const base = process.cwd()
-const configPath = path.join(__dirname, 'config.yml')
-const logger = new Logger()
-const renderer = new Render()
-const {
-  ignores,
-  commands,
-  keeps,
-} = renderer.use('yaml').renderFile(configPath)
-const config = getConfig(base)
-const filter = src => src.indexOf('_issues.json') === -1
+const help = `
+AcyOrt, A Node.js static website framework
 
-if (process.env.NODE_ENV === 'dev') {
-  config.cache = true
+Commands:
+  init [folder]       Create new website
+  generate            Generate static files
+  clean               Remove generated files
+
+Options:
+  --version           Show current version
+  --help              Show help
+
+For more help, check the docs: https://acyort.com
+`
+const cwd = process.cwd()
+
+function parse(argv) {
+  const { _ } = yargs(argv)
+
+  if (argv[0] === '-v' || argv[0] === '--version') {
+    global.console.log(pkg.version)
+    return
+  }
+
+  if (argv[0] === '-h' || argv[0] === '--help') {
+    global.console.log(help)
+    return
+  }
+
+  if (_[0] === 'init') {
+    const to = join(cwd, _[1] || '')
+    return
+  }
+
+  global.console.log(help)
 }
 
-program
-.allowUnknownOption()
-.usage('<command>')
-
-program
-.command('init [folder]')
-.description('Create new blog')
-.action((folder = '') => {
-  try {
-    if (config) {
-      fs.copySync(path.join(base, 'config.yml'), path.join(base, 'config.bak.yml'))
-    }
-
-    fs.copySync(path.resolve(__dirname, '../assets'), path.join(base, folder), { filter })
-    fs.outputFileSync(path.join(base, folder, '.gitignore'), ignores.join('\n'))
-
-    logger.success('Configure "config.yml" to start your blog')
-  } catch (e) {
-    logger.error(e)
-  }
-})
-
-program
-.command('version')
-.description('Display AcyOrt version')
-.action(() => console.log(version)) // eslint-disable-line no-console
-
-program
-.command('server [port]')
-.description('Create a local test server')
-.action((port = 2222) => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
-  } else {
-    new Acyort(config).start(port)
-  }
-})
-
-program
-.command('build')
-.description('Generate the files')
-.action(() => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
-  } else {
-    new Acyort(config).build()
-  }
-})
-
-program
-.command('clean')
-.description('Remove all the generated files')
-.action(() => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
-  } else {
-    try {
-      const removes = fs
-        .readdirSync(base)
-        .filter(file => file[0] !== '.' && keeps.indexOf(file) === -1)
-
-      removes.forEach(file => fs.removeSync(file))
-    } catch (e) {
-      logger.error(e)
-    }
-  }
-})
-
-program.parse(process.argv)
-
-if (!program.args.length || commands.indexOf(process.argv[2]) === -1) {
-  program.help()
-}
+parse(process.argv.slice(2))

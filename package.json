@@ -1,7 +1,7 @@
 {
   "name": "acyort",
-  "version": "2.3.0",
-  "description": "A Node.js static website framework. Powered by GitHub",
+  "version": "3.0.0",
+  "description": "A Node.js static website framework",
   "bin": {
     "acyort": "./bin/acyort.js"
   },
@@ -29,40 +29,20 @@
   "keywords": [
     "website",
     "blog",
-    "github",
-    "static",
-    "issue"
+    "static"
   ],
-  "author": "LoeiFy@gmail.com",
+  "author": "LoeiFy <LoeiFy@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/acyortjs/acyort/issues"
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
-    "acyort-config": "^1.0.3",
-    "acyort-extend": "^1.1.0",
-    "acyort-fetcher": "^1.0.5",
-    "acyort-helper": "^1.0.5",
-    "acyort-logger": "^1.0.0",
-    "acyort-marked": "^1.1.1",
-    "acyort-processor": "^1.0.5",
-    "acyort-render": "^1.0.1",
-    "acyort-server": "^1.0.0",
-    "commander": "^2.9.0",
-    "fs-extra": "^0.26.5"
+    "yargs-parser": "^11.0.0"
   },
   "devDependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "cross-env": "^3.1.4",
-    "eslint": "^3.12.2",
-    "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "intelli-espower-loader": "^1.0.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.1",
-    "power-assert": "^1.4.4",
-    "puppeteer": "^0.13.0",
-    "sinon": "^4.1.3"
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
