@@ -41,7 +41,8 @@ class C {
     const { commands, options } = this
     const width = 24
 
-    let help = `AcyOrt, A Node.js static website framework
+    let help = `
+AcyOrt, A Node.js static website framework
 
 Commands:`
 
