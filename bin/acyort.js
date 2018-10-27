@@ -4,7 +4,7 @@ const extend = require('@acyort/extender')
 const yargs = require('yargs-parser')
 const { join } =require('path')
 const { readdirSync } = require('fs')
-const cli = require('./cli')
+const cli = require('../lib/cli')
 
 function parse(args) {
   const argv = yargs(args)
