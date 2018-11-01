@@ -2,47 +2,30 @@
 
 const extend = require('@acyort/extender')
 const Logger = require('@acyort/logger')
-const yargs = require('yargs-parser')
 const { join } = require('path')
 const { readdirSync, existsSync } = require('fs')
 const cli = require('../lib/cli')
+const parser = require('../lib/cli/parser')
 
 const logger = new Logger()
+const argv = process.argv.slice(2)
 
-function parse(args) {
-  const argv = yargs(args)
+if (argv[0] !== 'init') {
+  try {
+    const cwd = process.cwd()
+    const scriptsDir = join(cwd, 'scripts')
 
-  let action = cli.getAction('options', args[0])
-
-  if (action) {
-    action(argv, logger)
-    return
+    if (existsSync(scriptsDir)) {
+      readdirSync(join(cwd, 'scripts'))
+        .filter(name => name.indexOf('.js') > -1)
+        .forEach((name) => {
+          const path = join(cwd, 'scripts', name)
+          extend(path, { cli }, 'acyort')
+        })
+    }
+  } catch (e) {
+    logger.error(e)
   }
-
-  action = cli.getAction('commands', argv._[0])
-
-  if (action) {
-    action(argv, logger)
-    return
-  }
-
-  logger.log(cli.help)
 }
 
-try {
-  const cwd = process.cwd()
-  const scriptsDir = join(cwd, 'scripts')
-
-  if (existsSync(scriptsDir)) {
-    readdirSync(join(cwd, 'scripts'))
-      .filter(name => name.indexOf('.js') > -1)
-      .forEach((name) => {
-        const path = join(cwd, 'scripts', name)
-        extend(path, { cli }, 'acyort')
-      })
-  }
-} catch (e) {
-  logger.error(e)
-}
-
-parse(process.argv.slice(2))
+parser(argv, logger)
