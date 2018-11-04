@@ -6,6 +6,11 @@ menu:
   tags: Tags
   about: About
 
+num:
+  zero: zero
+  one: one
+  other: other %d
+
 prev: Previous
 next: Next
-paginator: %1$s / %2$s
+paginator: '%1$s / %2$s'
