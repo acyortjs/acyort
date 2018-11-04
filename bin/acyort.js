@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 const extend = require('@acyort/extender')
-const Logger = require('@acyort/logger')
+const logger = require('@acyort/logger')()
 const { join } = require('path')
 const { readdirSync, existsSync } = require('fs')
 const cli = require('../lib/cli')
 const parser = require('../lib/cli/parser')
 
-const logger = new Logger()
 const argv = process.argv.slice(2)
 
 if (argv[0] !== 'init') {

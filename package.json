@@ -39,7 +39,8 @@
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
     "@acyort/extender": "^1.0.0",
-    "@acyort/logger": "^1.0.0",
+    "@acyort/i18n": "^0.1.1",
+    "@acyort/logger": "^1.1.1",
     "@acyort/renderer": "^1.0.0",
     "fs-extra": "^7.0.0",
     "moment": "^2.22.2",
