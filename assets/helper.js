@@ -30,3 +30,5 @@ helper.register('_test', function() {
 })
 
 helper.methods._test()
+
+helper.reset()
