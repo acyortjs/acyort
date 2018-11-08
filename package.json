@@ -5,7 +5,12 @@
   "bin": {
     "acyort": "./bin/acyort.js"
   },
-  "main": "./lib/acyort.js",
+  "files": [
+    "assets",
+    "bin",
+    "lib"
+  ],
+  "main": "./lib/index.js",
   "preferGlobal": true,
   "scripts": {
     "version": "cd assets && node ../bin/acyort version",
