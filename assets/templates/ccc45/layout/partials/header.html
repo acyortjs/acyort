@@ -1,9 +1,0 @@
-<div class="header">
-  <a href="{{ _url() }}">{{ config.title }}</a>
-  <p>{{ config.description }}</p>
-  <div class="menu center">
-  {% for u in config.menu %}
-    <a class="{{ _active(loop.key) }}" href="{{ _url(u) }}">{{ __('menu.' + loop.key) }}</a>
-  {% endfor %}
-  </div>
-</div>

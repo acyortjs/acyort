@@ -1,16 +1,9 @@
-powered: Powered by %s
+posts:
+  zero: no posts
+  one: only one post
+  other: there are %d posts in total
+
+paginator: page %1$s / %2$s
 
 menu:
-  home: Home
-  categories: Categories
-  tags: Tags
-  about: About
-
-num:
-  zero: zero
-  one: one
-  other: other %d
-
-prev: Previous
-next: Next
-paginator: '%1$s / %2$s'
+  home: home
