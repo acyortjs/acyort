@@ -9,19 +9,19 @@ const Acyort = require('../lib')
 const getConfig = require('../lib/config')
 
 const argv = process.argv.slice(2)
+const base = process.cwd()
 
 if (argv[0] !== 'init') {
   try {
-    const cwd = process.cwd()
-    const scriptsDir = join(cwd, 'scripts')
-    const config = getConfig(cwd)
+    const config = getConfig(base)
+    const scriptsDir = join(base, 'scripts')
     const acyort = new Acyort(config)
 
     if (existsSync(scriptsDir)) {
-      readdirSync(join(cwd, 'scripts'))
+      readdirSync(scriptsDir)
         .filter(name => name.indexOf('.js') > -1)
         .forEach((name) => {
-          const path = join(cwd, 'scripts', name)
+          const path = join(base, 'scripts', name)
           extend(path, acyort, 'acyort')
         })
     }
@@ -30,4 +30,4 @@ if (argv[0] !== 'init') {
   }
 }
 
-parser(argv, logger)
+parser(argv)
