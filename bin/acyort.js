@@ -24,7 +24,7 @@ try {
         .filter(name => name.indexOf('.js') > -1)
         .forEach((name) => {
           const path = join(base, 'scripts', name)
-          extend(path, acyort, 'acyort')
+          extend(path, { ...acyort, process: undefined }, 'acyort')
         })
     }
 

@@ -30,4 +30,10 @@ function d() {
   throw new Error('????')
 }
 
-acyort.workflow.register(b, c, a, d)
+function e() {
+  console.log('?')
+  acyort.process()
+}
+
+// acyort.workflow.register(b, c, a, d)
+acyort.workflow.register(e)
