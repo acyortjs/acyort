@@ -26,14 +26,8 @@ function c() {
   acyort.logger.success('c')
 }
 
-function d() {
-  throw new Error('????')
-}
-
 function e() {
-  console.log('?')
   acyort.process()
 }
 
-// acyort.workflow.register(b, c, a, d)
-acyort.workflow.register(e)
+acyort.workflow.register(b, c, a, e)

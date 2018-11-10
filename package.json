@@ -13,16 +13,8 @@
   "main": "./lib/index.js",
   "preferGlobal": true,
   "scripts": {
-    "version": "cd assets && node ../bin/acyort version",
-    "start": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort server",
-    "build": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort build",
-    "clean": "cd assets && cross-env NODE_ENV=dev node ../bin/acyort clean",
-    "test": "npm run test:lint && npm run test:cover",
-    "test:unit": "npm run clean && mocha --reporter dot --require intelli-espower-loader ./test",
-    "test:lint": "eslint .",
-    "test:cover": "istanbul cover --print both _mocha ./test",
-    "pretest": "npm run clean",
-    "posttest": "npm run clean"
+    "test": "cd assets && node ../bin/acyort flow",
+    "test:lint": "eslint ."
   },
   "engines": {
     "node": ">=6.0.0"
