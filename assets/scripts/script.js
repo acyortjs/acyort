@@ -5,6 +5,29 @@ acyort.cli.register('options', {
   alias: '-t',
   description: 'Show Test',
   action(argv, acyort) {
-    console.log(acyort.config)
+    acyort.logger.info(acyort.config)
   },
 })
+
+function a() {
+  acyort.logger.log(acyort.version)
+}
+
+function b() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      acyort.logger.info('b')
+      resolve()
+    }, 1000)
+  })
+}
+
+function c() {
+  acyort.logger.success('c')
+}
+
+function d() {
+  throw new Error('????')
+}
+
+acyort.workflow.register(b, c, a, d)
