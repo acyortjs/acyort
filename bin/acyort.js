@@ -12,28 +12,28 @@ const argv = process.argv.slice(2)
 const base = process.cwd()
 const ignores = ['init', '-h', '--help', '-v', '--version']
 
-if (argv[0] && !ignores.includes(argv[0])) {
-  try {
-    const config = getConfig(base)
-    const scriptsDir = join(base, 'scripts')
+try {
+  const config = getConfig(base)
+  const scriptsDir = join(base, 'scripts')
 
-    if (config) {
-      const acyort = new Acyort(config)
+  if (config) {
+    const acyort = new Acyort(config)
 
-      if (existsSync(scriptsDir)) {
-        readdirSync(scriptsDir)
-          .filter(name => name.indexOf('.js') > -1)
-          .forEach((name) => {
-            const path = join(base, 'scripts', name)
-            extend(path, acyort, 'acyort')
-          })
-      }
-
-      parser(argv)
+    if (existsSync(scriptsDir)) {
+      readdirSync(scriptsDir)
+        .filter(name => name.indexOf('.js') > -1)
+        .forEach((name) => {
+          const path = join(base, 'scripts', name)
+          extend(path, acyort, 'acyort')
+        })
     }
-  } catch (e) {
-    logger.error(e)
+
+    parser(argv, acyort)
+  } else if (argv[0] && !ignores.includes(argv[0])) {
+    logger.error('Cannot find `config.yml` or configuration error')
+  } else {
+    parser(argv)
   }
-} else {
-  parser(argv)
+} catch (e) {
+  logger.error(e)
 }
