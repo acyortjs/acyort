@@ -24,7 +24,17 @@ try {
         .filter(name => name.indexOf('.js') > -1)
         .forEach((name) => {
           const path = join(base, 'scripts', name)
-          extend(path, { ...acyort, process: undefined }, 'acyort')
+          const ctx = {}
+
+          Object.getOwnPropertyNames(Object.getPrototypeOf(acyort))
+            .concat(Object.keys(acyort))
+            .forEach((key) => {
+              if (key !== 'process') {
+                ctx[key] = acyort[key]
+              }
+            })
+
+          extend(path, ctx, 'acyort')
         })
     }
 
