@@ -27,7 +27,10 @@ function c() {
 }
 
 function e() {
-  acyort.process()
+  acyort.outputHTML('index', '/index.html', {
+    zero: 0,
+    other: 10,
+  })
 }
 
 acyort.workflow.register(b, c, a, e)
