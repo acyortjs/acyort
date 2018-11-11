@@ -27,15 +27,22 @@ function c() {
 }
 
 function e() {
-  acyort.outputHTML('index', 'index.html', {
-    zero: 0,
-    other: 10,
+  acyort.outputHTML({
+    template: 'index',
+    path: 'index.html',
+    data: {
+      zero: 0,
+      other: 10,
+    },
   })
   acyort.copySource()
 }
 
+acyort.store.set('test', { test: 1 })
+
 acyort.workflow.register(b, c, a, e)
 
 acyort.helper.register('_test', function test() {
+  global.console.log(acyort.store.get('test'))
   return `<p>${this.zero}|${acyort.config.language}</p>`
 })
