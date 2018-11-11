@@ -18,7 +18,7 @@ function b() {
     setTimeout(() => {
       acyort.logger.info('b')
       resolve()
-    }, 1000)
+    }, 300)
   })
 }
 
@@ -27,10 +27,15 @@ function c() {
 }
 
 function e() {
-  acyort.outputHTML('index', '/index.html', {
+  acyort.outputHTML('index', 'index.html', {
     zero: 0,
     other: 10,
   })
+  acyort.copySource()
 }
 
 acyort.workflow.register(b, c, a, e)
+
+acyort.helper.register('_test', function test() {
+  return `<p>${this.zero}|${acyort.config.language}</p>`
+})

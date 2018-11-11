@@ -14,6 +14,7 @@
   "preferGlobal": true,
   "scripts": {
     "test": "cd assets && node ../bin/acyort flow",
+    "clean": "cd assets && node ../bin/acyort clean",
     "test:lint": "eslint ."
   },
   "engines": {

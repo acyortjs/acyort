@@ -1,4 +1,8 @@
 <P>{{ _n('posts', page.zero) }}</P>
 <P>{{ _n('posts', page.other) }}</P>
-<p>{{ __('paginator', 1, 10) }}</p>
+<p>{{ __('paginator', config.template.length, 10) }}</p>
 <p>{{ __('menu.home') }}</p>
+
+<div>
+{{ _test() }}
+</div>
