@@ -5,7 +5,7 @@ const logger = require('@acyort/logger')()
 const { join } = require('path')
 const { readdirSync, existsSync } = require('fs')
 const parser = require('../lib/cli/parser')
-const Acyort = require('../lib')
+const acyort = require('../lib')
 const getConfig = require('../lib/config')
 
 const argv = process.argv.slice(2)
@@ -17,28 +17,18 @@ try {
   const scriptsDir = join(base, 'scripts')
 
   if (config) {
-    const acyort = new Acyort(config)
+    const ctx = acyort(config)
 
     if (existsSync(scriptsDir)) {
       readdirSync(scriptsDir)
         .filter(name => name.indexOf('.js') > -1)
         .forEach((name) => {
           const path = join(base, 'scripts', name)
-          const ctx = {}
-
-          Object.getOwnPropertyNames(Object.getPrototypeOf(acyort))
-            .concat(Object.keys(acyort))
-            .forEach((key) => {
-              if (key !== 'process') {
-                ctx[key] = acyort[key]
-              }
-            })
-
-          extend(path, ctx, 'acyort')
+          extend(path, { ...ctx, process: undefined }, 'acyort')
         })
     }
 
-    parser(argv, acyort)
+    parser(argv, ctx)
   } else if (argv[0] && !ignores.includes(argv[0])) {
     logger.error('Cannot find `config.yml` or configuration error')
   } else {
