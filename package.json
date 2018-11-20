@@ -15,6 +15,7 @@
   "scripts": {
     "test": "cd assets && node ../bin/acyort flow",
     "clean": "cd assets && node ../bin/acyort clean",
+    "version": "cd assets && node ../bin/acyort -v",
     "test:lint": "eslint ."
   },
   "engines": {
