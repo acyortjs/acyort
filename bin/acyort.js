@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const extend = require('@acyort/extender')
 const logger = require('@acyort/logger')()
 const { join } = require('path')
 const { readdirSync, existsSync } = require('fs')
@@ -24,7 +23,8 @@ try {
         .filter(name => name.indexOf('.js') > -1)
         .forEach((name) => {
           const path = join(base, 'scripts', name)
-          extend(path, { ...ctx, process: undefined }, 'acyort')
+          // eslint-disable-next-line global-require, import/no-dynamic-require
+          require(path)({ ...ctx, process: undefined })
         })
     }
 
