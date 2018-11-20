@@ -40,7 +40,6 @@
     "@acyort/i18n": "^0.1.1",
     "@acyort/logger": "^1.1.1",
     "@acyort/renderer": "^1.0.0",
-    "axios": "^0.18.0",
     "fs-extra": "^7.0.0",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
