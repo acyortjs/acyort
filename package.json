@@ -16,6 +16,8 @@
     "test": "cd assets && node ../bin/acyort flow",
     "clean": "cd assets && node ../bin/acyort clean",
     "version": "cd assets && node ../bin/acyort -v",
+    "help": "cd assets && node ../bin/acyort",
+    "config": "cd assets && node ../bin/acyort -c",
     "test:lint": "eslint ."
   },
   "engines": {

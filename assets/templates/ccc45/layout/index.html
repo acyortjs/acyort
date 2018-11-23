@@ -1,10 +1,11 @@
-<P>{{ _n('posts', page.zero) }}</P>
-<P>{{ _n('posts', page.other) }}</P>
-<p>{{ __('paginator', config.template.length, 10) }}</p>
-<p>{{ __('menu.home') }}</p>
+<h1>{{ __('h1', 'Hello', 'World') }}</h1>
 
-<div>
-{{ _test() }}
-</div>
+<h2>{{ _time(Date.now(), 'YYYY-MM-DD hh:mm:ss') }}</h2>
 
-<div>{{ _time(Date.now(), 'YYYY-MM-DD hh:mm:ss') }}</div>
+<h3>Powered By {{ __('name.acyort') }}</h3>
+
+<h4>Numbers: {{ _n('number', page.zero) }} {{ _n('number', page.one) }} {{ _n('number', page.other) }}</h4>
+
+<h5>{{ _h5() }}</h5>
+
+<h6>URL: {{ _url('posts/1') }}</h6>

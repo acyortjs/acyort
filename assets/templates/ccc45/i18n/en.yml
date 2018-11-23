@@ -1,9 +1,9 @@
-posts:
-  zero: no posts
-  one: only one post
-  other: there are %d posts in total
+number:
+  zero: '0'
+  one: '1'
+  other: '%d'
 
-paginator: page %1$s / %2$s
+h1: '%1$s %2$s'
 
-menu:
-  home: home
+name:
+  acyort: AcyOrt

@@ -1,9 +1,10 @@
 module.exports = (acyort) => {
   acyort.cli.register('options', {
-    name: '--test',
-    alias: '-t',
-    description: 'Show Test',
-    action() {
+    name: '--config',
+    alias: '-c',
+    description: 'Show config',
+    action(argv) {
+      acyort.logger.log('CLI arguments: ', argv, '\n')
       acyort.logger.info(acyort.config)
     },
   })
@@ -17,7 +18,7 @@ module.exports = (acyort) => {
       setTimeout(() => {
         acyort.logger.info('b')
         resolve()
-      }, 1000)
+      }, 300)
     })
   }
 
@@ -25,24 +26,26 @@ module.exports = (acyort) => {
     acyort.logger.success('c')
   }
 
-  function e() {
+  function d() {
     acyort.outputHTML({
       template: 'index',
       path: 'index.html',
       data: {
         zero: 0,
+        one: 1,
         other: 10,
       },
     })
     acyort.copySource()
   }
 
-  acyort.store.set('test', { test: 1 })
+  acyort.store.set('key', 5)
 
-  acyort.workflow.register(a, b, c, e)
+  acyort.workflow.register(a, b, c, d)
 
-  acyort.helper.register('_test', function test() {
-    global.console.log(acyort.store.get('test'))
-    return `<p>${this.zero}|${acyort.config.language}</p>`
+  acyort.helper.register('_h5', function h5() {
+    const key = acyort.store.get('key')
+    const number = this.one
+    return `This is h${key}, not h${number}`
   })
 }
