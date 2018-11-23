@@ -6,7 +6,7 @@ template: ccc45
 
 # scripts, script file name
 scripts:
-  # - active.js
+  - script.js
 
 # plugins, npm modules
 plugins:

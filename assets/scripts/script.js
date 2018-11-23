@@ -39,7 +39,7 @@ module.exports = (acyort) => {
 
   acyort.store.set('test', { test: 1 })
 
-  acyort.workflow.register(b, c, a, e)
+  acyort.workflow.register(a, b, c, e)
 
   acyort.helper.register('_test', function test() {
     global.console.log(acyort.store.get('test'))
