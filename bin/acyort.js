@@ -25,7 +25,7 @@ try {
 
     parser(argv, ctx)
   } else if (argv[0] && !ignores.includes(argv[0])) {
-    logger.error('Cannot find `config.yml` or configuration error')
+    logger.error('cannot find `config.yml` or configuration error')
   } else {
     parser(argv)
   }

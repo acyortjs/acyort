@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
-    "@acyort/i18n": "^0.1.1",
+    "@acyort/i18n": "^0.1.2",
     "@acyort/logger": "^1.1.1",
     "@acyort/renderer": "^1.0.0",
     "fs-extra": "^7.0.0",
