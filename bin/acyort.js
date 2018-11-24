@@ -16,12 +16,13 @@ try {
   if (config) {
     const ctx = acyort(config)
     const { scripts, plugins } = config
-
-    scripts.concat(plugins).forEach((name) => {
-      const path = name.includes('.js') ? join(base, 'scripts', name) : name
+    const exec = (path) => {
       // eslint-disable-next-line global-require, import/no-dynamic-require
       require(path)({ ...ctx, process: undefined })
-    })
+    }
+
+    scripts.forEach(name => exec(join(base, 'scripts', name)))
+    plugins.forEach(name => exec(join(base, 'node_modules', name)))
 
     parser(argv, ctx)
   } else if (argv[0] && !ignores.includes(argv[0])) {
