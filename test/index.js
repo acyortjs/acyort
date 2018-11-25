@@ -4,4 +4,5 @@ describe('AcyOrt', () => {
   require('./store')
   require('./workflow')
   require('./helper')
+  require('./config')
 })
