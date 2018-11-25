@@ -13,12 +13,15 @@
   "main": "./lib/index.js",
   "preferGlobal": true,
   "scripts": {
-    "test": "cd assets && node ../bin/acyort flow",
+    "flow": "cd assets && node ../bin/acyort flow",
     "clean": "cd assets && node ../bin/acyort clean",
     "version": "cd assets && node ../bin/acyort -v",
     "help": "cd assets && node ../bin/acyort",
-    "config": "cd assets && node ../bin/acyort -c",
-    "test:lint": "eslint ."
+    "test": "npm run test:lint && npm run test:cover",
+    "test:lint": "eslint .",
+    "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test/index.js",
+    "test:cover": "nyc npm run test:unit",
+    "coverage": "nyc report --reporter=lcov npm run test:unit"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -50,6 +53,10 @@
   "devDependencies": {
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "power-assert": "^1.6.1"
   }
 }
