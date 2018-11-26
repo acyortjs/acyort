@@ -33,5 +33,10 @@ describe('helper', () => {
 
     helper.register('test0', 'no a function')
     assert(helper.methods.test0 === undefined)
+
+    helper.language = 'zh_CN'
+    assert(_time(1543141780476, 'MMMM Do YYYY, h:mm:ss a') === '十一月 25日 2018, 6:29:40 晚上')
+    assert(helper.language === 'zh_CN')
+    assert(helper.__('test') === '')  // eslint-disable-line
   })
 })
