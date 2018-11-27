@@ -7,6 +7,12 @@
 
 A Node.js static website framework.
 
+## Install
+
+```bash
+$ npm i acyort@next -g
+```
+
 ## Documentation
 
 To check out the docs, visit https://acyort.com

@@ -13,7 +13,7 @@ describe('processor', () => {
             setTimeout(() => {
               test.push('b')
               resolve()
-            }, 300)
+            }, 100)
           }),
           () => test.push('a'),
           () => { throw new Error('error') },

@@ -1,5 +1,7 @@
 language: node_js
 
+sudo: false
+
 cache:
   apt: true
   directories:
@@ -21,5 +23,6 @@ script:
   - npm test
 
 after_script:
+  - npm run coverage
   - npm install -g codecov
   - cat ./coverage/lcov.info | codecov
