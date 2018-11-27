@@ -5,4 +5,5 @@ describe('AcyOrt', () => {
   require('./workflow')
   require('./helper')
   require('./config')
+  require('./utility')
 })

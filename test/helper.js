@@ -1,11 +1,11 @@
 const assert = require('power-assert')
-const { resolve } = require('path')
+const { join } = require('path')
 const Helper = require('../lib/helper')
 
 describe('helper', () => {
   it('test', () => {
     const config = {
-      base: resolve(__dirname, '../assets'),
+      base: join(__dirname, 'fixtures'),
       template: 'ccc45',
       language: 'en',
       root: '/',
