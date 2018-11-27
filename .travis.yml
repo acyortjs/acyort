@@ -1,8 +1,6 @@
 language: node_js
 
-sudo: required
-addons:
- chrome: stable
+sudo: false
 
 cache:
   apt: true
@@ -25,5 +23,6 @@ script:
   - npm test
 
 after_script:
+  - npm run coverage
   - npm install -g codecov
   - cat ./coverage/lcov.info | codecov

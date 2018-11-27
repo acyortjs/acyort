@@ -1,100 +1,35 @@
 #!/usr/bin/env node
 
-const program = require('commander')
-const fs = require('fs-extra')
-const path = require('path')
-const { version } = require('../package.json')
-const getConfig = require('acyort-config')
-const Render = require('acyort-render')
-const Logger = require('acyort-logger')
-const Acyort = require('../lib/acyort')
+const logger = require('@acyort/logger')()
+const { join } = require('path')
+const parser = require('../lib/cli/parser')
+const acyort = require('../lib')
+const getConfig = require('../lib/config')
 
+const argv = process.argv.slice(2)
 const base = process.cwd()
-const configPath = path.join(__dirname, 'config.yml')
-const logger = new Logger()
-const renderer = new Render()
-const {
-  ignores,
-  commands,
-  keeps,
-} = renderer.use('yaml').renderFile(configPath)
-const config = getConfig(base)
-const filter = src => src.indexOf('_issues.json') === -1
+const ignores = ['init', '-h', '--help', '-v', '--version']
 
-if (process.env.NODE_ENV === 'dev') {
-  config.cache = true
-}
+try {
+  const config = getConfig(base)
 
-program
-.allowUnknownOption()
-.usage('<command>')
-
-program
-.command('init [folder]')
-.description('Create new blog')
-.action((folder = '') => {
-  try {
-    if (config) {
-      fs.copySync(path.join(base, 'config.yml'), path.join(base, 'config.bak.yml'))
+  if (config) {
+    const ctx = acyort(config)
+    const { scripts, plugins } = config
+    const exec = (path) => {
+      // eslint-disable-next-line global-require, import/no-dynamic-require
+      require(path)({ ...ctx, process: undefined })
     }
 
-    fs.copySync(path.resolve(__dirname, '../assets'), path.join(base, folder), { filter })
-    fs.outputFileSync(path.join(base, folder, '.gitignore'), ignores.join('\n'))
+    scripts.forEach(name => exec(join(base, 'scripts', name)))
+    plugins.forEach(name => exec(join(base, 'node_modules', name)))
 
-    logger.success('Configure "config.yml" to start your blog')
-  } catch (e) {
-    logger.error(e)
-  }
-})
-
-program
-.command('version')
-.description('Display AcyOrt version')
-.action(() => console.log(version)) // eslint-disable-line no-console
-
-program
-.command('server [port]')
-.description('Create a local test server')
-.action((port = 2222) => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
+    parser(argv, ctx)
+  } else if (argv[0] && !ignores.includes(argv[0])) {
+    logger.error('cannot find `config.yml` or configuration error')
   } else {
-    new Acyort(config).start(port)
+    parser(argv)
   }
-})
-
-program
-.command('build')
-.description('Generate the files')
-.action(() => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
-  } else {
-    new Acyort(config).build()
-  }
-})
-
-program
-.command('clean')
-.description('Remove all the generated files')
-.action(() => {
-  if (!config) {
-    logger.error('Cannot find "config.yml" or Configuration information error')
-  } else {
-    try {
-      const removes = fs
-        .readdirSync(base)
-        .filter(file => file[0] !== '.' && keeps.indexOf(file) === -1)
-
-      removes.forEach(file => fs.removeSync(file))
-    } catch (e) {
-      logger.error(e)
-    }
-  }
-})
-
-program.parse(process.argv)
-
-if (!program.args.length || commands.indexOf(process.argv[2]) === -1) {
-  program.help()
+} catch (e) {
+  logger.error(e)
 }

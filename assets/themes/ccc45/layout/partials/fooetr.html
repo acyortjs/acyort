@@ -1,8 +1,0 @@
-<div class="footer">
-  &copy; {{ _time(Date.now(), 'YYYY') }}
-  . <a target="_blank" href="https://github.com/acyortjs/acyort">{{ __('powered', 'AcyOrt') }}</a>
-  {% if config.user && config.repository %}
-  . <a target="_blank" href="https://github.com/{{ config.user }}/{{ config.repository }}/issues">Source</a>
-  {% endif %}
-</div>
-{{ _footer() }}

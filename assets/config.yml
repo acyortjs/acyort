@@ -1,104 +1,23 @@
-# Base
-
-# site
-title: AcyOrt
-description: A Node.js static website framework. Powered by GitHub.
-
-# url
 # url of website. format like http://<domain>/<path> or https://<domain>
 url:
 
-# theme
-# default is ccc45
-theme:
+# website template
+template: ccc45
 
-# pagination
-# post count per page. set 0 to disable it
-# default is 10
-per_page: 3
-
-# menu
-# navigation menus of website
-menu:
-  home: /
-  categories: /categories/
-  tags: /tags/
-  about: /about/
-
-# default category name
-# default is "uncategorized"
-default_category:
-
-# content
-# GitHub user/repository
-# website contents comes from this repository issues
-user: LoeiFy
-repository: Recordum
-
-
-# Advance
-
-# scripts
-# script file names
+# scripts, script file name
 scripts:
-  - content.js
-  - active.js
+  - script.js
 
-# plugins
-# npm modules
+# plugins, npm modules
 plugins:
   # - xxx module
 
-# output
-# where static site files located
-public_dir: /
+# output, where static site files located
+public: /
 
-# authors
-# Github usernames, users whose issues can be generated to post
-authors:
-#  - author0
-#  - author1
-
-# timezone
-# website timezone. use machine setting by default
-# example: "America/New_York", "Japan", "UTC", or "Asia/Shanghai"
+# timezone, website timezone. use machine setting by default
+# example: `America/New_York`, `Japan`, `UTC`, or `Asia/Shanghai`
 timezone:
 
-# language
-# language of website, theme support is needed
-# default is default
-language:
-
-# code line numbers
-# whether showing line numbers in code block
-# default is true
-line_numbers:
-
-# order
-# post ordering, order posts by issues create_time(created) or update_time(updated)
-# default is created
-order:
-
-# directory
-# subdirectory in public_dir
-# default is categories, tags, posts
-category_dir:
-tag_dir:
-post_dir:
-
-# token
-# github access token
-# In order to prevent the token from removed by github, you should add a # inside it
-# for example the original token abcdedf should be replaced with a#bcdef.
-token:
-
-# cache
-# whether caching GitHub issues data, just for development
-# default false
-cache:
-
-# Other
-# customize some settings if necessary
-
-# disqus:
-# favicon:
+# language of website
+language: en
