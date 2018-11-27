@@ -3,5 +3,5 @@
 describe('utility', () => {
   require('./copy')
   require('./output')
-  // require('./processor')
+  require('./processor')
 })
