@@ -24,7 +24,12 @@ try {
     scripts.forEach(name => exec(join(base, 'scripts', name)))
     plugins.forEach(name => exec(join(base, 'node_modules', name)))
 
-    parser(argv, ctx)
+    parser(argv, {
+      process: ctx.process,
+      logger: ctx.logger,
+      version: ctx.version,
+      config: ctx.config,
+    })
   } else if (argv[0] && !ignores.includes(argv[0])) {
     logger.error('cannot find `config.yml` or configuration error')
   } else {
