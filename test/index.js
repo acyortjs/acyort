@@ -6,4 +6,5 @@ describe('AcyOrt', () => {
   require('./helper')
   require('./config')
   require('./utility')
+  require('./cli')
 })
