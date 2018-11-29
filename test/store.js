@@ -12,5 +12,8 @@ describe('store', () => {
     assert(store.store.key === 'key')
 
     assert(store.get('key') === 'key')
+
+    store.reset()
+    assert(store.get('key') === undefined)
   })
 })
