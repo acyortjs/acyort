@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.6
+
+- version: default version ^3
+- feature
+  * store reset method
+  * flow process will reset store
+
 ## 3.0.3
 
 - fix: cli function

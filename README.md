@@ -10,7 +10,10 @@ A Node.js static website framework.
 ## Install
 
 ```bash
-$ npm i acyort@next -g
+$ npm i acyort -g
+
+# install old version
+$ npm i acyort@2.3 -g
 ```
 
 ## Documentation
