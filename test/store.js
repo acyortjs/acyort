@@ -9,9 +9,9 @@ describe('store', () => {
     assert(store.store.key === 'key')
 
     store.set('key', 'other')
-    assert(store.store.key === 'key')
+    assert(store.store.key === 'other')
 
-    assert(store.get('key') === 'key')
+    assert(store.get('key') === 'other')
 
     store.reset()
     assert(store.get('key') === undefined)
