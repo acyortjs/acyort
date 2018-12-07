@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.8
+
+- fix: helpers bind page context error
+
+## 3.0.7
+
+- fix: store set data error
+
 ## 3.0.6
 
 - version: default version ^3
