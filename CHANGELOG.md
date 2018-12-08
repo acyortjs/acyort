@@ -1,8 +1,10 @@
 # Changelog
 
-## 3.0.7 ~ 3.0.9
+## 3.0.7 ~ 3.0.10
 
-- feature: cli action can access store
+- feature:
+  - cli action can access store
+  - cli action bind AcyOrt context
 - fix:
   * helpers bind page context error
   * store set data error

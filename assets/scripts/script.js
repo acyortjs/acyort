@@ -3,9 +3,9 @@ module.exports = (acyort) => {
     name: '--config',
     alias: '-c',
     description: 'Show config',
-    action(argv, _acyort) {
-      acyort.logger.log('CLI arguments: ', argv, '\n')
-      acyort.logger.info(_acyort.config)
+    action(argv) {
+      this.logger.log('CLI arguments: ', argv, '\n')
+      this.logger.info(this.config)
     },
   })
 
