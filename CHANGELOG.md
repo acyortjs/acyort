@@ -1,12 +1,11 @@
 # Changelog
 
-## 3.0.8
+## 3.0.7 ~ 3.0.9
 
-- fix: helpers bind page context error
-
-## 3.0.7
-
-- fix: store set data error
+- feature: cli action can access store
+- fix:
+  * helpers bind page context error
+  * store set data error
 
 ## 3.0.6
 

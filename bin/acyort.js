@@ -29,6 +29,7 @@ try {
       logger: ctx.logger,
       version: ctx.version,
       config: ctx.config,
+      store: ctx.store,
     })
   } else if (argv[0] && !ignores.includes(argv[0])) {
     logger.error('cannot find `config.yml` or configuration error')

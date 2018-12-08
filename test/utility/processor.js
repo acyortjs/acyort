@@ -2,16 +2,6 @@ const assert = require('power-assert')
 const logger = require('@acyort/logger')()
 const processor = require('../../lib/utility/processor')
 
-class Store {
-  constructor() {
-    this.store = {}
-  }
-
-  reset() {
-    this.store = {}
-  }
-}
-
 describe('processor', () => {
   it('test', async () => {
     const test = []
@@ -30,7 +20,6 @@ describe('processor', () => {
         ],
       },
       logger,
-      store: new Store(),
     }
 
     try {
