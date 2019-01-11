@@ -1,14 +1,9 @@
 const assert = require('power-assert')
 const { resolve } = require('path')
-const fs = require('fs-extra')
-const {
-  existsSync, readFileSync, removeSync,
-} = require('fs-extra')
+const { existsSync, readFileSync, removeSync } = require('fs-extra')
 const Renderer = require('@acyort/renderer')
 const logger = require('@acyort/logger')()
 const outputHTML = require('../../lib/utility/output')
-
-const resolveDir = (...paths) => resolve(__dirname, ...paths)
 
 class Helper {
   constructor() {
@@ -71,59 +66,5 @@ describe('output', () => {
       },
     })
     assert(existsSync(resolve(__dirname, '../fixtures/temp/test.html')) === false)
-  })
-})
-
-describe('output with node_modules', () => {
-  const templateName = 'mock-acyort-template'
-  const templatePath = `../../node_modules/${templateName}`
-  beforeEach(() => {
-    fs.copySync(resolveDir(`../fixtures/${templateName}`), resolveDir(templatePath))
-  })
-  afterEach(() => {
-    removeSync(resolveDir(templatePath))
-    removeSync(resolve(__dirname, '../fixtures/temp'))
-  })
-  const acy = {
-    ...acyort,
-    config: {
-      ...config,
-      template: templateName,
-    },
-  }
-  it('template from node_module', () => {
-    outputHTML.call(acy, {
-      template: 'index',
-      path: 'index.html',
-      data: {
-        one: 2,
-      },
-    })
-    assert(readFileSync(resolve(__dirname, '../fixtures/temp/index.html'), 'utf8') === '<p>from module: This is not h2</p>\n')
-  })
-  it('template from node_module and use entry', () => {
-    const indexPath = resolveDir(templatePath)
-    fs.renameSync(`${indexPath}/_index.js`, `${indexPath}/index.js`)
-    fs.renameSync(`${indexPath}/templates`, `${indexPath}/test`)
-    outputHTML.call(acy, {
-      template: 'index',
-      path: 'index.html',
-      data: {
-        one: 2,
-      },
-    })
-    assert(readFileSync(resolve(__dirname, '../fixtures/temp/index.html'), 'utf8') === '<p>from module: This is not h2</p>\n')
-  })
-  it('template from node_module and entry not found', () => {
-    const indexPath = resolveDir(templatePath)
-    fs.renameSync(`${indexPath}/_index.js`, `${indexPath}/index.js`)
-    outputHTML.call(acy, {
-      template: 'index',
-      path: 'index.html',
-      data: {
-        one: 2,
-      },
-    })
-    assert(existsSync(resolve(__dirname, '../fixtures/temp/index.html')) === false)
   })
 })
