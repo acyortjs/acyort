@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const logger = require('@acyort/logger')()
 const { existsSync, removeSync } = require('fs-extra')
 const copySource = require('../../lib/utility/copy')
@@ -10,6 +10,7 @@ const acyort = {
     public: 'temp',
     base: resolve(__dirname, '../fixtures'),
     template: 'ccc45',
+    templatePath: join(resolve(__dirname, '../fixtures'), 'templates', 'ccc45'),
   },
 }
 
@@ -20,7 +21,12 @@ describe('copy', () => {
 
     removeSync(resolve(__dirname, '../fixtures/temp'))
 
-    acyort.config.template = 'unknow'
+    acyort.config.templatePath = 'no exist'
+    copySource.call(acyort)
+
+    assert(existsSync(resolve(__dirname, '../fixtures/temp/favicon.ico')) === false)
+
+    acyort.config.templatePath = undefined
     copySource.call(acyort)
 
     assert(existsSync(resolve(__dirname, '../fixtures/temp/favicon.ico')) === false)

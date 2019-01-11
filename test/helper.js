@@ -10,6 +10,7 @@ describe('helper', () => {
       language: 'en',
       root: '/',
       timezone: 'UTC',
+      templatePath: join(__dirname, 'fixtures', 'templates', 'ccc45'),
     }
     const helper = new Helper(config)
     const {

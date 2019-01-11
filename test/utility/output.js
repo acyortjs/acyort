@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const { existsSync, readFileSync, removeSync } = require('fs-extra')
 const Renderer = require('@acyort/renderer')
 const logger = require('@acyort/logger')()
@@ -22,6 +22,7 @@ const config = {
   public: 'temp',
   base: resolve(__dirname, '../fixtures'),
   template: 'ccc45',
+  templatePath: join(resolve(__dirname, '../fixtures'), 'templates', 'ccc45'),
 }
 
 const acyort = {
@@ -66,5 +67,15 @@ describe('output', () => {
       },
     })
     assert(existsSync(resolve(__dirname, '../fixtures/temp/test.html')) === false)
+
+    config.templatePath = undefined
+    outputHTML.call(acyort, {
+      template: 'index',
+      path: 'index2.html',
+      data: {
+        one: 2,
+      },
+    })
+    assert(existsSync(resolve(__dirname, '../fixtures/temp/index2.html')) === false)
   })
 })
