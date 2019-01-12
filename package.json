@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "3.0.10",
+  "version": "3.0.11",
   "description": "A Node.js static website framework",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -20,7 +20,8 @@
     "test": "npm run test:lint && npm run test:cover",
     "test:lint": "eslint .",
     "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test/index.js",
-    "test:cover": "nyc npm run test:unit",
+    "test:unit.silent": "DISABLE_LOGGER=acyort mocha --reporter dot --require intelli-espower-loader ./test/index.js",
+    "test:cover": "nyc npm run test:unit.silent",
     "coverage": "nyc report --reporter=lcov npm run test:unit"
   },
   "engines": {
