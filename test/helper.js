@@ -10,8 +10,9 @@ describe('helper', () => {
       language: 'en',
       root: '/',
       timezone: 'UTC',
+      templatePath: join(__dirname, 'fixtures', 'templates', 'ccc45'),
     }
-    const helper = new Helper(config)
+    let helper = new Helper(config)
     const {
       __,
       _n,
@@ -37,6 +38,10 @@ describe('helper', () => {
     helper.language = 'zh_CN'
     assert(_time(1543141780476, 'MMMM Do YYYY, h:mm:ss a').includes('十一月 25日 2018') === true)
     assert(helper.language === 'zh_CN')
-    assert(helper.__('test') === '')  // eslint-disable-line
+    assert(helper.__('test') === '') // eslint-disable-line no-underscore-dangle
+
+    config.templatePath = undefined
+    helper = new Helper(config)
+    assert(helper.__('h1', 'O', 'K') === '') // eslint-disable-line no-underscore-dangle
   })
 })

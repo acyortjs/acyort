@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs-extra')
+const { removeSync, outputFileSync, ensureDirSync } = require('fs-extra')
 const { join } = require('path')
 const assert = require('power-assert')
 const getConfig = require('../lib/config')
@@ -6,32 +6,63 @@ const getConfig = require('../lib/config')
 const config0 = 'url:'
 const config1 = 'url: https://test.com/public'
 const config2 = 'url: test.com'
+const config3 = 'template: npm'
 
 describe('config', () => {
+  const base = join(__dirname, 'fixtures')
+
+  afterEach(() => {
+    removeSync(join(base, 'config.yml'))
+    removeSync(join(base, 'node_modules'))
+  })
+
   it('test', () => {
-    const base = join(__dirname, 'fixtures')
     let config
 
-    writeFileSync(join(base, 'config.yml'), config0)
+    outputFileSync(join(base, 'config.yml'), config0)
     config = getConfig(base)
 
     assert(config.url === 'https://acyort.com')
     assert(config.root === '/')
 
-    writeFileSync(join(base, 'config.yml'), config1)
+    outputFileSync(join(base, 'config.yml'), config1)
     config = getConfig(base)
 
     assert(config.url === 'https://test.com')
     assert(config.root === '/public')
 
-    writeFileSync(join(base, 'config.yml'), config2)
+    outputFileSync(join(base, 'config.yml'), config2)
     config = getConfig(base)
 
     assert(config.url === 'https://acyort.com')
     assert(config.root === '/')
 
-    config = getConfig()
+    outputFileSync(join(base, 'config.yml'), config3)
+    config = getConfig(base)
 
+    assert(config.templatePath === undefined)
+
+    ensureDirSync(join(base, 'node_modules', 'npm', 'templates', 'ccc45'))
+    outputFileSync(join(base, 'node_modules', 'npm', 'package.json'), JSON.stringify({
+      name: 'npm',
+      version: '0.1.0',
+      main: 'index.js',
+    }))
+    outputFileSync(join(base, 'node_modules', 'npm', 'index.js'), 'module.exports.template = \'ccc45\'')
+    config = getConfig(base)
+    assert(config.templatePath === join(base, 'node_modules', 'npm', 'templates', 'ccc45'))
+
+    removeSync(join(base, 'node_modules', 'npm', 'index.js'))
+    outputFileSync(join(base, 'node_modules', 'npm', 'index.js'), 'module.exports.template = undefined')
+
+    // delete require cache
+    const requireKey = Object.keys(require.cache).find(s => s.includes('npm'))
+    delete require.cache[requireKey]
+
+    config = getConfig(base)
+    assert(config.templatePath === undefined)
+
+    config = getConfig()
     assert(config === null)
   })
 })
