@@ -10,7 +10,6 @@ scripts:
 
 # plugins, npm modules
 plugins:
-  - npm
   # - xxx module
 
 # output, where static site files located

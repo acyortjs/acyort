@@ -41,11 +41,11 @@ module.exports = (acyort) => {
 
   acyort.store.set('key', 5)
 
-  // acyort.workflow.register(a, b, c)
+  acyort.workflow.register(a, b, c, d)
 
-  // acyort.helper.register('_h5', function h5() {
-  //   const key = acyort.store.get('key')
-  //   const number = this.one
-  //   return `This is h${key}, not h${number}`
-  // })
+  acyort.helper.register('_h5', function h5() {
+    const key = acyort.store.get('key')
+    const number = this.one
+    return `This is h${key}, not h${number}`
+  })
 }
