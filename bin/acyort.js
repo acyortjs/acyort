@@ -16,21 +16,35 @@ try {
   if (config) {
     const ctx = acyort(config)
     const { scripts, plugins } = config
-    const exec = (path) => {
-      // eslint-disable-next-line global-require, import/no-dynamic-require
-      require(path)({ ...ctx, process: undefined })
+    const { store } = ctx
+    const { getPrototypeOf, getOwnPropertyNames } = Object
+    const storeMethods = getOwnPropertyNames(getPrototypeOf(store))
+
+    const exec = (path, type, name) => {
+      const methods = {}
+
+      storeMethods.forEach((m) => {
+        if (m !== 'constructor') {
+          methods[m] = store[m].bind({ context: store, namespace: `${type}:${name}` })
+        }
+      })
+
+      try {
+        // eslint-disable-next-line global-require, import/no-dynamic-require
+        require(path)({
+          ...ctx,
+          process: undefined,
+          store: { ...store, ...methods },
+        })
+      } catch (e) {
+        // ignore
+      }
     }
 
-    scripts.forEach(name => exec(join(base, 'scripts', name)))
-    plugins.forEach(name => exec(join(base, 'node_modules', name)))
+    scripts.forEach(name => exec(join(base, 'scripts', name), 'script', name))
+    plugins.forEach(name => exec(join(base, 'node_modules', name), 'plugin', name))
 
-    parser(argv, {
-      process: ctx.process,
-      logger: ctx.logger,
-      version: ctx.version,
-      config: ctx.config,
-      store: ctx.store,
-    })
+    parser(argv, { process: ctx.process })
   } else if (argv[0] && !ignores.includes(argv[0])) {
     logger.error('cannot find `config.yml` or configuration error')
   } else {
