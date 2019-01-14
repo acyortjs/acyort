@@ -17,22 +17,16 @@ try {
     const ctx = acyort(config)
     const { scripts, plugins } = config
     const { store } = ctx
-    const storeMethods = Object
-      .getOwnPropertyNames(Object.getPrototypeOf(store))
-      .filter(n => n !== 'constructor')
+    const { getPrototypeOf, getOwnPropertyNames } = Object
+    const storeMethods = getOwnPropertyNames(getPrototypeOf(store))
 
-    const exec = (path) => {
-      const name = path.split('/').slice(-1)[0]
-      const binder = {
-        context: store,
-        namespace: path.includes('node_modules')
-          ? `plugin:${name}`
-          : `script:${name.split('.')[0]}`,
-      }
+    const exec = (path, type, name) => {
       const methods = {}
 
-      storeMethods.forEach((n) => {
-        methods[n] = store[n].bind(binder)
+      storeMethods.forEach((m) => {
+        if (m !== 'constructor') {
+          methods[m] = store[m].bind({ context: store, namespace: `${type}:${name}` })
+        }
       })
 
       try {
@@ -47,8 +41,8 @@ try {
       }
     }
 
-    scripts.forEach(name => exec(join(base, 'scripts', name)))
-    plugins.forEach(name => exec(join(base, 'node_modules', name)))
+    scripts.forEach(name => exec(join(base, 'scripts', name), 'script', name))
+    plugins.forEach(name => exec(join(base, 'node_modules', name), 'plugin', name))
 
     parser(argv, { process: ctx.process })
   } else if (argv[0] && !ignores.includes(argv[0])) {

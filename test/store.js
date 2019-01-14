@@ -2,18 +2,34 @@ const assert = require('power-assert')
 const Store = require('../lib/store')
 
 describe('store', () => {
+  const store = new Store()
+  const methods = ['set', 'get', 'reset', 'getPluginData']
+
   it('test', () => {
-    const store = new Store()
+    const methods1 = {}
+    const methods2 = {}
 
-    store.set('key', 'key')
-    assert(store.store.key === 'key')
+    methods.forEach((m) => {
+      methods1[m] = store[m].bind({ context: store, namespace: 'script:script.js' })
+      methods2[m] = store[m].bind({ context: store, namespace: 'plugin:plugin' })
+    })
 
-    store.set('key', 'other')
-    assert(store.store.key === 'other')
+    const store1 = { ...store, ...methods1 }
+    const store2 = { ...store, ...methods2 }
 
-    assert(store.get('key') === 'other')
+    store1.set('key', 'key')
+    assert(store.store[0].data === 'key')
+    assert(store.store[0].key === 'script:script.js:key')
+    assert(store1.get('key') === 'key')
 
-    store.reset()
-    assert(store.get('key') === undefined)
+    store2.set('key', 'key')
+    assert(store.store.length === 2)
+
+    store2.reset()
+    assert(store.store.length === 1)
+    assert(store2.get('key') === undefined)
+
+    assert(store2.getPluginData('script.js', 'key') === 'key')
+    assert(store1.getPluginData('plugin', 'key') === undefined)
   })
 })
