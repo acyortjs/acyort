@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.12
+
+- feature: store width namespace
+- refactor: cli action can access `process` method only
+
 ## 3.0.11
 
 - feature: npm template support #53
