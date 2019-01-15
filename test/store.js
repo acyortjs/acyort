@@ -3,7 +3,7 @@ const Store = require('../lib/store')
 
 describe('store', () => {
   const store = new Store()
-  const methods = ['set', 'get', 'reset', 'getPluginData']
+  const methods = ['set', 'get', 'reset']
 
   it('test', () => {
     const methods1 = {}
@@ -29,7 +29,7 @@ describe('store', () => {
     assert(store.store.length === 1)
     assert(store2.get('key') === undefined)
 
-    assert(store2.getPluginData('script.js', 'key') === 'key')
-    assert(store1.getPluginData('plugin', 'key') === undefined)
+    assert(store2.get('key', 'script.js') === 'key')
+    assert(store1.get('key', 'plugin') === undefined)
   })
 })
