@@ -1,5 +1,5 @@
 const { removeSync, outputFileSync, ensureDirSync } = require('fs-extra')
-const { join } = require('path')
+const { join, resolve } = require('path')
 const assert = require('power-assert')
 const getConfig = require('../lib/config')
 const defaultConfig = require('../lib/config/defaults')
@@ -77,15 +77,48 @@ describe('test config with config.yml', () => {
     config = getConfig(base)
     assert(config.templatePath === undefined)
 
-    config = getConfig()
+    config = getConfig('.')
     assert(config === null)
   })
 })
 describe('test config width arg', () => {
   let config
-  it('test', () => {
-    config = getConfig({})
-    console.log(config)
+  it('test default config', () => {
+    config = getConfig()
     const base = process.cwd()
+    assert(config.base === base)
+    Object.keys(defaultConfig).forEach((each) => {
+      assert(defaultConfig[each] === config[each])
+    })
+  })
+  it('test custom config', () => {
+    const url = 'http://abc.xyz'
+    const root = 'rootPath'
+    const now = Date.now()
+    const template = `acyort-template-${now}`
+    const npmPath = join(__dirname, '..', 'node_modules', template)
+    ensureDirSync(join(npmPath, 'templates', 'ccc45'))
+    outputFileSync(
+      join(npmPath, 'package.json'),
+      JSON.stringify({
+        name: 'npm',
+        version: '0.1.0',
+        main: 'index.js',
+      }),
+    )
+    outputFileSync(
+      join(npmPath, 'index.js'),
+      "module.exports.template = 'ccc45'",
+    )
+    config = getConfig({
+      base: '.',
+      url: `${url}/${root}`,
+      template,
+    })
+    removeSync(npmPath)
+    assert(config.base === resolve('.'))
+    assert(config.url === url)
+    assert(config.root === `/${root}`)
+    assert(config.templatePath === join(npmPath, 'templates', 'ccc45'))
   })
 })
