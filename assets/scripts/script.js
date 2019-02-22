@@ -4,8 +4,8 @@ module.exports = (acyort) => {
     alias: '-c',
     description: 'Show config',
     action(argv) {
-      this.logger.log('CLI arguments: ', argv, '\n')
-      this.logger.info(this.config)
+      acyort.logger.log('CLI arguments: ', argv, '\n')
+      acyort.logger.info(acyort.config)
     },
   })
 

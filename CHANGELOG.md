@@ -3,6 +3,7 @@
 ## 3.1.0
 
 - feature: node module use will initialize plugins
+- fix: cli logger error
 
 ## 3.0.12 ~ 3.0.13
 
