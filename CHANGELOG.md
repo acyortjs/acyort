@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+- feature: node module use will initialize plugins
+
 ## 3.0.12 ~ 3.0.13
 
 - feature: store width namespace
