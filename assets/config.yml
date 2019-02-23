@@ -4,12 +4,9 @@ url:
 # website template
 template: ccc45
 
-# scripts, script file name
-scripts:
-  - script.js
-
-# plugins, npm modules
+# plugins, npm modules or script file name
 plugins:
+  - script.js
   # - xxx module
 
 # output, where static site files located

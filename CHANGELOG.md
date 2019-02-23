@@ -2,7 +2,8 @@
 
 ## 3.1.0
 
-- feature: node module use will initialize plugins
+- feature: module use will initialize plugins
+- refactor: remove scripts option, all use plugins option
 - fix: cli logger error
 
 ## 3.0.12 ~ 3.0.13
