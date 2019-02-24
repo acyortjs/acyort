@@ -4,3 +4,4 @@ package-lock.json
 coverage/
 .nyc_output/
 yarn.lock
+!test/fixtures/plugins/node_modules/
