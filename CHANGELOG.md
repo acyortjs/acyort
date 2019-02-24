@@ -1,9 +1,10 @@
 # Changelog
 
-## 3.1.0
+## 3.1.0 ~ 3.1.1
 
 - feature: module use will initialize plugins
 - refactor: remove scripts option, all use plugins option
+- test: add plugin test
 - fix: cli logger error
 
 ## 3.0.12 ~ 3.0.13

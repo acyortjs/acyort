@@ -2,7 +2,7 @@
 
 const logger = require('@acyort/logger')()
 const parser = require('../lib/cli/parser')
-const acyort = require('../lib/')
+const acyort = require('../lib')
 const getConfig = require('../lib/config')
 
 const argv = process.argv.slice(2)
