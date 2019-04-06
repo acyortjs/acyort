@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.1
+
+- fix: log plugin error message
+
 ## 3.2.0
 
 - fix: store same key
