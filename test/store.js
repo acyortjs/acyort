@@ -22,6 +22,9 @@ describe('store', () => {
     assert(store.store[0].key === 'script:script.js:key')
     assert(store1.get('key') === 'key')
 
+    store1.set('key', 'key1')
+    assert(store1.get('key') === 'key1')
+
     store2.set('key', 'key')
     assert(store.store.length === 2)
 
@@ -29,7 +32,7 @@ describe('store', () => {
     assert(store.store.length === 1)
     assert(store2.get('key') === undefined)
 
-    assert(store2.get('key', 'script.js') === 'key')
+    assert(store2.get('key', 'script.js') === 'key1')
     assert(store1.get('key', 'plugin') === undefined)
   })
 })

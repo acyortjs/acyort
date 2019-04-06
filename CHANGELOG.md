@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+- fix: store same key
+
 ## 3.1.0 ~ 3.1.1
 
 - feature: module use will initialize plugins
