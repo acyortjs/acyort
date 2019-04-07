@@ -20,7 +20,9 @@ describe('workflow', () => {
       plugins: ['script.js', 'plugin'],
     },
     store: new Store(),
-    log: () => 'log',
+    logger: {
+      error: s => global.console.log(s.message),
+    },
   }
 
   it('test', () => {
