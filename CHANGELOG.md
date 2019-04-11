@@ -2,6 +2,7 @@
 
 ## 3.2.1
 
+- feat: can set default url empty
 - fix: log plugin error message
 
 ## 3.2.0

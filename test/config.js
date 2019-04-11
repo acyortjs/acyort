@@ -8,6 +8,7 @@ const config0 = 'url:'
 const config1 = 'url: https://test.com/public'
 const config2 = 'url: test.com'
 const config3 = 'template: npm'
+const config4 = 'url: \'\''
 
 describe('test config with config.yml', () => {
   const base = join(__dirname, 'fixtures')
@@ -38,6 +39,12 @@ describe('test config with config.yml', () => {
     config = getConfig(base)
 
     assert(config.url === 'https://acyort.com')
+    assert(config.root === '/')
+
+    outputFileSync(join(base, 'config.yml'), config4)
+    config = getConfig(base)
+
+    assert(config.url === '')
     assert(config.root === '/')
 
     outputFileSync(join(base, 'config.yml'), config3)
