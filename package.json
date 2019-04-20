@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "description": "A Node.js static website framework",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -44,21 +44,21 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
-    "@acyort/i18n": "^0.1.2",
-    "@acyort/logger": "^1.1.1",
-    "@acyort/renderer": "^1.0.1",
+    "@acyort/i18n": "^0.2.0",
+    "@acyort/renderer": "^1.1.0",
     "fs-extra": "^7.0.1",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.23",
-    "yargs-parser": "^11.1.1"
+    "moment-timezone": "^0.5.25",
+    "signale": "^1.4.0",
+    "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-import": "^2.17.2",
     "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0",
     "power-assert": "^1.6.1"
   }
 }

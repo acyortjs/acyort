@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.0
+
+- chore: update dependencies
+- refactor: use `signale` for logger
+
 ## 3.2.1
 
 - feat: can set default url empty
