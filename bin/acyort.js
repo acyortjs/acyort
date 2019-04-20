@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const logger = require('@acyort/logger')()
+const signale = require('signale')
 const parser = require('../lib/cli/parser')
 const acyort = require('../lib')
 const getConfig = require('../lib/config')
@@ -16,10 +16,10 @@ try {
     const ctx = acyort(config)
     parser(argv, { process: ctx.process })
   } else if (argv[0] && !ignores.includes(argv[0])) {
-    logger.error('cannot find `config.yml` or configuration error')
+    signale.error('Cannot find `config.yml` or configuration error')
   } else {
     parser(argv)
   }
 } catch (e) {
-  logger.error(e)
+  signale.error(e)
 }
