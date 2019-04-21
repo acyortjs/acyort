@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const logger = require('@acyort/logger')()
+const logger = require('../../lib/logger')
 const processor = require('../../lib/utility/processor')
 
 describe('processor', () => {

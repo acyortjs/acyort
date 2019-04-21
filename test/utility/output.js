@@ -2,7 +2,7 @@ const assert = require('power-assert')
 const { resolve, join } = require('path')
 const { existsSync, readFileSync, removeSync } = require('fs-extra')
 const Renderer = require('@acyort/renderer')
-const logger = require('@acyort/logger')()
+const logger = require('../../lib/logger')
 const outputHTML = require('../../lib/utility/output')
 
 class Helper {

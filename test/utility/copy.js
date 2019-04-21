@@ -1,8 +1,8 @@
 const assert = require('power-assert')
 const { resolve, join } = require('path')
-const logger = require('@acyort/logger')()
 const { existsSync, removeSync } = require('fs-extra')
 const copySource = require('../../lib/utility/copy')
+const logger = require('../../lib/logger')
 
 const acyort = {
   logger,
