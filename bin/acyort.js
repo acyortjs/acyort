@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const signale = require('signale')
+const logger = require('../lib/logger')
 const parser = require('../lib/cli/parser')
 const acyort = require('../lib')
 const getConfig = require('../lib/config')
@@ -16,10 +16,10 @@ try {
     const ctx = acyort(config)
     parser(argv, { process: ctx.process })
   } else if (argv[0] && !ignores.includes(argv[0])) {
-    signale.error('Cannot find `config.yml` or configuration error')
+    logger.error('Cannot find `config.yml` or configuration error')
   } else {
     parser(argv)
   }
 } catch (e) {
-  signale.error(e)
+  logger.error(e)
 }

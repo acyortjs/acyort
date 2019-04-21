@@ -21,8 +21,7 @@
     "test": "npm run test:lint && npm run test:cover",
     "test:lint": "eslint .",
     "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test/index.js",
-    "test:unit.silent": "DISABLE_LOGGER=acyort mocha --reporter dot --require intelli-espower-loader ./test/index.js",
-    "test:cover": "nyc npm run test:unit.silent",
+    "test:cover": "nyc npm run test:unit",
     "coverage": "nyc report --reporter=lcov npm run test:unit"
   },
   "engines": {
