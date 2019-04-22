@@ -2,10 +2,11 @@ const assert = require('power-assert')
 const { resolve, join } = require('path')
 const { existsSync, removeSync } = require('fs-extra')
 const copySource = require('../../lib/utility/copy')
-const logger = require('../../lib/logger')
 
 const acyort = {
-  logger,
+  logger: {
+    success: () => null,
+  },
   config: {
     public: 'temp',
     base: resolve(__dirname, '../fixtures'),

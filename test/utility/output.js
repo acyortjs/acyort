@@ -2,7 +2,6 @@ const assert = require('power-assert')
 const { resolve, join } = require('path')
 const { existsSync, readFileSync, removeSync } = require('fs-extra')
 const Renderer = require('@acyort/renderer')
-const logger = require('../../lib/logger')
 const outputHTML = require('../../lib/utility/output')
 
 class Helper {
@@ -24,6 +23,9 @@ const config = {
   template: 'ccc45',
   templatePath: join(resolve(__dirname, '../fixtures'), 'templates', 'ccc45'),
 }
+
+const logger = () => ({ log: () => null })
+logger.error = () => null
 
 const acyort = {
   config,

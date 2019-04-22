@@ -1,6 +1,14 @@
 const assert = require('power-assert')
-const logger = require('../../lib/logger')
+const signale = require('signale')
 const processor = require('../../lib/utility/processor')
+
+const logger = {}
+
+Object.keys(signale)
+  .filter(key => key.charAt(0) !== '_' && key !== 'Signale')
+  .forEach((name) => {
+    logger[name] = () => null
+  })
 
 describe('processor', () => {
   it('test', async () => {
