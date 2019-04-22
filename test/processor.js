@@ -1,6 +1,6 @@
 const assert = require('power-assert')
 const signale = require('signale')
-const processor = require('../../lib/utility/processor')
+const processor = require('../lib/processor')
 
 const logger = {}
 

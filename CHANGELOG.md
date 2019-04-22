@@ -4,6 +4,8 @@
 
 - chore: update dependencies
 - refactor: use `signale` for logger
+- refactor: error log to throw error
+- refactor: util method
 
 ## 3.2.1
 
