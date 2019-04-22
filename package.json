@@ -55,6 +55,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "expect": "^24.7.1",
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.1.4",
     "nyc": "^14.0.0",

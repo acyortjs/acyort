@@ -1,4 +1,5 @@
 const assert = require('power-assert')
+const expect = require('expect')
 const { join } = require('path')
 const Helper = require('../lib/helper')
 
@@ -29,11 +30,11 @@ describe('helper', () => {
     helper.register('test', () => 'a')
     assert(helper.methods.test() === 'a')
 
-    helper.register('test', () => 'b')
-    assert(helper.methods.test() === 'a')
+    expect(() => helper.register('test', () => 'b'))
+      .toThrow('Helper function register error: test, duplicate name or no a function')
 
-    helper.register('test0', 'no a function')
-    assert(helper.methods.test0 === undefined)
+    expect(() => helper.register('test0', 'no a function'))
+      .toThrow('Helper function register error: test0, duplicate name or no a function')
 
     helper.language = 'zh_CN'
     assert(_time(1543141780476, 'MMMM Do YYYY, h:mm:ss a').includes('十一月 25日 2018') === true)

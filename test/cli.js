@@ -1,13 +1,13 @@
 const assert = require('power-assert')
+const expect = require('expect')
 const cli = require('../lib/cli')
 
 describe('cli', () => {
   it('test', () => {
     const commands = []
 
-    cli.register('unknows')
-    assert(cli.commands.length === 0)
-    assert(cli.options.length === 0)
+    expect(() => cli.register('unknows'))
+      .toThrow('Not supports cli type: unknows')
 
     cli.register('commands', {
       name: 'test',
@@ -35,16 +35,10 @@ describe('cli', () => {
     assert(cli.getAction('options', '-s') === undefined)
     assert(cli.getAction('commands') === undefined)
 
-    cli.register('options', {
-      name: '-ss',
-      alias: '-v',
-    })
+    expect(() => cli.register('options', { name: '-ss', alias: '-v' }))
+      .toThrow('Option register error, name: -ss, alias: -v')
 
-    cli.register('options', {
-      name: '--ss',
-      alias: 's',
-    })
-
-    assert(cli.options.length === 1)
+    expect(() => cli.register('options', { name: '--ss', alias: 's' }))
+      .toThrow('Option register error, name: --ss, alias: s')
   })
 })

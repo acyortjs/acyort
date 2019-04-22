@@ -1,8 +1,8 @@
 const { removeSync, outputFileSync, ensureDirSync } = require('fs-extra')
 const { join, resolve } = require('path')
 const assert = require('power-assert')
+const expect = require('expect')
 const getConfig = require('../lib/config')
-const defaultConfig = require('../lib/config/defaults')
 
 const config0 = 'url:'
 const config1 = 'url: https://test.com/public'
@@ -48,9 +48,9 @@ describe('test config with config.yml', () => {
     assert(config.root === '/')
 
     outputFileSync(join(base, 'config.yml'), config3)
-    config = getConfig(base)
 
-    assert(config.templatePath === undefined)
+    expect(() => { config = getConfig(base) })
+      .toThrow('Template no exist: npm')
 
     ensureDirSync(join(base, 'node_modules', 'npm', 'templates', 'ccc45'))
     outputFileSync(
@@ -81,8 +81,8 @@ describe('test config with config.yml', () => {
     const requireKey = Object.keys(require.cache).find(s => s.includes('npm'))
     delete require.cache[requireKey]
 
-    config = getConfig(base)
-    assert(config.templatePath === undefined)
+    expect(() => { config = getConfig(base) })
+      .toThrow('Template no exist: npm')
 
     config = getConfig('.')
     assert(config === null)
@@ -91,12 +91,7 @@ describe('test config with config.yml', () => {
 describe('test config width arg', () => {
   let config
   it('test default config', () => {
-    config = getConfig()
-    const base = process.cwd()
-    assert(config.base === base)
-    Object.keys(defaultConfig).forEach((each) => {
-      assert(defaultConfig[each] === config[each])
-    })
+    expect(getConfig).toThrow('Template no exist: ccc45')
   })
   it('test custom config', () => {
     const url = 'http://abc.xyz'
