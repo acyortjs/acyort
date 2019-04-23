@@ -24,7 +24,7 @@ const config = {
   templatePath: join(resolve(__dirname, '../fixtures'), 'templates', 'ccc45'),
 }
 
-const logger = () => ({ log: () => null })
+const logger = () => ({ success: () => null })
 logger.error = () => null
 
 const acyort = {

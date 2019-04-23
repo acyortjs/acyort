@@ -39,15 +39,11 @@ describe('processor', () => {
     assert(test.join('') === 'ba')
     assert(error.join('') === 'error')
 
-    acyort.workflow.scripts = []
+    acyort.workflow.scripts.splice(2, 1)
 
-    try {
-      await processor.call(acyort)
-    } catch (e) {
-      error.push(e.message)
-    }
+    await processor.call(acyort)
 
-    assert(test.join('') === 'ba')
+    assert(test.join('') === 'baba')
     assert(error.join('') === 'error')
   })
 })

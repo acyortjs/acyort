@@ -39,9 +39,13 @@ module.exports = (acyort) => {
     acyort.util.copySource()
   }
 
+  function e() {
+    throw new Error('e')
+  }
+
   acyort.store.set('key', 5)
 
-  acyort.workflow.register(a, b, c, d)
+  acyort.workflow.register(a, b, c, d, e)
 
   acyort.helper.register('_h5', function h5() {
     const key = acyort.store.get('key')
