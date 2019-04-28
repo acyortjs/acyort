@@ -13,8 +13,10 @@ try {
   const config = getConfig(base)
 
   if (config) {
-    const ctx = acyort(config)
-    parser(argv, { process: ctx.process })
+    const { workflow } = acyort(config)
+    parser(argv, {
+      workflow: { ...workflow, register: undefined },
+    })
   } else if (argv[0] && !ignores.includes(argv[0])) {
     logger.error('Cannot find `config.yml` or configuration error')
   } else {

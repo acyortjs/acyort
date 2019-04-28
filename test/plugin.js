@@ -14,7 +14,6 @@ class Store {
 
 describe('workflow', () => {
   const acyort = {
-    process: () => null,
     config: {
       base: resolve(__dirname, './fixtures/plugins'),
       plugins: ['script.js', 'plugin'],

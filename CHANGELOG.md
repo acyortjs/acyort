@@ -6,6 +6,7 @@
 - refactor: use `signale` for logger
 - refactor: error log to throw error
 - refactor: util method
+- refactor: move API `process` to `workflow`
 
 ## 3.2.1
 

@@ -9,5 +9,4 @@ describe('AcyOrt', () => {
   require('./utility')
   require('./cli')
   require('./logger')
-  require('./processor')
 })
