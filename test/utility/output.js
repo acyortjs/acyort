@@ -24,12 +24,12 @@ const config = {
   templatePath: join(resolve(__dirname, '../fixtures'), 'templates', 'ccc45'),
 }
 
-const logger = () => ({ success: () => null })
-logger.error = () => null
-
 const acyort = {
   config,
-  logger,
+  logger: {
+    success: () => null,
+    error: () => null,
+  },
   renderer: new Renderer(),
   helper: new Helper(),
 }

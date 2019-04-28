@@ -3,7 +3,7 @@ const expect = require('expect')
 const Workflow = require('../lib/workflow')
 
 describe('workflow', () => {
-  it('test', () => {
+  it('register', () => {
     const flow = new Workflow()
 
     function a() {
@@ -23,5 +23,38 @@ describe('workflow', () => {
 
     assert(flow.scripts.length === 2)
     assert(flow.scripts[0]() === 'a')
+  })
+
+  it('test', async () => {
+    const test = []
+    const error = []
+    const flow = new Workflow()
+
+    flow.scripts = [
+      () => new Promise((resolve) => {
+        setTimeout(() => {
+          test.push('b')
+          resolve()
+        }, 100)
+      }),
+      () => test.push('a'),
+      () => { throw new Error('error') },
+    ]
+
+    try {
+      await flow.start()
+    } catch (e) {
+      error.push(e.message)
+    }
+
+    assert(test.join('') === 'ba')
+    assert(error.join('') === 'error')
+
+    flow.scripts.splice(2, 1)
+
+    await flow.start()
+
+    assert(test.join('') === 'baba')
+    assert(error.join('') === 'error')
   })
 })
