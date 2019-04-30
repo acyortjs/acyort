@@ -40,6 +40,8 @@ describe('helper', () => {
     assert(_time(1543141780476, 'MMMM Do YYYY, h:mm:ss a').includes('十一月 25日 2018') === true)
     assert(helper.language === 'zh_CN')
     assert(helper.__('test') === '') // eslint-disable-line no-underscore-dangle
+    assert(typeof helper.getHelper('__') === 'function')
+    assert(helper.getHelper('_') === undefined)
 
     config.templatePath = undefined
     helper = new Helper(config)
