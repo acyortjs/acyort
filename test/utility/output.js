@@ -9,11 +9,14 @@ class Helper {
     this.methods = {
       __: () => null,
     }
-    this.defaultMethods = ['__']
   }
 
   register(name, fn) {
     this.methods[name] = fn
+  }
+
+  get() {
+    return this.methods
   }
 }
 
@@ -25,7 +28,11 @@ const config = {
 }
 
 const acyort = {
-  config,
+  config: {
+    get() {
+      return config
+    },
+  },
   logger: {
     success: () => null,
     error: () => null,

@@ -3,12 +3,34 @@ const { join, resolve } = require('path')
 const assert = require('power-assert')
 const expect = require('expect')
 const getConfig = require('../lib/config/get')
+const Config = require('../lib/config')
 
 const config0 = 'url:'
 const config1 = 'url: https://test.com/public'
 const config2 = 'url: test.com'
 const config3 = 'template: npm'
 const config4 = 'url: \'\''
+
+describe('config api', () => {
+  const c = {
+    a: 0,
+    b: '1',
+  }
+
+  const cf = new Config(c)
+
+  it('api test', () => {
+    assert(cf.get('a') === 0)
+    assert(cf.get('b') === '1')
+    assert(cf.get().a === 0)
+
+    cf.set('a', 1)
+    cf.set('c', false)
+
+    assert(cf.get('a') === 1)
+    assert(cf.get('c') === false)
+  })
+})
 
 describe('test config with config.yml', () => {
   const base = join(__dirname, 'fixtures')

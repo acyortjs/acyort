@@ -16,8 +16,12 @@ describe('workflow', () => {
   const acyort = {
     workflow: { start: () => null },
     config: {
-      base: resolve(__dirname, './fixtures/plugins'),
-      plugins: ['script.js', 'plugin'],
+      get() {
+        return {
+          base: resolve(__dirname, './fixtures/plugins'),
+          plugins: ['script.js', 'plugin'],
+        }
+      },
     },
     store: new Store(),
     logger: {

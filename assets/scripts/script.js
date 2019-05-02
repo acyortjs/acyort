@@ -5,7 +5,7 @@ module.exports = (acyort) => {
     description: 'Show config',
     action(argv) {
       acyort.logger.log('CLI arguments: ', argv, '\n')
-      acyort.logger.info(acyort.config)
+      acyort.logger.info(acyort.config.get())
     },
   })
 
