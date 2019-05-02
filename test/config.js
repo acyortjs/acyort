@@ -2,7 +2,7 @@ const { removeSync, outputFileSync, ensureDirSync } = require('fs-extra')
 const { join, resolve } = require('path')
 const assert = require('power-assert')
 const expect = require('expect')
-const getConfig = require('../lib/config')
+const getConfig = require('../lib/config/get')
 
 const config0 = 'url:'
 const config1 = 'url: https://test.com/public'

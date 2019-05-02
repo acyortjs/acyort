@@ -19,7 +19,7 @@ describe('helper', () => {
       _n,
       _url,
       _time,
-    } = helper.methods
+    } = helper.get()
 
     assert(__('h1', 'O', 'K') === 'O K')
     assert(_n('number', 0) === '0')
@@ -28,7 +28,7 @@ describe('helper', () => {
     assert(_time(1543141780476, 'YYYY MM DD') === '2018 11 25')
 
     helper.register('test', () => 'a')
-    assert(helper.methods.test() === 'a')
+    assert(helper.get('test')() === 'a')
 
     expect(() => helper.register('test', () => 'b'))
       .toThrow('Helper function register error: test, duplicate name or no a function')
@@ -36,12 +36,15 @@ describe('helper', () => {
     expect(() => helper.register('test0', 'no a function'))
       .toThrow('Helper function register error: test0, duplicate name or no a function')
 
-    helper.language = 'zh_CN'
+    config.language = 'zh_CN'
     assert(_time(1543141780476, 'MMMM Do YYYY, h:mm:ss a').includes('十一月 25日 2018') === true)
-    assert(helper.language === 'zh_CN')
-    assert(helper.__('test') === '') // eslint-disable-line no-underscore-dangle
-    assert(typeof helper.getHelper('__') === 'function')
-    assert(helper.getHelper('_') === undefined)
+    assert(__('test') === '')
+    assert(__('name.acyort') === 'CCCCCCC')
+    assert(_n('number', 0) === '零')
+
+    assert(typeof helper.get('__') === 'function')
+    assert(helper.get('_') === undefined)
+    assert(Object.keys(helper.get()).length === 5)
 
     config.templatePath = undefined
     helper = new Helper(config)

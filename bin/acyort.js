@@ -3,7 +3,7 @@
 const logger = require('../lib/logger')
 const parser = require('../lib/cli/parser')
 const acyort = require('../lib')
-const getConfig = require('../lib/config')
+const getConfig = require('../lib/config/get')
 
 const argv = process.argv.slice(2)
 const base = process.cwd()
