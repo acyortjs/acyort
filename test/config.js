@@ -48,7 +48,7 @@ describe('test config with config.yml', () => {
     outputFileSync(join(base, 'config.yml'), config0)
     config = getConfig(base)
 
-    assert(config.url === 'https://acyort.com')
+    assert(config.url === 'https://acyort.js.org')
     assert(config.root === '/')
 
     outputFileSync(join(base, 'config.yml'), config1)
@@ -60,7 +60,7 @@ describe('test config with config.yml', () => {
     outputFileSync(join(base, 'config.yml'), config2)
     config = getConfig(base)
 
-    assert(config.url === 'https://acyort.com')
+    assert(config.url === 'https://acyort.js.org')
     assert(config.root === '/')
 
     outputFileSync(join(base, 'config.yml'), config4)

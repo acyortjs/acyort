@@ -2,6 +2,7 @@
 
 ## 3.3.1
 
+- chore: acyort.js.org
 - feat(renderer): register duplicate detection
 - feat(CLI): register duplicate detection
 
