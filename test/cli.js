@@ -14,8 +14,16 @@ describe('cli', () => {
       action(s) { commands.push(s) },
     })
 
+    cli.register('commands', {
+      name: 'test1',
+      action(s) { commands.push(s) },
+    })
+
     cli.getAction('commands', 'test')('a')
     assert(commands.join('') === 'a')
+
+    cli.getAction('commands', 'test1')('a')
+    assert(commands.join('') === 'aa')
 
     cli.register('options', {
       name: '--ver',
@@ -24,12 +32,12 @@ describe('cli', () => {
     })
 
     cli.getAction('options', '--ver')('b')
-    assert(commands.join('') === 'ab')
+    assert(commands.join('') === 'aab')
 
     cli.getAction('options', '-v')('c')
-    assert(commands.join('') === 'abc')
+    assert(commands.join('') === 'aabc')
 
-    assert(cli.commands.length === 1)
+    assert(cli.commands.length === 2)
     assert(cli.options.length === 1)
 
     assert(cli.getAction('options', '-s') === undefined)
@@ -40,5 +48,14 @@ describe('cli', () => {
 
     expect(() => cli.register('options', { name: '--ss', alias: 's' }))
       .toThrow('Option register error, name: --ss, alias: s')
+
+    expect(() => cli.register('options', { name: '--ver', alias: '-s' }))
+      .toThrow('Register error, options: --ver | -s currently exists')
+
+    expect(() => cli.register('options', { name: '--vers', alias: '-v' }))
+      .toThrow('Register error, options: --vers | -v currently exists')
+
+    expect(() => cli.register('commands', { name: 'test' }))
+      .toThrow('Register error, commands: test currently exists')
   })
 })

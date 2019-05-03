@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.1
+
+- feat: CLI register duplicate detection
+
 ## 3.3.0
 
 - chore: update dependencies

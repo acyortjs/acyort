@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "A Node.js static website framework",
   "bin": {
     "acyort": "./bin/acyort.js"
@@ -18,6 +18,7 @@
     "clean": "cd assets && node ../bin/acyort clean",
     "version": "cd assets && node ../bin/acyort -v",
     "help": "cd assets && node ../bin/acyort",
+    "config": "cd assets && node ../bin/acyort -c",
     "test": "npm run test:lint && npm run test:cover",
     "test:lint": "eslint .",
     "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test/index.js",
