@@ -11,11 +11,8 @@ A Node.js static website framework.
 
 ```bash
 $ npm i acyort -g
-
-# install old version
-$ npm i acyort@2.3 -g
 ```
 
 ## Documentation
 
-To check out the docs, visit https://acyort.com
+To check out the docs, visit https://acyort.js.org

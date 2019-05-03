@@ -2,7 +2,8 @@
 
 ## 3.3.1
 
-- feat: CLI register duplicate detection
+- feat(renderer): register duplicate detection
+- feat(CLI): register duplicate detection
 
 ## 3.3.0
 
