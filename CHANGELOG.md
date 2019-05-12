@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.2
+
+- chore: update dependencies
+- refactor: url helper default set lower case
+
 ## 3.3.1
 
 - chore: acyort.js.org
