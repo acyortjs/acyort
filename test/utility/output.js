@@ -60,6 +60,16 @@ describe('output', () => {
     assert(readFileSync(resolve(__dirname, '../fixtures/temp/index.html'), 'utf8') === '<p>This is not h1</p>\n')
 
     outputHTML.call(acyort, {
+      templatePath: join(config.templatePath, 'index.html'),
+      template: 'index',
+      path: 'index.html',
+      data: {
+        one: 1,
+      },
+    })
+    assert(readFileSync(resolve(__dirname, '../fixtures/temp/index.html'), 'utf8') === '<p>This is not h1</p>\n')
+
+    outputHTML.call(acyort, {
       template: 'index',
       path: 'index.html',
       data: {

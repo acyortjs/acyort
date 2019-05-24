@@ -3,6 +3,7 @@
 ## 3.4.0
 
 - feat: hooks
+- feat: outputHTML templatePath
 
 ## 3.3.2
 
