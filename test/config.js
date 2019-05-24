@@ -15,6 +15,7 @@ describe('config api', () => {
   const c = {
     a: 0,
     b: '1',
+    base: resolve(__dirname, './fixtures'),
   }
 
   const cf = new Config(c)
@@ -29,6 +30,10 @@ describe('config api', () => {
 
     assert(cf.get('a') === 1)
     assert(cf.get('c') === false)
+
+    cf.set('template', 'ccc45')
+
+    assert(cf.get('templatePath') === resolve(__dirname, './fixtures/templates/ccc45'))
   })
 })
 

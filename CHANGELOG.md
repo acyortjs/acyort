@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.0
+
+- feat: hooks
+- refactor: reget template path when set config template
+
 ## 3.3.2
 
 - chore: update dependencies

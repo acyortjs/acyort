@@ -22,8 +22,10 @@ module.exports = (acyort) => {
     })
   }
 
-  function c() {
-    acyort.logger.success('c')
+  async function c() {
+    const s = { a: 1 }
+    await acyort.hooks.call('test', s)
+    acyort.logger.success(s)
   }
 
   function d() {
@@ -52,4 +54,11 @@ module.exports = (acyort) => {
     const number = this.one
     return `This is h${key}, not h${number}`
   })
+
+  acyort.hooks.tap('test', ctx => new Promise((resolve) => {
+    ctx.a = 2
+    setTimeout(() => {
+      resolve()
+    }, 300)
+  }))
 }
