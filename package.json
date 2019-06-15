@@ -50,12 +50,12 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25",
     "signale": "^1.4.0",
-    "yargs-parser": "^13.1.0"
+    "yargs-parser": "^13.1.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.17.3",
     "expect": "^24.8.0",
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.1.4",
