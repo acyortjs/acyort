@@ -46,7 +46,7 @@
   "dependencies": {
     "@acyort/i18n": "^0.2.0",
     "@acyort/renderer": "^1.1.1",
-    "fs-extra": "^7.0.1",
+    "fs-extra": "^8.0.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25",
     "signale": "^1.4.0",
