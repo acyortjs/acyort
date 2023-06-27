@@ -1,9 +1,15 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "root": true,
   "env": {
     "node": true,
-    "mocha": true
+    "jest": true
   },
   "rules": {
     "semi": [2, "never"]

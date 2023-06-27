@@ -1,29 +1,10 @@
 {
-  "name": "acyort",
-  "version": "3.4.0",
+  "name": "acyortjs",
+  "version": "0.1.0",
+  "private": true,
   "description": "A Node.js static website framework",
-  "bin": {
-    "acyort": "./bin/acyort.js"
-  },
-  "files": [
-    "assets",
-    "bin",
-    "lib",
-    "!node_modules"
-  ],
-  "main": "./lib/index.js",
-  "preferGlobal": true,
   "scripts": {
-    "flow": "cd assets && node ../bin/acyort flow",
-    "clean": "cd assets && node ../bin/acyort clean",
-    "version": "cd assets && node ../bin/acyort -v",
-    "help": "cd assets && node ../bin/acyort",
-    "config": "cd assets && node ../bin/acyort -c",
-    "test": "npm run test:lint && npm run test:cover",
-    "test:lint": "eslint .",
-    "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test/index.js",
-    "test:cover": "nyc npm run test:unit",
-    "coverage": "nyc report --reporter=lcov"
+    "preinstall": "npx only-allow pnpm"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -32,34 +13,21 @@
     "type": "git",
     "url": "https://github.com/acyortjs/acyort.git"
   },
-  "keywords": [
-    "website",
-    "framework",
-    "static"
-  ],
   "author": "LoeiFy <LoeiFy@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/acyortjs/acyort/issues"
   },
   "homepage": "https://github.com/acyortjs/acyort",
-  "dependencies": {
-    "@acyort/i18n": "^0.2.0",
-    "@acyort/renderer": "^1.1.1",
-    "fs-extra": "^7.0.1",
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.25",
-    "signale": "^1.4.0",
-    "yargs-parser": "^13.1.1"
-  },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "expect": "^24.8.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^6.1.4",
-    "nyc": "^14.1.1",
-    "power-assert": "^1.6.1"
+    "@types/node": "^20.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
   }
 }

@@ -1,7 +1,2 @@
 .DS_Store
 node_modules/
-package-lock.json
-coverage/
-.nyc_output/
-yarn.lock
-!test/fixtures/plugins/node_modules/

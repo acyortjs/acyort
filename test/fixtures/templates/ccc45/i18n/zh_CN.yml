@@ -1,9 +1,0 @@
-number:
-  zero: 零
-  one: 一
-  other: '%d'
-
-h1: '%1$s %2$s'
-
-name:
-  acyort: CCCCCCC
