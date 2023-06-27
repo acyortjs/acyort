@@ -12,6 +12,7 @@
     "jest": true
   },
   "rules": {
-    "semi": [2, "never"]
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "never"]
   }
 }

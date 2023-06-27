@@ -17,5 +17,10 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "scripts": {
+    "build": "ts-node src"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "sprintf-js": "^1.1.2"
   }
 }
