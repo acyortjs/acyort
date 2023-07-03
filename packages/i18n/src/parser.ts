@@ -22,7 +22,7 @@ export default (
       signale.warn({
         prefix: '[i18n]',
         message: 'Cannot get locale data',
-        suffix: localeKey,
+        suffix: `(${localeKey})`,
       })
       return ''
     }
