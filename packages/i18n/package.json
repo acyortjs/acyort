@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "scripts": {
-    "dev": "ts-node src",
     "build": "tsc"
   },
   "dependencies": {
