@@ -1,0 +1,8 @@
+three: Hello %s
+num:
+  zero: not cats
+  one: only one cats
+  other: is %d cats
+a:
+  b:
+    c: s%2$s a %1$s
