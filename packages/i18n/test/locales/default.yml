@@ -1,4 +1,5 @@
 three: Hello %s
+error: null
 num:
   zero: not cats
   one: only one cats

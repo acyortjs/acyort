@@ -12,7 +12,9 @@ export default class {
   constructor(localesDir: string, defaultLocale: string) {
     this.localesDir = localesDir
     this.currentLocale = defaultLocale
-    this.localesData = {}
+    this.localesData = {
+      [defaultLocale]: getLocaleData(localesDir, defaultLocale) as Locale,
+    }
   }
 
   set locale(locale: string) {
@@ -23,24 +25,24 @@ export default class {
     return this.currentLocale
   }
 
-  private parse(type: '_' | 'n', ...params: any[]) {
+  private parse(type: '_' | 'n', localeKey: string, ...params: any[]) {
     let localeData = this.localesData[this.currentLocale]
     if (!localeData) {
       localeData = getLocaleData(this.localesDir, this.currentLocale) as Locale
       this.localesData[this.currentLocale] = localeData
     }
-    return parser(type, localeData, this.currentLocale, ...params)
+    return parser(type, localeData, localeKey, ...params)
   }
 
   public reload() {
     this.localesData = {}
   }
 
-  public __(...params: any[]) {
-    return this.parse('_', ...params)
+  public __(localeKey: string, ...params: any[]) {
+    return this.parse('_', localeKey, ...params)
   }
 
-  public _n(...params: any[]) {
-    return this.parse('n', ...params)
+  public _n(localeKey: string, ...params: any[]) {
+    return this.parse('n', localeKey, ...params)
   }
 }

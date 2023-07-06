@@ -18,7 +18,7 @@ export default (
       phrase = phrase ? (phrase as Locale)[key] : localeData[key]
     })
 
-    if (!phrase) {
+    if (phrase === undefined) {
       signale.warn({
         prefix: '[i18n]',
         message: 'Cannot get locale data',
