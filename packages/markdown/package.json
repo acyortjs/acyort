@@ -8,6 +8,7 @@
     "lib"
   ],
   "scripts": {
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,15 @@
   "bugs": {
     "url": "https://github.com/acyortjs/acyort/issues"
   },
-  "homepage": "https://github.com/acyortjs/acyort"
+  "homepage": "https://github.com/acyortjs/acyort",
+  "dependencies": {
+    "katex": "^0.16.8",
+    "marked": "^5.1.0",
+    "prismjs": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.1",
+    "@types/marked": "^5.0.1",
+    "@types/prismjs": "^1.26.0"
+  }
 }
