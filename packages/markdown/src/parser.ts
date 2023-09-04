@@ -8,16 +8,16 @@ import { RenderOptions, HeadingIDFormatter } from './type'
 export default class extends Code {
   private getHeadingId?: HeadingIDFormatter
 
-  constructor(config: RenderOptions) {
-    super(config.lineNumbers)
-    this.getHeadingId = config.getHeadingId
+  constructor(config?: RenderOptions) {
+    super(config?.lineNumbers)
+    this.getHeadingId = config?.getHeadingId
   }
 
-  markedRender(options: RenderOptions) {
+  markedRender(options?: RenderOptions) {
     const {
       lineNumbers,
       getHeadingId = this.getHeadingId,
-    } = options
+    } = options || {} as RenderOptions
 
     return {
       listitem,
