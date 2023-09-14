@@ -1,6 +1,5 @@
 import { EOL } from 'os'
 import prism from 'prismjs'
-import loadLanguages from 'prismjs/components/index'
 import pureCode from './pure'
 
 export default class {
@@ -16,7 +15,6 @@ export default class {
     if (!lang) {
       codeString = pureCode(block)
     } else {
-      loadLanguages(lang)
       const grammar = prism.languages[lang]
 
       codeString = grammar

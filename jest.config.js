@@ -13,7 +13,7 @@ module.exports = {
     //   transform,
     // },
     {
-      displayName: 'i18n',
+      displayName: 'markdown',
       roots: ['<rootDir>/packages/markdown'],
       transform,
     },
