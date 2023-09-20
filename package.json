@@ -6,7 +6,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . && tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "build": "pnpm run -r build"
   },
   "engines": {
     "node": ">=6.0.0"

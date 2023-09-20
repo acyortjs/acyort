@@ -12,8 +12,7 @@
   ],
   "main": "./lib/index.js",
   "preferGlobal": true,
-  "scripts": {
-  },
+  "scripts": {},
   "engines": {
     "node": ">=6.0.0"
   },
@@ -31,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/acyortjs/acyort/issues"
   },
-  "homepage": "https://github.com/acyortjs/acyort"
+  "homepage": "https://github.com/acyortjs/acyort",
+  "dependencies": {
+    "@acyort/i18n": "workspace:^"
+  }
 }

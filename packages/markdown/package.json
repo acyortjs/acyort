@@ -2,9 +2,8 @@
   "name": "@acyort/markdown",
   "version": "2.0.1",
   "description": "markdown parser with code highlighting and math latex support",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
-    "index.js",
     "lib"
   ],
   "scripts": {

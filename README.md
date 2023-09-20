@@ -24,12 +24,13 @@ $ pnpm i
 
 - @acyort/i18n
 - @acyort/markdown
+- acyort
 
 add
 
 ```bash
-$ pnpm i -D devDependency --filter package-name
-$ pnpm i -S dependency --filter package-name
+$ pnpm i -D devDependency/local-package --filter package-name
+$ pnpm i -S dependency/local-package --filter package-name
 
 # global
 $ pnpm i -wD devDependency
@@ -57,6 +58,12 @@ config: `jest.config.js`, `projects`
 
 ```bash
 $ pnpm run test
+```
+
+### Build
+
+```bash
+$ pnpm run build
 ```
 
 ### Script

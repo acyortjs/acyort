@@ -52,7 +52,11 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3
 
-  packages/acyort: {}
+  packages/acyort:
+    dependencies:
+      '@acyort/i18n':
+        specifier: workspace:^
+        version: link:../i18n
 
   packages/i18n:
     dependencies:
