@@ -16,7 +16,12 @@
     "@typescript-eslint/semi": ["error", "never"],
     "import/no-extraneous-dependencies": [
       "error", {
-        "packageDir": ["./", "./packages/i18n", "./packages/markdown"]
+        "packageDir": [
+          "./",
+          "./packages/i18n",
+          "./packages/markdown",
+          "./packages/acyort"
+        ]
       }
     ]
   }
