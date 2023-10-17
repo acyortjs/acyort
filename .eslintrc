@@ -14,6 +14,18 @@
   "rules": {
     "semi": "off",
     "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "comma",
+        "requireLast": true
+      },
+      "singleline": {
+        "delimiter": "comma",
+        "requireLast": false
+      }
+    }],
+    "import/no-dynamic-require": 0,
+    "global-require": 0,
     "import/no-extraneous-dependencies": [
       "error", {
         "packageDir": [

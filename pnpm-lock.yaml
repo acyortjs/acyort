@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      signale:
-        specifier: ^1.4.0
-        version: 1.4.0
     devDependencies:
       '@types/jest':
         specifier: ^29.5.2
@@ -18,9 +14,6 @@ importers:
       '@types/node':
         specifier: ^20.3.2
         version: 20.3.2
-      '@types/signale':
-        specifier: ^1.4.4
-        version: 1.4.4
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.60.1
         version: 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.43.0)(typescript@5.0.3)
@@ -57,12 +50,28 @@ importers:
       '@acyort/i18n':
         specifier: workspace:^
         version: link:../i18n
+      signale:
+        specifier: ^1.4.0
+        version: 1.4.0
+      yargs-parser:
+        specifier: ^21.1.1
+        version: 21.1.1
+    devDependencies:
+      '@types/signale':
+        specifier: ^1.4.5
+        version: 1.4.5
+      '@types/yargs-parser':
+        specifier: ^21.0.1
+        version: 21.0.1
 
   packages/i18n:
     dependencies:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
+      signale:
+        specifier: ^1.4.0
+        version: 1.4.0
       sprintf-js:
         specifier: ^1.1.2
         version: 1.1.2
@@ -70,6 +79,9 @@ importers:
       '@types/js-yaml':
         specifier: ^4.0.5
         version: 4.0.5
+      '@types/signale':
+        specifier: ^1.4.5
+        version: 1.4.5
       '@types/sprintf-js':
         specifier: ^1.1.2
         version: 1.1.2
@@ -925,8 +937,8 @@ packages:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
     dev: true
 
-  /@types/signale@1.4.4:
-    resolution: {integrity: sha512-VYy4VL64gA4uyUIYVj4tiGFF0VpdnRbJeqNENKGX42toNiTvt83rRzxdr0XK4DR3V01zPM0JQNIsL+IwWWfhsQ==}
+  /@types/signale@1.4.5:
+    resolution: {integrity: sha512-ewkOcex4cJH/4nPw9JIG6vQHDTZ5c0EORm1PZ3FHxHxaASQORYlQiG488LB8Vo/fpdTIfk99cbDYk5VFMXuECg==}
     dependencies:
       '@types/node': 20.3.2
     dev: true
@@ -939,14 +951,14 @@ packages:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
     dev: true
 
-  /@types/yargs-parser@21.0.0:
-    resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
+  /@types/yargs-parser@21.0.1:
+    resolution: {integrity: sha512-axdPBuLuEJt0c4yI5OZssC19K2Mq1uKdrfZBzuxLvaztgqUtFYZUNw7lETExPYJR9jdEoIg4mb7RQKRQzOkeGQ==}
     dev: true
 
   /@types/yargs@17.0.24:
     resolution: {integrity: sha512-6i0aC7jV6QzQB8ne1joVZ0eSFIstHsCrobmOtghM11yGlH0j43FKL2UhWdELkyps0zuf7qVTUVCCR+tgSlyLLw==}
     dependencies:
-      '@types/yargs-parser': 21.0.0
+      '@types/yargs-parser': 21.0.1
     dev: true
 
   /@typescript-eslint/eslint-plugin@5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.43.0)(typescript@5.0.3):
@@ -3799,7 +3811,6 @@ packages:
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
-    dev: true
 
   /yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}

@@ -34,7 +34,7 @@ $ pnpm i -S dependency/local-package --filter package-name
 
 # global
 $ pnpm i -wD devDependency
-$ pnpm i -ws dependency
+$ pnpm i -w dependency
 ```
 
 remove
