@@ -1,42 +1,31 @@
-import { CliCommand, CliOption, CliType } from '../types'
+import yargs from 'yargs-parser'
+import cli from './core'
+import versionOption from './version'
+import helpOption from './help'
+import type AcyOrt from '../core'
 
-export default class {
-  private commands: CliCommand[]
+cli.register('option', versionOption)
+cli.register('option', helpOption)
 
-  private options: CliOption[]
+export default (processArgv: string[], acyort?: AcyOrt) => {
+  const argv = yargs(processArgv)
 
-  constructor() {
-    this.commands = []
-    this.options = []
-  }
-
-  register(type: CliType, context: CliCommand | CliOption) {
-    if (type !== 'command' && type !== 'option') {
-      throw new Error(`not supports type: ${type}`)
+  if (acyort) {
+    const command = cli.getCommand(argv._[0] as string)
+    if (command) {
+      command.action.call(acyort, argv)
+      return
     }
 
-    if (type === 'option') {
-      const { name, alias } = context as CliOption
-      if (!name.startsWith('--') || !alias.startsWith('-')) {
-        throw new Error(`option error: ${name}, ${alias}`)
+    const optionKeys = Object.keys(argv)
+    for (let i = 0; i < optionKeys.length; i += 1) {
+      const option = cli.getOption(optionKeys[i])
+      if (option) {
+        option.action.call(acyort, argv)
+        return
       }
-
-      const optionExist = this.options.find((o) => o.name === name || o.alias === alias)
-
-      if (optionExist) {
-        throw new Error(`option exists: ${name}, ${alias}`)
-      }
-
-      this.options.push(context as CliOption)
-    }
-
-    if (type === 'command') {
-      const commandExist = this.commands.find((c) => c.name === context.name)
-      if (commandExist) {
-        throw new Error(`option exists: ${context.name}`)
-      }
-
-      this.commands.push(context as CliCommand)
     }
   }
+
+  helpOption.action.call({} as AcyOrt, argv)
 }

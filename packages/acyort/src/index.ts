@@ -1,14 +1,9 @@
-import signale from 'signale'
-import { version } from '../package.json'
+import AcyOrt from './core'
+import initPlugins from './plugin'
 import { Config } from './types'
 
-export default class {
-  private logger: typeof signale
-
-  public version: string
-
-  constructor(config: Config) {
-    this.version = version
-    this.logger = signale
-  }
+export default (config: Config) => {
+  const ctx = new AcyOrt(config)
+  initPlugins(ctx)
+  return ctx
 }

@@ -1,5 +1,5 @@
 import { Arguments } from 'yargs-parser'
-import type AcyOrt from '.'
+import type AcyOrt from './core'
 
 interface CliAction {
   name: string,
@@ -9,6 +9,7 @@ interface CliAction {
 
 export interface Config {
   plugins: string[],
+  cwd: string,
   [x: string]: any,
 }
 
