@@ -8,10 +8,12 @@ export default (acyort: AcyOrt) => {
 
     try {
       const module = require(localPath)
+      module(acyort)
     } catch (e0) {
-      acyort.logger.error(e1)
+      acyort.logger.error(e0)
       try {
         const module = require(npmPath)
+        module(acyort)
       } catch (e1) {
         acyort.logger.error(e1)
       }

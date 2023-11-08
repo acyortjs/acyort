@@ -10,12 +10,15 @@ export default class {
 
   public config: Config
 
+  public cwd: string
+
   public cli: typeof cli
 
-  constructor(config: Config) {
+  constructor(cwd: string, config: Config) {
     this.version = version
     this.logger = signale
     this.config = config
     this.cli = cli
+    this.cwd = cwd
   }
 }

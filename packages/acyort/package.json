@@ -3,16 +3,17 @@
   "version": "3.4.0",
   "description": "A Node.js static website framework",
   "bin": {
-    "acyort": "./bin/acyort.js"
+    "acyort": "./lib/bin/acyort.js"
   },
   "files": [
-    "assets",
     "bin",
     "lib"
   ],
-  "main": "./lib/index.js",
   "preferGlobal": true,
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "test": "cd test && ts-node ../src/bin server -h 2000"
+  },
   "engines": {
     "node": ">=6.0.0"
   },
@@ -32,12 +33,12 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "dependencies": {
-    "@acyort/i18n": "workspace:^",
     "signale": "^1.4.0",
     "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
     "@types/signale": "^1.4.5",
-    "@types/yargs-parser": "^21.0.1"
+    "@types/yargs-parser": "^21.0.1",
+    "ts-node": "^10.9.1"
   }
 }

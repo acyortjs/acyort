@@ -58,9 +58,9 @@ AcyOrt, A Node.js extensible framework
 
 Commands:`
 
-    commands.forEach(({ fullName, description }) => {
+    commands.forEach(({ name, description }) => {
       help += `
-  ${fullName}${new Array(width - fullName.length).fill(' ').join('')}${description}`
+  ${name}${new Array(width - name.length).fill(' ').join('')}${description}`
     })
 
     help += `

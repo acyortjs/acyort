@@ -13,7 +13,7 @@ try {
     cli(argv)
   } else {
     const config = getConfig(cwd())
-    const acyort = getAcyort(config)
+    const acyort = getAcyort(cwd(), config)
     cli(argv, acyort)
   }
 } catch (e) {

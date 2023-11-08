@@ -9,7 +9,6 @@ interface CliAction {
 
 export interface Config {
   plugins: string[],
-  cwd: string,
   [x: string]: any,
 }
 
@@ -18,7 +17,7 @@ export interface CliOption extends CliAction {
 }
 
 export interface CliCommand extends CliAction {
-  fullName: string,
+  // fullName: string,
 }
 
 export type CliType = 'command' | 'option'

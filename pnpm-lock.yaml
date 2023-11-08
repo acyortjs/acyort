@@ -47,9 +47,6 @@ importers:
 
   packages/acyort:
     dependencies:
-      '@acyort/i18n':
-        specifier: workspace:^
-        version: link:../i18n
       signale:
         specifier: ^1.4.0
         version: 1.4.0
@@ -63,6 +60,9 @@ importers:
       '@types/yargs-parser':
         specifier: ^21.0.1
         version: 21.0.1
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@20.3.2)(typescript@5.0.3)
 
   packages/i18n:
     dependencies:

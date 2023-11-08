@@ -1,4 +1,3 @@
-import { version } from '../../package.json'
 import { CliOption } from '../types'
 
 export default {
@@ -7,7 +6,7 @@ export default {
   description: 'print AcyOrt version',
   action() {
     const { version: nodeVersion, platform, arch } = process
-    global.console.log(`acyort: ${version}
+    global.console.log(`acyort: ${this.version}
 node: ${nodeVersion}
 os: ${platform} ${arch}`)
   },
