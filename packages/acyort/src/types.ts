@@ -8,7 +8,8 @@ interface CliAction {
 }
 
 export interface Config {
-  plugins: string[],
+  plugins?: string[],
+  scripts?: string[],
   [x: string]: any,
 }
 

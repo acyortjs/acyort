@@ -2,7 +2,8 @@
  * @type {import('../src/types').Config}
  */
 const config = {
-  plugins: ['server.js'],
+  // plugins: ['server'],
+  scripts: ['server.js'],
 }
 
 module.exports = config

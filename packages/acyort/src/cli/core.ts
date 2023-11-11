@@ -33,7 +33,7 @@ class Cli {
     if (type === 'command') {
       const commandExist = this.commands.find((c) => c.name === context.name)
       if (commandExist) {
-        throw new Error(`option exists: ${context.name}`)
+        throw new Error(`command exists: ${context.name}`)
       }
 
       this.commands.push(context as CliCommand)
