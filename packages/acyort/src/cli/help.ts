@@ -1,5 +1,5 @@
+import { CliOption } from 'acyort'
 import cli from './core'
-import { CliOption } from '../types'
 
 export default {
   name: '--help',

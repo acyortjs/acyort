@@ -1,8 +1,8 @@
 import yargs from 'yargs-parser'
+import { AcyOrt } from 'acyort'
 import cli from './core'
 import versionOption from './version'
 import helpOption from './help'
-import type AcyOrt from '../core'
 
 cli.register('option', versionOption)
 cli.register('option', helpOption)

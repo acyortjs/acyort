@@ -1,4 +1,4 @@
-import { CliOption } from '../types'
+import { CliOption } from 'acyort'
 
 export default {
   name: '--version',

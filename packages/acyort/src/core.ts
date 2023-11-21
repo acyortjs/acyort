@@ -1,21 +1,20 @@
 import signale from 'signale'
+import { AcyOrt, Config } from 'acyort'
 import cli from './cli/core'
-import { version } from '../package.json'
-import { Config } from './types'
 
-export default class {
-  public logger: typeof signale
+export default class implements AcyOrt {
+  public logger
 
-  public version: string
+  public version
 
-  public config: Config
+  public config
 
-  public cwd: string
+  public cwd
 
-  public cli: typeof cli
+  public cli
 
   constructor(cwd: string, config: Config) {
-    this.version = version
+    this.version = require('../package.json').version
     this.logger = signale
     this.config = config
     this.cli = cli

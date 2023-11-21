@@ -1,6 +1,8 @@
-import { CliCommand, CliOption, CliType } from '../types'
+import {
+  Cli, CliCommand, CliOption, CliType,
+} from 'acyort'
 
-class Cli {
+class C implements Cli {
   private commands: CliCommand[]
 
   private options: CliOption[]
@@ -80,4 +82,4 @@ For more information, check the docs: https://acyort.js.org
   }
 }
 
-export default new Cli()
+export default new C()

@@ -1,5 +1,5 @@
 import { join } from 'path'
-import type AcyOrt from './core'
+import { AcyOrt } from 'acyort'
 
 export default (acyort: AcyOrt) => {
   const exec = (path: string) => {

@@ -1,5 +1,5 @@
 import { join } from 'path'
-import { Config } from '../types'
+import { Config } from 'acyort'
 
 export default (cwd: string) => {
   const configPath = join(cwd, 'acyort.config.js')
