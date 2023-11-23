@@ -1,5 +1,5 @@
 /**
- * @type {import('../src/types.ts').CliCommand}
+ * @type {import('acyort').CliCommand}
  */
 
 const server = {
@@ -12,7 +12,7 @@ const server = {
 }
 
 /**
- * @param {import('../src/core.ts').default} acyort
+ * @param {import('acyort').AcyOrt} acyort
  */
 module.exports = (acyort) => {
   acyort.cli.register('command', server)

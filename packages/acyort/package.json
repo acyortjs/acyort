@@ -3,16 +3,14 @@
   "version": "3.4.0",
   "description": "A Node.js static website framework",
   "bin": {
-    "acyort": "./lib/bin/acyort.js"
+    "acyort": "./lib/bin/index.js"
   },
   "files": [
-    "bin",
     "lib"
   ],
   "preferGlobal": true,
   "scripts": {
-    "build": "tsc",
-    "test": "cd test && ts-node ../src/bin server -h 2000"
+    "build": "rm -rf lib && tsc"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -38,7 +36,6 @@
   },
   "devDependencies": {
     "@types/signale": "^1.4.5",
-    "@types/yargs-parser": "^21.0.1",
-    "ts-node": "^10.9.1"
+    "@types/yargs-parser": "^21.0.1"
   }
 }

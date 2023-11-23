@@ -1,5 +1,5 @@
 /**
- * @type {import('../src/types').Config}
+ * @type {import('acyort').Config}
  */
 const config = {
   // plugins: ['server'],

@@ -1,0 +1,14 @@
+{
+  "name": "@acyort/test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AcyOrt test",
+  "license": "MIT",
+  "scripts": {
+    "test0": "cd src && acyort server -h 2000",
+    "test": "cd src && acyort"
+  },
+  "devDependencies": {
+    "acyort": "workspace:^"
+  }
+}

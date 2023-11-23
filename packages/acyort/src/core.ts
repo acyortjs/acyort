@@ -5,7 +5,7 @@ import cli from './cli/core'
 export default class implements AcyOrt {
   public logger
 
-  public version
+  public version: string
 
   public config
 
