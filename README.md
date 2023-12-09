@@ -40,7 +40,7 @@ $ pnpm i -w dependency
 remove
 
 ```bash
-$ pnpm un dependency/devDependency
+$ cd packages/name && pnpm un dependency/devDependency
 
 # global
 $ pnpm un dependency/devDependency -w

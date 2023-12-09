@@ -1,7 +1,6 @@
 /**
  * @type {import('acyort').CliCommand}
  */
-
 const server = {
   name: 'server',
   description: 'start a server',
