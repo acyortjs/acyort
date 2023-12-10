@@ -1,0 +1,26 @@
+{
+  "name": "@acyort/paginator",
+  "version": "0.1.2",
+  "description": "Pagination utilities",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acyortjs/acyort.git"
+  },
+  "keywords": [
+    "pagination",
+    "pages"
+  ],
+  "author": "LoeiFy <LoeiFy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acyortjs/acyort/issues"
+  },
+  "homepage": "https://github.com/acyortjs/acyort"
+}

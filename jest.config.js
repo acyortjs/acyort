@@ -17,5 +17,10 @@ module.exports = {
       roots: ['<rootDir>/packages/markdown'],
       transform,
     },
+    {
+      displayName: 'paginator',
+      roots: ['<rootDir>/packages/paginator'],
+      transform,
+    },
   ],
 }

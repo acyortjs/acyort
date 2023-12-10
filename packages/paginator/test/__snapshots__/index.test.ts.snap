@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no pages 1`] = `
+[
+  {
+    "baseUrl": "/xxx/yyy",
+    "current": 1,
+    "data": [
+      1,
+      2,
+      3,
+    ],
+    "fullPath": "/xxx/yyy",
+    "next": "",
+    "prev": "",
+    "total": 1,
+  },
+]
+`;
+
+exports[`pages 1`] = `
+[
+  {
+    "baseUrl": "/",
+    "current": 1,
+    "data": [
+      1,
+      2,
+    ],
+    "fullPath": "/",
+    "next": "/page/2/",
+    "prev": "",
+    "total": 3,
+  },
+  {
+    "baseUrl": "/",
+    "current": 2,
+    "data": [
+      3,
+      4,
+    ],
+    "fullPath": "/page/2/",
+    "next": "/page/3/",
+    "prev": "/",
+    "total": 3,
+  },
+  {
+    "baseUrl": "/",
+    "current": 3,
+    "data": [
+      5,
+    ],
+    "fullPath": "/page/3/",
+    "next": "",
+    "prev": "/page/2/",
+    "total": 3,
+  },
+]
+`;
+
+exports[`prefix 1`] = `
+[
+  {
+    "baseUrl": "/",
+    "current": 1,
+    "data": [
+      1,
+      2,
+      3,
+    ],
+    "fullPath": "/",
+    "next": "/nav/2/",
+    "prev": "",
+    "total": 2,
+  },
+  {
+    "baseUrl": "/",
+    "current": 2,
+    "data": [
+      4,
+      5,
+    ],
+    "fullPath": "/nav/2/",
+    "next": "",
+    "prev": "/",
+    "total": 2,
+  },
+]
+`;

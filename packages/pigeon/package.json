@@ -1,0 +1,13 @@
+{
+  "name": "@acyort/pigeon",
+  "version": "0.2.0",
+  "description": "AcyOrt test",
+  "license": "MIT",
+  "scripts": {
+    "test0": "cd src && acyort server -h 2000",
+    "test": "cd src && acyort"
+  },
+  "devDependencies": {
+    "acyort": "workspace:^"
+  }
+}
