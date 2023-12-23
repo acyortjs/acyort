@@ -1,5 +1,5 @@
 declare module 'acyort' {
-  import signale from 'signale'
+  import { Signale } from 'signale'
   import { Arguments } from 'yargs-parser'
 
   interface Config {
@@ -9,7 +9,7 @@ declare module 'acyort' {
   }
 
   interface AcyOrt {
-    logger: signale,
+    logger: Signale,
     version: string,
     config: Config,
     cwd: string,

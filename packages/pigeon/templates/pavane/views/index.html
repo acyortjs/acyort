@@ -1,0 +1,18 @@
+{% extends 'partial/layout.html' %}
+
+{% block title %}
+{{ config.title }}
+{% endblock %}
+
+{% block heading %}
+{{ config.title }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ config.description }}</p>
+{% endblock %}
+
+{% block content %}
+{% include 'partial/posts.html' %}
+{% include 'partial/paginator.html' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'partial/layout.html' %}
+
+{% block title %}
+{{ config.title }} / {{ page.title }}
+{% endblock %}
+
+{% block heading %}
+{{ page.title }}
+{% endblock %}
+
+{% block content %}
+<div class="markdown-body">
+{{ page.content }}
+</div>
+{% endblock %}

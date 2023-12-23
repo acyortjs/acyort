@@ -9,7 +9,8 @@
   "root": true,
   "env": {
     "node": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "rules": {
     "semi": "off",
@@ -26,13 +27,15 @@
     }],
     "import/no-dynamic-require": 0,
     "global-require": 0,
+    "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": [
       "error", {
         "packageDir": [
           "./",
           "./packages/i18n",
           "./packages/markdown",
-          "./packages/acyort"
+          "./packages/acyort",
+          "./packages/pigeon"
         ]
       }
     ]

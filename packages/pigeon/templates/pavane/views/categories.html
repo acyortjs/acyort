@@ -1,0 +1,28 @@
+{% extends 'partial/layout.html' %}
+
+{% block title %}
+{{ config.title }} / {{ __('categories') }}
+{% endblock %}
+
+{% block heading %}
+{{ __('categories') }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ _n('category', page.categories.length) }}</p>
+{% endblock %}
+
+{% block content %}
+{% if page.categories.length %}
+<div class="img-cover">
+{% for c in page.categories %}
+  <a style="background-image: url({{ c.background }})" href="{{ _url(c.url) }}">
+    <div>
+      <h4>{{ c.name }}</h4>
+      <p>{{ _n('posts', c.posts.length) }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

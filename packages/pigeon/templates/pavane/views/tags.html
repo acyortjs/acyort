@@ -1,0 +1,28 @@
+{% extends 'partial/layout.html' %}
+
+{% block title %}
+{{ config.title }} / {{ __('tags') }}
+{% endblock %}
+
+{% block heading %}
+{{ __('tags') }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ _n('tag', page.tags.length) }}</p>
+{% endblock %}
+
+{% block content %}
+{% if page.tags.length %}
+<div class="img-cover">
+{% for t in page.tags %}
+  <a style="background-image: url({{ t.background }})" href="{{ _url(t.url) }}">
+    <div>
+      <h4>{{ t.name }}</h4>
+      <p>{{ _n('posts', t.posts.length) }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

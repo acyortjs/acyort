@@ -1,0 +1,13 @@
+{% if page.posts.length %}
+<div class="posts">
+{% for post in page.posts %}
+  <div class="post">
+    <a href="{{ _url(post.url) }}">{{ post.title }}</a>
+    <p>{{ _time(post.date, 'MMMM DD, YYYY') }}</p>
+    <div class="post-except markdown-body">
+      {{ post.except }}
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,18 @@
+{% extends 'partial/layout.html' %}
+
+{% block title %}
+{{ config.title }} / {{ page.name }}
+{% endblock %}
+
+{% block heading %}
+{{ page.name }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ _n('posts', page.posts.length) }}</p>
+{% endblock %}
+
+{% block content %}
+{% include 'partial/posts.html' %}
+{% include 'partial/paginator.html' %}
+{% endblock %}

@@ -4,10 +4,14 @@
   "description": "AcyOrt test",
   "license": "MIT",
   "scripts": {
-    "test0": "cd src && acyort server -h 2000",
     "test": "cd src && acyort"
   },
   "devDependencies": {
     "acyort": "workspace:^"
+  },
+  "dependencies": {
+    "@acyort/paginator": "workspace:^",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43"
   }
 }
