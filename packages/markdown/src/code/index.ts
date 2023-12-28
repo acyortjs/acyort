@@ -9,7 +9,7 @@ export default class {
     this.lineNumbers = lineNumbers
   }
 
-  codeRender(block: string, lang?: string, lineNumbers?: boolean) {
+  protected codeRender(block: string, lang?: string, lineNumbers?: boolean) {
     let codeString: string | undefined
 
     if (!lang) {

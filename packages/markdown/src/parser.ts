@@ -13,7 +13,7 @@ export default class extends Code {
     this.getHeadingId = config?.getHeadingId
   }
 
-  markedRender(options?: RenderOptions) {
+  protected markedRender(options?: RenderOptions) {
     const {
       lineNumbers,
       getHeadingId = this.getHeadingId,

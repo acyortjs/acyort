@@ -14,7 +14,7 @@ export default (posts: Post[], config: Config) => {
     let year: string
 
     currentPosts.forEach((post) => {
-      const current = timer(post.date, 'YYYY')
+      const current = timer(post.createdAt, 'YYYY')
       if (year !== current) {
         year = current
         result.push(current)

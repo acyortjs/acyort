@@ -28,6 +28,7 @@
     "import/no-dynamic-require": 0,
     "global-require": 0,
     "import/prefer-default-export": 0,
+    "@typescript-eslint/naming-convention": 0,
     "import/no-extraneous-dependencies": [
       "error", {
         "packageDir": [

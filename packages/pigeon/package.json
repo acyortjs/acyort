@@ -10,8 +10,11 @@
     "acyort": "workspace:^"
   },
   "dependencies": {
+    "@acyort/markdown": "workspace:^",
     "@acyort/paginator": "workspace:^",
+    "axios": "^1.6.2",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.43"
+    "moment-timezone": "^0.5.43",
+    "swig-templates": "^2.0.3"
   }
 }
