@@ -1,5 +1,6 @@
 declare module '@acyort/pigeon' {
   import { Config as C } from 'acyort'
+  import { PagingData } from '@acyort/paginator'
 
   interface Config extends C {
     template: string,
@@ -15,6 +16,22 @@ declare module '@acyort/pigeon' {
     archives_perpage?: number,
   }
 
+  interface Category {
+    title: string,
+    description?: string,
+    posts: number[],
+    pages: PagingData[],
+    url: string,
+  }
+
+  interface Tag {
+    title: string,
+    description?: string,
+    posts: number[],
+    pages: PagingData[],
+    url: string,
+  }
+
   interface Post {
     id: number,
     title: string,
@@ -27,10 +44,12 @@ declare module '@acyort/pigeon' {
       title: string,
       description?: string,
     }[],
-    category: {
+    category?: {
       title: string,
       description?: string,
     },
+    prev?: Omit<Post, 'content'>,
+    next?: Omit<Post, 'content'>,
   }
 
   interface Page {
@@ -69,7 +88,7 @@ declare module '@acyort/pigeon' {
     }[],
     state: 'open' | 'close',
     locked: boolean,
-    milestone: {
+    milestone?: {
       html_url: string,
       id: number,
       node_id: string,

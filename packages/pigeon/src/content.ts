@@ -53,10 +53,10 @@ export default (issues: GithubIssus[]) => {
         path: `/posts/${id}.html`,
         except: md.render(getExcept(body)),
         content: md.render(body),
-        category: {
+        category: milestone ? {
           title: milestone.title,
           description: milestone.description,
-        },
+        } : undefined,
         tags: labels.map((l) => ({
           title: l.name,
           description: l.description,
