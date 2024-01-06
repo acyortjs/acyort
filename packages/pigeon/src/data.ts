@@ -8,7 +8,7 @@ import {
 import paginator from '@acyort/paginator'
 import getArchives from './archives'
 
-export default (data: { pages: Page[], posts: Post[] }, config: Config) => {
+const getTemplateData = (data: { pages: Page[], posts: Post[] }, config: Config) => {
   const { perpage = 10 } = config
   const categories: Category[] = []
   const tags: Tag[] = []
@@ -73,3 +73,7 @@ export default (data: { pages: Page[], posts: Post[] }, config: Config) => {
     })),
   }
 }
+
+export type TemplateData = ReturnType<typeof getTemplateData>
+
+export default getTemplateData
