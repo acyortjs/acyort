@@ -133,6 +133,10 @@ importers:
         version: link:../acyort
 
   packages/test:
+    dependencies:
+      '@acyort/pigeon':
+        specifier: workspace:^
+        version: link:../pigeon
     devDependencies:
       acyort:
         specifier: workspace:^

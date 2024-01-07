@@ -6,7 +6,8 @@
     "acyort": "./lib/bin/index.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "preferGlobal": true,
   "scripts": {

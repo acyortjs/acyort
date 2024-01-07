@@ -3,7 +3,8 @@ import { AcyOrt } from 'acyort'
 
 export default (acyort: AcyOrt) => {
   const exec = (path: string) => {
-    const module = require(path)
+    const pkg = require(path)
+    const module = pkg.default || pkg
     module(acyort)
   }
 

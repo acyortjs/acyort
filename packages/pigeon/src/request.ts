@@ -10,7 +10,7 @@ export default async (acyort: AcyOrt) => {
   const { repository } = config
   const cacheFilePath = join(cwd, 'issues.json')
   const { TOKEN } = process.env
-  const requestHeaders: Record<string, string> = { 'User-Agent': 'AcyOrt-Pigeon' }
+  const requestHeaders: Record<string, string> = { 'User-Agent': 'acyort-pigeon' }
 
   if (TOKEN) {
     requestHeaders.Authorization = `token ${TOKEN}`

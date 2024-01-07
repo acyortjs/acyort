@@ -5,10 +5,13 @@
   "description": "AcyOrt test",
   "license": "MIT",
   "scripts": {
-    "test0": "cd src && acyort server -h 2000",
-    "test": "cd src && acyort"
+    "pigeon": "acyort -c pigeon.config.js pigeon",
+    "test": "acyort server -h 2000"
   },
   "devDependencies": {
     "acyort": "workspace:^"
+  },
+  "dependencies": {
+    "@acyort/pigeon": "workspace:^"
   }
 }
