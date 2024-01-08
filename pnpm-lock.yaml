@@ -109,6 +109,9 @@ importers:
 
   packages/pigeon:
     dependencies:
+      '@acyort/i18n':
+        specifier: workspace:^
+        version: link:../i18n
       '@acyort/markdown':
         specifier: workspace:^
         version: link:../markdown

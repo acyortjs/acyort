@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "files": [
     "lib",
-    "index.d.ts"
+    "index.d.ts",
+    "templates"
   ],
   "license": "MIT",
   "scripts": {
@@ -15,6 +16,7 @@
     "acyort": "workspace:^"
   },
   "dependencies": {
+    "@acyort/i18n": "workspace:^",
     "@acyort/markdown": "workspace:^",
     "@acyort/paginator": "workspace:^",
     "axios": "^1.6.2",

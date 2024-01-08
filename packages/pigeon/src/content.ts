@@ -55,11 +55,11 @@ export default (issues: GithubIssus[]) => {
         content: md.render(body),
         category: milestone ? {
           title: milestone.title,
-          description: milestone.description,
+          description: milestone.description || undefined,
         } : undefined,
         tags: labels.map((l) => ({
           title: l.name,
-          description: l.description,
+          description: l.description || undefined,
         })),
       })
     }
