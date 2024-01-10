@@ -1,5 +1,5 @@
-import { TimeLike } from 'fs'
-import { join } from 'path'
+import { TimeLike, mkdirSync, writeFileSync } from 'fs'
+import { join, dirname } from 'path'
 import moment from 'moment'
 import momentTz from 'moment-timezone'
 import { Config } from '@acyort/pigeon'
@@ -19,8 +19,8 @@ export const getTimer = (config: Config) => {
 }
 
 export const getUrl = (config: Config) => {
-  const { public: publicPath = '/' } = config
-  return (path?: string) => join(publicPath, path?.toLowerCase() || '')
+  const { root: rootPath = '/' } = config
+  return (path?: string) => join(rootPath, path?.toLowerCase() || '')
 }
 
 export const getI18n = (acyort: AcyOrt) => {
@@ -29,4 +29,9 @@ export const getI18n = (acyort: AcyOrt) => {
   const localePath = join(templatePath, 'i18n')
 
   return new I18n(localePath, language)
+}
+
+export const writeFileSyncRecursive = (filename: string, content: string) => {
+  mkdirSync(dirname(filename), { recursive: true })
+  writeFileSync(filename, content)
 }

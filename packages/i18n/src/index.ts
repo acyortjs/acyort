@@ -25,7 +25,7 @@ export default class {
     return this.currentLocale
   }
 
-  private parse(type: '_' | 'n', localeKey: string, ...params: any[]) {
+  private parse = (type: '_' | 'n', localeKey: string, ...params: any[]) => {
     let localeData = this.localesData[this.currentLocale]
     if (!localeData) {
       localeData = getLocaleData(this.localesDir, this.currentLocale) as Locale
@@ -38,11 +38,7 @@ export default class {
     this.localesData = {}
   }
 
-  public __(localeKey: string, ...params: any[]) {
-    return this.parse('_', localeKey, ...params)
-  }
+  public __ = (localeKey: string, ...params: any[]) => this.parse('_', localeKey, ...params)
 
-  public _n(localeKey: string, ...params: any[]) {
-    return this.parse('n', localeKey, ...params)
-  }
+  public _n = (localeKey: string, ...params: any[]) => this.parse('n', localeKey, ...params)
 }

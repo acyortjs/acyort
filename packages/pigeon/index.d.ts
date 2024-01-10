@@ -14,6 +14,7 @@ declare module '@acyort/pigeon' {
     language?: string,
     perpage?: number,
     archives_perpage?: number,
+    root?: string,
   }
 
   interface Category {

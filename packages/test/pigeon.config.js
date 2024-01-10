@@ -3,7 +3,7 @@
  */
 const config = {
   plugins: ['@acyort/pigeon'],
-  template: 'pavane',
+  template: '@acyort/pigeon',
   repository: 'LoeiFy/Recordum',
   title: 'Pigeon',
   description: 'Why is the pigeon so big',

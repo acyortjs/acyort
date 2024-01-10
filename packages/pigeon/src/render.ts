@@ -1,12 +1,13 @@
 /* eslint-disable no-underscore-dangle */
-import { writeFileSync } from 'fs'
 import { join } from 'path'
 import { AcyOrt } from 'acyort'
 import { Config } from '@acyort/pigeon'
 import swig from 'swig-templates'
 import { TemplateData } from './data'
 import getTemplate from './template'
-import { getI18n, getTimer, getUrl } from './helpers'
+import {
+  getI18n, getTimer, getUrl, writeFileSyncRecursive,
+} from './helpers'
 
 export default (data: TemplateData, acyort: AcyOrt) => {
   const config = acyort.config as Config
@@ -37,10 +38,11 @@ export default (data: TemplateData, acyort: AcyOrt) => {
     _n: i18n._n,
   }
   const outputBasePath = join(acyort.cwd, config.public || '/')
+  const extraData = { ...helpers, config }
 
   posts.forEach((post) => {
-    const html = swig.renderFile(templateNames.post, { post, ...helpers })
-    writeFileSync(join(outputBasePath, post.path), html)
+    const html = swig.renderFile(templateNames.post, { page: post, ...extraData })
+    writeFileSyncRecursive(join(outputBasePath, post.path), html)
   })
 
   // home.forEach((page) => {
