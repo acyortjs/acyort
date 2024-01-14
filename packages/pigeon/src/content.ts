@@ -42,7 +42,7 @@ export default (issues: GithubIssus[]) => {
         createdAt: created_at,
         updatedAt: updated_at,
         content: md.render(body),
-        path: `${t.toLowerCase()}/index.html`,
+        path: `/${t.toLowerCase()}/index.html`,
       })
     } else {
       posts.push({

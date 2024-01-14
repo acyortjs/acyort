@@ -1,17 +1,9 @@
-/* eslint-disable no-underscore-dangle */
 import { join } from 'path'
 import { AcyOrt } from 'acyort'
-import { Config } from '@acyort/pigeon'
-import swig from 'swig-templates'
 import { TemplateData } from './data'
-import getTemplate from './template'
-import {
-  getI18n, getTimer, getUrl, writeFileSyncRecursive,
-} from './helpers'
+import { getOutputHTML } from './helpers'
 
 export default (data: TemplateData, acyort: AcyOrt) => {
-  const config = acyort.config as Config
-  const i18n = getI18n(acyort)
   const {
     home,
     pages,
@@ -20,29 +12,10 @@ export default (data: TemplateData, acyort: AcyOrt) => {
     tags,
     archives,
   } = data
-  const templatePath = `${getTemplate(acyort)}/views`
-  const templateNames = {
-    post: `${templatePath}/post.html`,
-    page: `${templatePath}/page.html`,
-    home: `${templatePath}/home.html`,
-    categories: `${templatePath}/categories.html`,
-    tags: `${templatePath}/tags.html`,
-    category: `${templatePath}/category.html`,
-    tag: `${templatePath}/tag.html`,
-    archives: `${templatePath}/archives.html`,
-  }
-  const helpers = {
-    _url: getUrl(config),
-    _time: getTimer(config),
-    __: i18n.__,
-    _n: i18n._n,
-  }
-  const outputBasePath = join(acyort.cwd, config.public || '/')
-  const extraData = { ...helpers, config }
+  const outputHTML = getOutputHTML(acyort)
 
   posts.forEach((post) => {
-    const html = swig.renderFile(templateNames.post, { page: post, ...extraData })
-    writeFileSyncRecursive(join(outputBasePath, post.path), html)
+    outputHTML('post', post)
   })
 
   // home.forEach((page) => {
@@ -51,10 +24,9 @@ export default (data: TemplateData, acyort: AcyOrt) => {
   //   writeFileSync(path, html)
   // })
 
-  // pages.forEach((page) => {
-  //   const html = swig.renderFile(templateNames.page, page)
-  //   writeFileSync(page.path, html)
-  // })
+  pages.forEach((page) => {
+    outputHTML('page', page)
+  })
 
   // archives.forEach((page) => {
   //   const path = join(page.fullPath, 'index.html')
@@ -84,11 +56,9 @@ export default (data: TemplateData, acyort: AcyOrt) => {
   //   })
   // })
 
-  // const categoriesPath = '/categories/index.html'
-  // const categoriesHtml = swig.renderFile(templateNames.categories, categories)
-  // writeFileSync(categoriesPath, categoriesHtml)
+  const categoriesPath = '/categories/index.html'
+  outputHTML('categories', { categories }, categoriesPath)
 
-  // const tagsPath = '/tags/index.html'
-  // const tagsHtml = swig.renderFile(templateNames.tags, tags)
-  // writeFileSync(tagsPath, tagsHtml)
+  const tagsPath = '/tags/index.html'
+  outputHTML('tags', { tags }, tagsPath)
 }

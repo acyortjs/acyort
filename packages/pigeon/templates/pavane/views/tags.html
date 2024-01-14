@@ -1,4 +1,4 @@
-{% extends 'partial/layout.html' %}
+{% extends 'partial/base.html' %}
 
 {% block title %}
 {{ config.title }} / {{ __('tags') }}
@@ -16,9 +16,9 @@
 {% if page.tags.length %}
 <div class="img-cover">
 {% for t in page.tags %}
-  <a style="background-image: url({{ t.background }})" href="{{ _url(t.url) }}">
+  <a style="background-image: url(https://source.unsplash.com/480x320/?{% if t.title === 'uncategorized' %}default{% else %}{{ t.title }}{% endif %})" href="{{ _url(t.url) }}"></a>
     <div>
-      <h4>{{ t.name }}</h4>
+      <h4>{{ t.title }}</h4>
       <p>{{ _n('posts', t.posts.length) }}</p>
     </div>
   </a>
