@@ -1,9 +1,9 @@
-{% if page.posts.length %}
+{% if page.data.length %}
 <div class="posts">
-{% for post in page.posts %}
+{% for post in page.data %}
   <div class="post">
-    <a href="{{ _url(post.url) }}">{{ post.title }}</a>
-    <p>{{ _time(post.date, 'MMMM DD, YYYY') }}</p>
+    <a href="{{ _url(post.path) }}">{{ post.title }}</a>
+    <p>{{ _time(post.createdAt, 'MMMM DD, YYYY') }}</p>
     <div class="post-except markdown-body">
       {{ post.except }}
     </div>

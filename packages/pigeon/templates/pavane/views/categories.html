@@ -9,13 +9,13 @@
 {% endblock %}
 
 {% block supplement %}
-<p>{{ _n('category', page.categories.length) }}</p>
+<p>{{ _n('category', page.length) }}</p>
 {% endblock %}
 
 {% block content %}
-{% if page.categories.length %}
+{% if page.length %}
 <div class="img-cover">
-{% for c in page.categories %}
+{% for c in page %}
   <a style="background-image: url(https://source.unsplash.com/480x320/?{% if c.title === 'uncategorized' %}default{% else %}{{ c.title }}{% endif %})" href="{{ _url(c.url) }}"></a>
     <div>
       <h4>{{ c.title }}</h4>

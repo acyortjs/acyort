@@ -1,4 +1,4 @@
-{% extends 'partial/layout.html' %}
+{% extends 'partial/base.html' %}
 
 {% block title %}
 {{ config.title }} / {{ __('archives') }}
@@ -9,17 +9,17 @@
 {% endblock %}
 
 {% block supplement %}
-<p>{{ _n('posts', page.totalPosts) }}</p>
+<p>{{ _n('posts', _post().length) }}</p>
 {% endblock %}
 
 {% block content %}
-{% if page.posts.length %}
+{% if page.data.length %}
 <div class="archives">
-{% for post in page.posts %}
+{% for post in page.data %}
 {% if post.title %}
 <p>
-  <a href="{{ _url(post.url) }}">{{ post.title }}</a>
-  {{ _time(post.date, 'MMMM DD') }}
+  <a href="{{ _url(post.path) }}">{{ post.title }}</a>
+  {{ _time(post.createdAt, 'MMMM DD') }}
 </p>
 {% else %}
 <h3>{{ post }}</h3>

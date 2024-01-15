@@ -12,27 +12,25 @@ export default (data: TemplateData, acyort: AcyOrt) => {
     tags,
     archives,
   } = data
-  const outputHTML = getOutputHTML(acyort)
+  const outputHTML = getOutputHTML(acyort, data.posts)
 
   posts.forEach((post) => {
     outputHTML('post', post)
   })
 
-  // home.forEach((page) => {
-  //   const path = join(page.fullPath, 'index.html')
-  //   const html = swig.renderFile(templateNames.home, page)
-  //   writeFileSync(path, html)
-  // })
+  home.forEach((page) => {
+    const path = join(page.fullPath, 'index.html')
+    outputHTML('home', page, path)
+  })
 
   pages.forEach((page) => {
     outputHTML('page', page)
   })
 
-  // archives.forEach((page) => {
-  //   const path = join(page.fullPath, 'index.html')
-  //   const html = swig.renderFile(templateNames.archives, page)
-  //   writeFileSync(path, html)
-  // })
+  archives.forEach((page) => {
+    const path = join(page.fullPath, 'index.html')
+    outputHTML('archives', page, path)
+  })
 
   // categories.forEach((category) => {
   //   category.pages.forEach((page) => {
@@ -57,8 +55,8 @@ export default (data: TemplateData, acyort: AcyOrt) => {
   // })
 
   const categoriesPath = '/categories/index.html'
-  outputHTML('categories', { categories }, categoriesPath)
+  outputHTML('categories', categories, categoriesPath)
 
   const tagsPath = '/tags/index.html'
-  outputHTML('tags', { tags }, tagsPath)
+  outputHTML('tags', tags, tagsPath)
 }

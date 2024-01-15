@@ -8,6 +8,8 @@ import { Config } from '@acyort/pigeon'
 import { AcyOrt } from 'acyort'
 import I18n from '@acyort/i18n'
 import getTemplate from './template'
+// eslint-disable-next-line import/no-cycle
+import { TemplateData } from './data'
 
 export const getTimer = (config: Config) => {
   const {
@@ -38,7 +40,7 @@ const writeFileSyncRecursive = (filename: string, content: string) => {
   writeFileSync(filename, content)
 }
 
-export const getOutputHTML = (acyort: AcyOrt) => {
+export const getOutputHTML = (acyort: AcyOrt, posts: TemplateData['posts']) => {
   const { cwd, config } = acyort
   const { public: publicDir = '/' } = config as Config
   const outputBasePath = join(cwd, publicDir)
@@ -61,6 +63,12 @@ export const getOutputHTML = (acyort: AcyOrt) => {
     _time: getTimer(config as Config),
     __: i18n.__,
     _n: i18n._n,
+    _post: (id?: number) => {
+      if (id === undefined) {
+        return posts
+      }
+      return posts.find((p) => p.id === id)
+    },
   }
   const extraData = { ...helpers, config }
 
