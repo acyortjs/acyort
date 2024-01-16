@@ -16,5 +16,6 @@ export interface PagingData {
   data: Params['data'],
   fullPath: string,
   current: PageCtx['current'],
+  totalPage: number,
   total: number,
 }

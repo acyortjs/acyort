@@ -32,27 +32,27 @@ export default (data: TemplateData, acyort: AcyOrt) => {
     outputHTML('archives', page, path)
   })
 
-  // categories.forEach((category) => {
-  //   category.pages.forEach((page) => {
-  //     const path = join(page.fullPath, 'index.html')
-  //     const html = swig.renderFile(templateNames.category, {
-  //       ...page,
-  //       posts: posts.filter(({ id }) => page.data.includes(id)),
-  //     })
-  //     writeFileSync(path, html)
-  //   })
-  // })
+  categories.forEach((category) => {
+    category.pages.forEach((page) => {
+      const path = join(page.fullPath, 'index.html')
+      outputHTML('category', {
+        ...page,
+        title: category.title,
+        data: posts.filter(({ id }) => page.data.includes(id)),
+      }, path)
+    })
+  })
 
-  // tags.forEach((tag) => {
-  //   tag.pages.forEach((page) => {
-  //     const path = join(page.fullPath, 'index.html')
-  //     const html = swig.renderFile(templateNames.tag, {
-  //       ...page,
-  //       posts: posts.filter(({ id }) => page.data.includes(id)),
-  //     })
-  //     writeFileSync(path, html)
-  //   })
-  // })
+  tags.forEach((tag) => {
+    tag.pages.forEach((page) => {
+      const path = join(page.fullPath, 'index.html')
+      outputHTML('tag', {
+        ...page,
+        title: tag.title,
+        data: posts.filter(({ id }) => page.data.includes(id)),
+      }, path)
+    })
+  })
 
   const categoriesPath = '/categories/index.html'
   outputHTML('categories', categories, categoriesPath)

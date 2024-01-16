@@ -42,12 +42,13 @@ export default (args: Params): PagingData[] => {
       data,
       fullPath: getPath({ baseUrl, current: 1, prefix }),
       current: 1,
-      total: 1,
+      total: data.length,
+      totalPage: 1,
     }]
   }
 
   const result: PagingData[] = []
-  const total = Math.ceil(data.length / perpage)
+  const totalPage = Math.ceil(data.length / perpage)
 
   let page = 1
 
@@ -59,10 +60,11 @@ export default (args: Params): PagingData[] => {
       data: data.slice(i, i + perpage),
       fullPath: getPath({ baseUrl, current: page, prefix }),
       current: page,
-      total,
+      total: data.length,
+      totalPage,
     })
 
-    if (page === total) {
+    if (page === totalPage) {
       result[page - 1].next = ''
     }
 

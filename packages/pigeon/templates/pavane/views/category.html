@@ -1,15 +1,15 @@
-{% extends 'partial/layout.html' %}
+{% extends 'partial/base.html' %}
 
 {% block title %}
-{{ config.title }} / {{ page.name }}
+{{ config.title }} / {{ page.title }}
 {% endblock %}
 
 {% block heading %}
-{{ page.name }}
+{{ page.title }}
 {% endblock %}
 
 {% block supplement %}
-<p>{{ _n('posts', page.posts.length) }}</p>
+<p>{{ _n('posts', page.total) }}</p>
 {% endblock %}
 
 {% block content %}

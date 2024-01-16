@@ -13,7 +13,8 @@ exports[`no pages 1`] = `
     "fullPath": "/xxx/yyy",
     "next": "",
     "prev": "",
-    "total": 1,
+    "total": 3,
+    "totalPage": 1,
   },
 ]
 `;
@@ -30,7 +31,8 @@ exports[`pages 1`] = `
     "fullPath": "/",
     "next": "/page/2/",
     "prev": "",
-    "total": 3,
+    "total": 5,
+    "totalPage": 3,
   },
   {
     "baseUrl": "/",
@@ -42,7 +44,8 @@ exports[`pages 1`] = `
     "fullPath": "/page/2/",
     "next": "/page/3/",
     "prev": "/",
-    "total": 3,
+    "total": 5,
+    "totalPage": 3,
   },
   {
     "baseUrl": "/",
@@ -53,7 +56,8 @@ exports[`pages 1`] = `
     "fullPath": "/page/3/",
     "next": "",
     "prev": "/page/2/",
-    "total": 3,
+    "total": 5,
+    "totalPage": 3,
   },
 ]
 `;
@@ -71,7 +75,8 @@ exports[`prefix 1`] = `
     "fullPath": "/",
     "next": "/nav/2/",
     "prev": "",
-    "total": 2,
+    "total": 5,
+    "totalPage": 2,
   },
   {
     "baseUrl": "/",
@@ -83,7 +88,8 @@ exports[`prefix 1`] = `
     "fullPath": "/nav/2/",
     "next": "",
     "prev": "/",
-    "total": 2,
+    "total": 5,
+    "totalPage": 2,
   },
 ]
 `;

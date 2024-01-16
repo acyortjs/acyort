@@ -8,8 +8,12 @@ import { Config } from '@acyort/pigeon'
 import { AcyOrt } from 'acyort'
 import I18n from '@acyort/i18n'
 import getTemplate from './template'
-// eslint-disable-next-line import/no-cycle
-import { TemplateData } from './data'
+import type { TemplateData } from './data'
+
+interface PostsQuery {
+  tag?: string,
+  category?: string,
+}
 
 export const getTimer = (config: Config) => {
   const {
@@ -63,11 +67,18 @@ export const getOutputHTML = (acyort: AcyOrt, posts: TemplateData['posts']) => {
     _time: getTimer(config as Config),
     __: i18n.__,
     _n: i18n._n,
-    _post: (id?: number) => {
-      if (id === undefined) {
+    _post: (id: number) => posts.find((p) => p.id === id),
+    _posts: (query?: PostsQuery) => {
+      if (!query) {
         return posts
       }
-      return posts.find((p) => p.id === id)
+      if (query.tag) {
+        return posts.filter((p) => p.tags.map((t) => t.title).includes(query.tag!))
+      }
+      if (query.category) {
+        return posts.filter((p) => p.category?.title === query.category)
+      }
+      return []
     },
   }
   const extraData = { ...helpers, config }
