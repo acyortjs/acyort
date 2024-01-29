@@ -4,6 +4,7 @@ import request from './request'
 import getContent from './content'
 import getData from './data'
 import render from './render'
+import copy from './copy'
 
 export default (acyort: AcyOrt) => {
   acyort.cli.register('command', {
@@ -14,6 +15,7 @@ export default (acyort: AcyOrt) => {
       const content = getContent(issues)
       const data = getData(content, this.config as Config)
       render(data, this)
+      copy(this)
     },
   })
 }

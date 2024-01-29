@@ -83,6 +83,11 @@ export const getOutputHTML = (acyort: AcyOrt, posts: TemplateData['posts']) => {
   }
   const extraData = { ...helpers, config }
 
+  swig.setDefaults({
+    cache: false,
+    autoescape: false,
+  })
+
   return (templateName: keyof typeof templateNames, data: any, htmlPath?: string) => {
     const html = swig.renderFile(templateNames[templateName], { page: data, ...extraData })
     writeFileSyncRecursive(join(outputBasePath, htmlPath || data.path), html)

@@ -18,17 +18,11 @@ export default class {
       const grammar = prism.languages[lang]
 
       codeString = grammar
-        ? `<pre class="language-${lang}">
-  <code class="language-${lang}">${prism.highlight(block, grammar, lang)}</code>
-</pre>`
+        ? `<pre class="language-${lang}">${prism.highlight(block, grammar, lang).trim()}</pre>`
         : pureCode(block)
     }
 
-    const line = `<pre class="language-none">
-  <code class="language-none">
-    ${block.split(EOL).map((n, i) => `<span>${i + 1}</span>\n`).join('')}
-  </code>
-</pre>`
+    const line = `<pre class="language-none">${block.split(EOL).map((n, i) => `<span>${i + 1}</span>`).join('\n')}</pre>`
 
     const codeWidthLines = `<div class="code-highlight">
   <table>

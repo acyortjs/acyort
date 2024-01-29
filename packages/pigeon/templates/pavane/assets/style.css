@@ -181,6 +181,7 @@ ul {
   letter-spacing: 1.5px;
   display: flex;
   justify-content: space-between;
+  height: 60px;
 }
 .footer p:nth-child(2) {
   color: #9b9b9b;
@@ -195,8 +196,9 @@ ul {
 
 .content {
   margin: 50px auto 0;
-  max-width: 900px;
+  max-width: 700px;
   width: 94%;
+  min-height: calc(100vh - 260px - 160px - 60px - 50px);
 }
 .markdown-body {
   font-size: 14px;
@@ -474,7 +476,7 @@ ul {
 .markdown-body hr {
   border-bottom-color: #eee;
 }
-.markdown-body code {
+.markdown-body code, .markdown-body pre {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 13px;
   line-height: 1.8;
@@ -495,7 +497,7 @@ ul {
 }
 .code-highlight {
   border: 1px solid #ddd;
-  border-radius: 1px;
+  border-radius: 3px;
   overflow-x: auto;
   margin-bottom: 16px;
 }
@@ -517,6 +519,9 @@ ul {
 .code-highlight-line {
   width: 30px;
   opacity: .5;
+}
+.code-highlight-line pre {
+  text-align: right;
 }
 
 .post-tags {
@@ -556,9 +561,8 @@ ul {
   position: relative;
   margin: 70px auto 0;
   display: flex;
-  padding: 13px 0 0;
+  padding: 16px 0 0;
   justify-content: space-between;
-  width: 80%;
 }
 .paginator::before {
   content: '';
@@ -572,11 +576,18 @@ ul {
 .paginator a {
   font-size: 14px;
   color: #333;
-  padding: 9px 2px 0;
+  padding: 15px 2px 0;
   margin-right: 16px;
   border-top: 3px solid #333;
   position: relative;
   z-index: 1;
+  line-height: 1.4;
+}
+.paginator a:first-child {
+  margin-right: 20px;
+}
+.paginator a:last-child {
+  text-align: right;
 }
 .paginator a:not([href]) {
   color: #888;
@@ -627,21 +638,19 @@ ul {
 .img-cover {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 .img-cover a {
-  margin-bottom: 40px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px;
+  max-width: calc(700px / 3);
+  width: calc(100% / 3);
   height: 160px;
   text-align: center;
   background-color: #e5e5e5;
   background-size: cover;
   border-radius: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
   color: #fff;
 }
 .img-cover a::before {
@@ -683,6 +692,10 @@ ul {
   }
   .content {
     margin-top: 30px;
+    min-height: calc(100vh - 260px - 160px);
+  }
+  .img-cover a {
+    width: calc(100% / 2);
   }
   .menu {
     left: 24px;
@@ -703,7 +716,6 @@ ul {
     font-size: 20px;
   }
   .paginator {
-    width: 94%;
     font-size: 13px;
     margin-top: 50px;
   }
