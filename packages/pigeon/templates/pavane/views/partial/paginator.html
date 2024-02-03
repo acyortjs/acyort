@@ -1,3 +1,4 @@
+{% if page.prev && page.next %}
 <div class="paginator">
   <div>
     <a{% if page.prev %} href="{{ _url(page.prev) }}"{% endif %}>{{ __('previous') }}</a>
@@ -5,3 +6,4 @@
   </div>
   <span>{{ page.current }} / {{ page.totalPage }}</span>
 </div>
+{% endif %}

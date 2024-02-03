@@ -94,13 +94,14 @@ const posts = () => {
         }
 
         checkMenu()
-        loading = false
-        setTimeout(() => { $('.menu button').removeAttr('disabled') }, 1000)
       })
       .catch(({ message }) => {
-        loading = false
         prev = undefined
         window.alert(message) // eslint-disable-line no-alert
+      })
+      .finally(() => {
+        setTimeout(() => { $('.menu button').removeAttr('disabled') }, 1000)
+        loading = false
       })
   }
 }

@@ -10,9 +10,9 @@ export default (acyort: AcyOrt) => {
   acyort.cli.register('command', {
     name: 'pigeon',
     description: 'static website plugin',
-    async action() {
+    async action(argv) {
       const issues = await request(this)
-      const content = getContent(issues)
+      const content = getContent(issues, argv.users)
       const data = getData(content, this.config as Config)
       render(data, this)
       copy(this)

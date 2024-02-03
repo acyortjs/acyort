@@ -12,10 +12,11 @@ const getExcept = (issue: string) => {
   return splited[0]
 }
 
-export default (issues: GithubIssus[]) => {
+export default (issues: GithubIssus[], users?: string) => {
   const regex = /^\[(.+?)]/
   const posts: Post[] = []
   const pages: Page[] = []
+  const postsUsers = users?.split(',')
 
   issues.forEach((issue) => {
     const {
@@ -27,7 +28,12 @@ export default (issues: GithubIssus[]) => {
       state,
       milestone,
       labels,
+      user,
     } = issue
+
+    if (postsUsers && !postsUsers.includes(user.login)) {
+      return
+    }
 
     if (state === 'close') {
       return
