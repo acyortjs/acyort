@@ -5,7 +5,7 @@
   "description": "AcyOrt test",
   "license": "MIT",
   "scripts": {
-    "pigeon": "acyort -c pigeon.config.js pigeon --users loeify,aaa",
+    "pigeon": "acyort -c pigeon.config.js pigeon --users loeify,aaa --repo=LoeiFy/Recordum",
     "test": "acyort server -h 2000"
   },
   "devDependencies": {

@@ -4,7 +4,6 @@
 const config = {
   plugins: ['@acyort/pigeon'],
   template: '@acyort/pigeon',
-  repository: 'LoeiFy/Recordum',
   title: 'Pigeon',
   description: 'Why is the pigeon so big',
   public: '/docs',

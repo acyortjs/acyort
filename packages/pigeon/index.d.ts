@@ -4,7 +4,6 @@ declare module '@acyort/pigeon' {
 
   interface Config extends C {
     template: string,
-    repository: string,
     title?: string,
     description?: string,
     menu?: Record<string, string>,

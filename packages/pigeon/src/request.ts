@@ -2,12 +2,10 @@ import { join } from 'path'
 import { existsSync, writeFileSync } from 'fs'
 import axios from 'axios'
 import { AcyOrt } from 'acyort'
-import { Config, GithubIssus } from '@acyort/pigeon'
+import { GithubIssus } from '@acyort/pigeon'
 
-export default async (acyort: AcyOrt) => {
+export default async (acyort: AcyOrt, repository: string) => {
   const { logger, cwd } = acyort
-  const config = acyort.config as Config
-  const { repository } = config
   const cacheFilePath = join(cwd, 'issues.json')
   const { TOKEN } = process.env
   const requestHeaders: Record<string, string> = { 'User-Agent': 'acyort-pigeon' }

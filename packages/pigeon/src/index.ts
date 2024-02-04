@@ -11,7 +11,7 @@ export default (acyort: AcyOrt) => {
     name: 'pigeon',
     description: 'static website plugin',
     async action(argv) {
-      const issues = await request(this)
+      const issues = await request(this, argv.repo)
       const content = getContent(issues, argv.users)
       const data = getData(content, this.config as Config)
       render(data, this)
