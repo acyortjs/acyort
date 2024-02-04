@@ -9,7 +9,7 @@
     "lint": "eslint . && tsc --noEmit",
     "test": "jest",
     "build": "pnpm run -r build",
-    "changeset": "pnpm run build && changeset"
+    "bump": "pnpm run build && changeset"
   },
   "engines": {
     "node": ">=6.0.0"
