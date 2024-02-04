@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+{% include 'head.html' %}
+<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<div class="container">
+  <div class="header">
+    <div>
+      {% block supplement %}{% endblock %}
+      <h2>{% block heading %}{% endblock %}</h2>
+    </div>
+  </div>
+
+  <div class="content">
+    <div>
+    {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</div>
+
+<script src="{{ _url('assets/script.js') }}"></script>
+</body>
+</html>

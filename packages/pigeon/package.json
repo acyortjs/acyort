@@ -1,0 +1,27 @@
+{
+  "name": "@acyort/pigeon",
+  "version": "0.2.0",
+  "description": "static website plugin",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "index.d.ts",
+    "templates"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "devDependencies": {
+    "acyort": "workspace:^"
+  },
+  "dependencies": {
+    "@acyort/i18n": "workspace:^",
+    "@acyort/markdown": "workspace:^",
+    "@acyort/paginator": "workspace:^",
+    "axios": "^1.6.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "swig-templates": "^2.0.3"
+  }
+}

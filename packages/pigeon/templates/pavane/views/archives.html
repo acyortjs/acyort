@@ -1,0 +1,31 @@
+{% extends 'partial/base.html' %}
+
+{% block title %}
+{{ config.title }} / {{ __('archives') }}
+{% endblock %}
+
+{% block heading %}
+{{ __('archives') }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ _n('posts', _posts().length) }}</p>
+{% endblock %}
+
+{% block content %}
+{% if page.data.length %}
+<div class="archives">
+{% for post in page.data %}
+{% if post.title %}
+<p>
+  <a href="{{ _url(post.path) }}">{{ post.title }}</a>
+  {{ _time(post.createdAt, 'MMMM DD') }}
+</p>
+{% else %}
+<h3>{{ post }}</h3>
+{% endif %}
+{% endfor %}
+</div>
+{% endif %}
+{% include 'partial/paginator.html' %}
+{% endblock %}

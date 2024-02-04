@@ -1,0 +1,38 @@
+{
+  "name": "@acyort/markdown",
+  "version": "2.0.1",
+  "description": "markdown parser with code highlighting and math latex support",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acyortjs/acyort.git"
+  },
+  "keywords": [
+    "markdown",
+    "parser",
+    "code",
+    "highlighting"
+  ],
+  "author": "LoeiFy <LoeiFy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acyortjs/acyort/issues"
+  },
+  "homepage": "https://github.com/acyortjs/acyort",
+  "dependencies": {
+    "katex": "^0.16.8",
+    "marked": "^5.1.0",
+    "prismjs": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.1",
+    "@types/marked": "^5.0.1",
+    "@types/prismjs": "^1.26.0"
+  }
+}

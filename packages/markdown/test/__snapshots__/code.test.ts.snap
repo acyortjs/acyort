@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`code 1`] = `"<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre>"`;
+
+exports[`code 2`] = `"<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre>"`;
+
+exports[`code 3`] = `
+"<div class="code-highlight">
+  <table>
+    <tbody>
+      <tr>
+        <td class="code-highlight-line"><pre class="language-none"><span>1</span></pre></td>
+        <td class="code-highlight-code"><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>"
+`;
+
+exports[`code 4`] = `"<pre class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></pre>"`;
+
+exports[`code 5`] = `"<pre class="language-none">&lt;h1&gt;h1&lt;&#x2F;h1&gt;</pre>"`;
+
+exports[`code 6`] = `
+"<div class="code-highlight">
+  <table>
+    <tbody>
+      <tr>
+        <td class="code-highlight-line"><pre class="language-none"><span>1</span></pre></td>
+        <td class="code-highlight-code"><pre class="language-none">&lt;h1&gt;h1&lt;&#x2F;h1&gt;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>"
+`;
+
+exports[`code 7`] = `"<pre class="language-none">&lt;h1&gt;h1&lt;&#x2F;h1&gt;</pre>"`;
+
+exports[`code 8`] = `
+"<div class="code-highlight">
+  <table>
+    <tbody>
+      <tr>
+        <td class="code-highlight-line"><pre class="language-none"><span>1</span></pre></td>
+        <td class="code-highlight-code"><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>"
+`;
+
+exports[`code 9`] = `"<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>h1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre>"`;

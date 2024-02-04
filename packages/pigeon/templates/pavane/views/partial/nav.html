@@ -1,0 +1,9 @@
+<div class="menu">
+  <span class="shadow"><button></button></span>
+  <a class="shadow" href="/">{{ config.title }}</a>
+  <div class="shadow">
+  {% for url in config.menu %}
+    <a href="{{ _url(url) }}">{{ loop.key }}</a>
+  {% endfor %}
+  </div>
+</div>

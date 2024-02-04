@@ -1,0 +1,50 @@
+{% extends 'partial/base.html' %}
+
+{% block title %}
+{{ config.title }} / {{ page.title }}
+{% endblock %}
+
+{% block heading %}
+{{ page.title }}
+{% endblock %}
+
+{% block supplement %}
+<p>
+  {% if page.category %}
+  <a href="{{ _url('categories/' + page.category.title + '/') }}">{{ page.category.title }}</a>
+  {% else %}
+  <a href="{{ _url('categories/uncategorized/') }}">{{ __('uncategorized') }}</a>
+  {% endif %}
+  - {{ _time(page.createdAt, 'MMMM DD, YYYY') }}
+</p>
+{% endblock %}
+
+{% block content %}
+<div class="markdown-body">
+{{ page.content }}
+</div>
+
+<div class="post-tags">
+{% for tag in page.tags %}
+  <a href="{{ _url('tags/' + tag.title + '/') }}">{{ tag.title }}</a>
+{% endfor %}
+</div>
+
+<div class="post-nav paginator">
+{% if page.prev %}
+<a class="nav-prev" href="{{ _url(page.prev.path) }}">
+  <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><defs><style/></defs><path d="M576 672c-6.4 0-19.2 0-25.6-6.4l-128-128c-12.8-12.8-12.8-32 0-44.8l128-128c12.8-12.8 32-12.8 44.8 0s12.8 32 0 44.8L492.8 512l102.4 102.4c12.8 12.8 12.8 32 0 44.8 0 12.8-12.8 12.8-19.2 12.8z"/></svg>
+  {{ page.prev.title }}
+</a>
+{% else %}
+<a></a>
+{% endif %}
+{% if page.next %}
+<a class="nav-next" href="{{ _url(page.next.path) }}">
+  {{ page.next.title }}
+  <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><defs><style/></defs><path d="M448 672c-6.4 0-19.2 0-25.6-6.4-12.8-12.8-12.8-32 0-44.8L531.2 512 422.4 409.6c-12.8-12.8-12.8-32 0-44.8s32-12.8 44.8 0l128 128c12.8 12.8 12.8 32 0 44.8l-128 128c0 6.4-12.8 6.4-19.2 6.4z"/></svg>
+</a>
+{% endif %}
+</div>
+
+{% endblock %}

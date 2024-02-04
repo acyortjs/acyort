@@ -1,0 +1,28 @@
+{% extends 'partial/base.html' %}
+
+{% block title %}
+{{ config.title }} / {{ __('tags') }}
+{% endblock %}
+
+{% block heading %}
+{{ __('tags') }}
+{% endblock %}
+
+{% block supplement %}
+<p>{{ _n('tag', page.length) }}</p>
+{% endblock %}
+
+{% block content %}
+{% if page.length %}
+<div class="img-cover">
+{% for t in page %}
+  <a style="background-image: url(https://source.unsplash.com/480x320/?{% if t.title === 'uncategorized' %}default{% else %}{{ t.title }}{% endif %})" href="{{ _url(t.url) }}">
+    <div>
+      <h4>#{{ t.title }}</h4>
+      <p>{{ _n('posts', t.posts.length) }}</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

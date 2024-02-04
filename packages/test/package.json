@@ -1,0 +1,17 @@
+{
+  "name": "@acyort/test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AcyOrt test",
+  "license": "MIT",
+  "scripts": {
+    "pigeon": "acyort -c pigeon.config.js pigeon --users loeify,aaa --repo=LoeiFy/Recordum",
+    "test": "acyort server -h 2000"
+  },
+  "devDependencies": {
+    "acyort": "workspace:^"
+  },
+  "dependencies": {
+    "@acyort/pigeon": "workspace:^"
+  }
+}

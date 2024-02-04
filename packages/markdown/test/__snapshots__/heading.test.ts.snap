@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`heading 1`] = `
+"<h1>
+  <a href="#An h1 header" id="An h1 header"></a>An h1 header
+</h1>"
+`;
+
+exports[`heading 2`] = `
+"<h1>
+  <a href="#one" id="one"></a>An h1 header
+</h1>"
+`;
+
+exports[`heading 3`] = `
+"<h1>
+  <a href="#Anh1header" id="Anh1header"></a>An h1 header
+</h1>"
+`;
+
+exports[`heading 4`] = `
+"<h1>
+  <a href="#Anh1header" id="Anh1header"></a>An h1 header
+</h1>"
+`;

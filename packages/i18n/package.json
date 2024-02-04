@@ -1,0 +1,35 @@
+{
+  "name": "@acyort/i18n",
+  "version": "0.2.0",
+  "description": "AcyOrt i18n",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acyortjs/acyort.git"
+  },
+  "keywords": [
+    "i18n"
+  ],
+  "author": "LoeiFy <LoeiFy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acyortjs/acyort/issues"
+  },
+  "homepage": "https://github.com/acyortjs/acyort",
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "signale": "^1.4.0",
+    "sprintf-js": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/signale": "^1.4.5",
+    "@types/sprintf-js": "^1.1.2"
+  }
+}

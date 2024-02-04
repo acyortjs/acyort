@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  }
+}

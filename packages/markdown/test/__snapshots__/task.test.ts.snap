@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`task 1`] = `
+"<ul>
+<li style="list-style: none"><input checked="" disabled="" type="checkbox"> this is a complete item</li>
+</ul>
+"
+`;
+
+exports[`task 2`] = `
+"<ul>
+<li>Item 1</li>
+</ul>
+"
+`;

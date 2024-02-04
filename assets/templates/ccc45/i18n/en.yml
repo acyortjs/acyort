@@ -1,9 +1,0 @@
-number:
-  zero: '0'
-  one: '1'
-  other: '%d'
-
-h1: '%1$s %2$s'
-
-name:
-  acyort: AcyOrt

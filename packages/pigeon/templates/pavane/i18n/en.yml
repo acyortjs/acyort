@@ -1,0 +1,24 @@
+uncategorized: Uncategorized
+top: Top
+
+previous: Previous
+next: Next
+
+posts:
+  zero: No posts
+  one: 1 post in total
+  other: '%d posts in total'
+
+category:
+  zero: No categories
+  one: 1 category in total
+  other: '%d categories in total'
+
+tag:
+  zero: No tags
+  one: 1 tag in total
+  other: '%d tags in total'
+
+categories: CATEGORIES
+tags: TAGS
+archives: ARCHIVES

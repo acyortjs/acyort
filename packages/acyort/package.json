@@ -1,0 +1,42 @@
+{
+  "name": "acyort",
+  "version": "3.4.0",
+  "description": "A Node.js static website framework",
+  "bin": {
+    "acyort": "./lib/bin/index.js"
+  },
+  "files": [
+    "lib",
+    "index.d.ts"
+  ],
+  "preferGlobal": true,
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acyortjs/acyort.git"
+  },
+  "keywords": [
+    "website",
+    "framework",
+    "static"
+  ],
+  "author": "LoeiFy <LoeiFy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acyortjs/acyort/issues"
+  },
+  "homepage": "https://github.com/acyortjs/acyort",
+  "dependencies": {
+    "signale": "^1.4.0",
+    "yargs-parser": "^21.1.1"
+  },
+  "devDependencies": {
+    "@types/signale": "^1.4.5",
+    "@types/yargs-parser": "^21.0.1"
+  }
+}

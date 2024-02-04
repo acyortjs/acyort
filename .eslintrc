@@ -1,11 +1,44 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "root": true,
   "env": {
     "node": true,
-    "mocha": true
+    "jest": true,
+    "browser": true
   },
   "rules": {
-    "semi": [2, "never"]
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "comma",
+        "requireLast": true
+      },
+      "singleline": {
+        "delimiter": "comma",
+        "requireLast": false
+      }
+    }],
+    "import/no-dynamic-require": 0,
+    "global-require": 0,
+    "import/prefer-default-export": 0,
+    "@typescript-eslint/naming-convention": 0,
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "packageDir": [
+          "./",
+          "./packages/i18n",
+          "./packages/markdown",
+          "./packages/acyort",
+          "./packages/pigeon"
+        ]
+      }
+    ]
   }
 }
