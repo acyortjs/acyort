@@ -1,6 +1,6 @@
 {
   "name": "acyort",
-  "version": "3.4.0",
+  "version": "4.0.0",
   "description": "A Node.js static website framework",
   "bin": {
     "acyort": "./lib/bin/index.js"

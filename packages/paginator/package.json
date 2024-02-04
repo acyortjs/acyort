@@ -1,6 +1,6 @@
 {
   "name": "@acyort/paginator",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Pagination utilities",
   "main": "lib/index.js",
   "files": [

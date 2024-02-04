@@ -1,6 +1,6 @@
 {
   "name": "@acyort/i18n",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "AcyOrt i18n",
   "main": "lib/index.js",
   "files": [
