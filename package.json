@@ -8,7 +8,8 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint . && tsc --noEmit",
     "test": "jest",
-    "build": "pnpm run -r build"
+    "build": "pnpm run -r build",
+    "changeset": "pnpm run build && changeset"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/acyortjs/acyort",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.2",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
