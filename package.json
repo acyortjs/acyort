@@ -9,7 +9,9 @@
     "lint": "eslint . && tsc --noEmit",
     "test": "jest",
     "build": "pnpm run -r build",
-    "bump": "pnpm run build && changeset"
+    "bump": "changeset && changeset version",
+    "release": "pnpm build && pnpm release:only",
+    "release:only": "changeset publish --registry=https://registry.npmjs.com"
   },
   "engines": {
     "node": ">=6.0.0"
