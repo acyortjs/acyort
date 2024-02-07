@@ -1,4 +1,4 @@
-{% if page.prev && page.next %}
+{% if page.prev || page.next %}
 <div class="paginator">
   <div>
     <a{% if page.prev %} href="{{ _url(page.prev) }}"{% endif %}>{{ __('previous') }}</a>

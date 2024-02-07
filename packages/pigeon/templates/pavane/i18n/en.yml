@@ -19,6 +19,6 @@ tag:
   one: 1 tag in total
   other: '%d tags in total'
 
-categories: CATEGORIES
-tags: TAGS
-archives: ARCHIVES
+categories: Categories
+tags: Tags
+archives: Archives

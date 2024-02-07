@@ -661,11 +661,12 @@ ul {
   width: 100%;
   height: 100%;
   transition: all 1s ease;
-  background: rgba(0, 0, 0, .7);
-  opacity: .4;
+  background: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(4px);
 }
 .img-cover a:hover::before {
-  opacity: 1;
+  background: rgba(0, 0, 0, .7);
+  backdrop-filter: blur(0);
 }
 .img-cover div {
   position: relative;

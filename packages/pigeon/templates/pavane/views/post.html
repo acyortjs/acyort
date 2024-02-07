@@ -11,11 +11,11 @@
 {% block supplement %}
 <p>
   {% if page.category %}
-  <a href="{{ _url('categories/' + page.category.title + '/') }}">{{ page.category.title }}</a>
+  <a style="display:none" href="{{ _url('categories/' + page.category.title + '/') }}">{{ page.category.title }}</a>
   {% else %}
-  <a href="{{ _url('categories/uncategorized/') }}">{{ __('uncategorized') }}</a>
+  <a style="display:none" href="{{ _url('categories/uncategorized/') }}">{{ __('uncategorized') }}</a>
   {% endif %}
-  - {{ _time(page.createdAt, 'MMMM DD, YYYY') }}
+  {{ _time(page.updatedAt, 'MMMM DD, YYYY') }}
 </p>
 {% endblock %}
 
@@ -30,6 +30,7 @@
 {% endfor %}
 </div>
 
+{% if page.prev || page.next %}
 <div class="post-nav paginator">
 {% if page.prev %}
 <a class="nav-prev" href="{{ _url(page.prev.path) }}">
@@ -46,5 +47,6 @@
 </a>
 {% endif %}
 </div>
+{% endif %}
 
 {% endblock %}

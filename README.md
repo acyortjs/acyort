@@ -25,6 +25,8 @@ $ pnpm i
 - @acyort/i18n
 - @acyort/markdown
 - acyort
+- @acyort/paginator
+- @acyort/pigeon
 
 add
 
