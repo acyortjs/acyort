@@ -198,7 +198,7 @@ ul {
   margin: 50px auto 0;
   max-width: 700px;
   width: 94%;
-  min-height: calc(100vh - 260px - 160px - 60px - 50px);
+  min-height: calc(100vh - 260px - 160px - 60px - 80px);
 }
 .markdown-body {
   font-size: 14px;
@@ -693,7 +693,7 @@ ul {
   }
   .content {
     margin-top: 30px;
-    min-height: calc(100vh - 260px - 160px);
+    min-height: calc(100vh - 260px - 180px);
   }
   .img-cover a {
     width: calc(100% / 2);
