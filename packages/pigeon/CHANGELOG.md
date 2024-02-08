@@ -1,5 +1,11 @@
 # @acyort/pigeon
 
+## 1.0.2
+
+### Patch Changes
+
+- update theme
+
 ## 1.0.1
 
 ### Patch Changes
