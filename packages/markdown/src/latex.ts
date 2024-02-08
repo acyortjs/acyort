@@ -17,13 +17,11 @@ export default (text: string) => {
       return `<p class="latex-math">${text.replace(block[0], math)}</p>`
     }
 
-    return `<p>
-    ${text.replace(block[0], `</p>
+    return `<p>${text.replace(block[0], `</p>
   <div class="latex-math" style="text-align:center">
     ${math}
   </div>
-<p>`)}
-  </p>`
+<p>`)}</p>`
   }
   return `<p>${text}</p>`
 }

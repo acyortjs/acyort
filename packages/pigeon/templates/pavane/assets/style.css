@@ -321,6 +321,8 @@ ul {
 .markdown-body p {
   margin-top: 0;
   margin-bottom: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 .markdown-body blockquote {
   margin: 0;
