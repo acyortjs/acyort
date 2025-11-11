@@ -33,10 +33,11 @@ ul {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   left: 50px;
   top: 50px;
   display: flex;
+  z-index: 1000;
 }
 .menu a {
   color: #fff;
@@ -52,7 +53,7 @@ ul {
 }
 .menu > a {
   display: none;
-  background: #000;
+  background: rgba(0,0,0,.85);
   padding: 0 15px;
   border-left: 1px solid #4c4c4c;
 }
@@ -63,8 +64,7 @@ ul {
   opacity: 0;
   visibility: hidden;
   transition: all .3s ease;
-  background: #000;
-  padding: 0 5px;
+  background: rgba(0,0,0,.85);
   border-left: 1px solid #4c4c4c;
 }
 .menu > div.active {
@@ -75,8 +75,14 @@ ul {
   display: inline-block;
   padding: 0 5px;
 }
+.menu > div a:first-child {
+  padding-left: 10px;
+}
+.menu > div a:last-child {
+  padding-right: 10px;
+}
 .menu > span {
-  background: #000;
+  background: rgba(0,0,0,.85);
   height: 33px;
 }
 .menu button {
@@ -196,7 +202,7 @@ ul {
 
 .content {
   margin: 50px auto 0;
-  max-width: 700px;
+  max-width: 800px;
   width: 94%;
   min-height: calc(100vh - 260px - 160px - 60px - 80px);
 }
@@ -640,47 +646,49 @@ ul {
 .img-cover {
   display: flex;
   flex-wrap: wrap;
+  gap: 14px;
 }
 .img-cover a {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: calc(700px / 3);
-  width: calc(100% / 3);
-  height: 160px;
-  text-align: center;
-  background-color: #e5e5e5;
-  background-size: cover;
-  border-radius: 1px;
+  color: #363636;
+  background-color: rgba(96,125,139,.15);
+  height: 32px;
+  padding: 0 12px;
+  transition: all .3s ease-in-out;
+  font-size: 15px;
+}
+.img-cover a:hover {
+  background: #333;
   color: #fff;
 }
-.img-cover a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 1s ease;
-  background: rgba(0, 0, 0, .4);
-  backdrop-filter: blur(4px);
-}
-.img-cover a:hover::before {
-  background: rgba(0, 0, 0, .7);
-  backdrop-filter: blur(0);
-}
-.img-cover div {
-  position: relative;
-}
-.img-cover h4 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-.img-cover p {
+.img-cover a span {
+  margin-left: 2px;
   opacity: .7;
-  font-size: 12px;
+}
+
+.source {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.source a {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  height: 32px;
+  background-color: rgba(96,125,139,.15);
+  transition: all .3s ease-in-out;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+.source a:hover {
+  background: #333;
+  color: #fff;
 }
 
 @media screen and (max-width: 600px) {

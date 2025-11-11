@@ -1,17 +1,5 @@
 # AcyOrt
 
-A Node.js static website framework.
-
-## Install
-
-```bash
-$ npm i acyort -g
-```
-
-## Documentation
-
-To check out the docs, visit https://acyort.js.org
-
 ## Development
 
 ### Install

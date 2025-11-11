@@ -2,7 +2,7 @@ import { sprintf } from 'sprintf-js'
 import signale from 'signale'
 
 export type Locale = {
-  [key: string]: Locale | string
+  [key: string]: Locale | string,
 }
 
 export default (

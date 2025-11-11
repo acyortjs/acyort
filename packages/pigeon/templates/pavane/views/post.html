@@ -26,8 +26,12 @@
 
 <div class="post-tags">
 {% for tag in page.tags %}
-  <a href="{{ _url('tags/' + tag.title + '/') }}">{{ tag.title }}</a>
+  <a href="{{ _url('tags/' + tag.title + '/') }}">#{{ tag.title }}</a>
 {% endfor %}
+</div>
+
+<div class="source">
+  <a target="_blank" href="https://github.com/{{ config.repository }}/issues/{{ page.number }}">Source</a>
 </div>
 
 {% if page.prev || page.next %}

@@ -40,6 +40,7 @@ declare module '@acyort/pigeon' {
     path: string,
     except: string,
     content: string,
+    number: number,
     tags: {
       title: string,
       description?: string,

@@ -11,6 +11,7 @@ export default (acyort: AcyOrt) => {
     name: 'pigeon',
     description: 'static website plugin',
     async action(argv) {
+      this.config.repository = argv.repo
       const issues = await request(this, argv.repo)
       const content = getContent(issues, argv.users)
       const data = getData(content, this.config as Config)

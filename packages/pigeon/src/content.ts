@@ -29,6 +29,7 @@ export default (issues: GithubIssus[], users?: string) => {
       milestone,
       labels,
       user,
+      number,
     } = issue
 
     if (postsUsers && !postsUsers.includes(user.login)) {
@@ -52,6 +53,7 @@ export default (issues: GithubIssus[], users?: string) => {
       })
     } else {
       posts.push({
+        number,
         id,
         title,
         createdAt: created_at,

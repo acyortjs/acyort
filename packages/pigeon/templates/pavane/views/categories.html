@@ -16,11 +16,8 @@
 {% if page.length %}
 <div class="img-cover">
 {% for c in page %}
-  <a style="background-image: url(https://source.unsplash.com/480x320/?{% if c.title === 'uncategorized' %}default{% else %}{{ c.title }}{% endif %})" href="{{ _url(c.url) }}">
-    <div>
-      <h4>{{ c.title }}</h4>
-      <p>{{ _n('posts', c.posts.length) }}</p>
-    </div>
+  <a  href="{{ _url(c.url) }}">
+    {{ c.title }}<span>({{ c.posts.length }})</span>
   </a>
 {% endfor %}
 </div>
