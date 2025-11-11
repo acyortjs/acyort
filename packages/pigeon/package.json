@@ -1,6 +1,6 @@
 {
   "name": "@acyort/pigeon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "static website plugin",
   "main": "lib/index.js",
   "files": [
