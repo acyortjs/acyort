@@ -55,6 +55,7 @@ declare module '@acyort/pigeon' {
 
   interface Page {
     id: number,
+    number: number,
     title: string,
     createdAt: string,
     updatedAt: string,

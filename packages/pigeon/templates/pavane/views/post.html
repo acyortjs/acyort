@@ -15,7 +15,7 @@
   {% else %}
   <a style="display:none" href="{{ _url('categories/uncategorized/') }}">{{ __('uncategorized') }}</a>
   {% endif %}
-  {{ _time(page.updatedAt, 'MMMM DD, YYYY') }}
+  Last updated: {{ _time(page.updatedAt, 'MMMM DD, YYYY') }}
 </p>
 {% endblock %}
 

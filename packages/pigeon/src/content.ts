@@ -44,6 +44,7 @@ export default (issues: GithubIssus[], users?: string) => {
     if (regex.test(title)) {
       const [,t] = title.split(regex)
       pages.push({
+        number,
         title: t,
         id,
         createdAt: created_at,
