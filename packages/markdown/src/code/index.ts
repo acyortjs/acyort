@@ -1,6 +1,48 @@
-import { EOL } from 'os'
 import prism from 'prismjs'
+import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-c'
+import 'prismjs/components/prism-cpp'
+import 'prismjs/components/prism-csharp'
+import 'prismjs/components/prism-diff'
+import 'prismjs/components/prism-docker'
+import 'prismjs/components/prism-go'
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-kotlin'
+import 'prismjs/components/prism-less'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-objectivec'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-rust'
+import 'prismjs/components/prism-scss'
+import 'prismjs/components/prism-sql'
+import 'prismjs/components/prism-swift'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-yaml'
+import 'prismjs/components/prism-tsx'
 import pureCode from './pure'
+
+// markdown code fence aliases not identical to prism language keys
+const langAliases = {
+  yml: 'yaml',
+  sh: 'bash',
+  shell: 'bash',
+  'c++': 'cpp',
+  'c#': 'csharp',
+  kt: 'kotlin',
+  py: 'python',
+  rs: 'rust',
+  rb: 'ruby',
+} as Record<string, string>
+
+// avoid prototype chain keys like `constructor` / `__proto__`
+const getGrammar = (lang: string) => {
+  const name = langAliases[lang.toLowerCase()] || lang.toLowerCase()
+  return Object.prototype.hasOwnProperty.call(prism.languages, name)
+    ? prism.languages[name]
+    : undefined
+}
 
 export default class {
   private lineNumbers?: boolean
@@ -15,14 +57,14 @@ export default class {
     if (!lang) {
       codeString = pureCode(block)
     } else {
-      const grammar = prism.languages[lang]
+      const grammar = getGrammar(lang)
 
       codeString = grammar
         ? `<pre class="language-${lang}">${prism.highlight(block, grammar, lang).trim()}</pre>`
         : pureCode(block)
     }
 
-    const line = `<pre class="language-none">${block.split(EOL).map((n, i) => `<span>${i + 1}</span>`).join('\n')}</pre>`
+    const line = `<pre class="language-none">${block.replace(/\r\n/g, '\n').split('\n').map((n, i) => `<span>${i + 1}</span>`).join('\n')}</pre>`
 
     const codeWidthLines = `<div class="code-highlight">
   <table>
