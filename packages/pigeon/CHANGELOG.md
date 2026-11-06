@@ -1,5 +1,13 @@
 # @acyort/pigeon
 
+## 1.0.6
+
+### Patch Changes
+
+- 2c49885: fix code highlighting: case insensitive language aliases, support more languages (ts/tsx/jsx/md/diff/bash/json/yaml and more), avoid prototype chain keys, fix crlf line numbers, update pavane theme token colors
+- Updated dependencies [2c49885]
+  - @acyort/markdown@3.0.2
+
 ## 1.0.5
 
 ### Patch Changes
