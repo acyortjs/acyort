@@ -45,6 +45,40 @@ class Query {
 
 const $ = (dom) => new Query(dom)
 
+const THEME_KEY = 'theme'
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+const applyTheme = (dark, save) => {
+  document.documentElement.classList.toggle('dark', dark)
+  if (save) {
+    try {
+      window.localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light')
+    } catch (e) { /* ignore */ }
+  }
+}
+
+const initTheme = () => {
+  let saved = null
+  try {
+    saved = window.localStorage.getItem(THEME_KEY)
+  } catch (e) { /* ignore */ }
+  if (saved === 'dark' || saved === 'light') {
+    applyTheme(saved === 'dark')
+  } else {
+    applyTheme(darkQuery.matches)
+  }
+
+  darkQuery.addEventListener('change', (e) => {
+    let stored = null
+    try {
+      stored = window.localStorage.getItem(THEME_KEY)
+    } catch (err) { /* ignore */ }
+    if (stored !== 'dark' && stored !== 'light') {
+      applyTheme(e.matches)
+    }
+  })
+}
+
 const checkMenu = () => {
   const { pathname } = window.location
   if (pathname !== '/' && !pathname.includes('/page/')) {
@@ -107,8 +141,15 @@ const posts = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme()
+
+  $('.theme-toggle').on('click', () => {
+    applyTheme(!document.documentElement.classList.contains('dark'), true)
+  })
+
   $('.menu > span').on('click', function click() {
     $(this).toggleClass('active')
+    $('.menu').toggleClass('opened')
     $('.menu > div').toggleClass('active')
   })
 
