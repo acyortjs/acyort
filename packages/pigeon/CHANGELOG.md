@@ -1,5 +1,11 @@
 # @acyort/pigeon
 
+## 1.0.7
+
+### Patch Changes
+
+- 357aaf6: add dark mode with theme toggle button to pavane theme
+
 ## 1.0.6
 
 ### Patch Changes
